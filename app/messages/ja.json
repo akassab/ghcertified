@@ -108,6 +108,8 @@
     "flagged": "フラグ済み",
     "unflag": "この質問のフラグを解除",
     "flagForReview": "レビューのためにフラグを付ける",
+    "checkAnswer": "回答を確認する",
+    "tryAgain": "もう一度試す",
     "submitExam": "テストを提出する",
     "results": "結果",
     "scoreOf": "{score}/{total} 正解",
@@ -120,7 +122,7 @@
     "contributePrompt": "これらの問題を楽しんでいますか？問題集を拡大しましょう。",
     "contribute": "✍️ コントリビューションする",
     "submitDialogTitle": "練習テストを提出しますか？",
-    "submitDialogDescription": "提出後、スコアを確認し、各質問をレビューすることができます。",
+    "submitDialogDescription": "提出後、スコアを確認し、各質問をレビューして、不正解の回答をもう一度試せます。",
     "submitDialogFlagged": "レビューのためにフラグが付けられました",
     "submitDialogWarningUnanswered": "{count} 件の未回答の質問があります。不正解としてカウントされます。",
     "submitDialogWarningPartial": "{count} 件の部分的に回答済みの質問があります。不正解としてカウントされます。",
@@ -132,6 +134,7 @@
   },
   "QuestionBrowser": {
     "checkAnswer": "回答を確認する",
+    "tryAgain": "もう一度試す",
     "sidebarRange": "{start}–{end}/{total}",
     "previousSidebarPage": "前の質問ページ",
     "nextSidebarPage": "次の質問ページ"

@@ -108,6 +108,8 @@
     "flagged": "Flagged",
     "unflag": "Unflag this question",
     "flagForReview": "Flag for review",
+    "checkAnswer": "Check Answer",
+    "tryAgain": "Try again",
     "submitExam": "Submit Exam",
     "results": "Results",
     "scoreOf": "{score} of {total} correct",
@@ -120,7 +122,7 @@
     "contributePrompt": "Enjoying these questions? Help grow the collection.",
     "contribute": "✍️ Contribute",
     "submitDialogTitle": "Submit Practice Test?",
-    "submitDialogDescription": "Once submitted, you'll see your score and can review each question.",
+    "submitDialogDescription": "Once submitted, you'll see your score, review each question, and retry missed answers.",
     "submitDialogFlagged": "Flagged for review",
     "submitDialogWarningUnanswered": "You have {count} unanswered questions. These will count as incorrect.",
     "submitDialogWarningPartial": "You have {count} partially answered questions. These will count as incorrect.",
@@ -132,6 +134,7 @@
   },
   "QuestionBrowser": {
     "checkAnswer": "Check Answer",
+    "tryAgain": "Try again",
     "sidebarRange": "{start}–{end} of {total}",
     "previousSidebarPage": "Previous question page",
     "nextSidebarPage": "Next question page"

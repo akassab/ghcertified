@@ -55,6 +55,8 @@ export function Quiz({ questions, questionCount, cert, certName }: QuizProps) {
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, Set<string>>>({});
   const [flaggedSet, setFlaggedSet] = useState<Set<number>>(new Set());
   const [isComplete, setIsComplete] = useState(false);
+  const [correctQuestionIds, setCorrectQuestionIds] = useState<Set<string>>(new Set());
+  const [retryingQuestionIds, setRetryingQuestionIds] = useState<Set<string>>(new Set());
   const [showConfirmDialog, setShowConfirmDialog] = useState(false);
   const [manualMapPage, setManualMapPage] = useState<number | null>(null);
 
@@ -79,6 +81,10 @@ export function Quiz({ questions, questionCount, cert, certName }: QuizProps) {
   const currentQuestion = quizQuestions[currentIndex];
   const currentSelected = selectedAnswers[currentQuestion?.id] ?? new Set<string>();
   const isFlagged = flaggedSet.has(currentIndex);
+  const currentCorrectAnswerCount = currentQuestion?.answers.filter((a) => a.isCorrect).length ?? 1;
+  const isCurrentRetrying = !!currentQuestion && retryingQuestionIds.has(currentQuestion.id);
+  const isCurrentAcceptedCorrect = !!currentQuestion && correctQuestionIds.has(currentQuestion.id);
+  const canCheckCurrentAnswer = currentSelected.size === currentCorrectAnswerCount;
 
   const handleToggleFlag = useCallback(() => {
     setFlaggedSet((prev) => {
@@ -91,7 +97,7 @@ export function Quiz({ questions, questionCount, cert, certName }: QuizProps) {
 
   const handleToggleAnswer = useCallback(
     (answerId: string) => {
-      if (!currentQuestion || isComplete) return;
+      if (!currentQuestion || (isComplete && !retryingQuestionIds.has(currentQuestion.id))) return;
 
       setSelectedAnswers((prev) => {
         const qId = currentQuestion.id;
@@ -112,7 +118,7 @@ export function Quiz({ questions, questionCount, cert, certName }: QuizProps) {
         return { ...prev, [qId]: current };
       });
     },
-    [currentQuestion, isComplete]
+    [currentQuestion, isComplete, retryingQuestionIds]
   );
 
   const handleNext = () => {
@@ -150,8 +156,8 @@ export function Quiz({ questions, questionCount, cert, certName }: QuizProps) {
   const partialCount = quizQuestions.filter((q) => getQuestionState(q) === "partial").length;
   const unansweredCount = quizQuestions.filter((q) => getQuestionState(q) === "unanswered").length;
 
-  // Correctness check (used in review mode after submission)
-  const isQuestionCorrect = (q: Question): boolean => {
+  // Correctness check for the current answer selection.
+  const isSelectionCorrect = (q: Question): boolean => {
     const sel = selectedAnswers[q.id] ?? new Set<string>();
     const correctIds = new Set(q.answers.filter((a) => a.isCorrect).map((a) => a.id));
     if (sel.size !== correctIds.size) return false;
@@ -159,18 +165,55 @@ export function Quiz({ questions, questionCount, cert, certName }: QuizProps) {
     return true;
   };
 
-  const score = isComplete ? quizQuestions.filter(isQuestionCorrect).length : 0;
+  const isQuestionCorrect = (q: Question): boolean => correctQuestionIds.has(q.id);
+
+  const score = isComplete ? correctQuestionIds.size : 0;
   const scorePercent = quizQuestions.length > 0 ? Math.round((score / quizQuestions.length) * 100) : 0;
   const animatedPercent = useCountUp(isComplete ? scorePercent : 0);
-  const isCurrentCorrectInReview = isComplete && currentQuestion ? isQuestionCorrect(currentQuestion) : false;
+  const showCurrentFeedback = isComplete && currentQuestion && !isCurrentRetrying;
 
   const handleSubmitExam = () => {
     setShowConfirmDialog(true);
   };
 
   const handleConfirmSubmit = () => {
+    setCorrectQuestionIds(new Set(quizQuestions.filter(isSelectionCorrect).map((q) => q.id)));
+    setRetryingQuestionIds(new Set());
     setShowConfirmDialog(false);
     setIsComplete(true);
+  };
+
+  const handleStartRetry = () => {
+    if (!currentQuestion || isCurrentAcceptedCorrect) return;
+
+    setSelectedAnswers((prev) => ({
+      ...prev,
+      [currentQuestion.id]: new Set<string>(),
+    }));
+    setRetryingQuestionIds((prev) => {
+      const next = new Set(prev);
+      next.add(currentQuestion.id);
+      return next;
+    });
+  };
+
+  const handleCheckRetry = () => {
+    if (!currentQuestion || !canCheckCurrentAnswer) return;
+
+    const isCorrect = isSelectionCorrect(currentQuestion);
+    setRetryingQuestionIds((prev) => {
+      const next = new Set(prev);
+      next.delete(currentQuestion.id);
+      return next;
+    });
+
+    if (isCorrect) {
+      setCorrectQuestionIds((prev) => {
+        const next = new Set(prev);
+        next.add(currentQuestion.id);
+        return next;
+      });
+    }
   };
 
   // Loading
@@ -275,6 +318,20 @@ export function Quiz({ questions, questionCount, cert, certName }: QuizProps) {
               {/* Navigation footer */}
               <div className="px-4 sm:px-7 py-4 sm:py-5 flex items-center justify-end gap-2 flex-wrap">
                 <div className="flex gap-2">
+                  {isComplete && currentQuestion && !isCurrentAcceptedCorrect && (
+                    isCurrentRetrying ? (
+                      <Button
+                        onClick={handleCheckRetry}
+                        disabled={!canCheckCurrentAnswer}
+                      >
+                        {t("checkAnswer")}
+                      </Button>
+                    ) : (
+                      <Button onClick={handleStartRetry}>
+                        {t("tryAgain")}
+                      </Button>
+                    )
+                  )}
                   <Button
                     variant="outline"
                     onClick={handlePrev}
@@ -323,10 +380,10 @@ export function Quiz({ questions, questionCount, cert, certName }: QuizProps) {
             <AnswerList
               question={currentQuestion}
               selectedIds={currentSelected}
-              showResults={isComplete}
-              isDisabled={isComplete}
-              showSelectionHint={!isComplete}
-              dimUnselected
+              showResults={isComplete && isCurrentAcceptedCorrect}
+              isDisabled={isComplete && !isCurrentRetrying}
+              showSelectionHint={!isComplete || isCurrentRetrying}
+              dimUnselected={!isCurrentRetrying}
               onToggle={handleToggleAnswer}
               labels={{
                 answerGroup: tQ("answerGroup"),
@@ -336,9 +393,9 @@ export function Quiz({ questions, questionCount, cert, certName }: QuizProps) {
               }}
             />
 
-            {isComplete && (
+            {showCurrentFeedback && (
               <FeedbackAlert
-                isCorrect={isCurrentCorrectInReview}
+                isCorrect={isCurrentAcceptedCorrect}
                 correctLabel={tQ("correct")}
                 incorrectLabel={tQ("incorrect")}
                 className="motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-1 motion-safe:duration-200"

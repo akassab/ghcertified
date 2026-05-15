@@ -32,7 +32,8 @@ export function QuestionBrowser({ questions }: QuestionBrowserProps) {
   const tQ = useTranslations("QuestionCommon");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, Set<string>>>({});
-  const [revealedMap, setRevealedMap] = useState<Record<number, boolean>>({});
+  const [resolvedMap, setResolvedMap] = useState<Record<number, boolean>>({});
+  const [feedbackMap, setFeedbackMap] = useState<Record<number, "correct" | "incorrect" | undefined>>({});
 
   // Shuffle answers per question on mount (client-only to avoid hydration mismatch)
   const [shuffledAnswerMap, setShuffledAnswerMap] = useState<Record<string, Question["answers"]>>({});
@@ -74,11 +75,13 @@ export function QuestionBrowser({ questions }: QuestionBrowserProps) {
     return { ...q, answers: shuffledAnswers };
   }, [questions, currentIndex, shuffledAnswerMap]);
   const currentSelected = selectedAnswers[currentQuestion?.id ?? ""] ?? new Set<string>();
-  const isRevealed = revealedMap[currentIndex] || false;
+  const isResolved = resolvedMap[currentIndex] || false;
+  const currentFeedback = feedbackMap[currentIndex];
+  const isAnswerLocked = isResolved || currentFeedback === "incorrect";
 
   const handleToggleAnswer = useCallback(
     (answerId: string) => {
-      if (isRevealed || !currentQuestion) return;
+      if (isAnswerLocked || !currentQuestion) return;
 
       setSelectedAnswers((prev) => {
         const qId = currentQuestion.id;
@@ -99,13 +102,8 @@ export function QuestionBrowser({ questions }: QuestionBrowserProps) {
         return { ...prev, [qId]: current };
       });
     },
-    [currentQuestion, isRevealed],
+    [currentQuestion, isAnswerLocked],
   );
-
-  const handleCheck = () => {
-    if (!canCheck) return;
-    setRevealedMap((prev) => ({ ...prev, [currentIndex]: true }));
-  };
 
   // Check Answer is enabled only when the right number of answers is selected
   const requiredCount = currentQuestion
@@ -125,6 +123,26 @@ export function QuestionBrowser({ questions }: QuestionBrowserProps) {
     if (!currentQuestion) return false;
     const correctIds = new Set(currentQuestion.answers.filter((a) => a.isCorrect).map((a) => a.id));
     return correctIds.size === currentSelected.size && [...correctIds].every((id) => currentSelected.has(id));
+  };
+
+  const handleCheck = () => {
+    if (!canCheck) return;
+    if (isCurrentCorrect()) {
+      setResolvedMap((prev) => ({ ...prev, [currentIndex]: true }));
+      setFeedbackMap((prev) => ({ ...prev, [currentIndex]: "correct" }));
+    } else {
+      setFeedbackMap((prev) => ({ ...prev, [currentIndex]: "incorrect" }));
+    }
+  };
+
+  const handleTryAgain = () => {
+    if (!currentQuestion) return;
+
+    setSelectedAnswers((prev) => ({
+      ...prev,
+      [currentQuestion.id]: new Set<string>(),
+    }));
+    setFeedbackMap((prev) => ({ ...prev, [currentIndex]: undefined }));
   };
 
   if (!currentQuestion) return null;
@@ -237,8 +255,11 @@ export function QuestionBrowser({ questions }: QuestionBrowserProps) {
         footer={
           <div className="px-4 sm:px-7 py-4 sm:py-5 flex items-center justify-between gap-3 flex-wrap">
             <div>
-              {!isRevealed && (
+              {!isResolved && currentFeedback !== "incorrect" && (
                 <Button onClick={handleCheck} disabled={!canCheck}>{t("checkAnswer")}</Button>
+              )}
+              {!isResolved && currentFeedback === "incorrect" && (
+                <Button onClick={handleTryAgain}>{t("tryAgain")}</Button>
               )}
             </div>
             <div className="flex gap-2">
@@ -267,8 +288,8 @@ export function QuestionBrowser({ questions }: QuestionBrowserProps) {
         <AnswerList
           question={currentQuestion}
           selectedIds={currentSelected}
-          showResults={isRevealed}
-          isDisabled={isRevealed}
+          showResults={isResolved}
+          isDisabled={isAnswerLocked}
           onToggle={handleToggleAnswer}
           labels={{
             answerGroup: tQ("answerGroup"),
@@ -278,9 +299,9 @@ export function QuestionBrowser({ questions }: QuestionBrowserProps) {
           }}
         />
 
-        {isRevealed && (
+        {currentFeedback && (
           <FeedbackAlert
-            isCorrect={isCurrentCorrect()}
+            isCorrect={currentFeedback === "correct"}
             correctLabel={tQ("correct")}
             incorrectLabel={tQ("incorrect")}
           />

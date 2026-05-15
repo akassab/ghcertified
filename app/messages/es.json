@@ -108,6 +108,8 @@
     "flagged": "Marcada",
     "unflag": "Quitar marca de esta pregunta",
     "flagForReview": "Marcar para revisión",
+    "checkAnswer": "Verificar respuesta",
+    "tryAgain": "Intentar de nuevo",
     "submitExam": "Enviar examen",
     "results": "Resultados",
     "scoreOf": "{score} de {total} correctas",
@@ -120,7 +122,7 @@
     "contributePrompt": "¿Te gustan estas preguntas? Ayuda a que la colección crezca.",
     "contribute": "✍️ Contribuir",
     "submitDialogTitle": "¿Enviar Prueba de Práctica?",
-    "submitDialogDescription": "Una vez enviada, verás tu puntuación y podrás revisar cada pregunta.",
+    "submitDialogDescription": "Una vez enviada, verás tu puntuación, podrás revisar cada pregunta e intentar de nuevo las respuestas falladas.",
     "submitDialogFlagged": "Marcada para revisión",
     "submitDialogWarningUnanswered": "Tienes {count} preguntas sin responder. Se contarán como incorrectas.",
     "submitDialogWarningPartial": "Tienes {count} preguntas respondidas parcialmente. Se contarán como incorrectas.",
@@ -132,6 +134,7 @@
   },
   "QuestionBrowser": {
     "checkAnswer": "Verificar respuesta",
+    "tryAgain": "Intentar de nuevo",
     "sidebarRange": "{start}–{end} de {total}",
     "previousSidebarPage": "Página de preguntas anterior",
     "nextSidebarPage": "Página de preguntas siguiente"
