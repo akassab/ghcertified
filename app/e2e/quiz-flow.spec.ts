@@ -104,4 +104,24 @@ test.describe("quiz flow", () => {
     await expect(page.getByText(/results/i).first()).toBeVisible();
     await expect(page.getByText(/\d+ of 3 correct/i)).toBeVisible();
   });
+
+  test("can retry an incorrect Actions question", async ({ page }) => {
+    await page.goto("/en/questions/actions");
+    const answerGroup = page.getByRole("radiogroup", { name: /answer options/i }).or(
+      page.getByRole("group", { name: /answer options/i })
+    ).first();
+    await answerGroup.waitFor({ timeout: 15_000 });
+
+    await answerGroup.getByRole("radio", { name: /only elevated/i }).click();
+    await page.getByRole("button", { name: "Check Answer" }).click();
+
+    await expect(page.getByText("Incorrect")).toBeVisible();
+    await page.getByRole("button", { name: "Try again" }).click();
+
+    await answerGroup.getByRole("radio", { name: /only downgraded/i }).click();
+    await page.getByRole("button", { name: "Check Answer" }).click();
+
+    await expect(page.getByRole("alert").getByText("Correct")).toBeVisible();
+    await expect(page.getByRole("button", { name: "Try again" })).toHaveCount(0);
+  });
 });

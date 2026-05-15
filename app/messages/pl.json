@@ -108,6 +108,8 @@
     "flagged": "Oznaczone",
     "unflag": "Usuń oznaczenie tego pytania",
     "flagForReview": "Oznacz do sprawdzenia",
+    "checkAnswer": "Sprawdź odpowiedź",
+    "tryAgain": "Spróbuj ponownie",
     "submitExam": "Zakończ test",
     "results": "Wyniki",
     "scoreOf": "{score} z {total} poprawnych",
@@ -120,7 +122,7 @@
     "contributePrompt": "Podoba Ci się te pytania? Pomóż w ich rozwoju.",
     "contribute": "✍️ Wnieś swój wkład",
     "submitDialogTitle": "Zakończyć test próbny?",
-    "submitDialogDescription": "Po zakończeniu zobaczysz swój wynik i będziesz mógł/mogła przejrzeć każde pytanie.",
+    "submitDialogDescription": "Po zakończeniu zobaczysz swój wynik, przejrzysz każde pytanie i spróbujesz ponownie błędnych odpowiedzi.",
     "submitDialogFlagged": "Oznaczone do sprawdzenia",
     "submitDialogWarningUnanswered": "Masz {count} nieodpowiedzianych pytań. Będą liczone jako niepoprawne.",
     "submitDialogWarningPartial": "Masz {count} częściowo odpowiedzianych pytań. Będą liczone jako niepoprawne.",
@@ -132,6 +134,7 @@
   },
   "QuestionBrowser": {
     "checkAnswer": "Sprawdź odpowiedź",
+    "tryAgain": "Spróbuj ponownie",
     "sidebarRange": "{start}–{end} z {total}",
     "previousSidebarPage": "Poprzednia strona z pytaniami",
     "nextSidebarPage": "Następna strona z pytaniami"
