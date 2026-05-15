@@ -3,6 +3,100 @@ question: "ワークフローが `pull_request` イベントによってトリ�
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> マージされていないプルリクエストでは、`github.ref` はプルリクエストマージブランチ/タグの完全修飾リファレンスを指します。  
+- <input type="checkbox" disabled> マージされたプルリクエストでは、`github.ref` はマージ先のブランチの完全修飾リファレンスを指します。  
+- <input type="checkbox" disabled> プルリクエスト (マージ済みかどうかに関わらず) では、`github.ref` はプルリクエスト番号を指します。  
+- <input type="checkbox" disabled> プルリクエスト (マージ済みかどうかに関わらず) では、`github.ref` は `GITHUB_REF` ブランチ上の最後のマージコミットの SHA です。  
+- <input type="checkbox" disabled> マージされていないプルリクエストでは、`github.ref` はプルリクエストのタイトルから作成された完全修飾リファレンスです。  
+- <input type="checkbox" disabled> マージされたプルリクエストでは、`github.ref` はワークフローの実行をトリガーした完全修飾リファレンスのタイプです。その値は `branch`、`tag`、または (リファレンスが完全修飾されていない場合は) `null` のいずれかです。  
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] マージされていないプルリクエストでは、`github.ref` はプルリクエストマージブランチ/タグの完全修飾リファレンスを指します。  
 > リファレンスに関する詳細は、公式の [Git ドキュメント](https://git-scm.com/book/en/Git-Internals-Git-References) を参照してください。
 - [x] マージされたプルリクエストでは、`github.ref` はマージ先のブランチの完全修飾リファレンスを指します。  

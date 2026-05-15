@@ -3,6 +3,112 @@ question: "What is true about the following workflow configuration if triggered 
 documentation: "https://docs.github.com/en/actions/using-jobs/using-conditions-to-control-job-execution"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+name: deploy-workflow
+on: [push]
+jobs:
+    production-deploy:
+        if: github.repository == 'octo/my-prod-repo'
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '14'
+            - run: npm install -g bats
+```
+- <input type="checkbox" disabled> the `production-deploy` job will be marked as skipped
+- <input type="checkbox" disabled> the `production-deploy` job will error
+- <input type="checkbox" disabled> the `production-deploy` job will execute three steps
+- <input type="checkbox" disabled> the `production-deploy` job will run if the `node-version` is `14`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
 name: deploy-workflow
 on: [push]

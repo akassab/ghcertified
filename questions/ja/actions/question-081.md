@@ -3,6 +3,98 @@ question: "複数のリポジトリで定義済みのワークフローを再利
 documentation: "https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> ワークフローファイルを各リポジトリにコピーする
+- <input type="checkbox" disabled> ワークフローテンプレートを使用する
+- <input type="checkbox" disabled> 再利用可能なアクションを作成する
+- <input type="checkbox" disabled> ワークフローを中央リポジトリに定義する
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [ ] ワークフローファイルを各リポジトリにコピーする
 - [x] ワークフローテンプレートを使用する
 - [ ] 再利用可能なアクションを作成する

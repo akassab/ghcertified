@@ -3,6 +3,98 @@ question: "W jaki sposób organizacje korzystające z GitHub Enterprise Server m
 documentation: "https://docs.github.com/en/enterprise-server@3.17/admin/github-actions/managing-access-to-actions-from-githubcom/enabling-automatic-access-to-githubcom-actions-using-github-connect"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Korzystając z GitHub Connect
+- <input type="checkbox" disabled> GitHub Enterprise Server domyślnie ma dostęp do wszystkich GitHub.com Actions
+- <input type="checkbox" disabled> Korzystając z narzędzia actions-sync
+- <input type="checkbox" disabled> GitHub Enterprise Server (GHES) nie może korzystać z GitHub.com Actions z powodu swojej lokalnej (on-premise) natury i braku dostępu do internetu.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Korzystając z GitHub Connect
 > Po włączeniu GitHub Connect zostanie użyty do automatycznego ustanowienia bezpiecznego połączenia między instancją GitHub Enterprise Server (GHES) a kontem GitHub Enterprise Cloud (GHEC) (GHEC jest hostowany na GitHub.com). Konto GHEC pełni rolę zaufanej (uwierzytelnionej) tożsamości używanej przez GitHub.com do autoryzacji instancji GHES w celu uzyskania dostępu do akcji hostowanych na GitHub.com.  
 - [ ] GitHub Enterprise Server domyślnie ma dostęp do wszystkich GitHub.com Actions

@@ -3,6 +3,110 @@ question: "ワークフロー `Deploy Prod` が常に同時に1つだけ実行�
 documentation: "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#concurrency"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> ワークフローレベルで `concurrency` を使用する
+```yaml
+concurrency: ${{ github.workflow }}
+```
+- <input type="checkbox" disabled> ワークフローレベルで `queue` を使用する
+```yaml
+queue: ${{ github.workflow }}
+```
+- <input type="checkbox" disabled> ワークフローレベルで `order` を使用する
+```yaml
+order: ${{ github.workflow }}
+```
+- <input type="checkbox" disabled> ワークフローレベルで `parallel` を使用する
+```yaml
+parallel: ${{ github.workflow }}
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] ワークフローレベルで `concurrency` を使用する
 ```yaml
 concurrency: ${{ github.workflow }}

@@ -3,6 +3,99 @@ question: "¿Al crear GitHub Actions personalizados, en qué archivo se debe def
 documentation: "https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+Ejemplos de metadata: nombre, descripción, salidas o entradas requeridas
+- <input type="checkbox" disabled> En el archivo `action.yml` o `action.yaml` en el repositorio de la acción
+- <input type="checkbox" disabled> En el archivo `README` del repositorio
+- <input type="checkbox" disabled> Se edita en la interfaz de GitHub Marketplace cuando se publica para compartir
+- <input type="checkbox" disabled> En el archivo `action.yml` o `action.yaml` en el repositorio de la acción, pero no es necesario si la acción no está destinada para ser compartida y utilizada por el público
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 Ejemplos de metadata: nombre, descripción, salidas o entradas requeridas
 - [x] En el archivo `action.yml` o `action.yaml` en el repositorio de la acción
 - [ ] En el archivo `README` del repositorio

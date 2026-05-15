@@ -3,6 +3,98 @@ question: "A workflow is triggered when pull requests are reopened. Why might th
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#pull_request"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> `types: [reopened]` is defined under the `pull_request` event. 
+- <input type="checkbox" disabled> Branch protection rules were improperly configured.
+- <input type="checkbox" disabled> No activity types are defined under the `pull_request` event.
+- <input type="checkbox" disabled> `on: schedule` was configured with `pull_requests: [reopened]`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] `types: [reopened]` is defined under the `pull_request` event. 
 - [ ] Branch protection rules were improperly configured.
 > Branch protection rules do not determine when a workflow fires.

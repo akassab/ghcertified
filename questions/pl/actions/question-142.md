@@ -3,6 +3,99 @@ question: "Która z poniższych odpowiedzi jest poprawna w odniesieniu do token�
 documentation: "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-as-a-github-app-installation#using-an-installation-access-token-to-authenticate-as-an-app-installation"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Tokeny dostępu instalacyjnego to krótkoterminowe tokeny idealne do działań automatyzacyjnych, ale wymagają skonfigurowania aplikacji GitHub.
+- <input type="checkbox" disabled> `GITHUB_TOKEN` jest rodzajem tokenu dostępu instalacyjnego.
+- <input type="checkbox" disabled> Akcja `actions/create-github-app-token` może być wywoływana w ramach workflow w celu utworzenia tokenu dostępu instalacyjnego dostępnego do natychmiastowego użycia.
+- <input type="checkbox" disabled> Akcja `actions/create-github-app-token` może być wywoływana w ramach workflow w celu utworzenia tokenu dostępu instalacyjnego, ale token dostępu instalacyjnego może być używany tylko w przyszłych uruchomieniach workflow.
+- <input type="checkbox" disabled> Tokeny dostępu instalacyjnego nie mogą być skonfigurowane do działania w imieniu powiązanej z nimi aplikacji GitHub.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Tokeny dostępu instalacyjnego to krótkoterminowe tokeny idealne do działań automatyzacyjnych, ale wymagają skonfigurowania aplikacji GitHub.
 - [x] `GITHUB_TOKEN` jest rodzajem tokenu dostępu instalacyjnego.
 > `GITHUB_TOKEN` to token dostępu instalacyjnego aplikacji GitHub, który jest automatycznie generowany dla każdego uruchomienia workflow. Zobacz [dokumentację](https://docs.github.com/en/actions/concepts/security/github_token) w celu uzyskania dodatkowych informacji.

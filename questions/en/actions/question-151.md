@@ -3,6 +3,98 @@ question: "Which should you use when passing information between jobs: job outpu
 documentation: "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-variables#passing-values-between-steps-and-jobs-in-a-workflow"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Job outputs, because the value of environmental variables set via writing to `GITHUB_ENV` only applies to the current job.
+- <input type="checkbox" disabled> `GITHUB_ENV`, because job outputs can only be set and referenced within the same job.
+- <input type="checkbox" disabled> Job outputs, because they are simpler to set up
+- <input type="checkbox" disabled> `GITHUB_ENV`, because using it to set environmental variables puts significantly less strain on the runner, reducing workflow runtime.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Job outputs, because the value of environmental variables set via writing to `GITHUB_ENV` only applies to the current job.
 > While `env` can be set at workflow-level (meaning its variables can be referenced by multiple jobs), this does not mean changing the value of the environmental variable persists beyond the job that changed it.
 - [ ] `GITHUB_ENV`, because job outputs can only be set and referenced within the same job.

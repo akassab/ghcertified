@@ -3,6 +3,98 @@ question: "Qual declaração está correta em relação ao repasse de permissõe
 documentation: "https://docs.github.com/en/actions/using-workflows/reusing-workflows#access-and-permissions"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> As permissões do `GITHUB_TOKEN` repassadas do workflow chamador só podem ser reduzidas pelo workflow chamado.
+- <input type="checkbox" disabled> As permissões do `GITHUB_TOKEN` repassadas do workflow chamador só podem ser elevadas pelo workflow chamado.
+- <input type="checkbox" disabled> As permissões do `GITHUB_TOKEN` repassadas do workflow chamador podem ser tanto reduzidas quanto elevadas pelo workflow chamado.
+- <input type="checkbox" disabled> As permissões do `GITHUB_TOKEN` repassadas do workflow chamador não podem ser nem reduzidas nem elevadas pelo workflow chamado.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] As permissões do `GITHUB_TOKEN` repassadas do workflow chamador só podem ser reduzidas pelo workflow chamado.
 - [ ] As permissões do `GITHUB_TOKEN` repassadas do workflow chamador só podem ser elevadas pelo workflow chamado.
 - [ ] As permissões do `GITHUB_TOKEN` repassadas do workflow chamador podem ser tanto reduzidas quanto elevadas pelo workflow chamado.

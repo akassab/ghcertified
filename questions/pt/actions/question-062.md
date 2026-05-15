@@ -3,6 +3,98 @@ question: "Sua organização define um segredo `SomeSecret`, porém, ao referenc
 documentation: "https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#naming-your-secrets"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> O segredo `SomeSecret` também está declarado no escopo do repositório
+- <input type="checkbox" disabled> O segredo `SomeSecret` também está declarado no escopo da enterprise
+- <input type="checkbox" disabled> A expressão `${{ secrets.SomeSecret }}` é usada apenas para segredos no escopo do repositório
+- <input type="checkbox" disabled> Você precisa usar a API do GitHub para acessar segredos no escopo da organização
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] O segredo `SomeSecret` também está declarado no escopo do repositório
 - [ ] O segredo `SomeSecret` também está declarado no escopo da enterprise
 > Se um segredo com o mesmo nome existir em múltiplos níveis, o segredo no nível mais baixo terá precedência.

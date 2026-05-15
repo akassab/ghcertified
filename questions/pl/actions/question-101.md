@@ -3,6 +3,148 @@ question: "Jak zapewnić, że krok `Upload Failure test report` zostanie wykonan
 documentation: "https://docs.github.com/en/actions/learn-github-actions/expressions#status-check-functions"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> 
+```yaml
+- name: Run Tests
+  id: run-tests
+  run: npm run test
+
+- name: Upload Failure test report
+  if: failure() && steps.run-tests.outcome == 'failure'
+  uses: actions/upload-artifact@v3
+  with:
+    name: test-report
+    path: test-reports.html
+```
+
+- <input type="checkbox" disabled> 
+```yaml
+- name: Run Tests
+  id: run-tests
+  run: npm run test
+
+- name: Upload Failure test report
+  if: always()
+  uses: actions/upload-artifact@v3
+  with:
+    name: test-report
+    path: test-reports.html
+```
+
+- <input type="checkbox" disabled> 
+```yaml
+- name: Run Tests
+  id: run-tests
+  run: npm run test
+
+- name: Upload Failure test report
+  if: steps.run-tests.outcome == 'failure'
+  uses: actions/upload-artifact@v3
+  with:
+    name: test-report
+    path: test-reports.html
+```
+
+- <input type="checkbox" disabled> 
+```yaml
+- name: Run Tests
+  id: run-tests
+  run: npm run test
+
+- name: Upload Failure test report
+  uses: actions/upload-artifact@v3
+  with:
+    name: test-report
+    path: test-reports.html
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] 
 ```yaml
 - name: Run Tests

@@ -3,6 +3,98 @@ question: "プルリクエストが再オープンされたときにワークフ
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#pull_request"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> `types: [reopened]` が `pull_request` イベントの下で定義されているため。
+- <input type="checkbox" disabled> ブランチ保護ルールが適切に設定されていなかったため。
+- <input type="checkbox" disabled> `pull_request` イベントに特定のアクティビティタイプが定義されていないため。
+- <input type="checkbox" disabled> `on: schedule` が `pull_requests: [reopened]` で設定されているため。
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] `types: [reopened]` が `pull_request` イベントの下で定義されているため。
 - [ ] ブランチ保護ルールが適切に設定されていなかったため。
 > ブランチ保護ルールはワークフローが実行されるタイミングを決定しません。

@@ -3,6 +3,98 @@ question: "あなたのOrganizationでは、シークレット `SomeSecret` を�
 documentation: "https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#naming-your-secrets"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> シークレット `SomeSecret` がリポジトリスコープでも宣言されています
+- <input type="checkbox" disabled> シークレット `SomeSecret` がエンタープライズスコープでも宣言されています
+- <input type="checkbox" disabled> `${{ secrets.SomeSecret }}` 式はリポジトリスコープのシークレットでのみ使用されます
+- <input type="checkbox" disabled> OrganizationスコープのシークレットにアクセスするにはGitHub APIを使用する必要があります
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] シークレット `SomeSecret` がリポジトリスコープでも宣言されています
 - [ ] シークレット `SomeSecret` がエンタープライズスコープでも宣言されています
 > 同じ名前のシークレットが複数のレベルで存在する場合、最も低いレベルのシークレットが優先されます。

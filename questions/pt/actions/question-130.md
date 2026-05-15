@@ -3,6 +3,109 @@ question: "Quais das opções a seguir são verdadeiras sobre os blocos `outputs
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#example-defining-outputs-for-a-job"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Os blocos `outputs` em nível de trabalho devem ser usados apenas em fluxos de trabalho chamadores, não em fluxos de trabalho reutilizáveis.
+- <input type="checkbox" disabled> Um bloco `outputs` em nível de fluxo de trabalho deve ser usado apenas em fluxos de trabalho reutilizáveis, não em fluxos de trabalho chamadores.
+- <input type="checkbox" disabled> Um fluxo de trabalho reutilizável pode ter blocos `outputs` em nível de fluxo de trabalho e em nível de trabalho.
+- <input type="checkbox" disabled> Um bloco `outputs` em nível de trabalho deve ter a seguinte estrutura:
+```
+outputs:
+    <output-name>
+        value: ${{ steps.<step-name>.outputs.<output-name> }}
+```
+- <input type="checkbox" disabled> Um bloco `outputs` em nível de fluxo de trabalho deve ter a seguinte estrutura:
+```
+outputs:
+    <output-name>
+        value: ${{ jobs.<job-name>.outputs.<output-name> }}
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [ ] Os blocos `outputs` em nível de trabalho devem ser usados apenas em fluxos de trabalho chamadores, não em fluxos de trabalho reutilizáveis.
 > Fluxos de trabalho reutilizáveis podem ter blocos `outputs` tanto em nível de trabalho quanto em nível de fluxo de trabalho.
 - [x] Um bloco `outputs` em nível de fluxo de trabalho deve ser usado apenas em fluxos de trabalho reutilizáveis, não em fluxos de trabalho chamadores.

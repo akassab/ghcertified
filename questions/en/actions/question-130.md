@@ -3,6 +3,109 @@ question: "Which of the following are true regarding workflow-level vs. job-leve
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#example-defining-outputs-for-a-job"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Job-level `outputs` blocks should only be used in caller workflows, not reusable workflows.
+- <input type="checkbox" disabled> A workflow-level `outputs` block should only be used in reusable workflows, not caller workflows.
+- <input type="checkbox" disabled> A reusable workflow can have both workflow-level and job-level `outputs` blocks.
+- <input type="checkbox" disabled> A job-level `outputs` block must have the following structure:
+```
+outputs:
+    <output-name>
+        value: ${{ steps.<step-name>.outputs.<output-name> }}
+```
+- <input type="checkbox" disabled> A workflow-level `outputs` block must have the following structure:
+```
+outputs:
+    <output-name>
+        value: ${{ jobs.<job-name>.outputs.<output-name> }}
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [ ] Job-level `outputs` blocks should only be used in caller workflows, not reusable workflows.
 > Reusable workflows can have both job-level and workflow-level `outputs` blocks.
 - [x] A workflow-level `outputs` block should only be used in reusable workflows, not caller workflows.

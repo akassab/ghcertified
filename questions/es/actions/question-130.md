@@ -3,6 +3,109 @@ question: "¿Cuál de las siguientes afirmaciones son verdaderas con respecto a 
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#example-defining-outputs-for-a-job"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Los bloques de `outputs` a nivel de trabajo solo deben utilizarse en flujos de trabajo de llamada, no en flujos de trabajo reutilizables.
+- <input type="checkbox" disabled> Un bloque de `outputs` a nivel de flujo de trabajo solo debe utilizarse en flujos de trabajo reutilizables, no en flujos de trabajo de llamada.
+- <input type="checkbox" disabled> Un flujo de trabajo reutilizable puede tener bloques de `outputs` tanto a nivel de flujo de trabajo como a nivel de trabajo.
+- <input type="checkbox" disabled> Un bloque de `outputs` a nivel de trabajo debe tener la siguiente estructura:
+```
+outputs:
+    <output-name>
+        value: ${{ steps.<step-name>.outputs.<output-name> }}
+```
+- <input type="checkbox" disabled> Un bloque de `outputs` a nivel de flujo de trabajo debe tener la siguiente estructura:
+```
+outputs:
+    <output-name>
+        value: ${{ jobs.<job-name>.outputs.<output-name> }}
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [ ] Los bloques de `outputs` a nivel de trabajo solo deben utilizarse en flujos de trabajo de llamada, no en flujos de trabajo reutilizables.
 > Los flujos de trabajo reutilizables pueden tener bloques de `outputs` tanto a nivel de trabajo como a nivel de flujo de trabajo.
 - [x] Un bloque de `outputs` a nivel de flujo de trabajo solo debe utilizarse en flujos de trabajo reutilizables, no en flujos de trabajo de llamada.

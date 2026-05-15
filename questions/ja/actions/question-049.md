@@ -3,6 +3,100 @@ question: "「Starter Workflows」について正しい記述はどれですか�
 documentation: "https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> 既製の（または最小限の変更が必要な）ワークフローテンプレートを活用できる
+- <input type="checkbox" disabled> GitHubは異なるカテゴリ、言語、およびツール向けのStarter Workflowsを提供し、維持管理している
+- <input type="checkbox" disabled> 組織内のユーザー向けにカスタムStarter Workflowsを作成できる
+- <input type="checkbox" disabled> Starter Workflowsは再利用可能なワークフローを呼び出すことができない
+- <input type="checkbox" disabled> Starter WorkflowsはGitHubの有料機能である
+- <input type="checkbox" disabled> Starter Workflowsは既製の状態で提供され、修正や拡張ができない
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] 既製の（または最小限の変更が必要な）ワークフローテンプレートを活用できる
 - [x] GitHubは異なるカテゴリ、言語、およびツール向けのStarter Workflowsを提供し、維持管理している
 - [x] 組織内のユーザー向けにカスタムStarter Workflowsを作成できる

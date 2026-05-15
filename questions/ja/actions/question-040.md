@@ -3,6 +3,110 @@ question: "次の例では、`workflow A` が `inherit` キーワードを使用
 documentation: "https://docs.github.com/en/actions/using-workflows/reusing-workflows#passing-secrets-to-nested-workflows"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+jobs:
+  workflowA-calls-workflowB:
+    uses: octo-org/example-repo/.github/workflows/B.yml@main
+    secrets: inherit
+```
+
+```yaml
+jobs:
+  workflowB-calls-workflowC:
+    uses: different-org/example-repo/.github/workflows/C.yml@main
+```
+- <input type="checkbox" disabled> `workflow A` に利用可能なすべてのシークレットは `workflow B` にも利用可能になりますが、`workflow C` には利用可能になりません。
+- <input type="checkbox" disabled> `octo-org` 組織および `octo-org/example-repo` リポジトリのすべてのシークレットは `workflow B` に利用可能になりますが、`workflow C` には利用可能になりません。
+- <input type="checkbox" disabled> `workflow A` に利用可能なすべてのシークレットは、`workflow B` および `workflow C` にも利用可能になります。
+- <input type="checkbox" disabled> リポジトリおよび環境のシークレットのみが `workflow A` に利用可能で、`workflow B` にも利用可能になりますが、`workflow C` には利用可能になりません。組織スコープのシークレットは継承できません。
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
 jobs:
   workflowA-calls-workflowB:

@@ -3,6 +3,109 @@ question: "Które z poniższych są prawdziwe w kwestii bloków `outputs` na poz
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#example-defining-outputs-for-a-job"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Bloki `outputs` na poziomie job powinny być używane tylko w workflow wywołującym, a nie w workflow wielokrotnego użytku.
+- <input type="checkbox" disabled> Blok `outputs` na poziomie workflow powinien być używany tylko w workflow wielokrotnego użytku, a nie w workflow wywołującym.
+- <input type="checkbox" disabled> Workflow wielokrotnego użytku może zawierać zarówno bloki `outputs` na poziomie workflow jak i na poziomie job.
+- <input type="checkbox" disabled> Blok `outputs` na poziomie job musi mieć następującą strukturę:
+```
+outputs:
+    <output-name>
+        value: ${{ steps.<step-name>.outputs.<output-name> }}
+```
+- <input type="checkbox" disabled> Blok `outputs` na poziomie workflow musi mieć następującą strukturę:
+```
+outputs:
+    <output-name>
+        value: ${{ jobs.<job-name>.outputs.<output-name> }}
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [ ] Bloki `outputs` na poziomie job powinny być używane tylko w workflow wywołującym, a nie w workflow wielokrotnego użytku.
 > Workflows wielokrotnego użytku mogą mieć zarówno bloki `outputs` na poziomie job, jak i na poziomie workflow.
 - [x] Blok `outputs` na poziomie workflow powinien być używany tylko w workflow wielokrotnego użytku, a nie w workflow wywołującym.

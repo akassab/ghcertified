@@ -3,6 +3,99 @@ question: "GitHub Actions ワークフロー内でカスタム JavaScript スク
 documentation: "https://github.com/marketplace/actions/github-script"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> `actions/github-script` アクションを使用する
+- <input type="checkbox" disabled> リポジトリの Actions 設定で「Allow custom JavaScript scripts」構成を有効にする
+- <input type="checkbox" disabled> Organization の Actions 設定で「Allow custom JavaScript scripts」構成を有効にする
+- <input type="checkbox" disabled> スクリプトブロックの内容を `GITHUB_SCRIPT` 環境変数に書き込む
+- <input type="checkbox" disabled> JavaScript アクションで、`using` キーを `'github-script'` に設定する
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] `actions/github-script` アクションを使用する
 > `actions/github-script` を使用すると、API 呼び出しを行い、ワークフローのコンテキストにアクセスするためのインライン JavaScript を記述して活用することができます。`actions/github-script` を使用するには、[ドキュメント](https://github.com/actions/github-script) に記載されているように、他のアクションと同じように呼び出してください。
 - [ ] リポジトリの Actions 設定で「Allow custom JavaScript scripts」構成を有効にする

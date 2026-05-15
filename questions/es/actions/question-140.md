@@ -3,6 +3,115 @@ question: "Estás escribiendo un flujo de trabajo reutilizable que tiene `branch
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/expressions#startswith"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Usa el método incorporado `startsWith` en combinación con `jobs.<job_id>.steps[*].if`
+```yaml
+    if: startsWith(inputs.branch-name, 'smoke-test')
+```
+
+- <input type="checkbox" disabled> Usa el método incorporado `startsWith` en combinación con `jobs.<job_id>.steps[*].if`
+```yaml
+    if: inputs.branch-name.startsWith('smoke-test')
+``` 
+- <input type="checkbox" disabled> Usa el filtro `branches` bajo `workflow_call`
+```yaml
+on:
+  workflow_call:
+    branches:
+        - 'smoke-test/**'
+```
+
+- <input type="checkbox" disabled> Usa condicionales en shell en combinación con `jobs.<job_id>.steps[*].if`
+```yaml
+    if: [[ "${{inputs.branch-name}}" == "smoke-test"* ]]
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Usa el método incorporado `startsWith` en combinación con `jobs.<job_id>.steps[*].if`
 ```yaml
     if: startsWith(inputs.branch-name, 'smoke-test')

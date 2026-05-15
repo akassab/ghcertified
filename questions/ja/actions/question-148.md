@@ -3,6 +3,99 @@ question: "ワークフローがプッシュイベントでトリガーされた
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> プッシュイベントでは、`github.ref` はプッシュされたブランチまたはタグの参照の、完全修飾されたリファレンスです。
+- <input type="checkbox" disabled> プッシュイベントでは、`github.ref` はワークフローをトリガーしたコミットのメッセージです。
+- <input type="checkbox" disabled> プッシュイベントでは、`github.ref` はワークフローをトリガーしたコミットの SHA です。
+- <input type="checkbox" disabled> プッシュイベントでは、`github.ref` はワークフローをトリガーしたコミットの説明です。
+- <input type="checkbox" disabled> プッシュイベントでは、`github.ref` はワークフローランをトリガーした完全修飾されたリファレンスの種類です。その値は `branch`、`tag`、または（リファレンスが完全修飾されていない場合は）`null` です。
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] プッシュイベントでは、`github.ref` はプッシュされたブランチまたはタグの参照の、完全修飾されたリファレンスです。
 > リファレンスに関する詳細は、公式の [Git ドキュメント](https://git-scm.com/book/en/Git-Internals-Git-References) を参照してください。
 - [ ] プッシュイベントでは、`github.ref` はワークフローをトリガーしたコミットのメッセージです。

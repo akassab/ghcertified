@@ -3,6 +3,99 @@ question: "Dlaczego warto używać SHA commita zamiast tagu do przypinania akcji
 documentation: "https://docs.github.com/en/actions/reference/security/secure-use#using-third-party-actions"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> SHA commitów są bardziej bezpieczne
+- <input type="checkbox" disabled> SHA commitów są niezmienne, podczas gdy tagi mogą być zmieniane
+- <input type="checkbox" disabled> SHA commitów są wygodniejsze w użyciu w porównaniu do tagów
+- <input type="checkbox" disabled> SHA commitów gwarantują wskazanie na dokładnie ten sam kod za każdym razem, czego nie gwarantują tagi
+- <input type="checkbox" disabled> SHA commitów są trudniejsze do prześledzenia podczas audytu, co utrudnia złośliwym podmiotom ustalenie, w jaki sposób kod akcji wpływa na ogólne procesy.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] SHA commitów są bardziej bezpieczne
 > SHA commitów są bardziej bezpieczne, ponieważ obecnie są jedynym sposobem na użycie akcji jako niezmiennego wydania.
 - [x] SHA commitów są niezmienne, podczas gdy tagi mogą być zmieniane

@@ -3,6 +3,103 @@ question: "`GITHUB_STEP_SUMMARY` に書き込むとどうなりますか？"
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#adding-a-job-summary"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+- name: "テストスイートの結果を書き込む"
+  run: |
+    echo "The results of the testing suite are:" >> $GITHUB_STEP_SUMMARY
+```
+- <input type="checkbox" disabled> ジョブサマリーにこの行が追加されます
+- <input type="checkbox" disabled> GitHub Actions UI のステップ名にこの行をサブタイトルとして追加します
+- <input type="checkbox" disabled> ビルトイン成果物 `github-steps-summary.md` にこの行を追加します
+- <input type="checkbox" disabled> ステップレベルのデバッグメッセージとしてこの行を出力します
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
 - name: "テストスイートの結果を書き込む"
   run: |

@@ -3,6 +3,98 @@ question: "デプロイ後の関連アクティビティを実行するワーク
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#workflow_run"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> `workflow_run`
+- <input type="checkbox" disabled> `workflow_trigger`
+- <input type="checkbox" disabled> `workflow_dispatch`
+- <input type="checkbox" disabled> `workflow_call`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] `workflow_run`
 > `workflow_run` を使用すると、他の指定されたワークフローが完了した後（成功に関係なく）にワークフローをトリガーすることができます。この質問では特に完了したワークフローについて尋ねていますが、`workflow_run` は、他の指定されたワークフローがトリガーされたり、ランナー上で処理を開始した際にワークフローをトリガーするようにも設定できます。
 - [ ] `workflow_trigger`

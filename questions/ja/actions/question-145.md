@@ -3,6 +3,99 @@ question: "アーティファクトをダウンロードする方法にはどの
 documentation: "https://github.com/actions/upload-artifact#inputs"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> ワークフロー内で`actions/download-artifact`アクションを使用する
+- <input type="checkbox" disabled> GitHub ActionsのUIのワークフロー実行画面からアーティファクトをダウンロードする  
+- <input type="checkbox" disabled> 特定のGitHub APIエンドポイントを使用する  
+- <input type="checkbox" disabled> ワークフロー内で`actions/upload-artifact`アクションを使用する  
+- <input type="checkbox" disabled> セルフホストランナーにSSHでリモートアクセスし、`.github/artifacts`ディレクトリにアクセスする  
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] ワークフロー内で`actions/download-artifact`アクションを使用する
 - [x] GitHub ActionsのUIのワークフロー実行画面からアーティファクトをダウンロードする  
 > UIを使用することで、アーティファクトを手動でダウンロードすることができます。詳細は[ドキュメント](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/download-workflow-artifacts)を参照してください。

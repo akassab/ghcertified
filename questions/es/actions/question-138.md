@@ -3,6 +3,98 @@ question: "Deseas crear un flujo de trabajo `Post-Deploy` que realice una activi
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#workflow_run"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> `workflow_run`
+- <input type="checkbox" disabled> `workflow_trigger`
+- <input type="checkbox" disabled> `workflow_dispatch`
+- <input type="checkbox" disabled> `workflow_call`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] `workflow_run`
 > `workflow_run` te permite desencadenar un flujo de trabajo una vez que otros flujos de trabajo específicos se hayan completado (independientemente de si tuvieron éxito o no). Ten en cuenta que, aunque esta pregunta se refiere específicamente a flujos de trabajo completados, `workflow_run` también puede configurarse para que un flujo de trabajo se inicie cuando otros flujos específicos hayan sido desencadenados o comiencen a procesarse en un runner.
 - [ ] `workflow_trigger`

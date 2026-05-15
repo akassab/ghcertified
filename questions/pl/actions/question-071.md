@@ -3,6 +3,102 @@ question: "Jak można zastąpić organizacyjny GitHub Secret `API_KEY` inną war
 documentation: "https://docs.github.com/en/actions/reference/security/secrets"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Tworząc sekretny element repozytorium o tej samej nazwie `API_KEY`
+- <input type="checkbox" disabled> Tworząc sekretny element środowiska o tej samej nazwie `API_KEY`
+- <input type="checkbox" disabled> Tworząc sekretny element przedsiębiorstwa o tej samej nazwie `API_KEY`
+- <input type="checkbox" disabled> Tworząc sekretny element przedsiębiorstwa o nazwie `OVERRIDE_API_KEY`
+- <input type="checkbox" disabled> Tworząc sekretny element repozytorium o nazwie `OVERRIDE_API_KEY`
+- <input type="checkbox" disabled> Tworząc sekretny element środowiska o nazwie `OVERRIDE_API_KEY`
+- <input type="checkbox" disabled> Tworząc sekretny element repozytorium o nazwie `REPOSITORY_API_KEY`
+- <input type="checkbox" disabled> Tworząc sekretny element środowiska o nazwie `ENVIRONMENT_API_KEY`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Tworząc sekretny element repozytorium o tej samej nazwie `API_KEY`
 - [x] Tworząc sekretny element środowiska o tej samej nazwie `API_KEY`
 - [ ] Tworząc sekretny element przedsiębiorstwa o tej samej nazwie `API_KEY`

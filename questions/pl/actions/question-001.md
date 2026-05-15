@@ -3,6 +3,98 @@ question: "Które stwierdzenie jest poprawne w odniesieniu do przekazywania upra
 documentation: "https://docs.github.com/en/actions/using-workflows/reusing-workflows#access-and-permissions"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Uprawnienia `GITHUB_TOKEN` przekazywane z wywołującego workflow mogą być tylko obniżone przez wywoływany workflow.
+- <input type="checkbox" disabled> Uprawnienia `GITHUB_TOKEN` przekazywane z wywołującego workflow mogą być tylko podwyższone przez wywoływany workflow.
+- <input type="checkbox" disabled> Uprawnienia `GITHUB_TOKEN` przekazywane z wywołującego workflow mogą być zarówno obniżone, jak i podwyższone przez wywoływany workflow.
+- <input type="checkbox" disabled> Uprawnienia `GITHUB_TOKEN` przekazywane z wywołującego workflow nie mogą być ani obniżone, ani podwyższone przez wywoływany workflow.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Uprawnienia `GITHUB_TOKEN` przekazywane z wywołującego workflow mogą być tylko obniżone przez wywoływany workflow.
 - [ ] Uprawnienia `GITHUB_TOKEN` przekazywane z wywołującego workflow mogą być tylko podwyższone przez wywoływany workflow.
 - [ ] Uprawnienia `GITHUB_TOKEN` przekazywane z wywołującego workflow mogą być zarówno obniżone, jak i podwyższone przez wywoływany workflow.

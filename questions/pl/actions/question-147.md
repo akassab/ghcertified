@@ -3,6 +3,98 @@ question: "Masz tajny ciąg znaków zakodowany w formacie base-64, który dekodu
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#masking-a-value-in-a-log"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Używając polecenia `add-mask` w przepływie pracy w zadaniach, w których może być używany zdekodowany sekret.
+- <input type="checkbox" disabled> Nie trzeba nic robić, ponieważ infrastruktura GitHub Actions automatycznie ukrywa zdekodowane sekrety.
+- <input type="checkbox" disabled> Unikanie używania instrukcji drukujących zawierających zdekodowany sekret, ponieważ jest to jedyny sposób, w jaki zdekodowany sekret mógłby pojawić się w dzienniku przepływu pracy.
+- <input type="checkbox" disabled> Użycie wbudowanej funkcji `maskSecret`, aby ukryć zdekodowany sekret w przypadkach, gdy może być on używany.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Używając polecenia `add-mask` w przepływie pracy w zadaniach, w których może być używany zdekodowany sekret.
 > Użycie `add-mask` ukryje wartości, które GitHub Actions nie wykrywa jako sekret. Należy to zrobić raz dla każdej wartości, w każdym zadaniu, które korzysta ze zdekodowanego sekretu.
 - [ ] Nie trzeba nic robić, ponieważ infrastruktura GitHub Actions automatycznie ukrywa zdekodowane sekrety.

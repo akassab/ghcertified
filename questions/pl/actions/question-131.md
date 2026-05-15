@@ -3,6 +3,101 @@ question: "Które z poniższych stwierdzeń dotyczących wywoływania wielokrotn
 documentation: "https://docs.github.com/en/actions/concepts/workflows-and-actions/reusing-workflow-configurations#key-differences-between-reusable-workflows-and-composite-actions"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Composite actions są wywoływane przez odwołanie się do folderu zawierającego ich plik `action.yml`.
+- <input type="checkbox" disabled> Reusable workflows są wywoływane przez odwołanie się do folderu zawierającego ich plik `action.yml`.
+- <input type="checkbox" disabled> Composite actions muszą być wywoływane jako krok w ramach zadania.
+- <input type="checkbox" disabled> Reusable workflows muszą być wywoływane na poziomie zadania workflow (nie na poziomie kroku).
+- <input type="checkbox" disabled> Sekrety mogą być przekazywane zarówno do reusable workflows, jak i do composite actions za pomocą bloku `uses.secrets`.
+- <input type="checkbox" disabled> Tylko reusable workflows mogą przyjmować dane wejściowe.
+- <input type="checkbox" disabled> Reusable workflows mogą używać innego typu runnera niż workflow je wywołujący, podczas gdy composite actions nie mogą.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Composite actions są wywoływane przez odwołanie się do folderu zawierającego ich plik `action.yml`.
 > Composite actions muszą zawierać główną logikę w pliku `action.yml`. Aby wywołać composite action, należy wskazać lokalizację jej pliku `action.yml` (łącznie z głównym katalogiem. Np. aby wywołać composite action znajdującą się w głównym katalogu tego samego repozytorium co wywołujący workflow, należy użyć składni `uses: ./`).
 - [ ] Reusable workflows są wywoływane przez odwołanie się do folderu zawierającego ich plik `action.yml`.

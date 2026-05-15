@@ -3,6 +3,101 @@ question: "再利用可能なワークフローを呼び出す場合と、コン
 documentation: "https://docs.github.com/en/actions/concepts/workflows-and-actions/reusing-workflow-configurations#key-differences-between-reusable-workflows-and-composite-actions"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> コンポジットアクションは、その`action.yml`ファイルを含むフォルダーを参照することで呼び出されます。
+- <input type="checkbox" disabled> 再利用可能なワークフローは、その`action.yml`ファイルを含むフォルダーを参照することで呼び出されます。
+- <input type="checkbox" disabled> コンポジットアクションは、ジョブ内のステップとして呼び出す必要があります。
+- <input type="checkbox" disabled> 再利用可能なワークフローは、ワークフロージョブレベルで呼び出す必要があります（ステップレベルからは呼び出せません）。
+- <input type="checkbox" disabled> Secretsは、`uses.secrets`ブロックを介して再利用可能なワークフローおよびコンポジットアクションの両方に渡すことができます。
+- <input type="checkbox" disabled> 入力を受け入れることができるのは、再利用可能なワークフローのみです。
+- <input type="checkbox" disabled> 再利用可能なワークフローは、呼び出し元ワークフローと異なるランナータイプを使用できますが、コンポジットアクションは使用できません。
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] コンポジットアクションは、その`action.yml`ファイルを含むフォルダーを参照することで呼び出されます。
 > アクションとして、コンポジットアクションはそのロジックの大部分を`action.yml`ファイル内に含める必要があります。コンポジットアクションを呼び出すには、`action.yml`が配置されている場所を指定します（ルートを含みます。例えば、呼び出し元のワークフローと同じリポジトリのルートに配置されているコンポジットアクションを呼び出すには、`uses: ./`という構文を使用します）。
 - [ ] 再利用可能なワークフローは、その`action.yml`ファイルを含むフォルダーを参照することで呼び出されます。

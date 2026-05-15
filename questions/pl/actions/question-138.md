@@ -3,6 +3,98 @@ question: "Chcesz utworzyć workflow `Post-Deploy`, który wykonuje czynności z
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#workflow_run"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> `workflow_run`
+- <input type="checkbox" disabled> `workflow_trigger`
+- <input type="checkbox" disabled> `workflow_dispatch`
+- <input type="checkbox" disabled> `workflow_call`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] `workflow_run`
 > `workflow_run` pozwala na uruchomienie workflow po zakończeniu innych określonych workflow (niezależnie od ich powodzenia). Należy zauważyć, że chociaż to pytanie odnosi się konkretnie do zakończonych workflow, `workflow_run` może również zostać skonfigurowany tak, aby uruchamiał workflow, gdy inne określone workflow zostały wyzwolone lub rozpoczęły przetwarzanie na runnerze.
 - [ ] `workflow_trigger`

@@ -3,6 +3,100 @@ question: "Quais declarações sobre `github.ref` são verdadeiras quando o work
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Em pull requests que não foram mesclados, `github.ref` se refere ao ref totalmente formado do branch/tag de mesclagem do pull request 
+- <input type="checkbox" disabled> Em pull requests que foram mesclados, `github.ref` se refere ao ref totalmente formado do branch onde a mesclagem foi feita.
+- <input type="checkbox" disabled> Em pull requests (independentemente do status de mesclagem), `github.ref` se refere ao número do pull request 
+- <input type="checkbox" disabled> Em pull requests (independentemente do status de mesclagem), `github.ref` é o SHA do último commit de mesclagem no branch `GITHUB_REF`.
+- <input type="checkbox" disabled> Em pull requests que não foram mesclados, `github.ref` é o ref totalmente formado do título do pull request. 
+- <input type="checkbox" disabled> Em pull requests que foram mesclados, `github.ref` é o tipo de ref totalmente formado que acionou a execução do workflow. O valor será `branch`, `tag` ou `null` (se o ref não estiver totalmente formado).
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Em pull requests que não foram mesclados, `github.ref` se refere ao ref totalmente formado do branch/tag de mesclagem do pull request 
 > Para mais informações sobre refs, veja a [documentação oficial do Git](https://git-scm.com/book/en/Git-Internals-Git-References).
 - [x] Em pull requests que foram mesclados, `github.ref` se refere ao ref totalmente formado do branch onde a mesclagem foi feita.

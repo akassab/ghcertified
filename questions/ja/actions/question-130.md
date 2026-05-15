@@ -3,6 +3,109 @@ question: "ワークフロー単位の`outputs`ブロックとジョブ単位の
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#example-defining-outputs-for-a-job"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> ジョブ単位の`outputs`ブロックは、再利用可能なワークフローではなく、呼び出し元のワークフローでのみ使用する必要があります。
+- <input type="checkbox" disabled> ワークフロー単位の`outputs`ブロックは、再利用可能なワークフローでのみ使用し、呼び出し元のワークフローでは使用しないでください。
+- <input type="checkbox" disabled> 再利用可能なワークフローには、ワークフロー単位およびジョブ単位の両方で`outputs`ブロックを含むことができます。
+- <input type="checkbox" disabled> ジョブ単位の`outputs`ブロックは、以下の構造である必要があります:
+```
+outputs:
+    <output-name>
+        value: ${{ steps.<step-name>.outputs.<output-name> }}
+```
+- <input type="checkbox" disabled> ワークフロー単位の`outputs`ブロックは、以下の構造である必要があります:
+```
+outputs:
+    <output-name>
+        value: ${{ jobs.<job-name>.outputs.<output-name> }}
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [ ] ジョブ単位の`outputs`ブロックは、再利用可能なワークフローではなく、呼び出し元のワークフローでのみ使用する必要があります。
 > 再利用可能なワークフローには、ジョブ単位およびワークフロー単位の両方で`outputs`ブロックを含めることができます。
 - [x] ワークフロー単位の`outputs`ブロックは、再利用可能なワークフローでのみ使用し、呼び出し元のワークフローでは使用しないでください。

@@ -3,6 +3,106 @@ question: "Który sposób wyzwolenia zadania tylko wtedy, gdy zmienna konfigurac
 documentation: "https://docs.github.com/en/actions/learn-github-actions/contexts#example-usage-of-the-vars-context"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Tworząc następujący warunek na poziomie zadania
+```yaml
+my-job:
+  if: ${{ vars.MY_VAR == 'MY_VALUE' }}
+```
+- <input type="checkbox" disabled> Tworząc następujący warunek na poziomie zadania
+```yaml
+my-job:
+  if: ${{ vars.MY_VAR }} == 'MY_VALUE'
+```
+- <input type="checkbox" disabled> To nie jest możliwe, ponieważ zmienne konfiguracyjne nie mogą być używane w warunkach `if`
+- <input type="checkbox" disabled> To nie jest możliwe, ponieważ zmienne konfiguracyjne nie mogą być używane w warunkach `if` na poziomie zadania
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Tworząc następujący warunek na poziomie zadania
 ```yaml
 my-job:

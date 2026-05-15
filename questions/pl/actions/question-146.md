@@ -3,6 +3,100 @@ question: "Które stwierdzenia są prawdziwe w odniesieniu do `github.ref`, gdy 
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> W pull requestach, które nie zostały zmergowane, `github.ref` odnosi się do w pełni utworzonego odwołania do gałęzi/tagu merge pull requesta 
+- <input type="checkbox" disabled> W pull requestach, które zostały zmergowane, `github.ref` odnosi się do w pełni utworzonego odwołania do gałęzi, do której został wykonany merge.
+- <input type="checkbox" disabled> W pull requestach (niezależnie od statusu merge), `github.ref` odnosi się do numeru pull requesta 
+- <input type="checkbox" disabled> W pull requestach (niezależnie od statusu merge), `github.ref` to SHA ostatniego commita merge na gałęzi `GITHUB_REF`.
+- <input type="checkbox" disabled> W pull requestach, które nie zostały zmergowane, `github.ref` to w pełni utworzone odwołanie do tytułu pull requesta. 
+- <input type="checkbox" disabled> W pull requestach, które zostały zmergowane, `github.ref` to typ w pełni utworzonego odwołania, które uruchomiło wykonanie workflow. Wartość ta będzie albo `branch`, albo `tag`, albo `null` (jeśli odwołanie nie było w pełni utworzone).
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] W pull requestach, które nie zostały zmergowane, `github.ref` odnosi się do w pełni utworzonego odwołania do gałęzi/tagu merge pull requesta 
 > Więcej informacji o odwołaniach znajdziesz w oficjalnej [dokumentacji Git](https://git-scm.com/book/en/Git-Internals-Git-References).
 - [x] W pull requestach, które zostały zmergowane, `github.ref` odnosi się do w pełni utworzonego odwołania do gałęzi, do której został wykonany merge.

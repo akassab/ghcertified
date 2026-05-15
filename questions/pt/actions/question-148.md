@@ -3,6 +3,99 @@ question: "Qual afirmação é verdadeira em relação ao `github.ref` quando o 
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Em eventos de push, `github.ref` é a referência completamente formada do branch ou tag que foi enviado. 
+- <input type="checkbox" disabled> Em eventos de push, `github.ref` é a mensagem do commit que acionou o workflow.
+- <input type="checkbox" disabled> Em eventos de push, `github.ref` é o SHA do commit que acionou o workflow.
+- <input type="checkbox" disabled> Em eventos de push, `github.ref` é a descrição do commit que acionou o workflow.
+- <input type="checkbox" disabled> Em eventos de push, `github.ref` é o tipo de referência completamente formada que acionou a execução do workflow. O valor será `branch`, `tag` ou `null` (se a referência não estiver completamente formada).
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Em eventos de push, `github.ref` é a referência completamente formada do branch ou tag que foi enviado. 
 > Para mais informações sobre referências, consulte a documentação oficial do [Git](https://git-scm.com/book/en/Git-Internals-Git-References).
 - [ ] Em eventos de push, `github.ref` é a mensagem do commit que acionou o workflow.

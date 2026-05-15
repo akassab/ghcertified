@@ -3,6 +3,99 @@ question: "アクションを固定する際に、タグではなくコミット
 documentation: "https://docs.github.com/en/actions/reference/security/secure-use#using-third-party-actions"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> コミットSHAの方が安全性が高い
+- <input type="checkbox" disabled> コミットSHAは不変であり、タグは変更される可能性がある
+- <input type="checkbox" disabled> コミットSHAはタグよりも使用に便利である
+- <input type="checkbox" disabled> コミットSHAは毎回完全に同じコードを指すことが保証されますが、タグはそうではありません
+- <input type="checkbox" disabled> コミットSHAは監査で追跡が困難であるため、悪意のある第三者がアクションのコードが全体のプロセスにどのように関与しているかを特定しにくくなります
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] コミットSHAの方が安全性が高い
 > コミットSHAは、不変のリリースとしてアクションを使用するための唯一の方法であるため、より安全です。
 - [x] コミットSHAは不変であり、タグは変更される可能性がある

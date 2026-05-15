@@ -3,6 +3,98 @@ question: "あなたのオープンソースで公開されているリポジト
 documentation: "https://docs.github.com/en/actions/managing-workflow-runs/approving-workflow-runs-from-public-forks#about-workflow-runs-from-public-forks"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> フォークの実行に必要な承認をリポジトリで設定する
+- <input type="checkbox" disabled> リポジトリに対するデプロイ保護ルールを設定する  
+- <input type="checkbox" disabled> リポジトリに対するブランチ保護ルールを設定する  
+- <input type="checkbox" disabled> `pull_request` イベントを使用している場合、フォークのためにワークフローはトリガーされません。それを行いたい場合は、`require-approval` フラグ付きの `fork_pull_request` イベントトリガーを使用する必要があります。
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] フォークの実行に必要な承認をリポジトリで設定する
 - [ ] リポジトリに対するデプロイ保護ルールを設定する  
 > デプロイ保護ルールは環境を保護するために使用されます

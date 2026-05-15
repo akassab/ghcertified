@@ -3,6 +3,118 @@ question: "ジョブの失敗を防ぐために、あるステップが失敗し
 documentation: "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepscontinue-on-error"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> 失敗したステップに`continue-on-error`フラグを含める
+```yaml
+steps:
+    - uses: my-org/failing-action@v1
+      continue-on-error: true
+```
+- <input type="checkbox" disabled> 失敗したステップに`ignore-error`フラグを含める
+```yaml
+steps:
+    - uses: my-org/failing-action@v1
+      ignore-error: true
+```
+- <input type="checkbox" disabled> 失敗したステップに`failure()`条件を含める
+```yaml
+steps:
+    - uses: my-org/failing-action@v1
+      if: failure()
+```
+- <input type="checkbox" disabled> 失敗したステップに`always()`条件を含める
+```yaml
+steps:
+    - uses: my-org/failing-action@v1
+      if: always()
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] 失敗したステップに`continue-on-error`フラグを含める
 ```yaml
 steps:

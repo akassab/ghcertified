@@ -3,6 +3,123 @@ question: "Para executar um `step` apenas se o segredo `MY_SECRET` tiver sido co
 documentation: "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-secrets"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Definir o segredo `MY_SECRET` como uma variável de ambiente no nível do job e, em seguida, referenciar essa variável de ambiente para executar condicionalmente aquele step
+```yaml
+my-job:
+  runs-on: ubuntu-latest
+  env:
+    my_secret: ${{ secrets.MY_SECRET }}
+  steps:
+    - if: ${{ env.my_secret != '' }}
+```
+- <input type="checkbox" disabled> Criando a seguinte condicional no nível do job
+```yaml
+my-job:
+  runs-on: ubuntu-latest
+  if: ${{ secrets.MY_SECRET == '' }}
+```
+- <input type="checkbox" disabled> Criando a seguinte condicional no nível do step
+```yaml
+my-job:
+  runs-on: ubuntu-latest
+  steps:
+    - if: ${{ secrets.MY_SECRET == '' }}
+```
+- <input type="checkbox" disabled> Criando a seguinte condicional no nível do step
+```yaml
+my-job:
+  runs-on: ubuntu-latest
+  steps:
+    - if: ${{ secrets.MY_SECRET }}
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Definir o segredo `MY_SECRET` como uma variável de ambiente no nível do job e, em seguida, referenciar essa variável de ambiente para executar condicionalmente aquele step
 ```yaml
 my-job:

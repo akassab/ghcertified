@@ -3,6 +3,99 @@ question: "¿De qué maneras puedes descargar un artefacto?"
 documentation: "https://github.com/actions/upload-artifact#inputs"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Usando la acción `actions/download-artifact` en un workflow 
+- <input type="checkbox" disabled> Descargando artefactos desde la interfaz de usuario de GitHub Actions en la ejecución del workflow
+- <input type="checkbox" disabled> Usando un endpoint específico de la API de GitHub
+- <input type="checkbox" disabled> Usando la acción `actions/upload-artifact` en un workflow
+- <input type="checkbox" disabled> Accediendo remotamente a los runners autohospedados mediante SSH y accediendo al directorio `.github/artifacts`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Usando la acción `actions/download-artifact` en un workflow 
 - [x] Descargando artefactos desde la interfaz de usuario de GitHub Actions en la ejecución del workflow
 > Usar la interfaz de usuario te permite un enfoque práctico para descargar artefactos. Consulta la [documentación](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/download-workflow-artifacts) para más detalles.

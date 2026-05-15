@@ -3,6 +3,98 @@ question: "特定のワークフローによって生成されたアーティフ
 documentation: "https://github.com/actions/upload-artifact#inputs"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> `actions/upload-artifact`で`retention-days`入力を利用する 
+- <input type="checkbox" disabled> `actions/download-artifact`で`retention-days`入力を利用する
+- <input type="checkbox" disabled> ワークフローのリポジトリで、Actions設定に移動し、リストされたワークフローの「アーティファクトとログの保持」設定の値を編集する
+- <input type="checkbox" disabled> 組織のActions設定に移動し、「アーティファクトとログの保持」設定の値を編集する
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] `actions/upload-artifact`で`retention-days`入力を利用する 
 - [ ] `actions/download-artifact`で`retention-days`入力を利用する
 > `actions/download-artifact`はアーティファクトをダウンロードするために使用されます。そのため、アップロードされたアーティファクトの保持期間に関与することはありません。さらに、`retention-days`はこのアクションの入力項目ではありません。詳細については[ドキュメント](https://github.com/actions/download-artifact#inputs)を参照してください。

@@ -3,6 +3,99 @@ question: "Por que usar um SHA de commit ao invés de uma tag para fixar uma act
 documentation: "https://docs.github.com/en/actions/reference/security/secure-use#using-third-party-actions"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> SHAs de commit são mais seguros
+- <input type="checkbox" disabled> SHAs de commit são imutáveis, enquanto tags têm o potencial de serem alteradas
+- <input type="checkbox" disabled> SHAs de commit são mais convenientes de usar em comparação com tags
+- <input type="checkbox" disabled> SHAs de commit garantem apontar para exatamente o mesmo código todas as vezes, enquanto as tags não
+- <input type="checkbox" disabled> SHAs de commit são mais difíceis de rastrear em uma auditoria, dificultando para agentes mal-intencionados determinar como o código de uma action se encaixa nos processos gerais.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] SHAs de commit são mais seguros
 > SHAs de commit são mais seguros porque atualmente são a única forma de usar uma action como um lançamento imutável.
 - [x] SHAs de commit são imutáveis, enquanto tags têm o potencial de serem alteradas

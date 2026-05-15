@@ -3,6 +3,98 @@ question: "Se activa un flujo de trabajo cuando se vuelven a abrir las pull requ
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#pull_request"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> `types: [reopened]` está definido bajo el evento `pull_request`. 
+- <input type="checkbox" disabled> Las reglas de protección de ramas estaban configuradas incorrectamente.
+- <input type="checkbox" disabled> No se definen tipos de actividad bajo el evento `pull_request`.
+- <input type="checkbox" disabled> `on: schedule` fue configurado con `pull_requests: [reopened]`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] `types: [reopened]` está definido bajo el evento `pull_request`. 
 - [ ] Las reglas de protección de ramas estaban configuradas incorrectamente.
 > Las reglas de protección de ramas no determinan cuándo se activa un flujo de trabajo.

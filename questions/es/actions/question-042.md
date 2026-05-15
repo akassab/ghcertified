@@ -3,6 +3,98 @@ question: "¿Cuándo deberías usar `artifacts`?"
 documentation: "https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts#about-workflow-artifacts"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Usa `artifacts` para guardar archivos producidos por un trabajo para verlos después de que finalice una ejecución del workflow, como resultados de pruebas o registros de compilación.
+- <input type="checkbox" disabled> Usa `artifacts` para guardar binarios producidos por un trabajo de compilación y utilizarlos en un trabajo de despliegue posterior para implementar una nueva versión de una aplicación.
+- <input type="checkbox" disabled> Usa `artifacts` para reutilizar archivos que no cambian con frecuencia entre trabajos o ejecuciones de workflows, como dependencias de compilación de un sistema de gestión de paquetes.
+- <input type="checkbox" disabled> Usa `artifacts` para crear nuevas versiones de tu aplicación junto con notas de la versión, menciones y/o colaboradores.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Usa `artifacts` para guardar archivos producidos por un trabajo para verlos después de que finalice una ejecución del workflow, como resultados de pruebas o registros de compilación.
 - [x] Usa `artifacts` para guardar binarios producidos por un trabajo de compilación y utilizarlos en un trabajo de despliegue posterior para implementar una nueva versión de una aplicación.
 - [ ] Usa `artifacts` para reutilizar archivos que no cambian con frecuencia entre trabajos o ejecuciones de workflows, como dependencias de compilación de un sistema de gestión de paquetes.

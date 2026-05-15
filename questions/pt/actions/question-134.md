@@ -3,6 +3,99 @@ question: "Como executar scripts personalizados em JavaScript diretamente em um 
 documentation: "https://github.com/marketplace/actions/github-script"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Através da ação `actions/github-script`
+- <input type="checkbox" disabled> Habilitando a configuração 'Allow custom JavaScript scripts' nas configurações de Actions de um repositório
+- <input type="checkbox" disabled> Habilitando a configuração 'Allow custom JavaScript scripts' nas configurações de Actions de uma organização
+- <input type="checkbox" disabled> Escrever o conteúdo de um bloco de script na variável de ambiente `GITHUB_SCRIPT`
+- <input type="checkbox" disabled> Em uma ação JavaScript, definir a chave `using` como `'github-script'`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Através da ação `actions/github-script`
 > `actions/github-script` permite que você escreva e utilize JavaScript inline para fazer chamadas à API e acessar o contexto do workflow. Para usar `actions/github-script`, você o chama como qualquer outra ação, conforme visto na [documentação](https://github.com/actions/github-script)
 - [ ] Habilitando a configuração 'Allow custom JavaScript scripts' nas configurações de Actions de um repositório

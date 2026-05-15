@@ -2,6 +2,105 @@
 question: "Por que você deve usar `hashFiles` ao utilizar `actions/cache`?"
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/expressions#hashfiles"
 ---
+
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+  - uses: actions/cache@v5
+    with:
+      path: ~/.npm
+      key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+```
+- <input type="checkbox" disabled> Se uma chave de cache contém o arquivo de dependências envolvido em `hashFiles`, a chave muda quando o arquivo de dependências é atualizado, o que ajuda a mantê-lo atualizado.
+- <input type="checkbox" disabled> `hashFiles` é necessário para compatibilidade com runners do Windows.
+- <input type="checkbox" disabled> Quando se usa `hashFiles` como parte de uma chave de cache, se houver uma falha de cache, `hashFiles` fornece informações adicionais de depuração.  
+- <input type="checkbox" disabled> Quando se usa `hashFiles` como parte de uma chave de cache, uma etapa adicional será gerada no fluxo de trabalho chamador. Esta etapa do fluxo de trabalho imprime o valor do hash SHA-256 da chave de cache para fins de referência.  
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
   - uses: actions/cache@v5
     with:

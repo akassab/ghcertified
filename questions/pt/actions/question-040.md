@@ -3,6 +3,110 @@ question: "No exemplo a seguir, o `workflow A` passa todos os seus secrets para 
 documentation: "https://docs.github.com/en/actions/using-workflows/reusing-workflows#passing-secrets-to-nested-workflows"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+jobs:
+  workflowA-calls-workflowB:
+    uses: octo-org/example-repo/.github/workflows/B.yml@main
+    secrets: inherit
+```
+
+```yaml
+jobs:
+  workflowB-calls-workflowC:
+    uses: different-org/example-repo/.github/workflows/C.yml@main
+```
+- <input type="checkbox" disabled> Todos os secrets disponíveis para o `workflow A` também estarão disponíveis para o `workflow B`, mas não para o `workflow C`
+- <input type="checkbox" disabled> Todos os secrets da organização `octo-org` e do repositório `octo-org/example-repo` estarão disponíveis para o `workflow B`, mas não para o `workflow C`
+- <input type="checkbox" disabled> Todos os secrets disponíveis para o `workflow A` também estarão disponíveis para o `workflow B` e o `workflow C`
+- <input type="checkbox" disabled> Somente os repository e environment secrets disponíveis para o `workflow A` estarão disponíveis para o `workflow B`, mas não para o `workflow C`. Secrets no escopo da organização não podem ser herdados
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
 jobs:
   workflowA-calls-workflowB:

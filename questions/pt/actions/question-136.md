@@ -3,6 +3,108 @@ question: "Você possui um workflow que utiliza a matriz abaixo. Se um trabalho 
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstrategyfail-fast"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+jobs:
+  deploy:
+    strategy:
+      matrix:
+        version: ["1", "1.2", "1.3"]
+        os: [ubuntu-latest, windows-latest]
+```
+
+- <input type="checkbox" disabled> Defina `jobs.<job_id>.strategy.fail-fast` como `false`
+- <input type="checkbox" disabled> Nada precisa ser feito, já que `jobs.<job_id>.strategy.fail-fast` tem uma configuração padrão como `false`
+- <input type="checkbox" disabled> Defina `jobs.<job_id>.strategy.matrix.fail-fast` como `false`
+- <input type="checkbox" disabled> Nada precisa ser feito, já que `jobs.<job_id>.strategy.matrix.fail-fast` tem uma configuração padrão como `false`
+- <input type="checkbox" disabled> Não há como aplicar esse comportamento, não pode ser contornado.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
 jobs:
   deploy:

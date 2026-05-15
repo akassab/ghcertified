@@ -3,6 +3,99 @@ question: "Które z poniższych stwierdzeń są prawdziwe w odniesieniu do dodaw
 documentation: "https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/adding-self-hosted-runners#adding-a-self-hosted-runner-to-a-repository"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Możesz dodać samodzielnie hostowanego runnera do repository
+- <input type="checkbox" disabled> Możesz dodać samodzielnie hostowanego runnera do organization
+- <input type="checkbox" disabled> Możesz dodać samodzielnie hostowanego runnera do enterprise
+- <input type="checkbox" disabled> Nie możesz dodać samodzielnie hostowanego runnera na poziomie workflow
+- <input type="checkbox" disabled> Nie możesz dodać samodzielnie hostowanego runnera na poziomie step
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Możesz dodać samodzielnie hostowanego runnera do repository
 - [x] Możesz dodać samodzielnie hostowanego runnera do organization
 - [x] Możesz dodać samodzielnie hostowanego runnera do enterprise

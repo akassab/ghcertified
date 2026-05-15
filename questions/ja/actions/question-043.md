@@ -3,6 +3,98 @@ question: "ワークフローが `feature-a` ブランチで実行される場�
 documentation: "https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#restrictions-for-accessing-a-cache"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> はい、すべてのブランチはデフォルトブランチで作成されたキャッシュを復元できます
+- <input type="checkbox" disabled> はい、すべてのキャッシュは同じリポジトリ内の任意のブランチのワークフローによってアクセス可能です
+- <input type="checkbox" disabled> いいえ、キャッシュは同じブランチからのみ復元できます
+- <input type="checkbox" disabled> はい、ただし `feature-a` ブランチでファイルが変更されていない場合に限ります
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] はい、すべてのブランチはデフォルトブランチで作成されたキャッシュを復元できます
 - [ ] はい、すべてのキャッシュは同じリポジトリ内の任意のブランチのワークフローによってアクセス可能です
 - [ ] いいえ、キャッシュは同じブランチからのみ復元できます

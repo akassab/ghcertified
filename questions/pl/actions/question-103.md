@@ -3,6 +3,98 @@ question: "W GitHub Actions, jeśli zdefiniujesz zarówno filtr `branches`, jak 
 documentation: "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpull_requestpull_request_targetbranchesbranches-ignore"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> workflow uruchomi się tylko wtedy, gdy zarówno `branches`, jak i `paths` zostaną spełnione
+- <input type="checkbox" disabled> workflow uruchomi się, gdy spełniony zostanie którykolwiek z warunków `branches` lub `paths`, ale zastosowany zostanie jedynie pasujący filtr
+- <input type="checkbox" disabled> workflow uruchomi się, gdy spełniony zostanie którykolwiek z warunków `branches` lub `paths`
+- <input type="checkbox" disabled> workflow nie uruchomi się, gdy oba warunki `branches` i `paths` zostaną spełnione
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] workflow uruchomi się tylko wtedy, gdy zarówno `branches`, jak i `paths` zostaną spełnione
 - [ ] workflow uruchomi się, gdy spełniony zostanie którykolwiek z warunków `branches` lub `paths`, ale zastosowany zostanie jedynie pasujący filtr
 - [ ] workflow uruchomi się, gdy spełniony zostanie którykolwiek z warunków `branches` lub `paths`

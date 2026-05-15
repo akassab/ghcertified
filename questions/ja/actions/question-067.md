@@ -3,6 +3,106 @@ question: "ジョブをトリガーする際、設定変数 `MY_VAR` が値 `MY_
 documentation: "https://docs.github.com/en/actions/learn-github-actions/contexts#example-usage-of-the-vars-context"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> 以下の条件をジョブレベルに作成する
+```yaml
+my-job:
+  if: ${{ vars.MY_VAR == 'MY_VALUE' }}
+```
+- <input type="checkbox" disabled> 以下の条件をジョブレベルに作成する
+```yaml
+my-job:
+  if: ${{ vars.MY_VAR }} == 'MY_VALUE'
+```
+- <input type="checkbox" disabled> 設定変数は `if` 条件式で使用できないため、不可能です。
+- <input type="checkbox" disabled> 設定変数はジョブレベルの `if` 条件式で使用できないため、不可能です。
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] 以下の条件をジョブレベルに作成する
 ```yaml
 my-job:

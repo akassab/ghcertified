@@ -3,6 +3,98 @@ question: "GitHub Actionsで、使用しているオペレーティングシス�
 documentation: "https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#setting-an-environment-variable"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> 環境変数を大文字と小文字を区別するものとして扱う
+- <input type="checkbox" disabled> 環境変数名には大文字のみを使用する
+- <input type="checkbox" disabled> 大文字と小文字の区別を無視する（GitHub Actionsが自動的に処理するため）
+- <input type="checkbox" disabled> 使用中のオペレーティングシステムの動作に依存する
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] 環境変数を大文字と小文字を区別するものとして扱う
 - [ ] 環境変数名には大文字のみを使用する
 - [ ] 大文字と小文字の区別を無視する（GitHub Actionsが自動的に処理するため）

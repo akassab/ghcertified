@@ -3,6 +3,115 @@ question: "再利用可能なワークフローを作成しており、その入
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/expressions#startswith"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> 組み込みの `startsWith` メソッドを `jobs.<job_id>.steps[*].if` と組み合わせて使用する
+```yaml
+    if: startsWith(inputs.branch-name, 'smoke-test')
+```
+
+- <input type="checkbox" disabled> 組み込みの `startsWith` メソッドを `jobs.<job_id>.steps[*].if` と組み合わせて使用する
+```yaml
+    if: inputs.branch-name.startsWith('smoke-test')
+``` 
+- <input type="checkbox" disabled> `workflow_call` の下で `branches` フィルタを使用する
+```yaml
+on:
+  workflow_call:
+    branches:
+        - 'smoke-test/**'
+```
+
+- <input type="checkbox" disabled> `jobs.<job_id>.steps[*].if` と組み合わせてシェル条件を使用する
+```yaml
+    if: [[ "${{inputs.branch-name}}" == "smoke-test"* ]]
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] 組み込みの `startsWith` メソッドを `jobs.<job_id>.steps[*].if` と組み合わせて使用する
 ```yaml
     if: startsWith(inputs.branch-name, 'smoke-test')

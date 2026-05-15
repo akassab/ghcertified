@@ -3,6 +3,103 @@ question: "¿Qué hace escribir a `GITHUB_STEP_SUMMARY`?"
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#adding-a-job-summary"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+- name: "Escribir resultados del conjunto de pruebas"
+  run: |
+    echo "Los resultados del conjunto de pruebas son:" >> $GITHUB_STEP_SUMMARY
+```
+- <input type="checkbox" disabled> Agrega esta línea al resumen del trabajo
+- <input type="checkbox" disabled> Agrega esta línea como un subtítulo al nombre del paso en la interfaz de usuario de GitHub Actions
+- <input type="checkbox" disabled> Agrega esta línea al artefacto integrado `github-steps-summary.md`
+- <input type="checkbox" disabled> Imprime esta línea como un mensaje de depuración a nivel de paso
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
 - name: "Escribir resultados del conjunto de pruebas"
   run: |

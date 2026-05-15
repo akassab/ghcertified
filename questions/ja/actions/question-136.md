@@ -3,6 +3,108 @@ question: "以下のマトリックスを使用しているワークフローが
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstrategyfail-fast"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+jobs:
+  deploy:
+    strategy:
+      matrix:
+        version: ["1", "1.2", "1.3"]
+        os: [ubuntu-latest, windows-latest]
+```
+
+- <input type="checkbox" disabled> `jobs.<job_id>.strategy.fail-fast` を `false` に設定する
+- <input type="checkbox" disabled> 何もする必要はありません。`jobs.<job_id>.strategy.fail-fast` のデフォルト設定は `false` です。
+- <input type="checkbox" disabled> `jobs.<job_id>.strategy.matrix.fail-fast` を `false` に設定する
+- <input type="checkbox" disabled> 何もする必要はありません。`jobs.<job_id>.strategy.matrix.fail-fast` のデフォルト設定は `false` です。
+- <input type="checkbox" disabled> この動作を強制する方法はありません。回避方法は存在しません。
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
 jobs:
   deploy:
