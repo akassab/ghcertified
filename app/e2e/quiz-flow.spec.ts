@@ -121,7 +121,7 @@ test.describe("quiz flow", () => {
     await answerGroup.getByRole("radio", { name: /only downgraded/i }).click();
     await page.getByRole("button", { name: "Check Answer" }).click();
 
-    await expect(page.getByText("Correct")).toBeVisible();
+    await expect(page.getByRole("alert").getByText("Correct")).toBeVisible();
     await expect(page.getByRole("button", { name: "Try again" })).toHaveCount(0);
   });
 });
