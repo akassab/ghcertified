@@ -3,6 +3,116 @@ question: "How can you skip the following workflow run when you commit or create
 documentation: "https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+name: Build
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Extract artifact version
+...
+```
+
+- <input type="checkbox" disabled> By including any one of the following keywords in the commit message or in the title of the pull-request
+```yaml
+[skip ci]
+[ci skip]
+[no ci]
+[skip actions]
+[actions skip]
+```
+
+- <input type="checkbox" disabled> Provide `SKIP_WORKFLOW` in the commit message
+- <input type="checkbox" disabled> The above workflow will run in every event of push or pull request in every case
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
 name: Build
 on: [push, pull_request]
@@ -22,6 +132,6 @@ jobs:
 [skip actions]
 [actions skip]
 ```
-
-- [ ] Provide `SKIP_WORKFLOW` in the commit message
-- [ ] The above workflow will run in every event of push or pull request in every case
+> **Simple:** Put a documented skip phrase such as `[skip ci]` in the commit message or PR title to skip `push` and `pull_request` workflow runs.
+>
+> **Detailed:** GitHub skips `push` and `pull_request` runs when the **latest** commit message or PR title contains one of these bracketed phrases—for example, `git commit -m "docs: typo [skip ci]"`. The phrases are recognized exactly as written (`[ci skip]`, `[skip actions]`, `[actions skip]`, etc.) and apply to workflows triggered by those events. Informal text like “skip this build” or env vars such as `SKIP_WORKFLOW` do **not** cancel the run; only these documented keywords do. The workflow file itself does not need a change—the skip is detected from metadata on the push or PR.

@@ -3,6 +3,98 @@ question: "Um workflow foi inicialmente executado no `commit A` e falhou. Você 
 documentation: "https://docs.github.com/en/actions/managing-workflow-runs/re-running-workflows-and-jobs#about-re-running-workflows-and-jobs"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Ele será executado com o código do `commit A`
+- <input type="checkbox" disabled> Ele será executado com o código do `commit B`
+- <input type="checkbox" disabled> Você não pode reexecutar workflows no GitHub Actions. Você precisa acionar um novo workflow que será executado com as alterações mais recentes
+- <input type="checkbox" disabled> Ele acionará dois workflows, um com o código do `commit A` e outro com o código do `commit B`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Ele será executado com o código do `commit A`
 - [ ] Ele será executado com o código do `commit B`
 > Reexecutar um workflow usa o mesmo SHA do commit e o Git ref do evento original que acionou a execução do workflow.

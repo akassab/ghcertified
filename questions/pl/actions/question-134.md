@@ -3,6 +3,99 @@ question: "Jak uruchomić niestandardowe skrypty JavaScript bezpośrednio w work
 documentation: "https://github.com/marketplace/actions/github-script"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Za pomocą akcji `actions/github-script`
+- <input type="checkbox" disabled> Włączając konfigurację 'Allow custom JavaScript scripts' w ustawieniach Actions repozytorium
+- <input type="checkbox" disabled> Włączając konfigurację 'Allow custom JavaScript scripts' w ustawieniach Actions organizacji
+- <input type="checkbox" disabled> Zapisując zawartość bloku skryptu w zmiennej środowiskowej `GITHUB_SCRIPT`
+- <input type="checkbox" disabled> W akcji JavaScript ustawiając klucz `using` na `'github-script'`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Za pomocą akcji `actions/github-script`
 > `actions/github-script` pozwala pisać i wykorzystywać wewnętrzny kod JavaScript do wykonywania wywołań API i uzyskiwania dostępu do kontekstu workflow. Aby użyć `actions/github-script`, należy ją wywołać jak każdą inną akcję, jak opisano w [dokumentacji](https://github.com/actions/github-script).
 - [ ] Włączając konfigurację 'Allow custom JavaScript scripts' w ustawieniach Actions repozytorium

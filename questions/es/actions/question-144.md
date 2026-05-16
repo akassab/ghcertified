@@ -3,6 +3,98 @@ question: "¿Cómo puedes cambiar el período de retención de los artefactos ge
 documentation: "https://github.com/actions/upload-artifact#inputs"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Utilizando la entrada `retention-days` en `actions/upload-artifact`
+- <input type="checkbox" disabled> Utilizando la entrada `retention-days` en `actions/download-artifact`
+- <input type="checkbox" disabled> En el repositorio del flujo de trabajo, navegando a la configuración de Actions y editando el valor de la configuración "Artifact and log retention" para el flujo de trabajo listado.
+- <input type="checkbox" disabled> Navegando a la configuración de Actions de la organización y editando el valor de la configuración "Artifact and log retention".
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Utilizando la entrada `retention-days` en `actions/upload-artifact`
 - [ ] Utilizando la entrada `retention-days` en `actions/download-artifact`
 > `actions/download-artifact` se usa para descargar artefactos. Por lo tanto, no tiene influencia sobre cuánto tiempo debe conservarse un artefacto cargado. Además, `retention-days` no es una entrada para esta acción. Consulta [la documentación](https://github.com/actions/download-artifact#inputs) para más detalles.

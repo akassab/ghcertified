@@ -3,20 +3,21 @@ question: "Your Pull Request analysis workflow uses multiple code analysis tools
 documentation: "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-concurrency-to-cancel-any-in-progress-job-or-run"
 ---
 
-- [x] Use concurrency with cancel-in-progress
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Use concurrency with cancel-in-progress
 ```yaml
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 ```
-- [ ] Use concurrency
+- <input type="checkbox" disabled> Use concurrency
 ```yaml
 concurrency:
   group: ${{ github.ref }}
 ```
-> This would queue runs on that github ref. It will not stop previous runs
 
-- [ ] Use activity types filter
+- <input type="checkbox" disabled> Use activity types filter
 ```yaml
 on:
   pull_request:
@@ -24,8 +25,7 @@ on:
       - master
     types: [latest]
 ```
-> There is no such activity type as `latest` for pull_request event
-- [ ] Use cancel-in-progress flag for `pull_request` event
+- <input type="checkbox" disabled> Use cancel-in-progress flag for `pull_request` event
 ```yaml
 on:
   pull_request:
@@ -33,4 +33,109 @@ on:
       - master
     cancel-in-progress: true
 ```
-> `cancel-in-progress` can only be used inside a `concurrency` block. It is not a valid key for `pull_request`.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
+- [x] Use concurrency with cancel-in-progress
+```yaml
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+```
+> **Simple:** `cancel-in-progress: true` stops older runs in the same concurrency group when a newer one starts—use a per-PR group key.
+>
+> **Detailed:** For long PR analysis on `master`:
+>
+> ```yaml
+> on:
+>   pull_request:
+>     branches: [master]
+> concurrency:
+>   group: ${{ github.workflow }}-${{ github.ref }}
+>   cancel-in-progress: true
+> ```
+>
+> Each PR branch (`github.ref` like `refs/pull/42/merge`) gets its own group. A new push on the same PR cancels the still-running 20-minute job and starts fresh. Misconception: using only `${{ github.workflow }}` would serialize **all** PRs globally—usually you want `${{ github.ref }}` (or `github.head_ref`) so different PRs do not cancel each other.

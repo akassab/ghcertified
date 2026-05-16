@@ -3,6 +3,99 @@ question: "¿Cuál de las siguientes afirmaciones son verdaderas sobre agregar u
 documentation: "https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/adding-self-hosted-runners#adding-a-self-hosted-runner-to-a-repository"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Puedes agregar un runner autoalojado a un repository
+- <input type="checkbox" disabled> Puedes agregar un runner autoalojado a una organization
+- <input type="checkbox" disabled> Puedes agregar un runner autoalojado a un enterprise
+- <input type="checkbox" disabled> Puedes agregar un runner autoalojado a un workflow
+- <input type="checkbox" disabled> Puedes agregar un runner autoalojado a un step
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Puedes agregar un runner autoalojado a un repository
 - [x] Puedes agregar un runner autoalojado a una organization
 - [x] Puedes agregar un runner autoalojado a un enterprise

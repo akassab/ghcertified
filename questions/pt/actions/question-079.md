@@ -3,6 +3,98 @@ question: "Em qual commit e branch os workflows agendados são executados no Git
 documentation: "https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Os workflows agendados são executados no commit específico na branch mais recentemente modificada.
+- <input type="checkbox" disabled> Os workflows agendados são executados no commit específico na branch main.
+- <input type="checkbox" disabled> Os workflows agendados são executados no commit mais recente na branch padrão do repositório.
+- <input type="checkbox" disabled> Os workflows agendados são executados no commit mais recente na branch main.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [ ] Os workflows agendados são executados no commit específico na branch mais recentemente modificada.
 > incorreto, tanto commit específico quanto na branch mais recentemente modificada
 - [ ] Os workflows agendados são executados no commit específico na branch main.

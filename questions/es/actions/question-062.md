@@ -3,6 +3,98 @@ question: "Su organización define un secreto `SomeSecret`, sin embargo, cuando 
 documentation: "https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#naming-your-secrets"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> El secreto `SomeSecret` también está declarado en el ámbito del repositorio
+- <input type="checkbox" disabled> El secreto `SomeSecret` también está declarado en el ámbito empresarial
+- <input type="checkbox" disabled> La expresión `${{ secrets.SomeSecret }}` solo se utiliza para secretos en el ámbito del repositorio
+- <input type="checkbox" disabled> Necesita usar la API de GitHub para acceder a secretos en el ámbito de la organización
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] El secreto `SomeSecret` también está declarado en el ámbito del repositorio
 - [ ] El secreto `SomeSecret` también está declarado en el ámbito empresarial
 > Si un secreto con el mismo nombre existe en múltiples niveles, el secreto en el nivel más bajo tiene prioridad.

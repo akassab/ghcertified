@@ -3,6 +3,98 @@ question: "Se um workflow for executado em um branch `feature-a`, ele pode resta
 documentation: "https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#restrictions-for-accessing-a-cache"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Sim, todos os branches podem restaurar caches criados no branch padrão
+- <input type="checkbox" disabled> Sim, todos os caches podem ser acessados por workflows em qualquer branch dentro do mesmo repositório
+- <input type="checkbox" disabled> Não, os caches só podem ser restaurados do mesmo branch
+- <input type="checkbox" disabled> Sim, mas somente se nenhum arquivo foi alterado no branch `feature-a`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Sim, todos os branches podem restaurar caches criados no branch padrão
 - [ ] Sim, todos os caches podem ser acessados por workflows em qualquer branch dentro do mesmo repositório
 - [ ] Não, os caches só podem ser restaurados do mesmo branch

@@ -3,6 +3,106 @@ question: "Você definiu um job de matriz `example_matrix`. Como limitar a matri
 documentation: "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategymax-parallel"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+jobs:
+  example_matrix:
+    strategy:
+      matrix:
+        version: [10, 12, 14]
+        os: [ubuntu-latest, windows-latest]
+```
+- <input type="checkbox" disabled> Defina `jobs.example_matrix.strategy.max-parallel` como 2
+- <input type="checkbox" disabled> Defina `jobs.example_matrix.strategy.concurrency` como 2
+- <input type="checkbox" disabled> Use a REST API do GitHub para verificar se a contagem de jobs é menor que 2
+- <input type="checkbox" disabled> Não é possível, uma matriz sempre executará todos os jobs em paralelo, se houver runners disponíveis
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
 jobs:
   example_matrix:

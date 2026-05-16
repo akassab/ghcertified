@@ -3,6 +3,106 @@ question: "Como você pode acessar os valores atuais das variáveis em uma matri
 documentation: "https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs#using-a-matrix-strategy"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+jobs:
+    example_matrix:
+        strategy:
+            matrix:
+                version: [10, 12, 14]
+                os: [ubuntu-latest, windows-latest]
+```
+- <input type="checkbox" disabled> referencie as variáveis através do contexto `matrix` com a sintaxe como `matrix.version` e `matrix.os`
+- <input type="checkbox" disabled> usando a sintaxe `matrix.property`
+- <input type="checkbox" disabled> usando a palavra-chave `context` na configuração do trabalho
+- <input type="checkbox" disabled> acessando as variáveis diretamente com a sintaxe `version` e `os`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
 jobs:
     example_matrix:

@@ -3,6 +3,99 @@ question: "¿Por qué usar un SHA de commit en lugar de una etiqueta para fijar 
 documentation: "https://docs.github.com/en/actions/reference/security/secure-use#using-third-party-actions"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Los SHAs de commit son más seguros
+- <input type="checkbox" disabled> Los SHAs de commit son inmutables, mientras que las etiquetas tienen el potencial de ser cambiadas
+- <input type="checkbox" disabled> Los SHAs de commit son más convenientes de usar que las etiquetas
+- <input type="checkbox" disabled> Los SHAs de commit garantizan apuntar al mismo código exacto cada vez, las etiquetas no
+- <input type="checkbox" disabled> Los SHAs de commit son más difíciles de rastrear en una auditoría, lo que dificulta que los actores malintencionados determinen cómo el código de una acción influye en los procesos generales.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Los SHAs de commit son más seguros
 > Los SHAs de commit son más seguros porque actualmente son la única forma de usar una acción como un lanzamiento inmutable.
 - [x] Los SHAs de commit son inmutables, mientras que las etiquetas tienen el potencial de ser cambiadas

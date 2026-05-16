@@ -3,6 +3,99 @@ question: "¿De qué maneras puedes habilitar el registro de diagnóstico del ru
 documentation: "https://docs.github.com/en/actions/how-tos/monitor-workflows/enable-debug-logging#enabling-runner-diagnostic-logging"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Configurando un secreto o variable llamado `ACTIONS_RUNNER_DEBUG` en `true`
+- <input type="checkbox" disabled> Volviendo a ejecutar un flujo de trabajo con `Enable debug logging enabled`
+- <input type="checkbox" disabled> Añadiendo una carpeta de nivel superior `ACTIONS_RUNNER_DEBUG` al repositorio del flujo de trabajo
+- <input type="checkbox" disabled> Añadiendo una subcarpeta `runner-diagnostic-logs` al directorio `_diag` del runner auto-hospedado que se está utilizando
+- <input type="checkbox" disabled> Renombrando el directorio `_diag` de un runner auto-hospedado a `runner-diagnostic-logs`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Configurando un secreto o variable llamado `ACTIONS_RUNNER_DEBUG` en `true`
 > Nota: `ACTIONS_RUNNER_DEBUG` puede configurarse como un secreto o variable a nivel de organización o repositorio.
 - [x] Volviendo a ejecutar un flujo de trabajo con `Enable debug logging enabled`

@@ -3,6 +3,98 @@ question: "Qual das seguintes afirmações descreve com precisão o comportament
 documentation: "https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> os jobs do workflow não começarão até que todas as regras de proteção do ambiente sejam aprovadas
+- <input type="checkbox" disabled> os jobs do workflow começarão imediatamente e as regras de proteção serão avaliadas durante a execução
+- <input type="checkbox" disabled> os jobs do workflow começarão se pelo menos uma regra de proteção for aprovada
+- <input type="checkbox" disabled> os jobs do workflow falharão se as regras de proteção estiverem configuradas
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] os jobs do workflow não começarão até que todas as regras de proteção do ambiente sejam aprovadas
 - [ ] os jobs do workflow começarão imediatamente e as regras de proteção serão avaliadas durante a execução
 - [ ] os jobs do workflow começarão se pelo menos uma regra de proteção for aprovada

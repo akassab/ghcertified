@@ -3,6 +3,98 @@ question: "Dave está creando un flujo de trabajo con plantillas para su organiz
 documentation: "https://docs.github.com/en/actions/using-workflows/creating-starter-workflows-for-your-organization"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> dentro de un directorio llamado `workflow-templates` dentro de un repositorio llamado `.github`
+- <input type="checkbox" disabled> dentro de un directorio llamado `workflow-templates` dentro del repositorio actual
+- <input type="checkbox" disabled> dentro de un directorio llamado `.github/org-templates`
+- <input type="checkbox" disabled> dentro de un directorio llamado `.github/workflow-templates`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] dentro de un directorio llamado `workflow-templates` dentro de un repositorio llamado `.github`
 - [ ] dentro de un directorio llamado `workflow-templates` dentro del repositorio actual
 - [ ] dentro de un directorio llamado `.github/org-templates`

@@ -3,6 +3,98 @@ question: "空欄を埋めてください：セルフホストのランナーを
 documentation: "https://docs.github.com/en/enterprise-server/admin/managing-github-actions-for-your-enterprise/managing-access-to-actions-from-githubcom/setting-up-the-tool-cache-on-self-hosted-runners-without-internet-access"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> 最初は空であり、ツールをラン間で保存するためにポピュレートする必要があります
+- <input type="checkbox" disabled> GitHubホストランナーと同じように、特定のツールが事前にインストールされた状態で開始されます
+- <input type="checkbox" disabled> GitHubホストランナーと同じツールの他に、セルフホストランナーの管理を強化するための選択されたカスタムツールを備えた状態で開始されます
+- <input type="checkbox" disabled> ポピュレートすることはできません
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] 最初は空であり、ツールをラン間で保存するためにポピュレートする必要があります
 > ツールキャッシュを使用すると、さまざまなバージョンのツールをキャッシュでき、セルフホストランナーの作業を迅速化できます。ツールキャッシュがない場合、`actions/setup-*` を使用するセルフホストランナーは実行に時間がかかります。
 - [ ] GitHubホストランナーと同じように、特定のツールが事前にインストールされた状態で開始されます

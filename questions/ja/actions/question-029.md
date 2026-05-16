@@ -3,6 +3,123 @@ question: "あなたのPull Request分析ワークフローでは、複数のコ
 documentation: "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-concurrency-to-cancel-any-in-progress-job-or-run"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> cancel-in-progressを使用して並行処理を設定
+```yaml
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+```
+- <input type="checkbox" disabled> 並行処理を使用
+```yaml
+concurrency:
+  group: ${{ github.ref }}
+```
+
+- <input type="checkbox" disabled> アクティビティタイプフィルターを使用
+```yaml
+on:
+  pull_request:
+    branches:
+      - master
+    types: [latest]
+```
+
+- <input type="checkbox" disabled> `pull_request`イベントのcancel-in-progressフラグを使用
+```yaml
+on:
+  pull_request:
+    branches:
+      - master
+    cancel-in-progress: true
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] cancel-in-progressを使用して並行処理を設定
 ```yaml
 concurrency:

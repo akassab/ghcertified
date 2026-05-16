@@ -3,7 +3,99 @@ question: "How should a dependent job reference the `output1` value produced by 
 documentation: "https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/passing-information-between-jobs"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> `${{needs.job1.outputs.output1}}`
+- <input type="checkbox" disabled> `${{job1.outputs.output1}}`
+- <input type="checkbox" disabled> `${{needs.job1.output1}}`
+- <input type="checkbox" disabled> `${{depends.job1.output1}}`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] `${{needs.job1.outputs.output1}}`
-- [ ] `${{job1.outputs.output1}}`
-- [ ] `${{needs.job1.output1}}`
-- [ ] `${{depends.job1.output1}}`
+> **Simple:** Downstream jobs read upstream outputs with `${{ needs.<job_id>.outputs.<name> }}` after declaring `needs`.
+>
+> **Detailed:** When job B declares `needs: job1`, it can read job A’s outputs with `${{ needs.job1.outputs.output1 }}`. The `needs` prefix ties the expression to the dependency graph GitHub already validated. `${{ job1.outputs.output1 }}` or `${{ depends.job1... }}` are invalid—only `needs.<job_id>.outputs.<name>` is supported in expressions. Job A must define `outputs` mapping step outputs, for example `value: ${{ steps.build.outputs.version }}`.

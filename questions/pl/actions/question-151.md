@@ -3,6 +3,98 @@ question: "Czego powinieneś użyć, aby przekazywać informacje między zadania
 documentation: "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-variables#passing-values-between-steps-and-jobs-in-a-workflow"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Job outputs, ponieważ wartość zmiennych środowiskowych ustawionych za pomocą zapisu do `GITHUB_ENV` dotyczy tylko bieżącego zadania.
+- <input type="checkbox" disabled> `GITHUB_ENV`, ponieważ job outputs można ustawiać i odwoływać tylko w ramach tego samego zadania.
+- <input type="checkbox" disabled> Job outputs, ponieważ są prostsze do skonfigurowania.
+- <input type="checkbox" disabled> `GITHUB_ENV`, ponieważ ustawianie zmiennych środowiskowych za jego pomocą znacząco zmniejsza obciążenie runnera, skracając czas działania workflow.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Job outputs, ponieważ wartość zmiennych środowiskowych ustawionych za pomocą zapisu do `GITHUB_ENV` dotyczy tylko bieżącego zadania.
 > Chociaż `env` można ustawić na poziomie workflow (co oznacza, że jego zmienne mogą być odwoływane przez wiele zadań), to zmiana wartości zmiennej środowiskowej nie trwa poza zadaniem, które ją zmieniło.
 - [ ] `GITHUB_ENV`, ponieważ job outputs można ustawiać i odwoływać tylko w ramach tego samego zadania.

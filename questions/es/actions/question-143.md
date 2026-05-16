@@ -3,6 +3,98 @@ question: "Su organización quiere reducir el período de retención para los ar
 documentation: "https://docs.github.com/en/organizations/managing-organization-settings/configuring-the-retention-period-for-github-actions-artifacts-and-logs-in-your-organization"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Navegando a la configuración de Actions de la organización y editando el valor de la configuración "Artifact and log retention"  
+- <input type="checkbox" disabled> Usando runners autohospedados, creando un archivo `.github/retention-policy.yml` y especificando el valor de la clave `artifact-retention-period`  
+- <input type="checkbox" disabled> Esto no se puede hacer a nivel organizacional. Todos los workflows que utilicen `actions/upload-artifact` deben usar el valor requerido de entrada `retention-days`.  
+- <input type="checkbox" disabled> Esto no se puede hacer: los artefactos se almacenan estrictamente por 90 días en todos los sistemas que implementan GitHub Actions.  
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Navegando a la configuración de Actions de la organización y editando el valor de la configuración "Artifact and log retention"  
 - [ ] Usando runners autohospedados, creando un archivo `.github/retention-policy.yml` y especificando el valor de la clave `artifact-retention-period`  
 > Personalizar los períodos de retención de artefactos no se limita a los runners autohospedados.  

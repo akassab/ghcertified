@@ -3,6 +3,98 @@ question: "組織が保存されたアーティファクトの保持期間を短
 documentation: "https://docs.github.com/en/organizations/managing-organization-settings/configuring-the-retention-period-for-github-actions-artifacts-and-logs-in-your-organization"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> 組織のActions設定に移動し、「Artifact and log retention」設定の値を編集する
+- <input type="checkbox" disabled> セルフホストランナーを使用し、`.github/retention-policy.yml`ファイルを作成して、`artifact-retention-period`キーの値を指定する  
+- <input type="checkbox" disabled> これは組織レベルでは実行できません。`actions/upload-artifact`を利用するすべてのワークフローは、必須の`retention-days`入力を使用する必要があります。  
+- <input type="checkbox" disabled> これは実行できません: アーティファクトは、GitHub Actionsを実装しているすべてのシステムで厳密に90日間保存されます。  
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] 組織のActions設定に移動し、「Artifact and log retention」設定の値を編集する
 - [ ] セルフホストランナーを使用し、`.github/retention-policy.yml`ファイルを作成して、`artifact-retention-period`キーの値を指定する  
 > アーティファクトの保持期間をカスタマイズすることは、セルフホストランナーに限定されません。  

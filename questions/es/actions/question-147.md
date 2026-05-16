@@ -3,6 +3,98 @@ question: "Tienes un secreto codificado en base-64 que descodificas en un flujo 
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#masking-a-value-in-a-log"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Usando el comando de flujo de trabajo `add-mask` en los trabajos donde se pueda utilizar el secreto descodificado.
+- <input type="checkbox" disabled> No se necesita hacer nada, ya que la infraestructura de GitHub Actions redacta automáticamente los secretos descodificados.
+- <input type="checkbox" disabled> Evitar el uso de declaraciones de impresión que contengan el secreto descodificado, ya que esta es la única forma en que el secreto descodificado podría aparecer en el registro del flujo de trabajo.
+- <input type="checkbox" disabled> Usar la función integrada `maskSecret` para redactar el secreto descodificado en los casos en que pueda ser utilizado.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Usando el comando de flujo de trabajo `add-mask` en los trabajos donde se pueda utilizar el secreto descodificado.
 > Usar `add-mask` ocultará valores que GitHub Actions no detecta automáticamente como secretos. Esto debe hacerse una vez por cada valor, por cada trabajo que utilice el secreto descodificado.
 - [ ] No se necesita hacer nada, ya que la infraestructura de GitHub Actions redacta automáticamente los secretos descodificados.

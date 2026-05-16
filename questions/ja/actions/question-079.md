@@ -3,6 +3,98 @@ question: "スケジュールされたワークフローは、GitHub Actionsの�
 documentation: "https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> スケジュールされたワークフローは、最後に修正されたブランチの特定のコミットで実行されます。
+- <input type="checkbox" disabled> スケジュールされたワークフローは、mainブランチの特定のコミットで実行されます。
+- <input type="checkbox" disabled> スケジュールされたワークフローは、リポジトリのデフォルトブランチ上の最新のコミットで実行されます。
+- <input type="checkbox" disabled> スケジュールされたワークフローは、mainブランチ上の最新のコミットで実行されます。
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [ ] スケジュールされたワークフローは、最後に修正されたブランチの特定のコミットで実行されます。
 > 誤り: 特定のコミットと最後に修正されたブランチの両方
 - [ ] スケジュールされたワークフローは、mainブランチの特定のコミットで実行されます。

@@ -3,6 +3,108 @@ question: "You have a workflow that uses the matrix below. If a job in the matri
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idstrategyfail-fast"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+jobs:
+  deploy:
+    strategy:
+      matrix:
+        version: ["1", "1.2", "1.3"]
+        os: [ubuntu-latest, windows-latest]
+```
+
+- <input type="checkbox" disabled> Set `jobs.<job_id>.strategy.fail-fast` to `false`
+- <input type="checkbox" disabled> Nothing needs to be done, since `jobs.<job_id>.strategy.fail-fast` has a default setting of `false`
+- <input type="checkbox" disabled> Set `jobs.<job_id>.strategy.matrix.fail-fast` to `false`
+- <input type="checkbox" disabled> Nothing needs to be done, since `jobs.<job_id>.strategy.matrix.fail-fast` has a default setting of `false`
+- <input type="checkbox" disabled> There is no way to enforce this behavior, it cannot be worked around.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
 jobs:
   deploy:
@@ -13,11 +115,6 @@ jobs:
 ```
 
 - [x] Set `jobs.<job_id>.strategy.fail-fast` to `false`
-> `jobs.<job_id>.strategy.fail-fast` is set to `true` by default, meaning if one matrix job fails, other in-progress and queued matrix jobs will be cancelled. You must explicitly set `fail-fast` to `false` to avoid this behavior. 
-- [ ] Nothing needs to be done, since `jobs.<job_id>.strategy.fail-fast` has a default setting of `false`
-> `jobs.<job_id>.strategy.fail-fast` is set to `true` by default.
-- [ ] Set `jobs.<job_id>.strategy.matrix.fail-fast` to `false`
-> This is incorrect, `fail-fast` is at `strategy` level, not `matrix` level. If you set `fail-fast` at `matrix` level, it would function as part of the [job configuration](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/run-job-variations#adding-a-matrix-strategy-to-your-workflow-job) and not effect the cancellation/continuation of other matrix jobs.
-- [ ] Nothing needs to be done, since `jobs.<job_id>.strategy.matrix.fail-fast` has a default setting of `false`
-> This is incorrect, `fail-fast` is at `strategy` level, not `matrix` level. 
-- [ ] There is no way to enforce this behavior, it cannot be worked around.
+> **Simple:** Set `strategy.fail-fast: false` so one failing matrix leg does not cancel the others.
+>
+> **Detailed:** `fail-fast` defaults to **true**, so one failing matrix job cancels siblings—useful to save minutes when any failure invalidates the build. With `fail-fast: false`, every OS/version combination runs to completion (for example, to collect all test failures). For the question’s six jobs (`version` × `os`), Ubuntu failing no longer stops Windows legs from finishing.

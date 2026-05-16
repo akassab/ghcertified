@@ -3,14 +3,108 @@ question: "Why use a commit SHA versus a tag to pin an action?"
 documentation: "https://docs.github.com/en/actions/reference/security/secure-use#using-third-party-actions"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Commit SHAs are more secure
+- <input type="checkbox" disabled> Commit SHAs are immutable, whereas tags have the potential to be changed
+- <input type="checkbox" disabled> Commit SHAs are more convenient to use as opposed to tags
+- <input type="checkbox" disabled> Commit SHAs are guaranteed to point to the exact same code every time, tags are not
+- <input type="checkbox" disabled> Commit SHAs are more difficult to trace in an audit, making it difficult for bad actors to determine how an action's code factors in overall processes.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Commit SHAs are more secure
-> Commit SHAs are more secure because they are currently the only way to use an action as an immutable release
+> **Simple:** Pinning `uses: actions/checkout@<full-sha>` is the strongest supply-chain practice because the commit cannot change without editing your workflow.
+>
+> **Detailed:** Tags like `@v4` and branches are convenient but mutable unless you enable immutable releases. Security reviews and compliance checks often require SHA pinning for third-party actions. Dependabot can suggest SHA updates when maintainers publish new versions.
 - [x] Commit SHAs are immutable, whereas tags have the potential to be changed
-> [Tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) are pointed to specific commits. Their reference can be changed, which is not always obvious. Tag-related vulnerabilities can be mitigated by enabling [immutable releases](https://docs.github.com/en/code-security/concepts/supply-chain-security/immutable-releases), but a commit SHA will always point to the same commit and is immutable.
-> Re-running a workflow uses the same commit SHA and Git ref of the original event that triggered the workflow run.
-- [ ] Commit SHAs are more convenient to use as opposed to tags
-> While more secure, tags are generally easier to use.
+> **Simple:** Tags can be **moved** to another commit; a full SHA always identifies one commit.
+>
+> **Detailed:** `@v1` might run different code tomorrow if a maintainer force-updates the tag, without any change to your workflow file. Immutable releases on GitHub reduce that risk for release tags, but a full SHA always identifies one tree. Re-running a workflow still uses the action ref pinned in YAML at queue time.
 - [x] Commit SHAs are guaranteed to point to the exact same code every time, tags are not
-- [ ] Commit SHAs are more difficult to trace in an audit, making it difficult for bad actors to determine how an action's code factors in overall processes.
-> Commit SHAs always point to the same commit. When pinning an action to a SHA, the SHA is explicitly referenced, meaning you can find the corresponding commit in the action's repository. These factors make auditing easier.
-> Tags can have their references changed, and this is not always obvious. This can result in confusing scenarios when the tag points to a new commit, because the code referencing the action does not appear to have changed. Thus, in audit scenarios, you will have to figure out what commit the tag was pointing to and what it is currently pointed to.
+> **Simple:** A full SHA always resolves to the same file tree; `@main` and floating tags track whatever HEAD is at fetch time.
+>
+> **Detailed:** If an action maintainer retags `v1`, `uses: org/action@v1` can pull new code silently—SHA pinning prevents that class of surprise. Branch names like `@main` are the least deterministic for production workflows.

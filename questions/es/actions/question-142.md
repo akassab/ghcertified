@@ -3,6 +3,99 @@ question: "¿Cuál de las siguientes respuestas es correcta con respecto a los t
 documentation: "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-as-a-github-app-installation#using-an-installation-access-token-to-authenticate-as-an-app-installation"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Los tokens de acceso de instalación son tokens de corta duración ideales para actividades de automatización, pero requieren configurar una GitHub App.
+- <input type="checkbox" disabled> `GITHUB_TOKEN` es un tipo de token de acceso de instalación.
+- <input type="checkbox" disabled> Se puede llamar a `actions/create-github-app-token` dentro de workflows para crear un token de acceso de instalación disponible para uso inmediato.
+- <input type="checkbox" disabled> Se puede llamar a `actions/create-github-app-token` dentro de workflows para crear un token de acceso de instalación, pero el token de acceso de instalación solo se puede usar en futuras ejecuciones del workflow.
+- <input type="checkbox" disabled> Los tokens de acceso de instalación no pueden configurarse para actuar en nombre de su GitHub App asociada.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Los tokens de acceso de instalación son tokens de corta duración ideales para actividades de automatización, pero requieren configurar una GitHub App.
 - [x] `GITHUB_TOKEN` es un tipo de token de acceso de instalación.
 > `GITHUB_TOKEN` es un token de acceso de instalación de GitHub App que se genera automáticamente para cada ejecución de workflow. Consulta la [documentación](https://docs.github.com/en/actions/concepts/security/github_token) para obtener más detalles.

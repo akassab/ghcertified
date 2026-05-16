@@ -3,6 +3,106 @@ question: "¿Cuál es la forma correcta de activar un trabajo solo si la variabl
 documentation: "https://docs.github.com/en/actions/learn-github-actions/contexts#example-usage-of-the-vars-context"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Creando la siguiente condición a nivel de trabajo
+```yaml
+my-job:
+  if: ${{ vars.MY_VAR == 'MY_VALUE' }}
+```
+- <input type="checkbox" disabled> Creando la siguiente condición a nivel de trabajo
+```yaml
+my-job:
+  if: ${{ vars.MY_VAR }} == 'MY_VALUE'
+```
+- <input type="checkbox" disabled> No es posible porque las variables de configuración no pueden usarse en condiciones `if`
+- <input type="checkbox" disabled> No es posible porque las variables de configuración no pueden usarse en condiciones `if` a nivel de trabajo
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Creando la siguiente condición a nivel de trabajo
 ```yaml
 my-job:

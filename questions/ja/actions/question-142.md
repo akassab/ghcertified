@@ -3,6 +3,99 @@ question: "次の回答のうち、インストールアクセス・トークン
 documentation: "https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-as-a-github-app-installation#using-an-installation-access-token-to-authenticate-as-an-app-installation"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> インストールアクセス・トークンは自動化作業に適した短期間有効なトークンですが、GitHub Appの設定が必要です。
+- <input type="checkbox" disabled> `GITHUB_TOKEN`はインストールアクセス・トークンの一種です。
+- <input type="checkbox" disabled> `actions/create-github-app-token`はワークフロー内で呼び出すことができ、すぐに使用可能なインストールアクセス・トークンを作成します。
+- <input type="checkbox" disabled> `actions/create-github-app-token`はワークフロー内で呼び出すことができ、インストールアクセス・トークンを作成しますが、そのトークンはワークフローの将来の実行でのみ使用できます。
+- <input type="checkbox" disabled> インストールアクセス・トークンは、関連付けられたGitHub Appに代わって動作するように設定することはできません。
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] インストールアクセス・トークンは自動化作業に適した短期間有効なトークンですが、GitHub Appの設定が必要です。
 - [x] `GITHUB_TOKEN`はインストールアクセス・トークンの一種です。
 > `GITHUB_TOKEN`は、各ワークフロー実行時に自動生成されるGitHub Appインストールアクセス・トークンです。詳細は[ドキュメント](https://docs.github.com/en/actions/concepts/security/github_token)をご覧ください。

@@ -3,6 +3,98 @@ question: "Workflow początkowo uruchomiono na `commit A` i zakończył się nie
 documentation: "https://docs.github.com/en/actions/managing-workflow-runs/re-running-workflows-and-jobs#about-re-running-workflows-and-jobs"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Zostanie uruchomiony z kodem z `commit A`
+- <input type="checkbox" disabled> Zostanie uruchomiony z kodem z `commit B`
+- <input type="checkbox" disabled> Nie możesz ponownie uruchomić workflow w GitHub Actions. Musisz uruchomić nowy workflow, który zostanie uruchomiony z najnowszymi zmianami
+- <input type="checkbox" disabled> Spowoduje to uruchomienie dwóch workflow, jednego z kodem z `commit A` i drugiego z kodem z `commit B`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Zostanie uruchomiony z kodem z `commit A`
 - [ ] Zostanie uruchomiony z kodem z `commit B`
 > Ponowne uruchomienie workflow wykorzystuje ten sam SHA commitu i odwołanie Git do pierwotnego zdarzenia, które wywołało uruchomienie workflow.

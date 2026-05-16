@@ -2,6 +2,101 @@
 question: "Quais componentes podem ser reutilizados dentro de uma Organização no GitHub?"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Secrets
+- <input type="checkbox" disabled> Variáveis de Configuração
+- <input type="checkbox" disabled> Self Hosted Runners
+- <input type="checkbox" disabled> Modelos de Workflow
+- <input type="checkbox" disabled> Artifacts  
+- <input type="checkbox" disabled> Cache  
+- <input type="checkbox" disabled> Variáveis de Ambiente  
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Secrets
 - [x] Variáveis de Configuração
 - [x] Self Hosted Runners

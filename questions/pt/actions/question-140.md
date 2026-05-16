@@ -3,6 +3,115 @@ question: "Você está criando um workflow reutilizável que tem `branch-name` c
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/expressions#startswith"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Use o método embutido `startsWith` em combinação com `jobs.<job_id>.steps[*].if`
+```yaml
+    if: startsWith(inputs.branch-name, 'smoke-test')
+```
+
+- <input type="checkbox" disabled> Use o método embutido `startsWith` em combinação com `jobs.<job_id>.steps[*].if`
+```yaml
+    if: inputs.branch-name.startsWith('smoke-test')
+``` 
+- <input type="checkbox" disabled> Use o filtro `branches` em `workflow_call`
+```yaml
+on:
+  workflow_call:
+    branches:
+        - 'smoke-test/**'
+```
+
+- <input type="checkbox" disabled> Use condicionais shell em combinação com `jobs.<job_id>.steps[*].if`
+```yaml
+    if: [[ "${{inputs.branch-name}}" == "smoke-test"* ]]
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Use o método embutido `startsWith` em combinação com `jobs.<job_id>.steps[*].if`
 ```yaml
     if: startsWith(inputs.branch-name, 'smoke-test')

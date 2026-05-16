@@ -3,6 +3,99 @@ question: "Które stwierdzenie jest prawdziwe w odniesieniu do `github.ref`, gdy
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> W przypadku zdarzeń push, `github.ref` to w pełni uformowany odnośnik gałęzi lub tag, który został wypchnięty. 
+- <input type="checkbox" disabled> W przypadku zdarzeń push, `github.ref` to wiadomość commitu, który uruchomił workflow.
+- <input type="checkbox" disabled> W przypadku zdarzeń push, `github.ref` to SHA commitu, który uruchomił workflow.
+- <input type="checkbox" disabled> W przypadku zdarzeń push, `github.ref` to opis commitu, który uruchomił workflow.
+- <input type="checkbox" disabled> W przypadku zdarzeń push, `github.ref` to typ w pełni uformowanego odnośnika, który uruchomił workflow. Wartość będzie `branch`, `tag` lub `null` (jeśli odnośnik nie był w pełni uformowany).
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] W przypadku zdarzeń push, `github.ref` to w pełni uformowany odnośnik gałęzi lub tag, który został wypchnięty. 
 > Więcej informacji na temat odnośników znajdziesz w oficjalnej [dokumentacji Git](https://git-scm.com/book/en/Git-Internals-Git-References).
 - [ ] W przypadku zdarzeń push, `github.ref` to wiadomość commitu, który uruchomił workflow.

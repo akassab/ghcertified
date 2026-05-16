@@ -3,6 +3,100 @@ question: "¿Qué afirmaciones son ciertas respecto a `github.ref` cuando el wor
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> En solicitudes de extracción que no se han fusionado, `github.ref` se refiere a la referencia completamente formada de la rama/etiqueta de fusión de la solicitud de extracción.
+- <input type="checkbox" disabled> En solicitudes de extracción que han sido fusionadas, `github.ref` se refiere a la referencia completamente formada de la rama en la que se realizó la fusión.
+- <input type="checkbox" disabled> En solicitudes de extracción (independientemente del estado de fusión), `github.ref` se refiere al número de la solicitud de extracción.
+- <input type="checkbox" disabled> En solicitudes de extracción (independientemente del estado de fusión), `github.ref` es el SHA del último commit de fusión en la rama `GITHUB_REF`.
+- <input type="checkbox" disabled> En solicitudes de extracción que no se han fusionado, `github.ref` es la referencia completamente formada del título de la solicitud de extracción.
+- <input type="checkbox" disabled> En solicitudes de extracción que han sido fusionadas, `github.ref` es el tipo de referencia completamente formada que activó la ejecución del workflow. El valor será `branch`, `tag` o `null` (si la referencia no estaba completamente formada).
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] En solicitudes de extracción que no se han fusionado, `github.ref` se refiere a la referencia completamente formada de la rama/etiqueta de fusión de la solicitud de extracción.
 > Para más información sobre referencias, consulta la [documentación oficial de Git](https://git-scm.com/book/en/Git-Internals-Git-References).
 - [x] En solicitudes de extracción que han sido fusionadas, `github.ref` se refiere a la referencia completamente formada de la rama en la que se realizó la fusión.

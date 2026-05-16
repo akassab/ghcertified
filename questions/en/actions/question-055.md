@@ -3,8 +3,101 @@ question: "A workflow was initially run on `commit A` and failed. You fixed the 
 documentation: "https://docs.github.com/en/actions/managing-workflow-runs/re-running-workflows-and-jobs#about-re-running-workflows-and-jobs"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> It will run with code from `commit A`
+- <input type="checkbox" disabled> It will run with code from `commit B`
+- <input type="checkbox" disabled> You cannot re-run workflows in GitHub Actions. You have to trigger a new workflow which will run with latest changes
+- <input type="checkbox" disabled> It will trigger two workflows, one with code from `commit A` and one with code from `commit B`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] It will run with code from `commit A`
-- [ ] It will run with code from `commit B`
-> Re-running a workflow uses the same commit SHA and Git ref of the original event that triggered the workflow run.
-- [ ] You cannot re-run workflows in GitHub Actions. You have to trigger a new workflow which will run with latest changes
-- [ ] It will trigger two workflows, one with code from `commit A` and one with code from `commit B`
+> **Simple:** Re-running uses the same commit as the original failed run (`commit A`), not your later fix on `commit B`.
+>
+> **Detailed:** **Re-run failed jobs** / **Re-run all jobs** reuses the **same commit SHA and ref** as the original run—the workflow YAML and checkout snapshot from **`commit A`**. If you fixed the workflow on **`commit B`** after the failure, a re-run still executes code and YAML as they existed on **A**.
+>
+> To pick up fixes on B, trigger a **new** run with a fresh event (`push`, `workflow_dispatch`, etc.). Re-run is for retrying the same snapshot, not picking up latest `main`.

@@ -3,9 +3,99 @@ question: "Dorothea is troubleshooting a workflow triggered by a push event and 
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Printing the contents of the `github.event` object in a step
+- <input type="checkbox" disabled> Checking the "Show event webhook payload" checkbox under the workflow run options.
+- <input type="checkbox" disabled> Setting a secret or variable named `SHOW_EVENT_PAYLOAD` to `true`
+- <input type="checkbox" disabled> Navigating to the "Webhooks" section of the repository settings 
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Printing the contents of the `github.event` object in a step
-> `github.event` will show the full event webhook payload. This payload varies upon the type of event. See the [Webhook events and payloads](https://docs.github.com/en/webhooks/webhook-events-and-payloads) for more details.
-- [ ] Checking the "Show event webhook payload" checkbox under the workflow run options.
-- [ ] Setting a secret or variable named `SHOW_EVENT_PAYLOAD` to `true`
-- [ ] Navigating to the "Webhooks" section of the repository settings 
-> The "Webhooks" section in repository settings will only show details for custom webhooks, not standard event webhooks like `push`. 
+> **Simple:** Print or log `github.event` to inspect the **webhook payload** shape for the workflow trigger.
+>
+> **Detailed:** `pull_request` includes `number`, `head`, and `base`; `push` includes `commits` and `ref`. Shape differs per `on:` event, so guard access with `if:` or optional chaining in scripts—for example `github.event.pull_request.number` only when `github.event_name == 'pull_request'`. The [webhook payload reference](https://docs.github.com/en/webhooks/webhook-events-and-payloads) lists fields per event type.

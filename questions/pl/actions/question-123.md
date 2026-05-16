@@ -3,6 +3,138 @@ question: "Co należy dodać do `actions/checkout`, jeśli `my-org/my-private-re
 documentation: "https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#example-using-an-action-inside-a-different-private-repository-than-the-workflow"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+name: deploy-workflow
+on: [push]
+jobs:
+    my-job:
+        runs-on: ubuntu-latest
+        steps:
+          - name: "Checkout GitHub Action"
+            uses: actions/checkout@v4
+            with:
+               repository: my-org/my-private-repo
+               path: ./.github/actions/my-org/my-private-repo
+```
+
+- <input type="checkbox" disabled> Utwórz GitHub secret `MY_ACCESS_TOKEN`
+```yaml
+with:
+    repository: my-org/my-private-repo
+    path: ./.github/actions/my-org/my-private-repo
+    token: ${{ secrets.MY_ACCESS_TOKEN }}
+```
+
+- <input type="checkbox" disabled> Utwórz parametr wejściowy `MY_ACCESS_TOKEN`
+```yaml
+with:
+    repository: my-org/my-private-repo
+    path: ./.github/actions/my-org/my-private-repo
+    token: ${{ MY_ACCESS_TOKEN }}
+```
+
+- <input type="checkbox" disabled> Zmienna środowiskowa `GITHUB_TOKEN`
+```yaml
+with:
+    repository: my-org/my-private-repo
+    path: ./.github/actions/my-org/my-private-repo
+    token: $GITHUB_TOKEN
+```
+
+- <input type="checkbox" disabled> Pozostaw bez zmian, ponieważ tokeny dostępu zostaną przekazane automatycznie
+```yaml
+with:
+    repository: my-org/my-private-repo
+    path: ./.github/actions/my-org/my-private-repo
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
 name: deploy-workflow
 on: [push]

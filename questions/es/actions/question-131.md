@@ -3,6 +3,101 @@ question: "¿Cuál de las siguientes afirmaciones son verdaderas respecto a llam
 documentation: "https://docs.github.com/en/actions/concepts/workflows-and-actions/reusing-workflow-configurations#key-differences-between-reusable-workflows-and-composite-actions"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Las acciones compuestas se llaman haciendo referencia a la carpeta que contiene su archivo `action.yml`.
+- <input type="checkbox" disabled> Los workflows reutilizables se llaman haciendo referencia a la carpeta que contiene su archivo `action.yml`.
+- <input type="checkbox" disabled> Las acciones compuestas deben ser llamadas como un paso dentro de un job.
+- <input type="checkbox" disabled> Los workflows reutilizables deben ser llamados a nivel de job del workflow (no desde el nivel de paso).
+- <input type="checkbox" disabled> Los secretos pueden pasarse tanto a los workflows reutilizables como a las acciones compuestas usando el bloque `uses.secrets`.
+- <input type="checkbox" disabled> Solo los workflows reutilizables pueden aceptar entradas.
+- <input type="checkbox" disabled> Los workflows reutilizables pueden utilizar un tipo de runner diferente al del workflow que los llama, mientras que las acciones compuestas no.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Las acciones compuestas se llaman haciendo referencia a la carpeta que contiene su archivo `action.yml`.
 > Como una acción, las acciones compuestas deben contener la mayor parte de su lógica dentro de un archivo `action.yml`. Para llamar a la acción compuesta, se debe apuntar a donde se encuentra su archivo `action.yml` (esto incluye la raíz. Por ejemplo, para llamar a una acción compuesta que se encuentra en la raíz del mismo repositorio que el workflow que la llama, se usaría la sintaxis `uses: ./`).
 - [ ] Los workflows reutilizables se llaman haciendo referencia a la carpeta que contiene su archivo `action.yml`.

@@ -3,6 +3,98 @@ question: "Jak można zmienić okres przechowywania artefaktów wygenerowanych p
 documentation: "https://github.com/actions/upload-artifact#inputs"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Korzystając z wejścia `retention-days` w `actions/upload-artifact` 
+- <input type="checkbox" disabled> Korzystając z wejścia `retention-days` w `actions/download-artifact`
+- <input type="checkbox" disabled> Przechodząc do ustawień Actions w repozytorium i edytując wartość ustawienia "Artifact and log retention" dla wymienionego workflow.
+- <input type="checkbox" disabled> Przechodząc do ustawień Actions organizacji i edytując wartość ustawienia "Artifact and log retention"
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Korzystając z wejścia `retention-days` w `actions/upload-artifact` 
 - [ ] Korzystając z wejścia `retention-days` w `actions/download-artifact`
 > `actions/download-artifact` służy do pobierania artefaktów. W związku z tym nie ma wpływu na to, jak długo przesłany artefakt powinien być przechowywany. Dodatkowo, `retention-days` nie jest wejściem dla tej akcji. Zobacz [dokumentację](https://github.com/actions/download-artifact#inputs) po więcej informacji. 

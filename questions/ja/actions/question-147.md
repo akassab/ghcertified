@@ -3,6 +3,98 @@ question: "GitHub Actions ワークフロー内で Base64 でエンコードさ�
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#masking-a-value-in-a-log"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> デコードされたシークレットが使用されるジョブで `add-mask` ワークフローコマンドを使用する。
+- <input type="checkbox" disabled> GitHub Actions のインフラストラクチャが自動的にデコードされたシークレットを伏せ字にするため、何もする必要はありません。
+- <input type="checkbox" disabled> デコードされたシークレットを含む print 文を使用しないようにする。この方法だけがワークフローのログにシークレットが表示されるのを防ぐ唯一の方法です。
+- <input type="checkbox" disabled> デコードされたシークレットが使用される場合、`maskSecret` 組み込み関数を使用して伏せ字にする。
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] デコードされたシークレットが使用されるジョブで `add-mask` ワークフローコマンドを使用する。
 > `add-mask` を使用すると、GitHub Actions がシークレットとして検出しない値を伏せ字にすることができます。この操作は、デコードされたシークレットを使用するジョブごとに1回必要です。
 - [ ] GitHub Actions のインフラストラクチャが自動的にデコードされたシークレットを伏せ字にするため、何もする必要はありません。

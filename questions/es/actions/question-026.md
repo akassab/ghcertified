@@ -3,6 +3,98 @@ question: "Un flujo de trabajo reutilizable llamado `build` crea artefactos de a
 documentation: "https://docs.github.com/en/actions/using-workflows/reusing-workflows#using-outputs-from-a-reusable-workflow"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Defines una salida a nivel de flujo de trabajo en el flujo de trabajo `build`
+- <input type="checkbox" disabled> Defines una salida a nivel de trabajo en el flujo de trabajo `build`
+- <input type="checkbox" disabled> En el flujo de trabajo `build` escribes la salida en `$GITHUB_OUTPUT` en uno de los pasos
+- <input type="checkbox" disabled> Todas las salidas se pasan automáticamente a los flujos de trabajo que los llaman
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Defines una salida a nivel de flujo de trabajo en el flujo de trabajo `build`
 - [x] Defines una salida a nivel de trabajo en el flujo de trabajo `build`
 - [x] En el flujo de trabajo `build` escribes la salida en `$GITHUB_OUTPUT` en uno de los pasos

@@ -3,6 +3,109 @@ question: "You can only upload a single file at a time when using `actions/uploa
 documentation: "https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts#uploading-build-and-test-artifacts"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> False
+- <input type="checkbox" disabled> True
+- <input type="checkbox" disabled> Only directories can be uploaded, not individual files
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] False
-- [ ] True
-- [ ] Only directories can be uploaded, not individual files
+> **Simple:** False—`upload-artifact` accepts files, directories, globs, and multiple paths in one step.
+>
+> **Detailed:** `actions/upload-artifact` accepts a `path` that can be a **single file**, a **directory**, or a **glob pattern**. You can upload multiple paths in one step:
+>
+> ```yaml
+> - uses: actions/upload-artifact@v4
+>   with:
+>     name: build-outputs
+>     path: |
+>       dist/*.zip
+>       reports/
+> ```
+>
+> Or run multiple upload steps in the same job. The statement that only one file at a time is allowed is **false**.

@@ -3,6 +3,123 @@ question: "Seu fluxo de trabalho de análise de Pull Request usa várias ferrame
 documentation: "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-using-concurrency-to-cancel-any-in-progress-job-or-run"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Use concurrency com cancel-in-progress
+```yaml
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+```
+- <input type="checkbox" disabled> Use concurrency
+```yaml
+concurrency:
+  group: ${{ github.ref }}
+```
+
+- <input type="checkbox" disabled> Use filtro de tipos de atividade
+```yaml
+on:
+  pull_request:
+    branches:
+      - master
+    types: [latest]
+```
+
+- <input type="checkbox" disabled> Use a flag cancel-in-progress para o evento `pull_request`
+```yaml
+on:
+  pull_request:
+    branches:
+      - master
+    cancel-in-progress: true
+```
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Use concurrency com cancel-in-progress
 ```yaml
 concurrency:

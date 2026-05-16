@@ -3,6 +3,98 @@ question: "リポジトリをフォークして、サードパーティアプリ
 documentation: "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets?tool=webui#using-secrets-in-a-workflow"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> フォークしたリポジトリは元のリポジトリからシークレットを継承しません  
+- <input type="checkbox" disabled> 元のリポジトリからシークレットを継承する際に、フォーク中にエラーが発生し、シークレットが不正または破損した
+- <input type="checkbox" disabled> 継承されたシークレットのサイズが48 KBを超えていた
+- <input type="checkbox" disabled> フォークされたリポジトリはリポジトリシークレットのみを継承します。そのため、ワークフローで使用されているシークレットは組織または環境シークレットである必要があります。
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] フォークしたリポジトリは元のリポジトリからシークレットを継承しません  
 > セキュリティ対策として、（`GITHUB_TOKEN` を除き）シークレットはフォークしたリポジトリからトリガーされたワークフローではランナーに渡されません。そのため、元のリポジトリのシークレットを参照している場合、ワークフローは失敗します。
 - [ ] 元のリポジトリからシークレットを継承する際に、フォーク中にエラーが発生し、シークレットが不正または破損した

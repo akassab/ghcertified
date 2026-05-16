@@ -3,6 +3,100 @@ question: "¿Cuáles son los ámbitos definidos para las variables personalizada
 documentation: "https://docs.github.com/en/actions/learn-github-actions/variables#defining-environment-variables-for-a-single-workflow"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Todo el workflow, utilizando `env` en el nivel superior del archivo de workflow
+- <input type="checkbox" disabled> El contenido de un job dentro de un workflow, utilizando `jobs.<job_id>.env`
+- <input type="checkbox" disabled> Un paso específico dentro de un job, utilizando `jobs.<job_id>.steps[*].env`
+- <input type="checkbox" disabled> Todos los jobs dentro de un workflow, utilizando `jobs.env`
+- <input type="checkbox" disabled> Todo el workflow, utilizando `custom.env` en el nivel superior del archivo de workflow
+- <input type="checkbox" disabled> Un entorno específico en el repository, utilizando `environment.<environment_id>.env` en el nivel superior del archivo de workflow
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Todo el workflow, utilizando `env` en el nivel superior del archivo de workflow
 - [x] El contenido de un job dentro de un workflow, utilizando `jobs.<job_id>.env`
 - [x] Un paso específico dentro de un job, utilizando `jobs.<job_id>.steps[*].env`

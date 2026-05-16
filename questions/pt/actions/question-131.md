@@ -3,6 +3,101 @@ question: "Quais das seguintes opções são verdadeiras sobre chamar workflows 
 documentation: "https://docs.github.com/en/actions/concepts/workflows-and-actions/reusing-workflow-configurations#key-differences-between-reusable-workflows-and-composite-actions"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Ações compostas são chamadas referenciando a pasta que contém seu arquivo `action.yml`.
+- <input type="checkbox" disabled> Workflows reutilizáveis são chamados referenciando a pasta que contém seu arquivo `action.yml`.
+- <input type="checkbox" disabled> Ações compostas devem ser chamadas como um passo dentro de um job.
+- <input type="checkbox" disabled> Workflows reutilizáveis devem ser chamados no nível de job do workflow (não no nível de passo).
+- <input type="checkbox" disabled> Secrets podem ser passados tanto para workflows reutilizáveis quanto para chamadas de ações compostas através do bloco `uses.secrets`.
+- <input type="checkbox" disabled> Apenas workflows reutilizáveis podem aceitar entradas.
+- <input type="checkbox" disabled> Workflows reutilizáveis podem usar um tipo de runner diferente do workflow de chamada, enquanto ações compostas não podem.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Ações compostas são chamadas referenciando a pasta que contém seu arquivo `action.yml`.
 > Como uma ação, as ações compostas devem conter a maior parte de sua lógica dentro de um arquivo `action.yml`. Para chamar a ação composta, aponte para onde seu `action.yml` está localizado (isso inclui a raiz. Ex.: para chamar uma ação composta localizada na raiz do mesmo repositório que o workflow de chamada, a sintaxe `uses: ./` seria usada).
 - [ ] Workflows reutilizáveis são chamados referenciando a pasta que contém seu arquivo `action.yml`.

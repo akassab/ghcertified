@@ -2,6 +2,105 @@
 question: "Dlaczego warto używać funkcji `hashFiles` podczas korzystania z `actions/cache`?"
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/expressions#hashfiles"
 ---
+
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+  - uses: actions/cache@v5
+    with:
+      path: ~/.npm
+      key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+```
+- <input type="checkbox" disabled> Jeśli klucz pamięci podręcznej zawiera plik zależności objęty funkcją `hashFiles`, klucz zmienia się, gdy plik zależności zostanie zaktualizowany, co pomaga go utrzymać w aktualności.
+- <input type="checkbox" disabled> `hashFiles` jest wymagane dla kompatybilności z runnerami na Windows.
+- <input type="checkbox" disabled> Podczas używania funkcji `hashFiles` jako części klucza pamięci podręcznej, w przypadku braku pamięci podręcznej, `hashFiles` dostarcza dodatkowych informacji debugowania.
+- <input type="checkbox" disabled> Podczas używania funkcji `hashFiles` jako części klucza pamięci podręcznej, zostanie wygenerowany dodatkowy krok w wywołującym workflow. Ten krok workflow wypisuje wartość skrótu SHA-256 klucza pamięci podręcznej dla celów referencyjnych.  
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
   - uses: actions/cache@v5
     with:

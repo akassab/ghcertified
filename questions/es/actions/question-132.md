@@ -3,6 +3,99 @@ question: "¿Cuál de las siguientes afirmaciones son verdaderas con respecto a 
 documentation: "https://docs.github.com/en/enterprise-server/admin/overview/about-github-enterprise-server"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Los flujos de trabajo de GHES no pueden acceder a GitHub.com ni a las acciones de GitHub Marketplace de forma predeterminada. 
+- <input type="checkbox" disabled> `actions/actions-sync` está principalmente dedicado a trasladar acciones de GitHub.com a una instancia de GHES.
+- <input type="checkbox" disabled> Se permite que GHES utilice versiones avanzadas de los runners alojados por GitHub.
+- <input type="checkbox" disabled> Usando GitHub Connect, los usuarios pueden seguir un proceso manual para acceder a las acciones de GitHub.com. Este proceso debe realizarse una vez por cada acción deseada.
+- <input type="checkbox" disabled> Las instancias de GitHub Enterprise Server son auto gestionadas, en comparación con GitHub Enterprise Cloud (GHEC), que es alojado y gestionado por GitHub.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Los flujos de trabajo de GHES no pueden acceder a GitHub.com ni a las acciones de GitHub Marketplace de forma predeterminada. 
 - [x] `actions/actions-sync` está principalmente dedicado a trasladar acciones de GitHub.com a una instancia de GHES.
 > La sincronización de acciones desde GitHub.com se logra principalmente a través de GitHub Connect o `actions-sync`. La herramienta `actions/actions-sync` es una [manera manual](https://docs.github.com/en/enterprise-server/admin/managing-github-actions-for-your-enterprise/managing-access-to-actions-from-githubcom/manually-syncing-actions-from-githubcom) de realizar este proceso.

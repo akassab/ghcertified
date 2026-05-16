@@ -3,6 +3,98 @@ question: "Przepływ pracy jest uruchamiany, gdy wnioski o scalenie są ponownie
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#pull_request"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> `types: [reopened]` jest zdefiniowane pod zdarzeniem `pull_request`. 
+- <input type="checkbox" disabled> Reguły ochrony gałęzi zostały nieprawidłowo skonfigurowane.
+- <input type="checkbox" disabled> Żadne typy aktywności nie są zdefiniowane pod zdarzeniem `pull_request`.
+- <input type="checkbox" disabled> `on: schedule` zostało skonfigurowane z `pull_requests: [reopened]`
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] `types: [reopened]` jest zdefiniowane pod zdarzeniem `pull_request`. 
 - [ ] Reguły ochrony gałęzi zostały nieprawidłowo skonfigurowane.
 > Reguły ochrony gałęzi nie określają, kiedy przepływ pracy jest uruchamiany.

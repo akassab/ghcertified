@@ -3,6 +3,98 @@ question: "O que você deve usar ao passar informações entre jobs: saídas de 
 documentation: "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-variables#passing-values-between-steps-and-jobs-in-a-workflow"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Saídas de job, porque o valor das variáveis de ambiente definidas escrevendo para `GITHUB_ENV` se aplica apenas ao job atual.
+- <input type="checkbox" disabled> `GITHUB_ENV`, porque as saídas de job só podem ser definidas e referenciadas dentro do mesmo job.
+- <input type="checkbox" disabled> Saídas de job, porque são mais simples de configurar
+- <input type="checkbox" disabled> `GITHUB_ENV`, porque usá-lo para definir variáveis de ambiente coloca significativamente menos pressão no runner, reduzindo o tempo de execução do workflow.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Saídas de job, porque o valor das variáveis de ambiente definidas escrevendo para `GITHUB_ENV` se aplica apenas ao job atual.
 > Embora `env` possa ser definido no nível do workflow (significando que suas variáveis podem ser referenciadas por múltiplos jobs), isso não significa que alterar o valor da variável de ambiente permaneça além do job que a alterou.
 - [ ] `GITHUB_ENV`, porque as saídas de job só podem ser definidas e referenciadas dentro do mesmo job.

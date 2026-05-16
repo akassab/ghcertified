@@ -3,8 +3,105 @@ question: "Your organization defines a secret `SomeSecret`, however when you ref
 documentation: "https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#naming-your-secrets"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> The secret `SomeSecret` is also declared in repository scope
+- <input type="checkbox" disabled> The secret `SomeSecret` is also declared in enterprise scope
+- <input type="checkbox" disabled> `${{ secrets.SomeSecret }}` expression is only used for repository scoped secrets
+- <input type="checkbox" disabled> You need to use the GitHub API to access organization scoped secrets
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] The secret `SomeSecret` is also declared in repository scope
-- [ ] The secret `SomeSecret` is also declared in enterprise scope
-> If a secret with the same name exists at multiple levels, the secret at the lowest level takes precedence.
-- [ ] `${{ secrets.SomeSecret }}` expression is only used for repository scoped secrets
-- [ ] You need to use the GitHub API to access organization scoped secrets
+> **Simple:** A repository (or environment) secret with the same name overrides the organization secret—most specific scope wins.
+>
+> **Detailed:** When the same secret name exists at multiple levels, **most specific scope wins**:
+>
+> ```
+> environment  >  repository  >  organization  >  enterprise
+> ```
+>
+> If the org defines `SomeSecret` but the repo also defines `SomeSecret`, `${{ secrets.SomeSecret }}` resolves to the **repository** value. You use the same expression at every level—no special API or syntax for org secrets. Enterprise secrets sit above org in the hierarchy. The wrong value usually means a **narrower** scope shadowed the org secret you expected.

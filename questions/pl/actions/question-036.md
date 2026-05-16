@@ -3,6 +3,106 @@ question: "Zdefiniowałeś zadanie macierzy `example_matrix`. Jak możesz ograni
 documentation: "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategymax-parallel"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+```yaml
+jobs:
+  example_matrix:
+    strategy:
+      matrix:
+        version: [10, 12, 14]
+        os: [ubuntu-latest, windows-latest]
+```
+- <input type="checkbox" disabled> Ustaw `jobs.example_matrix.strategy.max-parallel` na 2
+- <input type="checkbox" disabled> Ustaw `jobs.example_matrix.strategy.concurrency` na 2
+- <input type="checkbox" disabled> Użyj REST API GitHub, aby sprawdzić, czy liczba zadań jest mniejsza niż 2
+- <input type="checkbox" disabled> To niemożliwe, macierz zawsze uruchomi wszystkie zadania równolegle, jeśli dostępne są runnery
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 ```yaml
 jobs:
   example_matrix:

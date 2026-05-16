@@ -3,6 +3,99 @@ question: "Quais das seguintes opções são verdadeiras sobre o GitHub Enterpri
 documentation: "https://docs.github.com/en/enterprise-server/admin/overview/about-github-enterprise-server"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Os workflows do GHES não podem acessar GitHub.com nem as ações do GitHub Marketplace por padrão.
+- <input type="checkbox" disabled> `actions/actions-sync` é principalmente dedicado a mover ações do GitHub.com para uma instância GHES.
+- <input type="checkbox" disabled> O GHES pode usar versões avançadas de runners hospedados pelo GitHub.
+- <input type="checkbox" disabled> Usando o GitHub Connect, os usuários podem seguir um processo manual para acessar ações do GitHub.com. Este processo deve ser feito uma vez para cada ação desejada.
+- <input type="checkbox" disabled> Instâncias do GitHub Enterprise Server são autogerenciadas, em comparação com o GitHub Enterprise Cloud (GHEC), que é hospedado e gerenciado pelo GitHub.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Os workflows do GHES não podem acessar GitHub.com nem as ações do GitHub Marketplace por padrão.
 - [x] `actions/actions-sync` é principalmente dedicado a mover ações do GitHub.com para uma instância GHES.
 > Sincronizar ações do GitHub.com é principalmente realizado através do GitHub Connect ou `actions-sync`. A ferramenta `actions/actions-sync` é uma [maneira manual](https://docs.github.com/en/enterprise-server/admin/managing-github-actions-for-your-enterprise/managing-access-to-actions-from-githubcom/manually-syncing-actions-from-githubcom) de executar este processo. 

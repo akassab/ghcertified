@@ -3,6 +3,98 @@ question: "Dorotheaは、プッシュイベントによってトリガーされ�
 documentation: "https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> ステップ内で`github.event`オブジェクトの内容を出力する
+- <input type="checkbox" disabled> ワークフロー実行オプションで「イベントWebhookペイロードを表示」チェックボックスをオンにする。
+- <input type="checkbox" disabled> `SHOW_EVENT_PAYLOAD`という名前のシークレットまたは変数を`true`に設定する。
+- <input type="checkbox" disabled> リポジトリ設定の「Webhooks」セクションに移動する。
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] ステップ内で`github.event`オブジェクトの内容を出力する
 > `github.event`はWebhookイベントペイロード全体を表示します。このペイロードはイベントの種類によって異なります。詳細については[Webhook events and payloads](https://docs.github.com/en/webhooks/webhook-events-and-payloads)を参照してください。
 - [ ] ワークフロー実行オプションで「イベントWebhookペイロードを表示」チェックボックスをオンにする。

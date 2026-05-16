@@ -3,6 +3,98 @@ question: "Você bifurcou um repositório para melhorar um fluxo de trabalho que
 documentation: "https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets?tool=webui#using-secrets-in-a-workflow"
 ---
 
+<!-- Unchecked choices are shown first; correct answers are below the spacer. -->
+
+- <input type="checkbox" disabled> Repositórios bifurcados não herdam secrets do repositório original  
+- <input type="checkbox" disabled> Ao herdar o secret do repositório original, ocorreu um erro durante a bifurcação que resultou em um secret malformado ou inválido
+- <input type="checkbox" disabled> O secret herdado tinha um tamanho maior que 48 KB
+- <input type="checkbox" disabled> Repositórios bifurcados herdam apenas secrets de repositórios, então o secret usado no fluxo de trabalho deve ser um secret organizacional ou de ambiente.
+
+> scroll down to see correct answer
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Correct answer
+
 - [x] Repositórios bifurcados não herdam secrets do repositório original  
 > Como medida de segurança, (com exceção de `GITHUB_TOKEN`) os secrets não são transmitidos ao runner quando um fluxo de trabalho é acionado a partir de um repositório bifurcado. Isso resultará na falha do fluxo de trabalho se ele referenciar um secret do repositório original.
 - [ ] Ao herdar o secret do repositório original, ocorreu um erro durante a bifurcação que resultou em um secret malformado ou inválido
