@@ -121,21 +121,4 @@ uses: actions/setup-node@v4
 with:
   node-version: 20
 ```
-- [ ] 
-```yaml
-uses: actions/node-setup@v4
-with:
-  node-version: 20
-```
-- [ ] 
-```yaml
-uses: setup-node@v4
-with:
-  version: 20
-```
-- [ ] 
-```yaml
-uses: setup-node@v4
-with:
-  node: 20
-```
+> Pin Node.js with the official `actions/setup-node` action and the `node-version` input. The action name must include the `actions/` owner prefix and a version tag; `setup-node` alone or inputs like `version` or `node` are not valid.

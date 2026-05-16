@@ -8,7 +8,7 @@
 
 import { join } from "node:path";
 import { existsSync } from "node:fs";
-import { parseDirectory } from "mdquiz";
+import { parseDirectoryWithScrollSupport } from "./parse-questions";
 
 // ── App-specific types ──────────────────────────────────────────────
 
@@ -84,7 +84,7 @@ function loadAll(locale: SupportedLocale): Question[] {
     const dir = join(base, cert);
     if (!existsSync(dir)) continue;
 
-    const raw = parseDirectory(dir, { filePrefix: "question-" });
+    const raw = parseDirectoryWithScrollSupport(dir, { filePrefix: "question-" });
     for (const q of raw) {
       all.push({
         id: `${cert}-${q.id.replace("question-", "")}`,

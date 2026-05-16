@@ -95,5 +95,9 @@ documentation: "https://docs.github.com/en/actions/writing-workflows/choosing-wh
 ## Correct answer
 
 - [x] Workflow level
+> A top-level `permissions` block applies the same token scopes to every job in the workflow unless a job overrides them.
+
 - [x] Job level
-- [ ] Step level
+> You can set `permissions` on an individual job to tighten or broaden scopes for just that job's `GITHUB_TOKEN`.
+
+> Permissions cannot be set on individual steps. Step access is inherited from the job-level token.

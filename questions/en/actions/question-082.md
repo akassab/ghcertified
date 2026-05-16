@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] By using the branches filter
-- [ ] By using the runs-on filter
-- [ ] By using the jobs filter
-- [ ] By using the branch keyword
+> Under `on.push` or `on.pull_request`, the `branches` (or `branches-ignore`) list limits which branch names trigger the workflow—for example only `main` and `release/*`.

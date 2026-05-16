@@ -96,9 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] workflow_call
-- [ ] workflow_trigger
-> There is no such event trigger
-- [ ] workflow_dispatch
-> This is used for manual triggers
-- [ ] workflow_run
-> https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_run
+> A workflow that other workflows invoke must declare `on: workflow_call`. That event makes the workflow reusable: callers reference it with `jobs.<job_id>.uses` and can pass `inputs` and `secrets` into it.

@@ -124,6 +124,4 @@ jobs:
       - run: echo "Hello ${{ matrix.color }} ${{ matrix.pet }}"
 ```
 - [x] 5
-- [ ] 4
-- [ ] 6
-- [ ] 7
+> The base matrix is 2 pets × 2 colors = 4 combinations. `include` adds one extra leg (`white` + `dog`) without duplicating an existing pair, for 5 total matrix jobs.

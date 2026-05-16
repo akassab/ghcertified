@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/hosting-your-own-runners/mana
 ## Correct answer
 
 - [x] A self-hosted runner is a system that you deploy and manage to execute jobs from GitHub Actions on GitHub.com
-- [ ] A self-hosted runner is a system to upload code to a private server
-- [ ] A self-hosted runner is a system to be able to create workloads automatically
-- [ ] A self-hosted runner is a system to manage pull requests from users of the organization
+> You install the runner agent on your own machine or VM; GitHub queues jobs to it based on labels. It runs workflow jobs like hosted runners, but you control the OS, tooling, and network—not a generic upload or PR management service.

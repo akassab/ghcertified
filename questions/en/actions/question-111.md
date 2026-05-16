@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] `issue_comment`
-- [ ] `issues.comment`
-- [ ] `issues`
-- [ ] `comment`
+> Workflows that react to comments on issues or pull requests use the `issue_comment` event. `issues.comment`, bare `issues`, and `comment` are not valid event names for this trigger.

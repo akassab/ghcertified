@@ -95,7 +95,5 @@ documentation: "https://docs.github.com/en/enterprise-cloud@latest/actions/using
 
 ## Correct answer
 
-- [ ] Using && to chain commands
-- [ ] Defining commands in an array
 - [x] Using a multiline string with |
-- [ ] Separating commands with a semicolon ;
+> In YAML, `run: |` followed by indented lines runs as a single script block (like a shell heredoc). Each line is one command in sequence on the same shell invocation— the idiomatic way to run multiple commands in one step.

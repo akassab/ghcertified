@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/disabling-and
 ## Correct answer
 
 - [x] Use the `Disable workflow` option in GitHub Actions
-- [ ] Remove secrets that are required for this workflow
-- [ ] Delete environment that is required for this workflow
-- [ ] Prevent any new commits to main branch
+> Disabling a workflow in the Actions tab stops new runs from being created for that workflow file without changing the YAML in the repository. You can re-enable it later when you want runs to resume—ideal for a temporary pause.

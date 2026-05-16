@@ -132,6 +132,4 @@ jobs:
 [skip actions]
 [actions skip]
 ```
-
-- [ ] Provide `SKIP_WORKFLOW` in the commit message
-- [ ] The above workflow will run in every event of push or pull request in every case
+> GitHub skips workflow runs when these strings appear in the latest commit message or pull request title. `SKIP_WORKFLOW` is not a supported skip keyword, and push/pull_request workflows still run unless one of these phrases is present.

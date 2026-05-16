@@ -96,6 +96,7 @@ documentation: "https://docs.github.com/en/actions/using-workflows/about-workflo
 ## Correct answer
 
 - [x] One or more events that will trigger the workflow
+> Every workflow needs an `on` section listing the events (or `workflow_dispatch` / `schedule`) that should start a run.
+
 - [x] One or more jobs
-- [ ] Workflow name
-- [ ] Defined branches on which the workflow will run
+> A workflow must define at least one job under `jobs`. The optional top-level `name` field is not required, and branch filters belong inside specific event types (for example `push.branches`), not as a standalone workflow property.

@@ -92,7 +92,5 @@ question: "Is this statement true? `Docker container actions are usually slower 
 
 ## Correct answer
 
-> Docker container actions are slower than JavaScript actions
 - [x] True
-- [ ] False
-> Because of the latency to build and retrieve the container, Docker container actions are slower than JavaScript actions.
+> Docker container actions must pull or build an image before the action runs, which adds startup latency compared to JavaScript actions that execute directly on the runner. For quick, frequent steps, JavaScript actions are usually faster.

@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/reference/environment-variabl
 ## Correct answer
 
 - [x] `GITHUB_REPOSITORY`
-- [ ] `GITHUB_REPOSITORY_ID`
-- [ ] `GITHUB_REPOSITORY_OWNER`
-- [ ] `GITHUB_REPOSITORY_OWNER_ID`
+> `github.repository_id` (and related owner ID fields) are available on the `github` context in expressions, but the default environment variable for the repo's `owner/name` string is `GITHUB_REPOSITORY`. The `_ID` and `_OWNER` suffixed names in the distractors are not the standard default env vars for those values.

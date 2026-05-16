@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/managing-workflow-runs/re-run
 ## Correct answer
 
 - [x] write 
-- [ ] read
-- [ ] admin
-- [ ] owner
+> Workflows need sufficient token permissions to push or modify repository content; `write` is the typical permission level for those operations. `read` is too restrictive, and `admin`/`owner` are not the usual permission names in workflow `permissions` blocks.

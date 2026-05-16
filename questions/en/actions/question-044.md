@@ -95,7 +95,5 @@ documentation: "https://github.com/actions/download-artifact?tab=readme-ov-file#
 
 ## Correct answer
 
-- [ ] You cannot access `artifacts` that were created in a different workflow run
 - [x] Use the `actions/download-artifact` action with elevated permissions.
-- [ ] Use the `actions/upload-artifact` action.
-- [ ] Use the `actions/download-artifact` action and make sure the artifact is not expired
+> Artifacts from other runs in the same repository can be downloaded when the workflow has permission to read them (for example `actions: read` on the token or a PAT with appropriate scope). `actions/download-artifact` can target artifacts from a specified run, not only the current run.

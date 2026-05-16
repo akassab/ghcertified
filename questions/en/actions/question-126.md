@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/writing-workflows/choosing-wh
 ## Correct answer
 
 - [x] `${{needs.job1.outputs.output1}}`
-- [ ] `${{job1.outputs.output1}}`
-- [ ] `${{needs.job1.output1}}`
-- [ ] `${{depends.job1.output1}}`
+> In a dependent job, read another job’s outputs with `needs.<job_id>.outputs.<name>`. Omitting `needs`, using `job1` directly, or `depends` is invalid syntax.

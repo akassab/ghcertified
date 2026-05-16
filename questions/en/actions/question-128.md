@@ -96,9 +96,6 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
 ## Correct answer
 
 - [x] `types: [reopened]` is defined under the `pull_request` event. 
-- [ ] Branch protection rules were improperly configured.
-> Branch protection rules do not determine when a workflow fires.
+> Listing only `reopened` under `pull_request.types` limits runs to reopened PRs; pushes to the branch after open (`synchronize`) will not trigger the workflow.
 - [x] No activity types are defined under the `pull_request` event.
-> If no activity types are explicitly defined, the `pull_request` event will fire off on opened PRs (`opened`), PRs whose source branch has been updated since the PR was opened (`synchronize`), or reopened PRs (`reopened`).
-- [ ] `on: schedule` was configured with `pull_requests: [reopened]`
-> `schedule` is used to fire workflows at certain times, not repository-based activity.
+> When `types` is omitted, `pull_request` defaults to `opened`, `synchronize`, and `reopened`, so updates to the PR branch will trigger runs.

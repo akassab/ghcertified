@@ -96,7 +96,4 @@ documentation: "https://docs.github.com/en/actions/managing-workflow-runs/re-run
 ## Correct answer
 
 - [x] It will run with code from `commit A`
-- [ ] It will run with code from `commit B`
-> Re-running a workflow uses the same commit SHA and Git ref of the original event that triggered the workflow run.
-- [ ] You cannot re-run workflows in GitHub Actions. You have to trigger a new workflow which will run with latest changes
-- [ ] It will trigger two workflows, one with code from `commit A` and one with code from `commit B`
+> Re-running a failed workflow reuses the same commit SHA and ref as the original run—the workflow file and code snapshot from `commit A`. Fixes on `commit B` apply only when a new event triggers a new run.

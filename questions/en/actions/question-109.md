@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] it limits the execution time for individual step
-- [ ] it defines the time interval for individual commands within a step
-- [ ] it sets the timeout for waiting on external events before proceeding to the next step
-- [ ] it specifies the maximum duration a job is allowed to run
+> `jobs.<job_id>.steps[*].timeout-minutes` caps how long a single step may run. Job-level `timeout-minutes` limits the entire job, not per-step command intervals or external wait times.

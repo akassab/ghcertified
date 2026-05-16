@@ -95,5 +95,4 @@ documentation: "https://docs.github.com/en/actions/how-tos/write-workflows/choos
 ## Correct answer
 
 - [x] the jobs that are dependent on job A are skipped
-- [ ] the jobs that are dependent on job A fail
-- [ ] the workflow immediately cancels all other jobs
+> When a job fails, any downstream jobs that list it in `needs` are **skipped** by default (shown as skipped in the UI). They do not automatically fail with the same error, and unrelated parallel jobs continue unless you use a fail-fast strategy.

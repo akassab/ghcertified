@@ -95,7 +95,5 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 
 ## Correct answer
 
-- [ ] Using the os keyword
 - [x] Using the runs-on keyword
-- [ ] Using the platform keyword
-- [ ] Using the env keyword
+> The `runs-on` key specifies which runner executes a job (for example `ubuntu-latest` or a self-hosted label). There is no `os`, `platform`, or `env` keyword for choosing the runner OS.

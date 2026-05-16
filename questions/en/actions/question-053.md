@@ -96,7 +96,4 @@ documentation: "https://docs.github.com/en/actions/creating-actions/about-custom
 ## Correct answer
 
 - [x] False
-- [ ] True
-> That is true for `workflows`, not for `actions`
-- [ ] Only if the action is reusable
-- [ ] Only for Docker container actions
+> Custom actions live in their own repository or directory (with `action.yml`), not under `.github/workflows`. Workflows belong in `.github/workflows`; actions are separate reusable units referenced via `uses:`.

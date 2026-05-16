@@ -96,6 +96,8 @@ documentation: "https://docs.github.com/en/actions/writing-workflows/choosing-wh
 ## Correct answer
 
 - [x] Workflow level
+> Set `timeout-minutes` at the workflow root to cap total runtime for all jobs in the run.
 - [x] Job level
+> `jobs.<job_id>.timeout-minutes` limits a single job.
 - [x] Step level
-- [ ] Action level
+> `jobs.<job_id>.steps[*].timeout-minutes` limits an individual step. Actions do not define a separate timeout level in metadata.

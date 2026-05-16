@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-comm
 ## Correct answer
 
 - [x] `echo "API_VERSION=2.1" >> "$GITHUB_ENV"`
-- [ ] `echo "API_VERSION=2.1" >> "$GITHUB_OUTPUT"`
-- [ ] `export API_VERSION=2.1 >> "$GITHUB_ENV"`
-- [ ] `set-env name=API_VERSION value=2.1`
+> Append `NAME=value` lines to the file path in `GITHUB_ENV` to expose environment variables to subsequent steps in the same job. `GITHUB_OUTPUT` is for step outputs, not env vars, and `set-env` is not a shell command.

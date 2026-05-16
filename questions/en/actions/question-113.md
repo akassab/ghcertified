@@ -124,6 +124,4 @@ jobs:
             - run: npm install -g bats
 ```
 - [x] the `production-deploy` job will be marked as skipped
-- [ ] the `production-deploy` job will error
-- [ ] the `production-deploy` job will execute three steps
-- [ ] the `production-deploy` job will run if the `node-version` is `14`
+> The job `if` compares `github.repository` to `octo/my-prod-repo`. A push to `octo/my-dev-repo` makes the condition false, so the job is skipped—not failed—and its steps do not run.

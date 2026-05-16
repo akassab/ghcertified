@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/enterprise-cloud@latest/actions/using
 ## Correct answer
 
 - [x] concurrency
-- [ ] limit
-- [ ] max-jobs
-- [ ] parallelism
+> Use the top-level `concurrency` key to limit how many workflow or job runs can be in progress at the same time. Keys like `limit`, `max-jobs`, and `parallelism` are not valid workflow syntax for this purpose.

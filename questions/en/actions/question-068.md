@@ -129,26 +129,4 @@ my-job:
   steps:
     - if: ${{ env.my_secret != '' }}
 ```
-- [ ] By creating the following conditional on job level
-```yaml
-my-job:
-  runs-on: ubuntu-latest
-  if: ${{ secrets.MY_SECRET == '' }}
-```
-> secrets cannot be directly referenced in if: conditionals
-- [ ] By creating the following conditional on step level
-```yaml
-my-job:
-  runs-on: ubuntu-latest
-  steps:
-    - if: ${{ secrets.MY_SECRET == '' }}
-```
-> secrets cannot be directly referenced in if: conditionals
-- [ ] By creating the following conditional on step level
-```yaml
-my-job:
-  runs-on: ubuntu-latest
-  steps:
-    - if: ${{ secrets.MY_SECRET }}
-```
-> secrets cannot be directly referenced in if: conditionals
+> `secrets` cannot be used directly in `if:` expressions. Copying the secret into `env` at job scope lets you branch on whether it is empty without exposing the value in logs (GitHub still masks secrets when possible).

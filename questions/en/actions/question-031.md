@@ -112,8 +112,7 @@ jobs:
       ...
 ```
 - [x] `if: github.repository == 'my-org/my-repo'`
+> In job `if` expressions you can reference the `github` context without `${{ }}` for simple comparisons. `github.repository` is `owner/name`, so this restricts the deploy job to one repository.
+
 - [x] `if: ${{ github.repository == 'my-org/my-repo' }}`
-- [ ] `if: ${{ github.organization == 'my-org' && github.repository == 'my-repo' }}`
-> https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
-- [ ] `if: ${{ github.org == 'my-org' && github.repository == 'my-repo' }}`
-> https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
+> The explicit expression form is equivalent: `${{ }}` evaluates the comparison and returns a boolean for the `if`. Both forms correctly gate the job on the repository identity.

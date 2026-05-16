@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/caching-depen
 ## Correct answer
 
 - [x] Yes, all branches can restore caches created on the default branch
-- [ ] Yes, all caches can be accessed by workflows on any branch within the same repository
-- [ ] No, caches can only be restored from the same branch
-- [ ] Yes but only if no files were changed on `feature-a` branch
+> A cache saved on the default branch is available as a fallback to workflows on other branches when no exact branch match exists. That lets feature branches benefit from dependency caches warmed on `main`.

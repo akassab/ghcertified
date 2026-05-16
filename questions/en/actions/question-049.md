@@ -98,9 +98,10 @@ documentation: "https://docs.github.com/en/actions/using-workflows/creating-star
 ## Correct answer
 
 - [x] They allow users to leverage ready-to-use (or requiring minimal changes) workflow templates
+> Starter workflows appear in the "New workflow" UI so users can start from a vetted template instead of an empty file. Teams can adopt CI patterns with minimal edits.
+
 - [x] GitHub provides and maintains starter workflows for different categories, languages and tooling
+> GitHub publishes maintained templates (CI, deploy, labeler, etc.) for common stacks. They are updated by GitHub and surfaced by language/ecosystem in the workflow picker.
+
 - [x] Your organization can create custom starter workflows for users in your organization
-- [ ] Starter workflows cannot call reusable workflows
-- [ ] Starter workflows are a paid GitHub feature
-- [ ] Starter workflows are provided ready-to-use and cannot be modified or enhanced
-> https://docs.github.com/en/actions/using-workflows/using-starter-workflows#using-starter-workflows
+> Organizations can add private starter workflows in `.github/workflow-templates` (with `metadata.json`) so members see org-standard pipelines when creating workflows.

@@ -96,9 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-jobs/choosing-the-runne
 ## Correct answer
 
 - [x] No
-- [ ] Yes
-> Each job runs in a fresh instance of a runner image specified by runs-on
-- [ ] Only if they run in parallel
-> Each job runs in a fresh instance of a runner image specified by runs-on
-- [ ] Only if they use the same `runs-on` label
-> Each job runs in a fresh instance of a runner image specified by runs-on
+> Each job gets a fresh runner VM (or a clean workspace on a new self-hosted assignment). Files written in one job are not visible in another unless you use artifacts, cache, or a shared store outside the runner filesystem.

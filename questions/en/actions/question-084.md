@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] env
-- [ ] vars
-- [ ] secrets
-- [ ] config
+> The `env` key at workflow, job, or step level defines environment variables for that scope. `vars` and `secrets` are separate contexts; there is no `config` key in workflow syntax.

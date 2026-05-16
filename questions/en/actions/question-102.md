@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/triggering-a-
 ## Correct answer
 
 - [x] `github.event`
-- [ ] `github.repository`
-- [ ] `github.job`
-- [ ] `jobs.<job_id>.result`
+> The `github.event` context holds the webhook payload for the event that triggered the workflow (for example push or pull_request data). `github.repository` is the repo name, `github.job` is not a standard context, and job results use `jobs.<job_id>.result`.

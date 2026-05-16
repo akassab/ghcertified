@@ -6,7 +6,7 @@
 import { describe, it, expect } from "vitest";
 import { join } from "node:path";
 import { readdirSync, existsSync } from "node:fs";
-import { parseDirectory } from "mdquiz";
+import { parseDirectoryWithScrollSupport } from "../parse-questions";
 
 const QUESTIONS_ROOT = join(__dirname, "../../../../questions");
 
@@ -33,7 +33,7 @@ describe("question parsing", () => {
         if (!existsSync(dir)) continue;
 
         it(`parses all ${cert} questions`, () => {
-          const questions = parseDirectory(dir, { filePrefix: "question-", strict: true });
+          const questions = parseDirectoryWithScrollSupport(dir, { filePrefix: "question-", strict: true });
 
           expect(questions.length).toBeGreaterThan(0);
 

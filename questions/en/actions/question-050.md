@@ -99,12 +99,10 @@ documentation: "https://docs.github.com/en/actions/using-workflows/sharing-workf
 ## Correct answer
 
 - [x] The entire organization, or selected repositories in an organization
+> Organization-level secrets and variables can apply to all repos in the org or to a selected list. That is the broadest scope below enterprise.
+
 - [x] A single repository
+> Repository-level secrets and variables are available to workflows in that repo (subject to environment and branch rules).
+
 - [x] An environment in a repository
-- [ ] An environment shared across multiple repositories
-> Environments cannot be shared across repositories
-- [ ] Multiple repositories that do not share an organization/enterprise
-- [ ] A specific workflow in a repository
-> Environment variables can be scoped to a workflow, configuration variables cannot
-- [ ] A specific job in a workflow
-> Environment variables can be scoped to a workflow, configuration variables cannot
+> Environment-scoped secrets and variables apply only when a job targets that environment (via `environment:`). They support protection rules and deployment-specific values.

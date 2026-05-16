@@ -116,7 +116,4 @@ steps:
     run: ?
 ```
 - [x] `run: echo "$action_state"`
-- [ ] `run: echo "${{ steps.step_one.outputs.action_state }}"`
-> That would be the case if `action_state` was written to `$GITHUB_OUTPUT`
-- [ ] `run: echo "$steps.step_one.outputs.action_state"`
-- [ ] `run: echo "${{ action_state }}"`
+> Writing to `$GITHUB_ENV` creates a job-level environment variable for subsequent steps in the same job. Later steps reference it as `$action_state` in the shell, not via `steps.*.outputs` (that path is for `$GITHUB_OUTPUT`).

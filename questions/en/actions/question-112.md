@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/monitoring-and-troubleshootin
 ## Correct answer
 
 - [x] write 
-- [ ] read
-- [ ] admin
-- [ ] owner
+> The default `GITHUB_TOKEN` permissions for workflows triggered from the repository typically include `contents: read` and can be raised to `write` where needed; `read`, `admin`, and `owner` are not the standard default permission level name in this context.

@@ -96,8 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/caching-depen
 ## Correct answer
 
 - [x] When you want to reuse files that don't change often between jobs or workflow runs, such as build dependencies from a package management system.
-- [ ] When you want to reuse files that do change often between jobs or workflow runs, such as build dependencies from a package management system.
-- [ ] When you want to save files produced by a job to view after a workflow run has ended, such as built binaries or build logs.
-> Artifacts should be used for that https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
-- [ ] When you want to save binaries produced by a build job to use in a subsequent deploy job to deploy a new version of an application
-> Artifacts should be used for that https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
+> Dependency caching (`actions/cache`) is meant for files that are expensive to download or rebuild but change infrequently, such as npm or Maven caches. Restoring a cache speeds up later jobs or workflow runs without storing long-lived build outputs.

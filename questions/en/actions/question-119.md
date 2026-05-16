@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/creating-actions/metadata-syn
 ## Correct answer
 
 - [x] `runs.using` has `docker` as value
-- [ ] `runs.using` has `container` as value
-- [ ] `runs.using` has `Dockerfile` as value
-- [ ] `runs.main` has `container` as value
+> Docker container actions declare `runs.using: docker` (optionally with `image`, `entrypoint`, and related keys). `container`, `Dockerfile` as a `using` value, or `runs.main: container` are not the correct indicator.

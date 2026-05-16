@@ -120,8 +120,4 @@ jobs:
     uses: different-org/example-repo/.github/workflows/C.yml@main
 ```
 - [x] All secrets available to `workflow A` will be also available to `workflow B`, but not to `workflow C`
-- [ ] All secrets from `octo-org` organization and `octo-org/example-repo` repository will be available to `workflow B`, but not to `workflow C`
-> Not all secrets from `octo-org` organization have to be made available to `octo-org/example-repo`.
-- [ ] All secrets available to `workflow A` will be also available to `workflow B` and `workflow C`
-> `Workflow B` would need to add `secrets: inherit` when calling `workflow C`
-- [ ] Only repository and environment secrets available to `workflow A` will be available to `workflow B`, but not to `workflow C`. Organization scoped secrets cannot be inherited
+> `secrets: inherit` on the call from A to B passes through secrets the caller can access. Workflow B does not use `secrets: inherit` when calling C, so C does not automatically receive A's secrets—only what B explicitly maps or inherits in its own call.

@@ -95,7 +95,5 @@ documentation: "https://docs.github.com/en/actions/using-jobs/using-a-matrix-for
 
 ## Correct answer
 
-- [ ] Using the `vars` context
 - [x] Using the `matrix` context
-- [ ] Using the `job` context
-- [ ] Using the `jobs` context
+> Each matrix combination exposes its values on `${{ matrix.<key> }}` (the `matrix` context). For example, `${{ matrix.os }}` resolves to the OS value for that matrix job. There is no `job` or `jobs` context for matrix values, and `vars` holds configuration variables, not matrix dimensions.

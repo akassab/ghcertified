@@ -95,7 +95,5 @@ documentation: "https://docs.github.com/en/actions/using-workflows/caching-depen
 
 ## Correct answer
 
-- [ ] by requiring manual intervention to create a new cache
-- [ ] by searching for a cache in other repositories
 - [x] by automatically creating a new cache if the job is completed successfully
-- [ ] by terminating the workflow if a cache miss occurs
+> When a job finishes successfully and no matching cache exists for the key, `actions/cache` saves a new cache entry automatically. You do not search other repositories, require manual cache creation, or fail the workflow on a cache miss.

@@ -97,9 +97,8 @@ documentation: "https://docs.github.com/en/actions/hosting-your-own-runners/mana
 ## Correct answer
 
 - [x] You can add a self-hosted runner to a repository
+> Self-hosted runners are registered at the repository, organization, or enterprise level so any eligible workflow in that scope can use them.
 - [x] You can add a self-hosted runner to an organization
+> Organization-level runners can be shared across repositories in the org according to your access settings.
 - [x] You can add a self-hosted runner to an enterprise
-- [ ] You can add a self-hosted runner to a workflow
-> You can't add to workflow level
-- [ ] You can add a self-hosted runner to a step
-> You can't add to step level
+> Enterprise administrators can register runners for use across the enterprise. Runners are not attached to individual workflows or steps.

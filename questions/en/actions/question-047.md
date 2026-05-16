@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/storing-workf
 ## Correct answer
 
 - [x] upload the binaries as artifacts in `build` and download them in `deploy`
-- [ ] upload the binaries as artifacts in `deploy` and download them in `build`
-- [ ] cache the binaries in `build` and read the files from cache in `deploy`
-- [ ] cache the binaries in `deploy` and read the files from cache in `build`
+> The job that produces the binaries should `upload-artifact`; the downstream `deploy` job uses `download-artifact` after declaring `needs: build`. Caches are for dependencies, not passing fresh build outputs between jobs.

@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/security-guides/using-secrets
 ## Correct answer
 
 - [x] ${{ secrets.SECRET_NAME }}
-- [ ] ${{ secret.SECRET_NAME }}
-- [ ] ${{ env.SECRET_NAME }}
-- [ ] ${{ config.SECRET_NAME }}
+> Reference repository, organization, or environment secrets in expressions with the `secrets` context: `${{ secrets.SECRET_NAME }}`. `secret`, `env`, and `config` are not valid contexts for stored secrets.

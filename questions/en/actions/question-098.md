@@ -95,7 +95,5 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 
 ## Correct answer
 
-- [ ] add a condition in the workflow YAML for weekdays
-- [ ] it is not possible in GitHub actions
-- [ ] use the on: schedule: weekdays event trigger
 - [x] use the on: schedule: cron event trigger
+> Scheduled workflows use `on.schedule` with cron syntax in UTC. There is no `weekdays` schedule type, and a plain `if` in the job does not replace the trigger—you need the `schedule` event with `cron`.

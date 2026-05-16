@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/deployment/targeting-differen
 ## Correct answer
 
 - [x] Using deployment protection rules
-- [ ] Setting the required reviewers in the `production` workflow
-- [ ] Using branch protection rules
-- [ ] Manual approvals are not supported by GitHub Actions
+> Configure required reviewers (and other protections) on the `production` environment in the repository or organization settings. Jobs that target that environment with `environment: production` wait for approval before proceeding.

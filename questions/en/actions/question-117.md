@@ -95,5 +95,4 @@ documentation: "https://docs.github.com/en/actions/deployment/targeting-differen
 ## Correct answer
 
 - [x] Repository administrators
-- [ ] Anyone with repository write permission
-- [ ] Anyone with repository read permission
+> Only users with admin access to the repository (repository administrators) can configure Actions settings such as enabling workflows and managing permissions. Write or read access alone is not sufficient.

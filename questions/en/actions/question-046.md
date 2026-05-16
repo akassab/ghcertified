@@ -95,5 +95,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/storing-workf
 ## Correct answer
 
 - [x] False
-- [ ] True
-- [ ] Only directories can be uploaded, not individual files
+> `actions/upload-artifact` accepts a `path` that can be a file, directory, or glob. You can upload multiple paths in one step; you are not limited to a single file per upload action.

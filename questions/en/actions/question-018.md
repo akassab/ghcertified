@@ -110,6 +110,4 @@ on:
       - '!release/**-alpha'
 ```
 - [x] the target branch name starts with `release` but does not end with `-alpha`
-- [ ] the target branch name starts with `release`
-- [ ] the source branch name starts with `release` but does not end with `-alpha`
-- [ ] the source branch name starts with `release`
+> For `pull_request`, the `branches` filter applies to the **base** (target) branch of the PR, not the head branch. The pattern `release/**` includes release branches, and `!release/**-alpha` excludes names ending in `-alpha`, so only non-alpha release target branches match.

@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/concepts/workflows-and-action
 ## Correct answer
 
 - [x] Each job in a workflow can reference a single environment.
-- [ ] Each workflow can reference a single environment.
-- [ ] Each job in a workflow can reference a maximum of two environments.
-- [ ] Each workflow can reference a maximum of two environments.
+> A job may set `environment:` to one named environment (for secrets, variables, and protection rules). Different jobs in the same workflow can target different environments, but one job cannot reference two environments at once.

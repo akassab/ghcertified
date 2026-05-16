@@ -96,7 +96,4 @@ documentation: "https://docs.github.com/en/actions/managing-workflow-runs/approv
 ## Correct answer
 
 - [x] Setup required approvals for fork runs in the repository
-- [ ] Setup deployment protection rules for the repository
-> Deployment protection rules are used for protecting environments
-- [ ] Setup branch protection rules for the repository
-- [ ] The workflow will not trigger for forks if using `pull_request` event. If you want to do that you should use `fork_pull_request` event trigger with `require-approval` flag.
+> For `pull_request` workflows in public repos, runs from first-time or fork contributors can require maintainer approval before executing. Configure this under Actions → Fork pull request workflows in the repository settings.

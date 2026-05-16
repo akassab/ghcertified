@@ -95,7 +95,5 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 
 ## Correct answer
 
-- [ ] To define environment variables
 - [x] To specify input parameters for an action
-- [ ] To set up dependencies
-- [ ] To trigger another workflow
+> Under a `uses:` step, `with:` passes inputs defined in the action's `action.yml`. Environment variables use `env:`; job dependencies use `needs:`; workflows are triggered by `on:` events, not `with:`.

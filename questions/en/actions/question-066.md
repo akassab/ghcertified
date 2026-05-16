@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/hosting-your-own-runners/mana
 ## Correct answer
 
 - [x] Using a GitHub provided script on the runner machine
-- [ ] By trying to access the runner machine by `ssh` to validate the network connectivity
-- [ ] By using the predefined GitHub Actions workflow `network-connectivity.yml`
-- [ ] GitHub will validate the network connectivity automatically when the runner application is installed on the runner machine
+> GitHub documents connectivity checks (scripts you run on the host) to verify the self-hosted runner can reach required GitHub endpoints. Installation alone does not replace explicitly testing firewall and proxy rules.

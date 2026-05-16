@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/deployment/targeting-differen
 ## Correct answer
 
 - [x] workflow jobs won't start until all the environment's protection rules pass
-- [ ] workflow jobs will start immediately and protection rules are evaluated during execution
-- [ ] workflow jobs will start if at least one protection rule passes
-- [ ] workflow jobs will fail if protection rules are configured
+> When a job references a deployment environment, it waits until required reviewers, wait timers, and other protection rules are satisfied before starting. Jobs do not start immediately and fail later solely because an environment exists.

@@ -124,24 +124,4 @@ on:
     check_run:
         types: [rerequested, completed]
 ```
-
-- [ ] 
-```yaml
-on:
-    check_run:
-        types: [started]
-```
-
-- [ ] 
-```yaml
-on:
-    check_run:
-        type: [closed]
-```
-
-- [ ] 
-```yaml
-on:
-    check_run:
-        filter: [requested]
-```
+> The `check_run` event uses the `types` array with supported activity types such as `rerequested` and `completed`. `started` is not a valid type here, and `type` or `filter` are not the correct keys.

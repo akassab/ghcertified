@@ -95,5 +95,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] Reference the commit SHA
-- [ ] Reference a version tag
-- [ ] Reference the main branch
+> Pinning third-party actions to a full commit SHA (`uses: org/action@abc123...`) is the recommended supply-chain practice. Tags and branches can move; a SHA fixes the exact code that runs.

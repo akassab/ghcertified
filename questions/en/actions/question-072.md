@@ -98,12 +98,13 @@ question: "What components can be reused within a GitHub Organization?"
 ## Correct answer
 
 - [x] Secrets
+> Organization-level secrets can be shared with selected repositories in the org, so teams reuse credentials without duplicating them per repo.
+
 - [x] Configuration Variables
+> Organization variables (`vars`) follow the same sharing model as org secrets and are available to workflows in allowed repositories.
+
 - [x] Self Hosted Runners
+> Self-hosted runners can be registered at the organization level and assigned to multiple repositories via runner groups.
+
 - [x] Workflow Templates
-- [ ] Artifacts
-> Artifacts are used to preserve data after a job has completed and/or share that data with another job within the same workflow. 
-- [ ] Cache
-> Cache can be reused across workflows within one repository
-- [ ] Environment Variables
-> Environment variables can be scoped to a step, job or a workflow. They cannot be shared across workflows/repositories or organizations
+> Organization workflow templates (starter workflows) live in a dedicated repo and appear in the workflow creation UI for repos in the org.

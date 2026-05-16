@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/writing-workflows/choosing-wh
 ## Correct answer
 
 - [x] treat environment variables as case-sensitive
-- [ ] use only uppercase letters for environment variable names
-- [ ] ignore case sensitivity as GitHub Actions handles it automatically
-- [ ] depend on the behavior of the operating system in use
+> On Linux and macOS runners, environment variable names are case-sensitive, so `VAR` and `var` are different. GitHub Actions does not normalize names for you, and behavior is not “handled automatically” across platforms.

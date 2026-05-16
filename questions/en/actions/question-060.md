@@ -95,7 +95,5 @@ documentation: "https://docs.github.com/en/actions/reference/environment-variabl
 
 ## Correct answer
 
-- [ ] `GITHUB_USER`
-- [ ] `GITHUB_REPOSITORY`
-- [ ] `GITHUB_WORKFLOW`
 - [x] `GITHUB_ACTOR`
+> `GITHUB_ACTOR` is the username of the person or app that triggered the workflow (for example the user who pushed or opened a PR). `GITHUB_REPOSITORY` is the repo name; `GITHUB_WORKFLOW` is the workflow name—neither identifies who started the run.

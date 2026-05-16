@@ -96,8 +96,4 @@ documentation: "https://docs.github.com/en/actions/deployment/security-hardening
 ## Correct answer
 
 - [x] Using OIDC
-- [ ] Using Vault
-- [ ] Storing access keys in `secrets`
-> Using long lasting access keys is not recommended in case of any security leaks or attacks such as [script injection](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#understanding-the-risk-of-script-injections)
-- [ ] Storing access keys in `variables`
-> No sensitive values should be stored in `variables`
+> OpenID Connect lets the workflow exchange a short-lived token with the cloud provider without storing long-lived access keys in secrets. Configure trust between GitHub and AWS/Azure/GCP and use the provider's official login action—recommended in GitHub's security hardening guidance.

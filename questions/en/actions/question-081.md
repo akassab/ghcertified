@@ -95,7 +95,8 @@ documentation: "https://docs.github.com/en/actions/using-workflows/creating-star
 
 ## Correct answer
 
-- [ ] By copying the workflow file to each repository
 - [x] By using workflow templates
-- [ ] By creating a reusable action
+> Organization workflow templates in `.github/workflow-templates` let every repo start from the same YAML pattern when users click "New workflow."
+
 - [x] By defining the workflow in a central repository
+> A common pattern is one "platform" repo that holds canonical workflows; other repos call reusable workflows or copy from that source of truth instead of maintaining unrelated copies by hand.

@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] Specifies the dependencies of a job
-- [ ] Defines environment variables
-- [ ] Sets up the environment
-- [ ] Triggers a job based on an event
+> `needs` lists job IDs that must complete successfully before this job runs. It defines the DAG between jobs in a workflow, not env vars, deployment environments, or event triggers.

@@ -96,8 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/storing-workf
 ## Correct answer
 
 - [x] Artifacts
-- [ ] Caches
-- [ ] Packages
-> https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages
-- [ ] Releases
-> https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases
+> Test output such as coverage HTML, JUnit XML, or screenshots should be uploaded as workflow artifacts so reviewers can download them from the run. Caches are for speeding up dependency installs, not retaining test reports.

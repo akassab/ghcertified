@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/caching-depen
 ## Correct answer
 
 - [x] provide alternative keys to use in case of a cache miss
-- [ ] indicate whether a cache hit occurred
-- [ ] specify the location of the cached files
-- [ ] enable cross-OS cache functionality
+> The `restore-keys` input lists prefix keys to try when the primary `key` does not match, enabling partial cache reuse. It does not report hit/miss, set cache paths, or enable cross-OS caching by itself.

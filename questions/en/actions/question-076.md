@@ -96,8 +96,5 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
 
 ## Correct answer
 
-- [ ] 20
-- [ ] 5
-- [ ] 1
-- [ ] 10
 - [x] 50
+> A single workflow run can trigger at most 50 workflows via `workflow_run` (and the same cap applies to `workflow_call` chain depth in related limits). This prevents runaway cascading automation.

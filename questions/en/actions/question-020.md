@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/manually-runn
 ## Correct answer
 
 - [x] workflow_dispatch
-- [ ] manual_dispatch
-- [ ] workflow_trigger
-- [ ] manual_trigger
+> `workflow_dispatch` adds a "Run workflow" button in the Actions tab and lets you trigger the workflow manually (with optional inputs). The other names are not valid event identifiers in GitHub Actions.

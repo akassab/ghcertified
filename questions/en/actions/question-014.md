@@ -114,6 +114,4 @@ jobs:
 ```
 
 - [x] Yes
-- [ ] No
-- [ ] Only if the workflows are in the same repository
-- [ ] Only with self-hosted runners
+> A matrix can call a **reusable workflow** with `uses:` and pass matrix values as inputs, running multiple instances of that workflow in parallel. This works across repositories (with appropriate access) and does not require self-hosted runners.

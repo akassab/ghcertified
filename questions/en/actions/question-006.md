@@ -99,11 +99,10 @@ documentation: "https://docs.github.com/en/actions/using-workflows/about-workflo
 ## Correct answer
 
 - [x] Workflows can run one or multiple jobs at a time
+> Jobs without a `needs` dependency run in parallel. You can also chain jobs so some run only after others finish.
+
 - [x] Workflows can be triggered manually, by an event or run on a schedule
+> The `on` key supports activity events (like `push`), manual `workflow_dispatch`, and `schedule` cron triggers.
+
 - [x] Workflows have to be defined in the `.github/workflows` directory
-- [ ] Workflows can only be run on a schedule
-- [ ] Workflow can run only one job at a time
-- [ ] Workflows are written in any of `.yaml`, `.json` or `.toml` formats
-> Workflows can only be defined in `.yaml` format
-- [ ] Workflows can be shared in GitHub Marketplace
-> Actions (not workflows) can be shared in GitHub Marketplace
+> GitHub only loads workflow files from `.github/workflows/` in the repository. They must be YAML — JSON and TOML are not supported for workflows. Individual **actions** (not entire workflows) can be published to GitHub Marketplace.

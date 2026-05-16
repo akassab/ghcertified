@@ -94,5 +94,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] True
-- [ ] False
-> Steps can but don't have to run actions (e.g running a run command)
+> A step is either a `uses` step (runs an action) or a `run` step (executes shell commands). Every workflow job is made of steps; not every step must call a third-party action—inline scripts count as steps too.

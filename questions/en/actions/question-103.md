@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] the workflow will only run when both `branches` and `paths` are satisfied
-- [ ] the workflow will run when either `branches` or `paths` are satisfied, but will only apply the matching filter
-- [ ] the workflow will run when either `branches` or `paths` are satisfied
-- [ ] the workflow will not run when both `branches` and `paths` are satisfied
+> For a single event like `push`, `branches` and `paths` filters are combined with AND logic—the ref must match the branch filter and the commit must touch a matching path. They are not OR filters.

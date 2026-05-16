@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/learn-github-actions/expressi
 ## Correct answer
 
 - [x] `success()`, `always()`, `cancelled()` and `failure()`
-- [ ] `completed()`, `always()`, `cancelled()` and `failure()`
-- [ ] `status()`, `always()`, `cancelled()` and `failure()`
-- [ ] `state()`, `always()`, `cancelled()` and `failure()`
+> These are the built-in status check functions for `if` conditions on jobs and steps. `completed()`, `status()`, and `state()` are not valid status check function names in GitHub Actions expressions.

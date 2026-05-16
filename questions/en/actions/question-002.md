@@ -95,5 +95,4 @@ documentation: "https://docs.github.com/en/actions/using-jobs/assigning-permissi
 ## Correct answer
 
 - [x] none, write, read
-- [ ] read, write, delete
-- [ ] read, write
+> For each permission category (such as `contents` or `pull-requests`), the `permissions` key accepts `read`, `write`, or `none`. There is no `delete` level — write access covers mutating operations, and `none` removes that scope from the token entirely.

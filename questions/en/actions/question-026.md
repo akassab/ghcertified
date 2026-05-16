@@ -96,6 +96,10 @@ documentation: "https://docs.github.com/en/actions/using-workflows/reusing-workf
 ## Correct answer
 
 - [x] You define an output on workflow level in the `build` workflow
+> Reusable workflows expose return values under `on.workflow_call.outputs`. Map each output to a job output (for example `value: ${{ jobs.build.outputs.result }}`) so callers can read them after the called workflow finishes.
+
 - [x] You define an output on job level in the `build` workflow
+> Jobs declare `outputs` that reference step outputs (for example `result: ${{ steps.set.outputs.result }}`). The called workflow's workflow-level outputs typically pull from these job outputs.
+
 - [x] In the `build` workflow you write the output into `$GITHUB_OUTPUT` in one of the steps
-- [ ] All outputs are automatically passed to the caller workflows
+> Step outputs are set by appending `name=value` lines to `$GITHUB_OUTPUT`. Without writing to `GITHUB_OUTPUT`, downstream jobs and workflow outputs have nothing to expose to the caller.

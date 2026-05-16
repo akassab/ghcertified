@@ -94,5 +94,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/reusing-workf
 ## Correct answer
 
 - [x] False
-- [ ] True
-> Reusable workflows can be nested, but there are limitations https://docs.github.com/en/actions/using-workflows/reusing-workflows#limitations
+> Reusable workflows can call other reusable workflows (nesting), subject to documented limits on depth and which events may be used. The statement that nesting is impossible is therefore false.

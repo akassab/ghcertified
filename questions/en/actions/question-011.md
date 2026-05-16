@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/about-workflo
 ## Correct answer
 
 - [x] All jobs run in parallel
-- [ ] Jobs run in sequence
-- [ ] Jobs run based on the order they are defined in the workflow file
-- [ ] Only the first job runs, others require manual approval
+> By default, jobs with no `needs` dependency start at the same time and run in parallel on available runners. Sequential execution only happens when you declare dependencies with `needs`; definition order in the YAML file does not control run order.

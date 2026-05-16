@@ -156,26 +156,4 @@ with:
     path: ./.github/actions/my-org/my-private-repo
     token: ${{ secrets.MY_ACCESS_TOKEN }}
 ```
-
-- [ ] Create an input `MY_ACCESS_TOKEN`
-```yaml
-with:
-    repository: my-org/my-private-repo
-    path: ./.github/actions/my-org/my-private-repo
-    token: ${{ MY_ACCESS_TOKEN }}
-```
-
-- [ ] The environmental variable `GITHUB_TOKEN`
-```yaml
-with:
-    repository: my-org/my-private-repo
-    path: ./.github/actions/my-org/my-private-repo
-    token: $GITHUB_TOKEN
-```
-
-- [ ] Leave as is since access tokens will be passed automatically
-```yaml
-with:
-    repository: my-org/my-private-repo
-    path: ./.github/actions/my-org/my-private-repo
-```
+> Checking out another private repository requires a PAT or similar token with access, stored as a secret and passed to `actions/checkout` via the `token` input. Inputs, bare `$GITHUB_TOKEN`, or omitting `token` will not grant cross-repo access beyond the default `GITHUB_TOKEN` scope.

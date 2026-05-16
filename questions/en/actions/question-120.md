@@ -143,39 +143,4 @@ runs:
   entrypoint: 'entrypoint.sh'
   post-entrypoint: 'cleanup.sh'
 ```
-
-- [ ] 
-```yaml
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  entrypoint: 'entrypoint.sh'
-  post: 'cleanup.sh'
-```
-
-- [ ] 
-```yaml
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  entrypoint: 'entrypoint.sh'
-  after: 'cleanup.sh'
-```
-
-- [ ] 
-```yaml
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  entrypoint: 'entrypoint.sh'
-  after-entrypoint: 'cleanup.sh'
-```
-
-- [ ] 
-```yaml
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  entrypoint: 'entrypoint.sh'
-  cleanup: 'cleanup.sh'
-```
+> Docker actions use `post-entrypoint` for a cleanup script that runs after the main entrypoint when the action completes. Keys like `post`, `after`, `after-entrypoint`, or `cleanup` are not valid in the action metadata schema.

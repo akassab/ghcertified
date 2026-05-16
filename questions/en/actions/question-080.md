@@ -128,26 +128,4 @@ defaults:
     shell: bash
     working-directory: ./scripts
 ```
-- [ ] set `directory` under `defaults.run`
-```yaml
-defaults:
-  run:
-    shell: bash
-    directory: ./scripts
-```
-- [ ] set `working-directory` under `job`
-```yaml
-defaults:
-  run:
-    shell: bash
-job:
-  working-directory: ./scripts
-```
-- [ ] set `directory` under `job`
-```yaml
-defaults:
-  run:
-    shell: bash
-job:
-  directory: ./scripts
-```
+> `defaults.run.working-directory` sets the cwd for all `run` steps in the workflow (or job if defined at job level). There is no `directory` key under `defaults.run`, and `job` is not a valid sibling for this purpose.

@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/triggering-a-
 ## Correct answer
 
 - [x] Using `branches` filter
-- [ ] Using `branch` filter
-- [ ] You create the workflow only on `prod` branch
-- [ ] Using glob patterns
+> Under an event like `push` or `pull_request`, the `branches` filter limits which branch activity triggers the workflow (for example `branches: [prod]`). The key is `branches`, not `branch`. You can use glob patterns **inside** the `branches` list, but creating the workflow file only on `prod` does not restrict when it runs.

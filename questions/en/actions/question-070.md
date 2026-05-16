@@ -96,7 +96,4 @@ documentation: "https://docs.github.com/en/rest/actions/secrets?create-or-update
 ## Correct answer
 
 - [x] `PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}`
-- [ ] `POST /repos/{owner}/{repo}/actions/secrets/{secret_name}`
-> `POST` is not valid for this endpoint. Only `PUT` can create or update repository secrets.
-- [ ] `HEAD /repos/{owner}/{repo}/actions/secrets/{secret_name}`
-- [ ] `GET /repos/{owner}/{repo}/actions/secrets/{secret_name}`
+> Creating or updating an encrypted repository secret uses PUT with the secret name in the path and the encrypted value in the body. POST is not the documented method for this upsert operation.

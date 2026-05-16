@@ -95,5 +95,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] Limiting workflow runs to specific activity types using the `types` filter
-- [ ] Checking if the activity comes from an user or a bot
-- [ ] Reacting to new activity on a repository (e.g new contributor)
+> Many webhook events (for example `issues`, `pull_request`, `release`) emit multiple activity types. The `types` array under `on.<event>` limits which of those activities actually start your workflow, so you do not run on every sub-event.

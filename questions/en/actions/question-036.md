@@ -112,6 +112,4 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 ```
 - [x] Set `jobs.example_matrix.strategy.max-parallel` to 2
-- [ ] Set `jobs.example_matrix.strategy.concurrency` to 2
-- [ ] Use GitHub's REST API to check if the job count is lesser than 2
-- [ ] It's not possible, a matrix will always run all of the jobs in parallel if there are runners available
+> `strategy.max-parallel` caps how many matrix jobs run at the same time. With six combinations and `max-parallel: 2`, GitHub runs at most two matrix legs concurrently and queues the rest until slots free up.

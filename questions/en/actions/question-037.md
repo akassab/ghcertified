@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-comm
 ## Correct answer
 
 - [x] `echo "PET=DOG" >> "$GITHUB_OUTPUT"`
-- [ ] `echo "DOG=PET" >> "$GITHUB_OUTPUT"`
-- [ ] `gh set-output "DOG=PET"`
-- [ ] `gh set-output "PET=DOG"`
+> Step outputs use the `NAME=value` format appended to `$GITHUB_OUTPUT`. Here `PET` is the output name and `DOG` is the value, readable later as `${{ steps.<step_id>.outputs.PET }}`.

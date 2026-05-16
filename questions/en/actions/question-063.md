@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-comm
 ## Correct answer
 
 - [x] `echo "::debug::Watch out here!"`
-- [ ] `echo ":debug:Watch out here!"`
-- [ ] `echo "::debug::message=Watch out here!"`
-- [ ] `echo "Watch out here!" >> $GITHUB_DEBUG`
+> Workflow commands use the `::command::value` format. `::debug::` writes a debug log line visible when debug logging is enabled for the run. A single colon or writing to `$GITHUB_DEBUG` is not the supported syntax.

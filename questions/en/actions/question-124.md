@@ -120,8 +120,5 @@ strategy:
         node: 14
 ```
 
-- [ ] 4 jobs
 - [x] 5 jobs
-- [ ] 6 jobs
-- [ ] 7 jobs
-- [ ] No jobs will run because the syntax is invalid.
+> The Cartesian product of `os` × `node` yields four combinations, plus `include` adds `macos-latest`/`18` and does not duplicate the existing `ubuntu-latest`/`14` pair, for five jobs total.

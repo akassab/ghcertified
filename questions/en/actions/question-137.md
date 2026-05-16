@@ -147,8 +147,4 @@ jobs:
 
 > `os:macos-latest,comment-color:yellow` 
 
-> An `include` key NOT defined in `strategy.matrix` can be added to a job configuration if it does not overwrite the configuration. `include` keys already present in `strategy.matrix` will create a new job if they have a new value. 
-
-- [ ] 6
-- [ ] 7
-- [ ] 10
+> An `include` key NOT defined in `strategy.matrix` can be added to a job configuration if it does not overwrite the configuration. `include` keys already present in `strategy.matrix` will create a new job if they have a new value.

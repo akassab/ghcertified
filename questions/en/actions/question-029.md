@@ -125,28 +125,4 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 ```
-- [ ] Use concurrency
-```yaml
-concurrency:
-  group: ${{ github.ref }}
-```
-> This would queue runs on that github ref. It will not stop previous runs
-
-- [ ] Use activity types filter
-```yaml
-on:
-  pull_request:
-    branches:
-      - master
-    types: [latest]
-```
-> There is no such activity type as `latest` for pull_request event
-- [ ] Use cancel-in-progress flag for `pull_request` event
-```yaml
-on:
-  pull_request:
-    branches:
-      - master
-    cancel-in-progress: true
-```
-> `cancel-in-progress` can only be used inside a `concurrency` block. It is not a valid key for `pull_request`.
+> `cancel-in-progress: true` tells GitHub to cancel any in-progress runs in the same concurrency group when a new run starts. Combined with a group keyed by workflow and ref, pushing again to a PR branch stops the previous run instead of leaving both running.

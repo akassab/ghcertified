@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/enterprise-cloud@latest/actions/using
 ## Correct answer
 
 - [x] Allows defining multiple job configurations to run in parallel
-- [ ] Sets environment variables for the job
-- [ ] Triggers workflows based on a schedule
-- [ ] Defines secrets for the workflow
+> The `strategy.matrix` key defines multiple variable combinations for a job, and GitHub Actions runs one job per combination in parallel. It does not set environment variables, define secrets, or schedule workflows.

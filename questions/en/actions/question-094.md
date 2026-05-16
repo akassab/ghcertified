@@ -95,7 +95,5 @@ documentation: "https://github.blog/changelog/2019-10-17-github-actions-default-
 
 ## Correct answer
 
-- [ ] bash
-- [ ] sh
 - [x] powershell
-- [ ] cmd
+> On Windows runners, `run` steps default to PowerShell unless you set `shell:` to something else. Linux and macOS runners default to bash, not `sh` or `cmd`.

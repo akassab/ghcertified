@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] Cloning the repository
-- [ ] Committing a file to master branch
-- [ ] A branch is created
-- [ ] Adding a label to a pull request
+> Workflows run in response to **GitHub events** (pushes, pull requests, issues, schedules, and so on). Cloning a repository locally or over HTTPS/SSH does not emit a GitHub webhook event, so no workflow is triggered. Pushes, branch creation, and label changes are all valid activity events that can start a workflow.

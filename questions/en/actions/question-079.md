@@ -95,10 +95,5 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 
 ## Correct answer
 
-- [ ] Scheduled workflows run on the specific commit on last modified branch.
-> incorrect, both specific commit and on last modified branch
-- [ ] Scheduled workflows run on the specific commit on the main branch.
-> incorrect, both specific commit and main branch
 - [x] Scheduled workflows run on the latest commit on the repository default branch.
-- [ ] Scheduled workflows run on the latest commit on the main branch.
-> latest commit is correct but the main branch is not
+> `schedule` events always use the latest commit on the repository's default branch (which may be `main` or another default). They do not run on arbitrary branches or pinned SHAs from other branches.

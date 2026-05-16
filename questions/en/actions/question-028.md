@@ -111,15 +111,4 @@ parallel: ${{ github.workflow }}
 ```yaml
 concurrency: ${{ github.workflow }}
 ```
-- [ ] Use `queue` on workflow level
-```yaml
-queue: ${{ github.workflow }}
-```
-- [ ] Use `order` on workflow level
-```yaml
-order: ${{ github.workflow }}
-```
-- [ ] Use `parallel` on workflow level
-```yaml
-parallel: ${{ github.workflow }}
-```
+> The `concurrency` key controls how many runs of a workflow can be in progress at once. Using the workflow name (or a custom `group`) as the concurrency group ensures only one run of that workflow executes at a time; additional runs wait in queue.

@@ -96,6 +96,4 @@ documentation: "https://docs.github.com/en/billing/concepts/product-billing/gith
 ## Correct answer
 
 - [x] Yes, when using standard GitHub-hosted runners
-- [ ] No, all GitHub Actions usage is billed
-- [ ] Yes, but only for the first 2,000 minutes per month
-- [ ] No, only self-hosted runners are free for public repositories
+> GitHub Actions usage in **public** repositories is free for standard GitHub-hosted runners (within fair-use limits). Private repositories and larger runners are billed separately. Self-hosted runners are always free to run; you only pay for the machines you operate.
