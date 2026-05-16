@@ -99,16 +99,56 @@ documentation: "https://docs.github.com/en/actions/writing-workflows/workflow-sy
 ## Correct answer
 
 - [x] choice
-> For `workflow_dispatch` inputs, `choice` renders a dropdown when you list fixed `options`—for example `options: [patch, minor, major]` for a release type.
+> **Simple:** `type: choice` shows a dropdown; you must supply an `options` list.
+>
+> **Detailed:** Example:
+>
+> ```yaml
+> on:
+>   workflow_dispatch:
+>     inputs:
+>       bump:
+>         type: choice
+>         options: [patch, minor, major]
+>         default: patch
+> ```
+>
+> The runner uses `${{ inputs.bump }}` in steps. Not valid: free-form `choice` without `options`.
 
 - [x] boolean
-> `boolean` inputs render as a true/false toggle in the manual run UI. Use them for flags like `dry_run` and reference the value in `if:` expressions.
+> **Simple:** `type: boolean` is a true/false toggle in the Run workflow form.
+>
+> **Detailed:** Use for flags such as dry-run:
+>
+> ```yaml
+> inputs:
+>   dry_run:
+>     type: boolean
+>     default: false
+> ```
+>
+> In steps: `if: ${{ inputs.dry_run }}`. Values are boolean in expressions, not the strings `"true"`/`"false"` unless you coerce.
 
 - [x] string
-> `string` is the default free-text type for values such as a tag name, branch, or deployment note passed into `${{ inputs.<name> }}`.
+> **Simple:** `type: string` is free text—the default style for names, tags, or messages.
+>
+> **Detailed:** Example `tag_name` with `required: true` and `default: v0.0.0`. Referenced as `${{ inputs.tag_name }}` in `run:` or `with:`. Most manual inputs are strings unless you need structured types below.
 
 - [x] number
-> `number` accepts numeric inputs only—useful for replica counts, retry limits, or timeout minutes without quoting numbers as strings.
+> **Simple:** `type: number` accepts numeric input only (replicas, timeouts, etc.).
+>
+> **Detailed:** Example:
+>
+> ```yaml
+> inputs:
+>   replicas:
+>     type: number
+>     default: 3
+> ```
+>
+> Use when arithmetic or numeric comparison matters. Misconception: quoting a number in a `string` input and expecting numeric ops—use `number` for validation in the UI.
 
 - [x] environment
-> The `environment` type lets the person triggering the run pick a configured deployment environment from the repo. GitHub associates the run with that environment (protection rules and environment secrets apply).
+> **Simple:** `type: environment` lets the user pick a repo **environment** (deployment protections and secrets apply).
+>
+> **Detailed:** Lists environments configured under Settings → Environments. The selected name is available as `${{ inputs.env_name }}` and ties the run to that environment's protection rules and secrets—unlike a plain string that only passes text without linking GitHub Environment metadata.

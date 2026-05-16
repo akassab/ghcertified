@@ -96,4 +96,17 @@ documentation: "https://docs.github.com/en/actions/using-workflows/caching-depen
 ## Correct answer
 
 - [x] provide alternative keys to use in case of a cache miss
-> `restore-keys` lists prefix keys tried in order when the exact `key` has no match, enabling reuse of a previous partial cache (for example `npm-${{ runner.os }}-` matching `npm-Linux-abc123`). That softens cache busts when lockfiles change slightly. It does not log hit or miss by itself, define which paths are cached, or enable cross-OS sharing unless keys and paths are designed for that.
+> **Simple:** `restore-keys` lists prefix keys to try when the exact `key` misses, reusing the newest partial match.
+>
+> **Detailed:** The primary `key` must match exactly for a full hit. `restore-keys` provides fallback prefixes, tried in order, when the exact key is missing:
+>
+> ```yaml
+> - uses: actions/cache@v4
+>   with:
+>     path: ~/.npm
+>     key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+>     restore-keys: |
+>       npm-${{ runner.os }}-
+> ```
+>
+> If the lockfile hash changes, `npm-Linux-newhash` misses, but `npm-Linux-` may restore an older `npm-Linux-oldhash` cache—partial reuse instead of a cold install. It does not replace `path` (what to cache), does not log hits by itself, and does not share caches across OS unless you design keys and paths for that.

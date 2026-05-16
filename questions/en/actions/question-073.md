@@ -124,4 +124,10 @@ jobs:
       - run: echo "Hello ${{ matrix.color }} ${{ matrix.pet }}"
 ```
 - [x] 5
-> The base matrix is 2 pets × 2 colors = 4 job variants: `(cat,pink)`, `(cat,brown)`, `(dog,pink)`, `(dog,brown)`. The `include` entry adds `{ pet: dog, color: white }` as a fifth combination—it does not multiply the whole matrix again. `include` merges extra keys into matching or new legs; here you get five parallel `matrix-job` runs, not six or seven.
+> **Simple:** The base matrix is 2×2 = 4 jobs; `include` adds one more combination for **5** total jobs.
+>
+> **Detailed:** Base matrix: `pet: [cat, dog]` × `color: [pink, brown]` = **4** variants:
+>
+> - `(cat, pink)`, `(cat, brown)`, `(dog, pink)`, `(dog, brown)`
+>
+> `include` adds **`{ pet: dog, color: white }`** as a **fifth** combination—it does not multiply the whole matrix again (you do not get another full 2×2). `include` merges extra keys into matching rows or adds new legs. Result: **5** parallel `matrix-job` runs, not 4, 6, or 7.

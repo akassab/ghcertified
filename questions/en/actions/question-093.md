@@ -96,4 +96,21 @@ documentation: "https://docs.github.com/en/actions/security-guides/using-secrets
 ## Correct answer
 
 - [x] ${{ secrets.SECRET_NAME }}
-> Reference secrets in expressions with the `secrets` context: `${{ secrets.SECRET_NAME }}`. Secrets can be defined at repository, environment, or organization scope and are masked in logs. Map them into steps with `env: TOKEN: ${{ secrets.API_TOKEN }}` when a plain shell variable is needed. The contexts `secret`, `env`, and `config` are not valid for reading stored secrets directly.
+> **Simple:** Read secrets with `${{ secrets.SECRET_NAME }}` in expressions or map them into `env` for shell steps.
+>
+> **Detailed:** Secrets are stored in repository, environment, or organization settings—not in the `env:` block at definition time. Reference them in workflow expressions:
+>
+> ```yaml
+> jobs:
+>   deploy:
+>     steps:
+>       - name: Deploy
+>         env:
+>           API_TOKEN: ${{ secrets.API_TOKEN }}
+>         run: ./deploy.sh
+>       - uses: my-org/deploy-action@v1
+>         with:
+>           token: ${{ secrets.API_TOKEN }}
+> ```
+>
+> GitHub masks secret values in logs when possible. Invalid contexts include `secret` (singular), plain `env` for secret storage, and `config`—only **`secrets`** is the documented context for stored secrets.

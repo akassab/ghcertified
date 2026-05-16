@@ -96,4 +96,23 @@ documentation: "https://docs.github.com/en/actions/using-workflows/manually-runn
 ## Correct answer
 
 - [x] workflow_dispatch
-> `workflow_dispatch` adds a **Run workflow** button in the Actions tab and lets you trigger the workflow manually, optionally with typed inputs defined under `on.workflow_dispatch.inputs`. Add `on: workflow_dispatch` to the workflow file—`manual_dispatch`, `workflow_trigger`, and `manual_trigger` are not valid GitHub event names.
+> **Simple:** Add `on: workflow_dispatch` to get a **Run workflow** button in the Actions tab.
+>
+> **Detailed:** Minimal manual workflow:
+>
+> ```yaml
+> on:
+>   workflow_dispatch:
+>     inputs:
+>       environment:
+>         description: Target env
+>         type: choice
+>         options: [staging, production]
+> jobs:
+>   deploy:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: echo "Deploying to ${{ inputs.environment }}"
+> ```
+>
+> Valid event name is **`workflow_dispatch`** only. Misconception: `manual_dispatch` or `workflow_trigger`—those strings are not in the `on:` schema. You can also trigger the same event via REST API with `ref` and `inputs`.

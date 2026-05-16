@@ -121,4 +121,15 @@ uses: actions/setup-node@v4
 with:
   node-version: 20
 ```
-> Pin Node.js with `actions/setup-node` and the `node-version` input, as in the example. The action must use the full `actions/` owner prefix and a version tag (for example `@v4`); `setup-node` alone is invalid. Inputs like `version` or `node` are not defined on the official action—use `node-version`. After setup, `node` and `npm` are on the PATH for subsequent `run` steps.
+> **Simple:** Use `actions/setup-node` with `with.node-version` (e.g. `20`) before `run` steps that need Node.
+>
+> **Detailed:** The official action installs Node and adds `node` and `npm` to `PATH` for later steps in the same job:
+>
+> ```yaml
+> - uses: actions/setup-node@v4
+>   with:
+>     node-version: 20
+> - run: node --version && npm ci
+> ```
+>
+> The reference must include the `actions/` owner and a version tag (`@v4`); bare `setup-node` is invalid. Wrong inputs include `version` or `node`—the metadata defines **`node-version`**. You can also pass `'lts/*'`, a semver range, or read from `.nvmrc` depending on your setup action version.

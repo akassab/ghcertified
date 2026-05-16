@@ -97,4 +97,6 @@ documentation: "https://github.com/marketplace/actions/github-script"
 ## Correct answer
 
 - [x] Via the `actions/github-script` action
-> `actions/github-script` runs inline JavaScript with `github` (Octokit) and workflow contexts pre-wired—no separate Node setup step. Example: `script: await github.rest.issues.createComment({...})` in the `with:` block. Use it when a few API calls are easier than maintaining a custom action or curl against the REST API.
+> **Simple:** Use `actions/github-script` to run inline JavaScript with Octokit and workflow contexts pre-wired—no separate Node setup.
+>
+> **Detailed:** Pass API calls in the `with.script` input—for example `await github.rest.issues.createComment({ owner, repo, issue_number, body })`. The action injects `github`, `context`, and `core` automatically. Use it when a few REST calls are easier than maintaining a custom action or hand-written `curl` with token headers.

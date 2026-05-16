@@ -114,4 +114,21 @@ jobs:
     needs: [job1, job2]
 ```
 - [x] job3 will run after job1 and job2 have completed, regardless of whether they were successful
-> By default, `needs` skips dependents when an upstream job fails. Adding `if: ${{ always() }}` forces `job3` to evaluate and run after `job1` and `job2` finish regardless of success—typical for cleanup uploads, Slack notifications, or tearing down test infrastructure even when tests failed.
+> **Simple:** `needs` plus `if: ${{ always() }}` lets `job3` run after `job1` and `job2` finish even if they failed.
+>
+> **Detailed:** Given:
+>
+> ```yaml
+> jobs:
+>   job1:
+>     runs-on: ubuntu-latest
+>   job2:
+>     needs: job1
+>     runs-on: ubuntu-latest
+>   job3:
+>     if: ${{ always() }}
+>     needs: [job1, job2]
+>     runs-on: ubuntu-latest
+> ```
+>
+> Default `needs` alone would **skip** `job3` when `job2` fails. `always()` means "run this job if dependencies have **completed** (any result)." Common for teardown, artifact upload on failure, or notifications. Related: `if: failure()` runs only when a needed job failed; `always()` is broader for "run anyway after completion."

@@ -96,7 +96,32 @@ documentation: "https://docs.github.com/en/actions/using-workflows/creating-star
 ## Correct answer
 
 - [x] By using workflow templates
-> Organization workflow templates live in the organization's `.github` repository under `workflow-templates/`. When someone clicks "New workflow" in a repo, GitHub can show your template as a starting point with prefilled YAML. A `properties.json` file alongside the template can set display name and categories. This spreads a standard CI pattern across many repositories without copying files manually into each repo.
+> **Simple:** Store starter YAML in the org's `.github` repo under `workflow-templates/` so "New workflow" offers a prefilled template.
+>
+> **Detailed:** Organization workflow templates live in a dedicated `.github` repository at the org level, in `workflow-templates/`. When a developer clicks **Actions → New workflow**, GitHub lists your templates with optional metadata from `properties.json` (name, description, categories).
+>
+> ```
+> org-name/.github/
+>   workflow-templates/
+>     ci-starter.yml
+>     ci-starter.properties.json
+> ```
+>
+> Choosing a template copies the YAML into the target repo once at creation time. That spreads a standard CI pattern without manually pasting files into dozens of repositories—but each repo still owns its copy after that.
 
 - [x] By defining the workflow in a central repository
-> Reusable workflows let a central repository expose `workflow_call` entry points that other repos invoke with `uses: org/platform-repo/.github/workflows/ci.yml@main`. Callers pass inputs and secrets explicitly, so one canonical pipeline serves dozens of services. That differs from only sharing a template once at repo creation—central definitions stay the single source of truth as requirements evolve.
+> **Simple:** Define a reusable workflow with `on: workflow_call` in a central repo; other repos invoke it with `uses:`.
+>
+> **Detailed:** A **reusable workflow** is a workflow file that declares `on: workflow_call` and exposes `inputs` and `secrets`. Consumer repositories call it from a job instead of duplicating YAML:
+>
+> ```yaml
+> # In service-repo/.github/workflows/deploy.yml
+> jobs:
+>   call-platform-ci:
+>     uses: my-org/platform-pipelines/.github/workflows/ci.yml@main
+>     with:
+>       node-version: '20'
+>     secrets: inherit
+> ```
+>
+> Every run executes the **current** definition in the central repo, so security and build policy updates propagate without editing each service repo. That differs from templates, which copy YAML once at repo setup—reusable workflows stay the single source of truth as requirements evolve.

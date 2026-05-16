@@ -96,4 +96,18 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] it limits the execution time for individual step
-> `timeout-minutes` on a step caps that step's runtime; when the limit is exceeded, the step fails and the job can fail unless later steps use `if: failure()`. Job-level `timeout-minutes` applies to the whole job including all steps. Use step timeouts for long tests or network calls that should not hang the entire job.
+> **Simple:** Step `timeout-minutes` fails that step if it runs too long; job-level timeout caps the entire job.
+>
+> **Detailed:** Per-step timeout stops a single hung operation without waiting for the job default (up to 360 minutes on GitHub-hosted runners):
+>
+> ```yaml
+> steps:
+>   - name: Slow integration test
+>     timeout-minutes: 10
+>     run: npm run test:integration
+>   - name: Cleanup
+>     if: always()
+>     run: ./teardown.sh
+> ```
+>
+> When the step exceeds 10 minutes, GitHub marks it failed and can fail the job unless later steps use `if: failure()` or `if: always()`. Job-level `timeout-minutes` under `jobs.<id>` applies to **all** steps combined. Use step timeouts for one long network call or test suite; use job timeout for overall runaway protection.

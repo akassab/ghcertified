@@ -96,4 +96,14 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-comm
 ## Correct answer
 
 - [x] `echo "PET=DOG" >> "$GITHUB_OUTPUT"`
-> Step outputs use `NAME=value` lines on `$GITHUB_OUTPUT`. `echo "PET=DOG" >> "$GITHUB_OUTPUT"` defines `PET`; a later step reads `${{ steps.<step_id>.outputs.PET }}`. The older `::set-output` command is deprecated—always use `$GITHUB_OUTPUT` for new workflows.
+> **Simple:** Write step outputs as `NAME=value` lines appended to `$GITHUB_OUTPUT`.
+>
+> **Detailed:** In a step with `id: pets`:
+>
+> ```yaml
+> - id: pets
+>   run: echo "PET=DOG" >> "$GITHUB_OUTPUT"
+> - run: echo "The pet is ${{ steps.pets.outputs.PET }}"
+> ```
+>
+> Format is `KEY=value` per line. Misconception: `echo PET=DOG >> $GITHUB_ENV` (that sets **env** for later steps, not step outputs) or deprecated `echo "::set-output name=PET::DOG"`. Use `$GITHUB_OUTPUT` for outputs passed via `steps.<id>.outputs.*`.

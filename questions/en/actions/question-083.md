@@ -96,4 +96,26 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] Specifies the dependencies of a job
-> The `needs` keyword lists job IDs that must finish successfully before the current job starts, defining execution order between jobs. For example, `needs: [build, lint]` waits for both jobs to succeed; if either fails, the dependent job is skipped. Jobs with no `needs` run in parallel when runners are available. `needs` does not define environment variables, GitHub Environments, or what event triggered the workflow.
+> **Simple:** `needs` lists job IDs that must succeed before this job starts; failed dependencies skip the dependent job.
+>
+> **Detailed:** By default, jobs in one workflow run in parallel when runners are free. `needs` creates a directed dependency graph:
+>
+> ```yaml
+> jobs:
+>   build:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: npm run build
+>   test:
+>     needs: build
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: npm test
+>   deploy:
+>     needs: [build, test]
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: ./deploy.sh
+> ```
+>
+> `test` waits until `build` completes successfully. If `build` fails, `test` and `deploy` are **skipped** (not retried automatically). `needs` does not set `env` variables, select GitHub Environments, or define triggers—that is `env:`, `environment:`, and `on:` respectively.

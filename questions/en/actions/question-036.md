@@ -112,4 +112,19 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 ```
 - [x] Set `jobs.example_matrix.strategy.max-parallel` to 2
-> Set `jobs.example_matrix.strategy.max-parallel: 2` to cap concurrent matrix legs. With six `version` × `os` combinations in the example, GitHub runs at most two at once and queues the rest until a slot frees up—useful to avoid overloading shared runners or rate-limited APIs.
+> **Simple:** Set `strategy.max-parallel: 2` on the matrix job to run at most two legs at once.
+>
+> **Detailed:** With six combinations in the question's matrix:
+>
+> ```yaml
+> jobs:
+>   example_matrix:
+>     strategy:
+>       max-parallel: 2
+>       matrix:
+>         version: [10, 12, 14]
+>         os: [ubuntu-latest, windows-latest]
+>     runs-on: ${{ matrix.os }}
+> ```
+>
+> GitHub runs two matrix jobs concurrently and queues the other four until slots free. Misconception: `max-parallel` at workflow root—it belongs under `jobs.<id>.strategy`. Unlike `concurrency`, this only throttles legs of **one** matrix job, not whole workflow runs.

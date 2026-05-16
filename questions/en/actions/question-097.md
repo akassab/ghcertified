@@ -96,4 +96,17 @@ documentation: "https://docs.github.com/en/actions/using-workflows/caching-depen
 ## Correct answer
 
 - [x] by automatically creating a new cache if the job is completed successfully
-> When the primary `key` does not match an existing cache, restore steps continue without failing the job. If the job later completes successfully, `actions/cache` saves a new entry for future runs. On a miss you pay the full install cost once; the next run with the same key may hit the cache. Cache does not search other repositories or require manual creation in the UI.
+> **Simple:** On a cache miss, restore does not fail the job; a successful run saves a new cache for that `key`.
+>
+> **Detailed:** `actions/cache` has separate restore and save phases. When the exact `key` is not found, the restore step reports a miss but the workflow **continues**—your install step runs normally:
+>
+> ```yaml
+> - uses: actions/cache@v4
+>   id: cache
+>   with:
+>     path: ~/.npm
+>     key: npm-${{ hashFiles('**/package-lock.json') }}
+> - run: npm ci
+> ```
+>
+> If the job finishes successfully, the action uploads a new cache entry for that key. The next run with the same key may **hit** and skip most of `npm ci`. A miss does not search other repositories or require creating cache entries manually in the UI; misses simply mean "install from scratch this time."

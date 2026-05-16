@@ -96,4 +96,18 @@ documentation: "https://github.blog/changelog/2019-10-17-github-actions-default-
 ## Correct answer
 
 - [x] powershell
-> On `windows-latest` and other Windows runners, `run` steps default to PowerShell unless you set `shell:` to `bash`, `cmd`, or another option. Linux and macOS runners default to bash. That is why a step `run: echo $env:COMPUTERNAME` works on Windows without extra configuration. Choosing the wrong shell for the OS is a common source of "command not found" errors in cross-platform workflows.
+> **Simple:** On Windows runners, `run` steps default to **PowerShell** unless you set `shell:` to something else.
+>
+> **Detailed:** GitHub Actions picks a default shell per OS. Linux and macOS use `bash`; Windows uses **PowerShell** (`pwsh` on newer images):
+>
+> ```yaml
+> jobs:
+>   windows:
+>     runs-on: windows-latest
+>     steps:
+>       - run: echo $env:COMPUTERNAME    # PowerShell syntax
+>       - run: echo Hello
+>         shell: cmd                     # override to cmd.exe
+> ```
+>
+> Cross-platform workflows often set `defaults.run.shell` or per-step `shell: bash` on Windows when scripts assume Unix syntax. Using bash-only syntax on the default PowerShell step causes "command not found" or parser errors—match the shell to the script.

@@ -96,8 +96,14 @@ documentation: "https://docs.github.com/en/actions/writing-workflows/choosing-wh
 ## Correct answer
 
 - [x] Workflow level
-> Workflow-level `timeout-minutes` caps the **entire** run across all jobs—for example, `timeout-minutes: 60` at the top of the file stops the workflow if the combined runtime exceeds one hour. Use this when many parallel jobs should share one global budget. Individual jobs can still hit their own limits first if those are lower.
+> **Simple:** Workflow-level `timeout-minutes` caps the **entire** run across all jobs.
+>
+> **Detailed:** For example, `timeout-minutes: 60` at the top of the file stops the workflow if the combined runtime exceeds one hour. Use this when many parallel jobs should share one global budget. Individual jobs can still hit their own limits first if those are lower. GitHub’s default workflow timeout is 360 minutes unless you set a lower value.
 - [x] Job level
-> `jobs.<job_id>.timeout-minutes` applies only to that job, which is useful when deploy steps need more time than lint. A job with `timeout-minutes: 30` is cancelled if it runs longer than thirty minutes even when the workflow-level limit is higher. Steps inherit the job limit unless a step sets its own.
+> **Simple:** `jobs.<job_id>.timeout-minutes` applies only to that job—useful when deploy needs more time than lint.
+>
+> **Detailed:** A job with `timeout-minutes: 30` is cancelled if it runs longer than thirty minutes even when the workflow-level limit is higher. Steps inherit the job limit unless a step sets its own. Default per-job timeout is six hours unless configured otherwise.
 - [x] Step level
-> `jobs.<job_id>.steps[*].timeout-minutes` can cap a single long-running step, such as an integration test script, without shortening the whole job. Action metadata in `action.yml` does not define a workflow timeout level—only workflow YAML does. Typical defaults are 360 minutes at workflow level and 6 hours per job unless you set lower values.
+> **Simple:** Step-level `timeout-minutes` can cap one long-running step without shortening the whole job.
+>
+> **Detailed:** `jobs.<job_id>.steps[*].timeout-minutes` is useful for a single integration test script that must not hang the job indefinitely. Action metadata in `action.yml` does not define workflow timeouts—only workflow YAML does. There is no separate “action timeout” level in the syntax reference.

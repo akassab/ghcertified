@@ -96,4 +96,14 @@ documentation: "https://docs.github.com/en/actions/using-workflows/reusing-workf
 ## Correct answer
 
 - [x] The `GITHUB_TOKEN` permissions passed from the caller workflow can be only downgraded by the called workflow.
-> When you call a reusable workflow, GitHub passes the caller's `GITHUB_TOKEN` permissions to the called workflow. The called workflow may only **narrow** those scopes—for example, the caller might grant `contents: write` while the reusable workflow sets `permissions: contents: read`. It cannot add scopes the caller did not grant (such as `packages: write`). This follows least privilege: a shared workflow cannot escalate beyond what the calling repo allowed.
+> **Simple:** A reusable workflow can only **narrow** the caller's `GITHUB_TOKEN` scopes—it cannot grant itself more permission than the caller allowed.
+>
+> **Detailed:** When job A in repo X calls a reusable workflow with `uses: org/shared/.github/workflows/ci.yml@main`, GitHub passes the **caller's** token permissions into the called run. The reusable workflow may add a `permissions:` block that **reduces** scopes—for example the caller grants `contents: write` and `packages: write`, but the called workflow sets:
+>
+> ```yaml
+> permissions:
+>   contents: read
+>   packages: none
+> ```
+>
+> That is allowed. The called workflow **cannot** elevate to scopes the caller did not grant (for example adding `packages: write` when the caller only allowed `contents: read`). Common misconception: thinking the reusable workflow's `permissions:` replaces or ignores the caller—it only downgrades. This enforces least privilege so a shared workflow in another repo cannot escalate access in your repository.

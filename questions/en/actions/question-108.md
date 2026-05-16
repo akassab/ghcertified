@@ -124,4 +124,19 @@ on:
     check_run:
         types: [rerequested, completed]
 ```
-> The `check_run` event listens for check run activity on the repository. The `types` array lists which activities fire the workflow, such as `rerequested` when someone re-runs a check and `completed` when a check finishes. `started` is not a supported type for this webhook. The key is `types`, not `type` or `filter`.
+> **Simple:** Use `on.check_run` with a `types` array (e.g. `rerequested`, `completed`) to filter check run webhook activity.
+>
+> **Detailed:** The `check_run` event fires when check runs are created or updated on the repository. Narrow which activities start your workflow with `types`:
+>
+> ```yaml
+> on:
+>   check_run:
+>     types: [rerequested, completed]
+> jobs:
+>   respond:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: echo "Check run ${{ github.event.check_run.name }}"
+> ```
+>
+> `rerequested` runs when someone re-runs a check from the UI; `completed` runs when a check finishes. `started` is **not** a supported `types` value for this event. The YAML key must be **`types`** (plural), not `type` or `filter`.

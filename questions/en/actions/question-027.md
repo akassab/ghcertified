@@ -97,7 +97,38 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] Using defaults.run on workflow level to set default shell (e.g bash) for an entire workflow
-> `defaults.run` at the workflow root applies to every `run` step in every job unless overridden—for example `defaults.run.shell: bash` so you do not repeat `shell: bash` on each step.
+> **Simple:** Workflow-level `defaults.run` sets default `shell` (or `working-directory`) for all `run` steps in all jobs.
+>
+> **Detailed:** Example:
+>
+> ```yaml
+> defaults:
+>   run:
+>     shell: bash
+> jobs:
+>   test:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: npm test   # uses bash without repeating shell:
+> ```
+>
+> Jobs and steps can override. Applies to `run:` steps, not to how `uses:` actions execute internally.
 
 - [x] Using defaults.run on job level to set default working-directory for all steps in a single job
-> `defaults.run` on a job scopes to that job's steps only. `working-directory: ./apps/web` under `defaults.run` sets the cwd for all `run` steps in that job—handy when every command should run from the same folder.
+> **Simple:** Job-level `defaults.run.working-directory` sets the cwd for every `run` step in that job only.
+>
+> **Detailed:** Example:
+>
+> ```yaml
+> jobs:
+>   web:
+>     defaults:
+>       run:
+>         working-directory: ./apps/web
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: npm ci
+>       - run: npm run build
+> ```
+>
+> Both commands run under `apps/web`. Misconception: `defaults` on a single step—valid levels are workflow and job for `defaults.run`, not per-step defaults in standard syntax.

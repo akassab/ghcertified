@@ -97,8 +97,28 @@ documentation: "https://docs.github.com/en/actions/hosting-your-own-runners/mana
 ## Correct answer
 
 - [x] You can add a self-hosted runner to a repository
-> Repository-level runners are registered in **Settings → Actions → Runners** and are available to workflows in that repo when `runs-on` matches their labels. This is the smallest scope—ideal when only one project needs access to private hardware or networks. Runners are not registered on individual workflows or steps.
+> **Simple:** You can register self-hosted runners at **repository** scope in Settings → Actions → Runners.
+>
+> **Detailed:** Repository runners are tied to one repo. After installing the agent and registering it under **Settings → Actions → Runners**, workflows in that repository can target it when labels match:
+>
+> ```yaml
+> runs-on: [self-hosted, linux]
+> ```
+>
+> This is the **narrowest** scope—useful when only one project needs a private network or special hardware. You do not register runners on individual workflow files or steps; registration is at the repo (or higher) level, and YAML only references labels.
 - [x] You can add a self-hosted runner to an organization
-> Organization-level runners can be shared across repositories in the org according to runner group and access settings. A platform team might maintain one pool labeled `gpu` that many services use. Registration still happens once per machine, not per workflow file.
+> **Simple:** Organization runners can be shared across repos in the org via runner groups and access rules.
+>
+> **Detailed:** Org administrators register runners at the organization level and assign them to **runner groups**. Repositories in the org can use those runners when group policy allows:
+>
+> ```yaml
+> runs-on: [self-hosted, gpu]
+> ```
+>
+> A platform team might operate one GPU pool that dozens of microservices reference with the same labels. One physical machine is registered once; many repos queue jobs to it according to org settings—not one registration per workflow YAML file.
 - [x] You can add a self-hosted runner to an enterprise
-> Enterprise administrators can register runners for use across the enterprise, the broadest scope for large organizations with centralized infrastructure. The same runner agent software is used at every level; only who can assign jobs to the runner changes with scope.
+> **Simple:** Enterprise admins can register runners usable across the enterprise—the broadest self-hosted scope.
+>
+> **Detailed:** At **enterprise** scope, administrators deploy runners for many organizations under one GitHub Enterprise account. The same runner agent binary is used at repo, org, and enterprise levels; what changes is **who may assign jobs** and how policies are enforced.
+>
+> A large company might run a single hardened image fleet at enterprise scope while individual orgs only consume labeled capacity (`enterprise-linux`). Registration is still per machine; workflows in allowed repos reference labels with `runs-on`—never a separate "enterprise workflow" registration step.

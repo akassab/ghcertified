@@ -96,4 +96,17 @@ documentation: "https://docs.github.com/en/actions/deployment/targeting-differen
 ## Correct answer
 
 - [x] Using deployment protection rules
-> Configure required reviewers (and optional wait timers) on the `production` environment under **Settings → Environments**. Jobs that set `environment: production` pause until an allowed reviewer approves the deployment in the Actions UI or via the API. Example: a deploy job runs tests automatically on every push, but the step that hits production waits for a platform engineer—without that environment gate, the same job would run unattended.
+> **Simple:** Configure required reviewers (deployment protection rules) on the `production` environment so deploy jobs pause until a maintainer approves.
+>
+> **Detailed:** Under **Settings → Environments → production**, enable **required reviewers** (and optional wait timers). Jobs with `environment: production` pause until an allowed reviewer approves in the Actions UI or via API:
+>
+> ```yaml
+> jobs:
+>   deploy:
+>     environment: production
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: ./deploy.sh
+> ```
+>
+> Tests can run on every push; production deploy waits for a platform engineer. Branch protection rules govern merges, not environment deployment gates. Manual approvals for environments are a first-class Actions feature—not unsupported.

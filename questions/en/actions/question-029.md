@@ -125,4 +125,17 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 ```
-> `cancel-in-progress: true` cancels any in-progress run in the same concurrency `group` when a newer run starts. Keying the group with `${{ github.workflow }}-${{ github.ref }}` scopes cancellation to that PR branch—pushing again stops the stale 20-minute analysis run instead of stacking parallel duplicates.
+> **Simple:** `cancel-in-progress: true` stops older runs in the same concurrency group when a newer one starts—use a per-PR group key.
+>
+> **Detailed:** For long PR analysis on `master`:
+>
+> ```yaml
+> on:
+>   pull_request:
+>     branches: [master]
+> concurrency:
+>   group: ${{ github.workflow }}-${{ github.ref }}
+>   cancel-in-progress: true
+> ```
+>
+> Each PR branch (`github.ref` like `refs/pull/42/merge`) gets its own group. A new push on the same PR cancels the still-running 20-minute job and starts fresh. Misconception: using only `${{ github.workflow }}` would serialize **all** PRs globally—usually you want `${{ github.ref }}` (or `github.head_ref`) so different PRs do not cancel each other.

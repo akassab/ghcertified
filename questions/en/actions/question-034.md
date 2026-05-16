@@ -95,4 +95,17 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] Reference the commit SHA
-> Pinning with a full commit SHA (`uses: actions/checkout@8e4660…`) fixes the exact code GitHub checks out. Tags like `@v4` and branches like `@main` can be retagged or force-pushed; SHAs are the recommended supply-chain control for third-party actions.
+> **Simple:** Pin actions to a full commit SHA for the most stable, tamper-resistant reference.
+>
+> **Detailed:** Examples:
+>
+> ```yaml
+> # Most secure (immutable)
+> - uses: actions/checkout@8e4660c213bd4eeca4e7b4b328e731c4d457f8c0
+>
+> # Convenient but mutable
+> - uses: actions/checkout@v4
+> - uses: actions/checkout@main
+> ```
+>
+> Tags and branches can move if a maintainer retags or force-pushes; SHA pins the exact commit GitHub checks out. Dependabot can propose SHA updates. Misconception: `@v4` is "most secure"—it is easier to read but not immutable like a SHA.

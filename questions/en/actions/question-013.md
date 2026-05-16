@@ -95,4 +95,19 @@ documentation: "https://docs.github.com/en/actions/how-tos/write-workflows/choos
 ## Correct answer
 
 - [x] the jobs that are dependent on job A are skipped
-> When a job fails, any downstream jobs that list it in `needs` are **skipped** by default (shown as "Skipped" in the UI)—for example, if `test` fails, `deploy` with `needs: test` never runs. They do not automatically fail with the same error unless you add `if: failure()`. Unrelated parallel jobs (no `needs` link to the failed job) keep running unless you use `strategy.fail-fast` on a matrix.
+> **Simple:** If job A fails, jobs with `needs: A` are **skipped**—they do not run unless you use `if: always()` or similar.
+>
+> **Detailed:** Example:
+>
+> ```yaml
+> jobs:
+>   test:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: npm test   # fails
+>   deploy:
+>     needs: test
+>     runs-on: ubuntu-latest
+> ```
+>
+> `deploy` shows **Skipped** in the UI, not Failed. Unrelated jobs without a `needs` path to `test` continue. To run cleanup anyway: `if: ${{ always() }}` on the downstream job. Matrix jobs can use `strategy.fail-fast: true` to cancel sibling matrix legs when one fails—different from the default `needs` skip behavior.

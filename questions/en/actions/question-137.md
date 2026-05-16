@@ -135,4 +135,6 @@ jobs:
 ```
 
 - [x] 5
-> The Cartesian product of `os` × `version` × `comment-color` × `error-color` yields four jobs (Ubuntu×2 and Windows×2 with their `include` overrides for colors). The extra `include` row adds a fifth job: `macos-latest` with `comment-color: yellow` only—keys not in the base matrix can appear on `include` alone. An `include` that exactly matches an existing combination does not add a duplicate job; a new value for a matrix key does.
+> **Simple:** The base `os` × `version` product is four jobs; the `macos-latest` `include` row adds a fifth.
+>
+> **Detailed:** The Cartesian product of `os` × `version` with `include` overrides for `comment-color` and `error-color` yields four jobs (Ubuntu×2 and Windows×2). The extra `include` row adds `macos-latest` with `comment-color: yellow` only—keys not in the base matrix can appear on `include` alone. An `include` that exactly matches an existing combination does not add a duplicate; a new matrix dimension value does.

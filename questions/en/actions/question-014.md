@@ -114,13 +114,11 @@ jobs:
 ```
 
 - [x] Yes
-> The YAML in the question is a **job matrix**: `version: [10, 12, 14]` × `os: [ubuntu-latest, windows-latest]` creates **6 jobs inside one workflow** (3 × 2)—for example `example_matrix (10, ubuntu-latest)`, `(10, windows-latest)`, through `(14, windows-latest)`. Each job runs that workflow’s steps on a different version/OS combo.
+> **Simple:** A matrix can run multiple jobs in parallel inside one workflow (this snippet creates 6), and it can also call reusable workflows in parallel with `uses:`.
 >
-> **Do those 6 run in parallel?** Yes, by default. Matrix jobs do not wait on each other unless you add `needs` or limit concurrency. GitHub starts as many as it can on available runners, so you often see several or all six running at once. To cap that, set `strategy.max-parallel` (for example `max-parallel: 2` runs at most two matrix jobs at a time while the rest queue).
+> **Detailed:** The YAML in the question is a **job matrix**: `version: [10, 12, 14]` × `os: [ubuntu-latest, windows-latest]` creates **6 jobs inside one workflow** (3 × 2)—for example `example_matrix (10, ubuntu-latest)` through `(14, windows-latest)`. **Do those 6 run in parallel?** Yes, by default. Matrix jobs do not wait on each other unless you add `needs` or `strategy.max-parallel` (for example `max-parallel: 2` caps how many run at once).
 >
-> The question also asks something different: can a matrix spin up **whole workflows** in parallel—not just jobs in a single file?
->
-> **Yes.** A job can call a **reusable workflow** with `uses:` instead of `runs-on` + `steps`. Put that job in a matrix and each matrix combination starts a separate reusable-workflow run. Example:
+> The question also asks whether a matrix can spin up **whole workflows** in parallel—not only jobs in one file. **Yes:** a job can call a reusable workflow with `uses:` instead of `runs-on` + `steps`:
 >
 > ```yaml
 > jobs:
@@ -134,4 +132,4 @@ jobs:
 >     secrets: inherit
 > ```
 >
-> That launches **two full workflow runs** (staging and production) in parallel, each executing every job defined in `ci.yml`. You are not limited to the same repository (caller and reusable workflow can be in different repos if permissions allow), and GitHub-hosted runners work fine—self-hosted runners are optional, not required.
+> Each matrix value starts a full run of `ci.yml`. That works across repos when access allows; self-hosted runners are not required.

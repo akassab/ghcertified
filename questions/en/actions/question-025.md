@@ -96,4 +96,35 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] workflow_call
-> A workflow meant to be called by others must declare `on: workflow_call`. Callers reference it with `uses: ./.github/workflows/ci.yml` (or `org/repo/.github/workflows/ci.yml@ref`) and pass `with:` inputs and `secrets:`. Triggers like `push` belong on the **caller** workflow, not on the reusable `CI` file itself.
+> **Simple:** Reusable workflows use `on: workflow_call`—callers trigger them with `uses:`, not `push` on the reusable file.
+>
+> **Detailed:** Reusable `CI` workflow:
+>
+> ```yaml
+> on:
+>   workflow_call:
+>     inputs:
+>       node-version:
+>         type: string
+> jobs:
+>   test:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - uses: actions/setup-node@v4
+>         with:
+>           node-version: ${{ inputs.node-version }}
+> ```
+>
+> Caller:
+>
+> ```yaml
+> on: push
+> jobs:
+>   ci:
+>     uses: ./.github/workflows/ci.yml
+>     with:
+>       node-version: '20'
+>     secrets: inherit
+> ```
+>
+> Put `push` / `pull_request` on the **caller**; the shared CI file listens for **`workflow_call`** only. Misconception: reusable workflows need `on: push` to be invokable—they need `workflow_call`.

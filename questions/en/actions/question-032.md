@@ -96,10 +96,27 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] Windows
-> Windows hosted runners (`windows-latest`, specific Windows versions) support .NET, PowerShell, and builds that require a Windows environment—set `runs-on: windows-latest`.
+> **Simple:** Use `runs-on: windows-latest` (or a pinned Windows label) for .NET, PowerShell, and Windows-only builds.
+>
+> **Detailed:** GitHub-hosted **Windows** images include common build tools; pick labels from the docs (`windows-latest`, `windows-2022`, etc.). Billing multipliers differ from Linux. Misconception: "Windows" means self-hosted—you can use GitHub-hosted Windows without your own VM.
 
 - [x] Ubuntu Linux
-> Linux runners (`ubuntu-latest`, `ubuntu-22.04`) are the default for most Actions examples; containers, apt packages, and Docker workflows typically use Ubuntu.
+> **Simple:** `ubuntu-latest` / `ubuntu-22.04` are the usual Linux hosted runners for CI, Docker, and apt-based setups.
+>
+> **Detailed:** Example:
+>
+> ```yaml
+> jobs:
+>   test:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - uses: actions/checkout@v4
+>       - run: sudo apt-get install -y libfoo
+> ```
+>
+> Most Actions docs assume Ubuntu. Container jobs (`container: node:20`) also commonly run on a Linux host.
 
 - [x] macOS
-> macOS runners (`macos-latest`, `macos-14`) provide Xcode and Apple toolchains for iOS/macOS builds. Android is not a hosted runner OS—you run the Android SDK on Linux or Windows instead.
+> **Simple:** `macos-latest` / `macos-14` provide Apple/Xcode tooling for iOS and macOS apps.
+>
+> **Detailed:** Use when you need Xcode, codesigning on Apple runners, or Swift builds. **Android** is not a third hosted OS—run the Android SDK on Ubuntu or Windows. macOS minutes typically cost more than Linux on private repos.

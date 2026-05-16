@@ -96,4 +96,17 @@ documentation: "https://docs.github.com/en/actions/deployment/targeting-differen
 ## Correct answer
 
 - [x] workflow jobs won't start until all the environment's protection rules pass
-> When a job declares `environment: production`, GitHub applies that environment's protection rules before the job starts executing steps. Required reviewers, wait timers, and deployment branches can block the job until conditions are met. The job does not start and then fail solely because an environment exists—it waits at the environment gate. Secrets scoped to that environment become available only after approval when rules require it.
+> **Simple:** A job with `environment:` waits on that environment's protection rules (reviewers, timers, branch rules) before steps run.
+>
+> **Detailed:** Declaring `environment: production` ties the job to the **production** GitHub Environment and its protection settings:
+>
+> ```yaml
+> jobs:
+>   deploy:
+>     runs-on: ubuntu-latest
+>     environment: production
+>     steps:
+>       - run: ./deploy.sh
+> ```
+>
+> If the environment requires reviewers or a wait timer, the job **pauses at the environment gate** until approval or the timer elapses—it does not fail merely because an environment exists. Deployment branch rules can reject runs from the wrong ref. Environment-scoped secrets become available according to those rules (often only after approval). This is deployment gating, not a substitute for `needs:` between jobs.

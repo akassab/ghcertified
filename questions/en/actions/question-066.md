@@ -96,4 +96,8 @@ documentation: "https://docs.github.com/en/actions/hosting-your-own-runners/mana
 ## Correct answer
 
 - [x] Using a GitHub provided script on the runner machine
-> GitHub documents connectivity check scripts you run on the runner host to verify it can reach required GitHub endpoints (API, blob storage, etc.). Installing the runner service does not automatically prove outbound HTTPS through your firewall or proxy—run the script after install or network changes. SSH into the machine validates OS access, not GitHub service reachability; there is no built-in `network-connectivity.yml` starter workflow shipped for this purpose.
+> **Simple:** Run GitHub's documented connectivity check script on the runner host to verify it can reach required GitHub endpoints.
+>
+> **Detailed:** GitHub documents **connectivity check scripts** you run on the runner machine after install or network changes. They verify outbound HTTPS to required endpoints (API, blob storage, etc.). Installing the runner service does **not** automatically prove firewall/proxy reachability.
+>
+> **SSH** validates OS access, not GitHub service reachability. There is no built-in **`network-connectivity.yml`** starter workflow for this—use the script on the host.

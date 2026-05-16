@@ -96,4 +96,8 @@ documentation: "https://docs.github.com/en/actions/monitoring-and-troubleshootin
 ## Correct answer
 
 - [x] write 
-> Deleting workflow run logs requires **write** access to the repository, because log deletion modifies Actions data for that repo. Users with only **read** access can view logs but cannot delete them. **Admin** and **owner** roles include write, but "write" is the permission level GitHub documents for this action.
+> **Simple:** Deleting workflow run logs requires **write** access to the repository.
+>
+> **Detailed:** Removing logs changes Actions data for the repo, so GitHub requires at least the **write** permission level. Collaborators with **read** access can view logs in the Actions tab but cannot delete them.
+>
+> Roles that include write—such as maintainers with write, admins, and owners—can delete logs. The correct answer is the documented permission name **write**, not merely "admin" or "owner," even though those roles satisfy the requirement. This applies per repository; organization owners do not delete another repo's logs without appropriate repo access.

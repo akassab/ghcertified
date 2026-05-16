@@ -96,4 +96,12 @@ documentation: "https://docs.github.com/en/enterprise-server@3.17/admin/github-a
 ## Correct answer
 
 - [x] Using GitHub Connect
-> GitHub Connect links a GitHub Enterprise Server (GHES) instance to GitHub Enterprise Cloud on GitHub.com so administrators can enable controlled access to Actions hosted on GitHub.com. GHES does not see every github.com action by default—Connect (or the separate `actions-sync` tool for air-gapped installs) is how you bring third-party actions in. On-premise GHES can still use Actions; lack of internet means you sync bundles rather than pulling live on every run.
+> **Simple:** GitHub Connect links GHES to GitHub.com so administrators can enable controlled access to Actions hosted on GitHub.com.
+>
+> **Detailed:** **GitHub Connect** links a **GitHub Enterprise Server (GHES)** instance to **GitHub Enterprise Cloud** on GitHub.com so admins enable controlled access to Actions hosted on github.com. GHES does **not** see every github.com action by default.
+>
+> Alternatives:
+> - **`actions-sync`** — air-gapped or manual bundle sync
+> - GHES **can** use Actions on-premise; without internet you sync bundles instead of pulling live every run
+>
+> Connect is the path for **automatic syncing** when network policy allows linking to GitHub.com.

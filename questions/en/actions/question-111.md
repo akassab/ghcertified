@@ -96,4 +96,19 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] `issue_comment`
-> The `issue_comment` event runs when someone creates, edits, or deletes a comment on an issue or pull request. Use `on.issue_comment` with optional `types: [created]` to react only to new comments. Valid event names are not `issues.comment`, bare `issues` for comments, or `comment`. This is the trigger Dave needs for notifications when a comment is added.
+> **Simple:** Use `on.issue_comment` (optionally `types: [created]`) when someone comments on an issue or PR.
+>
+> **Detailed:** Comments on issues and pull requests emit the **`issue_comment`** webhook—not `issues.comment`, bare `issues`, or `comment`:
+>
+> ```yaml
+> on:
+>   issue_comment:
+>     types: [created]
+> jobs:
+>   notify:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: echo "New comment on #${{ github.event.issue.number }}"
+> ```
+>
+> `types: [created]` limits runs to new comments; omit `types` to include `edited` and `deleted`. Dave can read `github.event.comment.body` and `github.event.issue` for notification logic. For label or issue-open events, use other triggers (`issues`, `pull_request`) instead.

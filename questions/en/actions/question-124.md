@@ -121,4 +121,6 @@ strategy:
 ```
 
 - [x] 5 jobs
-> The matrix builds the Cartesian product of `os` × `node`: `ubuntu-latest`/`14`, `ubuntu-latest`/`16`, `windows-latest`/`14`, and `windows-latest`/`16`—four jobs. The `include` entry adds `macos-latest` with `node: 18` as a fifth combination. A second `include` row matching `ubuntu-latest`/`14` does not create a duplicate because that pair already exists from the product.
+> **Simple:** The base matrix is 2×2 = 4 jobs; `include` adds `macos-latest` + `node: 18` for a fifth—duplicate pairs do not add extra jobs.
+>
+> **Detailed:** The matrix builds the Cartesian product of `os` × `node`: `ubuntu-latest`/`14`, `ubuntu-latest`/`16`, `windows-latest`/`14`, and `windows-latest`/`16`—four jobs. The `include` entry adds `macos-latest` with `node: 18` as a fifth combination. A second `include` row matching `ubuntu-latest`/`14` does not create a duplicate because that pair already exists from the product. Count matrix jobs as unique combinations of all matrix keys after merging `include` and `exclude`.

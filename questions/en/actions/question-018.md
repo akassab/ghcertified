@@ -110,4 +110,20 @@ on:
       - '!release/**-alpha'
 ```
 - [x] the target branch name starts with `release` but does not end with `-alpha`
-> For `pull_request`, the `branches` filter applies to the **base** (target) branch, not the head/feature branch. Here `release/**` matches targets like `release/1.0`, and `!release/**-alpha` excludes names ending in `-alpha`—so a PR into `release/beta` runs, but one into `release/2.0-alpha` does not.
+> **Simple:** The `branches` filter matches the PR **base** branch: `release/**` yes, `release/**-alpha` excluded by `!`.
+>
+> **Detailed:** Given:
+>
+> ```yaml
+> on:
+>   pull_request:
+>     branches:
+>       - 'release/**'
+>       - '!release/**-alpha'
+> ```
+>
+> - PR **into** `release/1.2` → runs (matches include, not excluded).
+> - PR **into** `release/2.0-alpha` → does not run (negated pattern).
+> - PR **from** `feature/foo` **into** `main` → does not run (base not under `release/`).
+>
+> Misconception: filtering on the source/head branch—`branches` under `pull_request` always means **target** branch. The `!` prefix excludes matches from the include list.

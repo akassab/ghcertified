@@ -96,4 +96,6 @@ documentation: "https://github.com/actions/upload-artifact#inputs"
 ## Correct answer
 
 - [x] By utilizing the `retention-days` input in `actions/upload-artifact` 
-> `actions/upload-artifact` accepts `retention-days` to keep **that** artifact longer or shorter than the repo default—for example `retention-days: 5` on a huge test report you only need briefly. Org defaults still cap the maximum retention. `download-artifact` does not set retention; it only fetches existing artifacts.
+> **Simple:** Pass `retention-days` to `actions/upload-artifact` to keep **that** artifact longer or shorter than the repo default.
+>
+> **Detailed:** For example `retention-days: 5` on a large test report you only need briefly. Org and repo defaults still cap the maximum retention. `download-artifact` does not set retention—it only fetches existing artifacts.

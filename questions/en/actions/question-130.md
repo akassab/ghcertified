@@ -107,13 +107,19 @@ outputs:
 ## Correct answer
 
 - [x] A workflow-level `outputs` block should only be used in reusable workflows, not caller workflows.
-> A workflow-level `outputs` block is a direct child of `on.workflow_call` in **reusable** workflows—it exposes values to the caller. Ordinary caller workflows only define `outputs` on jobs, mapping step results with `${{ steps.<step>.outputs.<name> }}`. Putting `outputs` at the workflow root of a non-reusable workflow is not the pattern GitHub documents for callers.
+> **Simple:** Workflow-level `outputs` belong under `on.workflow_call` in **reusable** workflows, not at the root of ordinary caller workflows.
+>
+> **Detailed:** That block exposes values to the caller. Ordinary caller workflows define `outputs` on jobs, mapping step results with `${{ steps.<step>.outputs.<name> }}`. Putting `outputs` at the workflow root of a non-reusable workflow is not the pattern GitHub documents for callers.
 - [x] A reusable workflow can have both workflow-level and job-level `outputs` blocks.
-> A reusable workflow often needs **both** levels: the job computes the value (`jobs.build.outputs.image`), and `workflow_call.outputs` maps it for the caller with `value: ${{ jobs.build.outputs.image }}`. The caller then reads it via `needs.<job>.outputs.<name>` on the job that invoked the reusable workflow. Skipping either block breaks the chain from step to caller.
+> **Simple:** Reusable workflows often define outputs on jobs **and** map them at the workflow level for callers.
+>
+> **Detailed:** The job computes the value (`jobs.build.outputs.image`), and `workflow_call.outputs` maps it for the caller with `value: ${{ jobs.build.outputs.image }}`. The caller reads it via `needs.<job>.outputs.<name>` on the job that invoked the reusable workflow. Skipping either block breaks the chain from step to caller.
 - [x] A workflow-level `outputs` block must have the following structure:
 ```
 outputs:
     <output-name>
         value: ${{ jobs.<job-name>.outputs.<output-name> }}
 ```
-> Each workflow-level output requires a `value` expression, typically `${{ jobs.<job-id>.outputs.<output-name> }}`—not step outputs directly. An optional `description` documents the output for callers. Example: `build-version: value: ${{ jobs.build.outputs.version }}` lets the caller pass that string to a deploy job.
+> **Simple:** Each workflow-level output needs a `value` expression, usually `${{ jobs.<job-id>.outputs.<name> }}`.
+>
+> **Detailed:** Step outputs are not referenced directly at workflow level—map through job outputs first. An optional `description` documents the output for callers. Example: `build-version: value: ${{ jobs.build.outputs.version }}` lets the caller pass that string to a deploy job in the parent workflow.

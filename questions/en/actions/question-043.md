@@ -96,4 +96,6 @@ documentation: "https://docs.github.com/en/actions/using-workflows/caching-depen
 ## Correct answer
 
 - [x] Yes, all branches can restore caches created on the default branch
-> A cache saved on the default branch (`main`) is available as a fallback to workflows on other branches when no exact branch match exists for that cache key. A PR on `feature-a` can restore a `npm-...` cache first created on `main`, avoiding a cold install on every branch. Caches are not limited to the same branch only, and access does not depend on whether files changed on the feature branch—GitHub matches by cache key and branch rules documented for cache scope.
+> **Simple:** Yes—workflows on feature branches can restore caches saved on the default branch when no exact branch match exists for that cache key.
+>
+> **Detailed:** A cache saved on **`main`** is available as a **fallback** to workflows on other branches (for example `feature-a`) when there is no exact branch match for the same cache key. A PR branch can restore an `npm-${{ hashFiles('**/package-lock.json') }}` cache first created on `main`, avoiding a cold `npm ci` on every branch. Caches are **not** limited to the same branch only. Access does **not** depend on whether files changed on the feature branch—GitHub matches by **cache key** and documented **branch scope** rules (default-branch caches are broadly restorable; feature-branch caches have tighter scope).

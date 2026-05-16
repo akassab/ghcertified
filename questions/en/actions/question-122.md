@@ -98,8 +98,14 @@ documentation: "https://docs.github.com/en/actions/learn-github-actions/variable
 ## Correct answer
 
 - [x] The entire workflow, by using `env` at the top level of the workflow file
-> Top-level `env` applies to every job in the workflow unless a job or step overrides it. For example, `env: NODE_ENV: production` at the root makes that variable visible in all jobs. Job-level `env` can narrow or replace values for one job only.
+> **Simple:** Top-level `env` applies to every job in the workflow unless a job or step overrides it.
+>
+> **Detailed:** For example, `env: NODE_ENV: production` at the root of the workflow file makes that variable visible in all jobs and steps. Job-level or step-level `env` can narrow or replace values for one job or one step only. There is no separate `workflow.env` key—the workflow root is where global variables live.
 - [x] The contents of a job within a workflow, by using `jobs.<job_id>.env`
-> `jobs.<job_id>.env` scopes variables to a single job and every step inside it. A deploy job might set `env: DEPLOY_ENV: staging` while a test job omits it. Steps in other jobs never see that variable unless you repeat or pass it explicitly.
+> **Simple:** `jobs.<job_id>.env` scopes variables to one job and all steps inside it.
+>
+> **Detailed:** A deploy job might set `env: DEPLOY_ENV: staging` while a test job omits it; steps in other jobs never see that variable unless you repeat it or pass data via outputs. Job `env` overrides workflow-level `env` for the same name within that job—for example, root `NODE_ENV: production` and `jobs.deploy.env.NODE_ENV: staging` gives staging only in deploy.
 - [x] A specific step within a job, by using `jobs.<job_id>.steps[*].env`
-> `jobs.<job_id>.steps[*].env` limits a variable to one step—useful for a token or flag only one command needs. There is no `jobs.env`, `custom.env`, or `environment.<id>.env` key for ordinary workflow variables; deployment **environments** are a separate concept from `env` blocks.
+> **Simple:** Step-level `env` limits a variable to a single step—useful for tokens or flags only one command needs.
+>
+> **Detailed:** `jobs.<job_id>.steps[*].env` is the narrowest scope. There is no `jobs.env`, `custom.env`, or `environment.<id>.env` key for ordinary workflow variables; GitHub **deployment environments** (protection rules, environment secrets) are a separate concept from `env` blocks in YAML.

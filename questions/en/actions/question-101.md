@@ -158,4 +158,21 @@ documentation: "https://docs.github.com/en/actions/learn-github-actions/expressi
     name: test-report
     path: test-reports.html
 ```
-> Steps run only when prior steps succeed unless you override with `if`. Using `if: failure() && steps.run-tests.outcome == 'failure'` limits the upload to the case where the test step failed, not a failure in an unrelated step. `${{ steps.run-tests.outcome }}` can be `success`, `failure`, `cancelled`, or `skipped`. Combine `failure()` with a step `id` when you need precise control over which failure triggers follow-up work.
+> **Simple:** Give the test step an `id` and use `if: failure() && steps.<id>.outcome == 'failure'` on the upload step.
+>
+> **Detailed:** By default, steps after a failure are skipped. `failure()` is true when **any** earlier step in the job failed—which is too broad if you only want artifacts when **tests** failed:
+>
+> ```yaml
+> - name: Run Tests
+>   id: run-tests
+>   run: npm run test
+>
+> - name: Upload Failure test report
+>   if: failure() && steps.run-tests.outcome == 'failure'
+>   uses: actions/upload-artifact@v3
+>   with:
+>     name: test-report
+>     path: test-reports.html
+> ```
+>
+> If an earlier setup step failed, `failure()` is true but `steps.run-tests.outcome` may be `skipped`, so the upload does not run. `outcome` for a step can be `success`, `failure`, `cancelled`, or `skipped`. Pair `failure()` with a step `id` when you need precise control over which failure triggers follow-up work.

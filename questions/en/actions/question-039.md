@@ -94,4 +94,14 @@ documentation: "https://docs.github.com/en/actions/using-workflows/reusing-workf
 ## Correct answer
 
 - [x] False
-> Reusable workflows can call other reusable workflows—GitHub documents nesting with limits on depth and which events may trigger nested calls. A caller might use `uses: org/app/.github/workflows/ci.yml@main`, and that reusable workflow can itself call another reusable workflow in a `jobs` entry. The statement that nesting is impossible is false; you cannot nest without bound, but chaining is supported when you stay within the documented limits.
+> **Simple:** Reusable workflows can call other reusable workflows; nesting is supported within documented limits.
+>
+> **Detailed:** The statement is **false**. GitHub documents **nesting reusable workflows**: a caller job can use `uses: org/app/.github/workflows/ci.yml@main`, and that reusable workflow can itself call another reusable workflow in a `jobs` entry. Limits apply (depth, which events may trigger nested calls, how many `workflow_call` targets per run)—you cannot nest without bound. Example chain:
+>
+> ```yaml
+> jobs:
+>   orchestrator:
+>     uses: my-org/pipelines/.github/workflows/deploy.yml@main
+> ```
+>
+> Inside `deploy.yml`, another job may call `uses: my-org/pipelines/.github/workflows/notify.yml@main`. Chaining is supported when you stay within those limits.

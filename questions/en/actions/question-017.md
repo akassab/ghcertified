@@ -96,4 +96,15 @@ documentation: "https://docs.github.com/en/actions/using-workflows/triggering-a-
 ## Correct answer
 
 - [x] Using `branches` filter
-> Under `pull_request` or `pull_request_target`, use a `branches` filter so the workflow runs only when the PR **targets** matching branches—for example `branches: [prod]`. The key is `branches` (plural), not `branch`. Glob patterns like `release/*` go inside the list; storing the workflow file only on `prod` does not limit when GitHub triggers it.
+> **Simple:** Under `pull_request` / `pull_request_target`, use `branches:` to run only when the PR **targets** `prod` (or other listed branches).
+>
+> **Detailed:** Example for `prod` only:
+>
+> ```yaml
+> on:
+>   pull_request:
+>     branches:
+>       - prod
+> ```
+>
+> The filter applies to the **base** (target) branch, not the head/feature branch. Key name is **`branches`** (plural)—`branch:` is invalid. Misconception: committing the workflow only on `prod`—triggers depend on the default branch's workflow file and the event filter, not where the YAML lives. You can combine with globs: `branches: ['release/**']` (see question-018).

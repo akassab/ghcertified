@@ -112,4 +112,21 @@ jobs:
                 os: [ubuntu-latest, windows-latest]
 ```
 - [x] reference variables through the `matrix` context with syntax like`matrix.version` and `matrix.os`
-> Matrix axes defined under `strategy.matrix` are exposed as the `matrix` context inside the job. Use `${{ matrix.version }}` and `${{ matrix.os }}` in `runs-on`, `env`, or step inputs for the current combination—for example `runs-on: ${{ matrix.os }}`. Bare names like `version` without the context are invalid. There is no separate `context` keyword for matrix values.
+> **Simple:** Use `${{ matrix.<axis> }}` (e.g. `${{ matrix.os }}`) inside the job for the current matrix combination.
+>
+> **Detailed:** Each matrix job receives a `matrix` context with one value per axis defined under `strategy.matrix`:
+>
+> ```yaml
+> strategy:
+>   matrix:
+>     version: [10, 12, 14]
+>     os: [ubuntu-latest, windows-latest]
+> runs-on: ${{ matrix.os }}
+> steps:
+>   - uses: actions/setup-node@v4
+>     with:
+>       node-version: ${{ matrix.version }}
+>   - run: echo "Testing on ${{ matrix.os }} Node ${{ matrix.version }}"
+> ```
+>
+> Reference axes as `matrix.version` and `matrix.os` in expressions—bare `version` or `os` without the `matrix.` prefix is invalid. Use the same names you declared in the matrix map; there is no separate `context:` keyword for matrix values.

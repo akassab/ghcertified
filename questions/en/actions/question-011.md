@@ -96,4 +96,18 @@ documentation: "https://docs.github.com/en/actions/using-workflows/about-workflo
 ## Correct answer
 
 - [x] All jobs run in parallel
-> By default, jobs with no `needs` dependency start at the same time and run in parallel on available runners—for example, `lint` and `test` can run side by side while `build` also starts. Sequential execution only happens when you declare `needs`; listing `deploy` after `test` in the YAML does not make `deploy` wait unless `deploy` lists `needs: test`.
+> **Simple:** By default every job without `needs` starts at once—parallel, not one-after-another.
+>
+> **Detailed:** In this workflow shape:
+>
+> ```yaml
+> jobs:
+>   lint:
+>     runs-on: ubuntu-latest
+>   test:
+>     runs-on: ubuntu-latest
+>   build:
+>     runs-on: ubuntu-latest
+> ```
+>
+> All three queue immediately on available runners. Order in the YAML file does **not** imply sequence. Add `needs: [build]` on `deploy` when `deploy` must wait. Misconception: jobs run top-to-bottom like script lines—they form a dependency graph, and the default is parallel execution.

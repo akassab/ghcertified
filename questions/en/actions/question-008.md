@@ -97,4 +97,19 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] repository_dispatch
-> `repository_dispatch` lets external systems trigger a workflow via the REST API by POSTing an `event_type` your workflow listens for under `on.repository_dispatch.types`. For example, a deploy hook from another service can start CI without a push. `workflow_dispatch` is for manual runs from the UI/API, not arbitrary third-party webhooks. The other names listed are not valid GitHub Actions triggers.
+> **Simple:** External systems trigger your repo via the REST API with `repository_dispatch` and a custom `event_type`.
+>
+> **Detailed:** Define the workflow:
+>
+> ```yaml
+> on:
+>   repository_dispatch:
+>     types: [deploy-approved]
+> jobs:
+>   run:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: echo "${{ github.event.client_payload.ref }}"
+> ```
+>
+> An external service POSTs to `POST /repos/{owner}/{repo}/dispatches` with body `{ "event_type": "deploy-approved", "client_payload": { ... } }`. That is the webhook-style integration **from outside the repo**. Misconception: `workflow_dispatch` is the same—it is for manual/API runs tied to a workflow file, not arbitrary external event types. Names like `webhook_dispatch` are not valid `on:` events.

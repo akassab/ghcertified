@@ -96,4 +96,19 @@ documentation: "https://docs.github.com/en/enterprise-cloud@latest/actions/using
 ## Correct answer
 
 - [x] concurrency
-> The top-level `concurrency` key groups workflow runs with a `group` name and optionally `cancel-in-progress: true` so only one deployment runs at a time. For example, `group: deploy-${{ github.ref }}` serializes deploys per branch. Keys like `limit`, `max-jobs`, and `parallelism` are not valid GitHub Actions syntax. Use `concurrency` when overlapping runs would conflict, such as two migrations against the same database.
+> **Simple:** Top-level `concurrency` with a `group` name limits overlapping workflow runs; `cancel-in-progress: true` cancels older runs in the same group.
+>
+> **Detailed:** `concurrency` applies to **workflow runs**, not individual matrix cells by default (unless you include matrix values in the group expression):
+>
+> ```yaml
+> concurrency:
+>   group: deploy-${{ github.ref }}
+>   cancel-in-progress: true
+> jobs:
+>   deploy:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: ./migrate.sh
+> ```
+>
+> Only one run in `deploy-refs/heads/main` executes at a time; a newer push cancels the in-flight deploy when `cancel-in-progress` is true. Invalid distractors include `limit`, `max-jobs`, and `parallelism`—those are not GitHub Actions keys. Use `concurrency` when parallel deploys or migrations would conflict on shared infrastructure.

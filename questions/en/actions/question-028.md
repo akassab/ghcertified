@@ -111,4 +111,20 @@ parallel: ${{ github.workflow }}
 ```yaml
 concurrency: ${{ github.workflow }}
 ```
-> The `concurrency` key limits how many runs share the same group at once. Setting `concurrency: deploy-prod` (or `${{ github.workflow }}` as in the answer) puts every run of **Deploy Prod** in one group so only one executes at a time; the next run waits in queue until the current one finishes.
+> **Simple:** Set `concurrency` so only one run in the same group executes at a time—the rest wait in queue.
+>
+> **Detailed:** For workflow **Deploy Prod**, serialize all runs:
+>
+> ```yaml
+> name: Deploy Prod
+> on: push
+>   branches: [main]
+> concurrency: Deploy Prod
+> # or dynamic:
+> concurrency: ${{ github.workflow }}
+> jobs:
+>   deploy:
+>     runs-on: ubuntu-latest
+> ```
+>
+> Same group string → at most **one** active run; new runs wait. Different group strings run independently. Misconception: `concurrency` cancels old runs by default—it only queues unless you add `cancel-in-progress: true` (see question-029).

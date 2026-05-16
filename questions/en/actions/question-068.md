@@ -129,4 +129,18 @@ my-job:
   steps:
     - if: ${{ env.my_secret != '' }}
 ```
-> `secrets` cannot be used directly in `if:` expressions—`if: ${{ secrets.MY_SECRET }}` will not work as intended. Copy the secret into a job-level `env` value (`my_secret: ${{ secrets.MY_SECRET }}`), then test `if: ${{ env.my_secret != '' }}` on the step so you only run when the secret is configured. GitHub still masks secret values in logs when possible; avoid echoing the env var. Job-level `if: secrets.MY_SECRET == ''` is also invalid for the same reason.
+> **Simple:** Copy the secret to a job-level `env` variable, then use `if: ${{ env.my_secret != '' }}` on the step—`secrets` cannot be used directly in `if`.
+>
+> **Detailed:** `secrets` **cannot** be used directly in `if:` expressions—`if: ${{ secrets.MY_SECRET }}` will not work as intended. Pattern:
+>
+> ```yaml
+> my-job:
+>   runs-on: ubuntu-latest
+>   env:
+>     my_secret: ${{ secrets.MY_SECRET }}
+>   steps:
+>     - if: ${{ env.my_secret != '' }}
+>       run: ./needs-secret.sh
+> ```
+>
+> The step runs only when the secret is set. GitHub still **masks** secret values in logs when possible—avoid echoing the env var. Job-level `if: ${{ secrets.MY_SECRET == '' }}` is also invalid for the same reason.

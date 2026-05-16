@@ -121,4 +121,17 @@ steps:
     - uses: my-org/failing-action@v1
       continue-on-error: true
 ```
-> `continue-on-error: true` on a step marks it failed for reporting but lets the job continue—later steps still run and the job can succeed overall. Use it when a linter or smoke test should not block deployment if it flakes.
+> **Simple:** `continue-on-error: true` on a step lets the job keep going even if that step fails.
+>
+> **Detailed:** The step shows as failed in the UI, but subsequent steps still run and the job can end **success** unless another step fails without the flag:
+>
+> ```yaml
+> steps:
+>   - name: Optional linter
+>     uses: my-org/linter@v1
+>     continue-on-error: true
+>   - name: Deploy
+>     run: ./deploy.sh
+> ```
+>
+> Use for non-blocking checks (linters, experimental scans). Misconception: `continue-on-error` at job level—it's a **step** property. For matrix-wide behavior see `fail-fast` / `continue-on-error` on matrix strategy (different feature).

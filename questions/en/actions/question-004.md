@@ -96,4 +96,12 @@ documentation: "https://docs.github.com/en/billing/concepts/product-billing/gith
 ## Correct answer
 
 - [x] Yes, when using standard GitHub-hosted runners
-> GitHub Actions usage in **public** repositories is free for standard GitHub-hosted runners (Linux, Windows, macOS labels like `ubuntu-latest`), subject to fair-use limits. A public repo running CI on every push does not consume your included private minutes. Private repos bill against your plan's minutes, and larger runners (for example `ubuntu-latest-4-cores`) cost more. Self-hosted runners incur no GitHub minute charges—you pay only for your own hardware.
+> **Simple:** Standard GitHub-hosted runners are free for workflows in **public** repos (within fair-use limits); private repos consume billable minutes.
+>
+> **Detailed:** Billing measures **minutes** on GitHub-hosted runners by OS and size. For **public** repositories, usage on standard labels (`ubuntu-latest`, `windows-latest`, `macos-latest`, etc.) is free—so a typical `on: push` CI workflow on every PR does not charge your account. **Private** repos use included minutes then paid usage. Exceptions and misconceptions:
+>
+> - **Larger runners** (for example `ubuntu-latest-4-cores`) and **self-hosted** runners follow different rules—self-hosted does not bill GitHub minutes but you supply the machine.
+> - **Public** does not mean unlimited abuse; GitHub may apply usage policies.
+> - Storage/artifacts and other products can still incur costs separately from runner minutes.
+>
+> Check current billing docs for your plan; the exam answer is "yes" for standard hosted runners on public repos.

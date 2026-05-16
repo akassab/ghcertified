@@ -156,4 +156,15 @@ with:
     path: ./.github/actions/my-org/my-private-repo
     token: ${{ secrets.MY_ACCESS_TOKEN }}
 ```
-> The default `GITHUB_TOKEN` is scoped to the repository that triggered the workflow, so checking out `my-org/my-private-repo` from another repo requires a PAT or GitHub App token with access. Store it as a secret (for example `MY_ACCESS_TOKEN`) and pass it to `actions/checkout` via `token: ${{ secrets.MY_ACCESS_TOKEN }}`. Without that, checkout fails even if the workflow YAML names the other repository correctly.
+> **Simple:** Pass a PAT or app token with access to the other private repo via `token: ${{ secrets.MY_ACCESS_TOKEN }}` on `actions/checkout`.
+>
+> **Detailed:** The default `GITHUB_TOKEN` is scoped to the repository that triggered the workflow, so checking out `my-org/my-private-repo` from another repo requires credentials that can read that repository. Store a PAT or GitHub App installation token as a secret (for example `MY_ACCESS_TOKEN`) and pass it to checkout:
+>
+> ```yaml
+> with:
+>   repository: my-org/my-private-repo
+>   path: ./.github/actions/my-org/my-private-repo
+>   token: ${{ secrets.MY_ACCESS_TOKEN }}
+> ```
+>
+> Without that `token`, checkout fails even when the workflow YAML names the other repository correctly.

@@ -95,4 +95,6 @@ documentation: "https://docs.github.com/en/actions/concepts/security/github_toke
 ## Correct answer
 
 - [x] False
-> `GITHUB_TOKEN` is scoped to the repository that **contains** the workflow run—it cannot clone or push to arbitrary other repos by default. Checking out `actions/checkout` with `repository: other-org/other-repo` requires a PAT or installation token stored as a secret. The statement that the token always has access to any repository in the org is **false**.
+> **Simple:** `GITHUB_TOKEN` is scoped to the repo that contains the workflow—it does **not** automatically access every repo in the org.
+>
+> **Detailed:** The token cannot clone or push to arbitrary other repositories by default. Checking out another repo with `actions/checkout` and `repository: other-org/other-repo` requires a PAT or installation token stored as a secret with access to that repo. The statement that the token always has access to any repository in the organization is **false**; permissions follow the workflow repository and the `permissions` key in YAML.

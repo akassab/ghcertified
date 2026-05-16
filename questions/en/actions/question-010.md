@@ -96,4 +96,16 @@ documentation: "https://docs.github.com/en/actions/security-guides/using-secrets
 ## Correct answer
 
 - [x] secrets
-> Encrypted repository, organization, or environment **secrets** are exposed to workflows through `${{ secrets.MY_TOKEN }}` or the `secrets` context in env blocks. Never commit passwords or certificates in the YAML—use Settings → Secrets instead. Configuration `vars` are for non-sensitive values, and there is no built-in `vault` context in Actions.
+> **Simple:** Store passwords and certificates as GitHub **secrets**, then reference `${{ secrets.NAME }}`—never commit them in workflow YAML.
+>
+> **Detailed:** Create secrets under Settings → Secrets and variables → Actions (repo, org, or environment level). Use in workflows:
+>
+> ```yaml
+> steps:
+>   - name: Deploy
+>     env:
+>       API_KEY: ${{ secrets.API_KEY }}
+>     run: ./deploy.sh
+> ```
+>
+> GitHub masks secret values in logs. **Variables** (`vars`) are for non-sensitive configuration. There is no first-class `vault` or `certificates` context in Actions syntax—misconception: putting a PEM in `env:` in plain text in the file; that exposes it in git history.

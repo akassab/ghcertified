@@ -96,4 +96,19 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] Scheduled workflows run on the latest commit on the repository default branch.
-> The `schedule` trigger always runs against the latest commit on the repository's default branch (such as `main`), regardless of which branch received recent pushes. The workflow file must exist on that default branch for scheduled runs to be created. Scheduled runs do not execute on feature branches or pinned SHAs from non-default branches. If you need branch-specific automation on a timer, merge to default first or use a different trigger such as `workflow_dispatch`.
+> **Simple:** Scheduled workflows run against the **latest commit on the default branch** (e.g. `main`), in UTC.
+>
+> **Detailed:** The `on.schedule` trigger uses cron syntax, and GitHub always evaluates scheduled workflows from the **default branch**—not from feature branches or arbitrary SHAs.
+>
+> ```yaml
+> on:
+>   schedule:
+>     - cron: '0 6 * * *'   # 06:00 UTC daily
+> jobs:
+>   nightly:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: ./nightly-audit.sh
+> ```
+>
+> The workflow file must exist on the default branch for the schedule to be registered. Pushes to `feature/login` do not change what commit a schedule uses; GitHub checks out the tip of `main` (or whatever the default is). For branch-specific timed work, merge to default, use `workflow_dispatch`, or trigger on `push` with filters instead of `schedule` alone.

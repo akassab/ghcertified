@@ -115,4 +115,6 @@ jobs:
 ```
 
 - [x] Set `jobs.<job_id>.strategy.fail-fast` to `false`
-> `strategy.fail-fast` defaults to **true**, so one failing matrix leg cancels the rest—useful to save minutes when any failure invalidates the build. Set `fail-fast: false` under `strategy` when you want every OS/version combination to finish (for example, to collect all test failures). Example: six matrix jobs on three OSes keep running after Ubuntu fails if `fail-fast: false`.
+> **Simple:** Set `strategy.fail-fast: false` so one failing matrix leg does not cancel the others.
+>
+> **Detailed:** `fail-fast` defaults to **true**, so one failing matrix job cancels siblings—useful to save minutes when any failure invalidates the build. With `fail-fast: false`, every OS/version combination runs to completion (for example, to collect all test failures). For the question’s six jobs (`version` × `os`), Ubuntu failing no longer stops Windows legs from finishing.

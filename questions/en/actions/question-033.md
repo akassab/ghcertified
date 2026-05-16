@@ -94,4 +94,16 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] True
-> A **step** is either `uses:` (runs an action) or `run:` (shell commands). Every action runs inside a step, but steps can be plain scripts—`run: npm test`—with no marketplace action involved. Jobs are composed entirely of one or more steps.
+> **Simple:** Steps can be plain `run:` scripts or `uses:` actions—but every action runs inside a step.
+>
+> **Detailed:** A job is a list of steps:
+>
+> ```yaml
+> steps:
+>   - uses: actions/checkout@v4      # action as a step
+>   - run: npm test                    # step with no action
+>   - name: Lint
+>     uses: my-org/linter@v1
+> ```
+>
+> "Not all steps run actions" — `run: npm test` has no `uses:`. "All actions run as a step" — you cannot put `uses:` at job level; actions are always invoked from a step. Misconception: a job can call an action directly without a step wrapper.

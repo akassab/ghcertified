@@ -96,4 +96,6 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
 ## Correct answer
 
 - [x] Using `add-mask` workflow command in jobs where the decoded secret may be utilized.
-> The `::add-mask::` workflow command (often written `echo "::add-mask::$VALUE"`) hides values from logs when GitHub did not already treat them as secrets—for example a base64-decoded token printed in a script. Call it **once per sensitive value per job** before the value might appear in output. Masking in job A does not apply to job B.
+> **Simple:** Use the `::add-mask::` workflow command in the job where a decoded or derived secret might appear in logs.
+>
+> **Detailed:** For example `echo "::add-mask::$VALUE"` before printing a base64-decoded token GitHub did not already treat as a secret. Call it **once per sensitive value per job** before the value might appear in output. Masking in job A does not apply to job B; repeat in each job that could log the value.

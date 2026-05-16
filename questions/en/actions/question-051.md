@@ -96,4 +96,22 @@ documentation: "https://docs.github.com/en/actions/creating-actions/about-custom
 ## Correct answer
 
 - [x] `Docker container actions`, `JavaScript Actions`, `Composite Actions`
-> GitHub Actions supports three action types declared in `action.yml`: **Docker** (`runs.using: docker`), **JavaScript** (`runs.using: node20`), and **composite** (`runs.using: composite` with bundled `steps`). Docker actions run inside an image; JavaScript actions run on the host runner's Node runtime; composite actions chain shell steps behind one `uses:` line. There is no separate platform type named "Python action" or "Custom action"—other languages usually ship via Docker or composite `run` steps.
+> **Simple:** The three action types are Docker container, JavaScript (Node), and composite—declared in `action.yml` with `runs.using`.
+>
+> **Detailed:** Every custom action ships `action.yml` with one of:
+>
+> | Type | `runs.using` | Runs on |
+> |------|----------------|---------|
+> | **Docker** | `docker` | Container image |
+> | **JavaScript** | `node20` (etc.) | Runner's Node runtime |
+> | **Composite** | `composite` | Bundled `steps:` (shell/`uses`) |
+>
+> Example JavaScript action:
+>
+> ```yaml
+> runs:
+>   using: node20
+>   main: dist/index.js
+> ```
+>
+> There is no separate "Python action" or "Custom action" type—other languages usually ship via **Docker** or **composite** `run` steps.

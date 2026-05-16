@@ -96,4 +96,12 @@ documentation: "https://docs.github.com/en/rest/actions/workflow-runs?apiVersion
 ## Correct answer
 
 - [x] `GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs`
-> The REST API downloads workflow run logs with `GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs`. The response is typically a redirect to a zip archive of the job logs for that run. `POST`, `PUT`, and `HEAD` are not the documented download operation—clients follow the redirect with the same auth token to retrieve the bundle.
+> **Simple:** Download workflow run logs with `GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs`.
+>
+> **Detailed:** The REST API downloads workflow run logs with:
+>
+> ```
+> GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs
+> ```
+>
+> The response is typically a **redirect** to a **zip archive** of job logs for that run. Clients follow the redirect with the same auth token (PAT or `GITHUB_TOKEN` with appropriate scopes). `POST`, `PUT`, and `HEAD` are not the documented download operation.

@@ -96,4 +96,16 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] the workflow will only run when both `branches` and `paths` are satisfied
-> For one event such as `push`, `branches` and `paths` filters combine with AND logic: the ref must match the branch filter and the commit must change at least one matching path. A push to `main` that only touches `README.md` when `paths: ['src/**']` is set will not run the workflow. They are not OR filters—both conditions must pass.
+> **Simple:** For one event, `branches` and `paths` filters combine with **AND**—both must match.
+>
+> **Detailed:** Under the same trigger (e.g. `push`), GitHub evaluates branch and path filters together:
+>
+> ```yaml
+> on:
+>   push:
+>     branches: [main]
+>     paths:
+>       - 'src/**'
+> ```
+>
+> A push to `main` that only edits `README.md` does **not** run the workflow—the branch matches but no file under `src/**` changed. A push to `feature/x` that changes `src/app.ts` also does **not** run—path matches but branch does not. Both must pass; they are not OR filters. Use `paths-ignore` or `branches-ignore` when you need exclusion semantics instead.

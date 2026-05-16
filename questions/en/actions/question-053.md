@@ -96,4 +96,20 @@ documentation: "https://docs.github.com/en/actions/creating-actions/about-custom
 ## Correct answer
 
 - [x] False
-> Custom actions live in their own repository or folder with an `action.yml` at the root of the action path—not inside `.github/workflows/`. Workflow files belong under `.github/workflows/*.yml` and orchestrate jobs; actions are reusable units referenced with `uses: ./.github/actions/my-action` or `uses: org/repo/path@v1`. Putting an action definition only in a workflow file without `action.yml` would not be a publishable action others can `uses:`.
+> **Simple:** False—custom actions live with `action.yml` in their own path or repo, not in `.github/workflows/`.
+>
+> **Detailed:** **Workflows** orchestrate jobs under `.github/workflows/*.yml`. **Actions** are reusable units with `action.yml` at the action root—for example:
+>
+> ```
+> .github/actions/my-action/action.yml
+> ```
+>
+> Reference them with:
+>
+> ```yaml
+> - uses: ./.github/actions/my-action
+> # or
+> - uses: org/repo/path@v1
+> ```
+>
+> Putting logic only in a workflow file without `action.yml` is not a publishable action others can `uses:`.

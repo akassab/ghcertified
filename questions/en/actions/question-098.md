@@ -96,4 +96,19 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] use the on: schedule: cron event trigger
-> Weekday-only schedules use `on.schedule` with cron expressions in UTC, such as `cron: '0 9 * * 1-5'` for 09:00 UTC Monday through Friday. There is no built-in `weekdays:` trigger type. A job-level `if` does not schedule runs—it only filters jobs after an event already fired. Put the cron under `schedule` so GitHub enqueues the workflow on the default branch.
+> **Simple:** Use `on.schedule` with a cron expression in UTC; weekday field `1-5` means Monday–Friday.
+>
+> **Detailed:** There is no `weekdays:` trigger. Restrict runs to weekdays with standard cron under `schedule`:
+>
+> ```yaml
+> on:
+>   schedule:
+>     - cron: '0 9 * * 1-5'   # 09:00 UTC, Mon–Fri
+> jobs:
+>   weekday-report:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: ./generate-report.sh
+> ```
+>
+> Cron uses **UTC** and runs against the default branch. A job-level `if: github.event.schedule == '...'` does **not** create scheduled runs—it only skips jobs after some other event already started the workflow. Put timing logic in `on.schedule` so GitHub enqueues the workflow on the intended cadence.

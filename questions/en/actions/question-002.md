@@ -95,4 +95,15 @@ documentation: "https://docs.github.com/en/actions/using-jobs/assigning-permissi
 ## Correct answer
 
 - [x] none, write, read
-> For each permission category (such as `contents` or `pull-requests`), the `permissions` key accepts `read`, `write`, or `none`. For example, `permissions: contents: read` lets the token clone and read files but not push commits; `contents: write` allows pushes. There is no separate `delete` level—destructive operations are covered by `write`. Use `none` to remove a scope entirely from the token for that job.
+> **Simple:** Each permission category (like `contents`) accepts only `read`, `write`, or `none`—not a separate `delete` level.
+>
+> **Detailed:** The workflow or job `permissions` block maps each scope to one of three levels:
+>
+> ```yaml
+> permissions:
+>   contents: read      # clone/fetch, read files
+>   pull-requests: write # comment, label, merge (where allowed)
+>   issues: none        # remove issues scope from token
+> ```
+>
+> `read` is read-only access for that resource; `write` includes create/update/delete operations GitHub groups under that scope (there is no standalone `delete` keyword). `none` explicitly withholds that scope. Misconception: listing `delete` as a fourth level—use `write` for destructive repo operations or `none` to deny the scope entirely. Fine-grained PATs are a different product; `GITHUB_TOKEN` in Actions uses these three levels per [documented scopes](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token).

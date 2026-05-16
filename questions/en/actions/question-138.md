@@ -96,4 +96,15 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
 ## Correct answer
 
 - [x] `workflow_run`
-> The `workflow_run` event starts a workflow after another workflow finishes (or reaches another `types` activity such as `requested`). Example: `on.workflow_run.workflows: ["CI"]` runs a deploy workflow when `CI` completes, with `github.event.workflow_run.conclusion` available in `if:` conditions. This chains automation without embedding deploy steps in the same file as tests.
+> **Simple:** The `workflow_run` event starts a workflow after another named workflow finishes (or hits another configured activity).
+>
+> **Detailed:** Example:
+>
+> ```yaml
+> on:
+>   workflow_run:
+>     workflows: [CI]
+>     types: [completed]
+> ```
+>
+> A deploy workflow can run when `CI` completes, using `github.event.workflow_run.conclusion` in `if:` conditions. This chains automation without embedding deploy steps in the same file as tests.

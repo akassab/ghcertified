@@ -108,4 +108,20 @@ my-job:
 my-job:
   if: ${{ vars.MY_VAR == 'MY_VALUE' }}
 ```
-> The entire comparison must live inside `${{ }}` so GitHub evaluates it as one boolean expression: `if: ${{ vars.MY_VAR == 'MY_VALUE' }}`. Splitting so only `vars.MY_VAR` is inside `${{ }}` and `== 'MY_VALUE'` is outside is invalid. Configuration variables (`vars`) are allowed in job and step `if` conditionals—unlike `secrets`, which cannot be referenced directly in `if` (use `env` indirection instead).
+> **Simple:** Put the full comparison inside `${{ }}`: `if: ${{ vars.MY_VAR == 'MY_VALUE' }}` at job level.
+>
+> **Detailed:** The **entire** comparison must live inside `${{ }}` so GitHub evaluates one boolean expression:
+>
+> ```yaml
+> my-job:
+>   if: ${{ vars.MY_VAR == 'MY_VALUE' }}
+>   runs-on: ubuntu-latest
+> ```
+>
+> This is **invalid**—only part of the expression is wrapped:
+>
+> ```yaml
+> if: ${{ vars.MY_VAR }} == 'MY_VALUE'
+> ```
+>
+> Configuration variables (`vars`) work in job and step `if` conditionals. **`secrets`** cannot be referenced directly in `if`—use `env` indirection (see question-068).

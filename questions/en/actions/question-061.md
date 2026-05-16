@@ -98,10 +98,16 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
 ## Correct answer
 
 - [x] `GITHUB_REPOSITORY`
-> Default environment variable set by GitHub to `owner/repo` (for example `octocat/Hello-World`) for the repository where the workflow runs. It is always available as `$GITHUB_REPOSITORY` in steps and as `github.repository` in expressions. Use it when logging or passing the repo slug to tools without hard-coding the name.
+> **Simple:** `GITHUB_REPOSITORY` is the `owner/repo` string for the repository where the workflow runs.
+>
+> **Detailed:** For example `octocat/Hello-World`. Available as `$GITHUB_REPOSITORY` in shell steps or `${{ github.repository }}` in expressions. It identifies **where** the workflow is running, not the user or workflow file path alone.
 
 - [x] `GITHUB_WORKFLOW`
-> The display name of the workflow—the `name:` field in the YAML, or the workflow filename if `name` is omitted (for example `CI` or `deploy.yml`). It appears in the Actions UI and in `$GITHUB_WORKFLOW` for logging which pipeline definition is executing. It is not the job name or the workflow run number.
+> **Simple:** `GITHUB_WORKFLOW` is the workflow's display name from the `name:` field (or the filename if `name` is omitted).
+>
+> **Detailed:** If your file is `ci.yml` with `name: CI`, the value is `CI`. This is the workflow title in the Actions UI—not the job name (`GITHUB_JOB`), run number, or commit SHA.
 
 - [x] `GITHUB_ACTOR`
-> The account that initiated the workflow run (for example `octocat` after a push or `github-actions[bot]` for some automations). `GITHUB_USER` and `GITHUB_ORGANIZATION` are not standard default environment variable names. `GITHUB_TOKEN` is provided as an automatic secret for the job, not as a documented default env var in this list.
+> **Simple:** `GITHUB_ACTOR` is the username or bot account that triggered the workflow run.
+>
+> **Detailed:** Examples: `octocat` for a user's push, `dependabot[bot]` for Dependabot, `github-actions[bot]` for some automated events. Use it to branch behavior (`if: github.actor == 'dependabot[bot]'`) or audit who started the run. `GITHUB_USER` and `GITHUB_ORGANIZATION` are not in this default set; `GITHUB_TOKEN` is provided as a **secret**, not as a default env var in this list.

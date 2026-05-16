@@ -96,4 +96,6 @@ documentation: "https://docs.github.com/en/actions/managing-workflow-runs/re-run
 ## Correct answer
 
 - [x] write 
-> Anyone with **write** access to the repository can re-run a workflow from the Actions tab or API—for example, open a failed run and choose **Re-run all jobs**. **Read** access lets you view runs but not start a new attempt. **Admin** and **owner** are not the permission labels GitHub documents for this action; write is the threshold collaborators need for re-runs.
+> **Simple:** **Write** access to the repository is enough to re-run workflows from the Actions tab or API.
+>
+> **Detailed:** Anyone with **write** (or higher) permission on the repository can re-run a workflow—for example, open a failed run on the Actions tab and choose **Re-run all jobs**, or call the REST API to start a new attempt. **Read** access lets you view run history and logs but not trigger a re-run. **Admin** and **owner** are not the permission labels GitHub documents for this specific action; **write** is the documented threshold for collaborators who need to restart CI without being a repo admin.

@@ -96,4 +96,17 @@ documentation: "https://docs.github.com/en/actions/reference/limits#existing-sys
 ## Correct answer
 
 - [x] 360 minutes
-> Unless you set `timeout-minutes` on a job, GitHub-hosted runner jobs may run up to 360 minutes (6 hours) before the platform terminates them. You can set a lower ceiling—for example `timeout-minutes: 30` on a quick lint job—to fail fast if a step hangs. The default is not 30, 60, or 120 minutes. Self-hosted runners follow the same default unless you configure otherwise.
+> **Simple:** The default job timeout on GitHub-hosted runners is **360 minutes** (6 hours) unless you set `timeout-minutes`.
+>
+> **Detailed:** If you omit `timeout-minutes`, a job on a GitHub-hosted runner can run until it hits the platform maximum of **360 minutes**, then GitHub cancels it. Set a lower limit to fail fast when work hangs:
+>
+> ```yaml
+> jobs:
+>   lint:
+>     timeout-minutes: 15
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: npm run lint
+> ```
+>
+> Step-level `timeout-minutes` caps individual steps; job-level applies to the whole job including all steps. The default is **not** 30, 60, or 120 minutes. Self-hosted runners use the same documented default unless your administrator configures different limits.

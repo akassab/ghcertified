@@ -120,4 +120,13 @@ jobs:
     uses: different-org/example-repo/.github/workflows/C.yml@main
 ```
 - [x] All secrets available to `workflow A` will be also available to `workflow B`, but not to `workflow C`
-> `secrets: inherit` on the call from A to B passes through secrets the caller can access (repository, environment, and organization secrets available to workflow A). Workflow B's call to C in `different-org` does not use `secrets: inherit`, so C does not automatically receive A's secrets—only what B explicitly maps (`secrets: MY_TOKEN: ${{ secrets.MY_TOKEN }}`) or passes with `secrets: inherit` on that second `uses:` job. In the example, B gets A's secrets; C does not unless B configures the call.
+> **Simple:** `secrets: inherit` from A to B passes A's secrets to B; B's call to C does not inherit them unless B also uses `secrets: inherit` or maps secrets explicitly.
+>
+> **Detailed:** Workflow A calls B with `secrets: inherit`, so **all secrets available to A** (repository, environment, and organization secrets the caller can access) flow to **workflow B**. Workflow B calls C in `different-org` **without** `secrets: inherit`, so **workflow C does not automatically get A's secrets**. C only receives secrets B explicitly passes:
+>
+> ```yaml
+> secrets:
+>   MY_TOKEN: ${{ secrets.MY_TOKEN }}
+> ```
+>
+> or `secrets: inherit` on B's `uses:` job to C. In the example, B has A's secrets; C does not unless B configures the second call. Secrets do not cascade across nested reusable workflows by default.

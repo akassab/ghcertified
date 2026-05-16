@@ -96,4 +96,18 @@ documentation: "https://docs.github.com/en/actions/using-workflows/triggering-a-
 ## Correct answer
 
 - [x] glob
-> GitHub Actions branch and path filters use **glob** syntax, not full regex. Examples: `feature/*` matches `feature/login`; `!dependabot/**` excludes dependabot branches under `push` or `pull_request` filters. URL schemes and a special `action` pattern type are not used for these filters.
+> **Simple:** Branch and path filters use **glob** patterns (`*`, `**`, `?`), not full regex.
+>
+> **Detailed:** Under `push` or `pull_request`:
+>
+> ```yaml
+> on:
+>   push:
+>     branches:
+>       - 'feature/*'
+>       - '!dependabot/**'
+>     paths:
+>       - 'src/**'
+> ```
+>
+> `feature/*` matches one segment; `**` matches across slashes. Negation uses `!` prefix. Misconception: PCRE-style regex like `^release-.*$`—use glob instead. "URL" and "action" are distractors; filter pattern type for branches/paths is **glob** per GitHub docs.

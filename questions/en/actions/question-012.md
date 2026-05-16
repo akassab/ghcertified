@@ -96,4 +96,21 @@ documentation: "https://docs.github.com/en/actions/using-workflows/about-workflo
 ## Correct answer
 
 - [x] use the `needs` keyword in job B to create this dependency
-> Job B should list job A under `needs` so B waits for A to finish successfully—for example, `deploy` with `needs: build` runs only after `build` completes. The keyword is `needs`, not `requires`. You declare the dependency on the **downstream** job (`deploy`), not on the job that must finish first (`build`).
+> **Simple:** On job B, set `needs: jobA` so B waits until A finishes successfully.
+>
+> **Detailed:** Dependencies are declared on the **dependent** job:
+>
+> ```yaml
+> jobs:
+>   build:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: npm run build
+>   deploy:
+>     needs: build
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: npm run deploy
+> ```
+>
+> `deploy` (job B) lists `build` (job A). There is no `requires:` keyword. Misconception: adding `waits-for: deploy` on `build`—only `needs` on the downstream job is valid. Multiple prerequisites: `needs: [build, test]`.

@@ -96,4 +96,16 @@ documentation: "https://docs.github.com/en/enterprise-cloud@latest/actions/using
 ## Correct answer
 
 - [x] Using a multiline string with |
-> In YAML, a pipe (`|`) after `run:` preserves line breaks so multiple commands run in one shell invocation, like a short script. For example, `run: |` followed by `npm ci`, `npm test`, and `npm run build` runs all three in the same step without starting a new shell each time. Alternatives such as chaining with `&&` on one line also work, but multiline `|` is the idiomatic style for longer scripts.
+> **Simple:** Use a multiline string with `run: |` so several commands run in one shell in a single step.
+>
+> **Detailed:** In workflow YAML, `|` after `run:` preserves line breaks. All lines execute in **one** shell session for that step—variables and `cd` persist between lines:
+>
+> ```yaml
+> - name: Build and test
+>   run: |
+>     npm ci
+>     npm test
+>     npm run build
+> ```
+>
+> That is equivalent to one script block. You can also chain with `&&` on one line (`run: npm ci && npm test`), but `run: |` is idiomatic for longer scripts. Each separate `- run:` step starts a **new** shell, so multiline `|` is the syntax for multiple commands **in one step**.

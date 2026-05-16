@@ -94,4 +94,25 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] True
-> Workflows that define only `workflow_dispatch` can still be started via the REST API: `POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches` with `ref` (branch or tag) and optional `inputs` in the JSON body. That is the same payload shape as clicking **Run workflow** in the Actions UI—no `push` event is required.
+> **Simple:** A `workflow_dispatch`-only workflow can be started via the REST API—same as **Run workflow** in the UI.
+>
+> **Detailed:** Workflow file:
+>
+> ```yaml
+> on:
+>   workflow_dispatch:
+>     inputs:
+>       logLevel:
+>         type: string
+> ```
+>
+> API call (conceptually):
+>
+> ```bash
+> curl -X POST \
+>   -H "Authorization: Bearer $TOKEN" \
+>   https://api.github.com/repos/OWNER/REPO/actions/workflows/WORKFLOW_ID/dispatches \
+>   -d '{"ref":"main","inputs":{"logLevel":"debug"}}'
+> ```
+>
+> `ref` is required (branch or tag). No `push` or other `on:` event is needed if `workflow_dispatch` is listed. Misconception: manual-only workflows cannot be automated—they can, via this dispatch endpoint.

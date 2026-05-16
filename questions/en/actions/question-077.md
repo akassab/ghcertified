@@ -96,4 +96,19 @@ documentation: "https://docs.github.com/en/actions/hosting-your-own-runners/mana
 ## Correct answer
 
 - [x] A self-hosted runner is a system that you deploy and manage to execute jobs from GitHub Actions on GitHub.com
-> You install the runner agent on your own machine or VM, and GitHub queues jobs when a workflow's `runs-on` label matches the runner's labels (for example `self-hosted` and `linux`). Self-hosted runners execute the same job steps as GitHub-hosted runners—checking out code, running `run` scripts, and invoking actions—but you control the OS image, installed tools, and network access. Teams often use them to reach private resources on an internal network or to run jobs that need specialized hardware. Unlike the distractors, a self-hosted runner is not a code upload endpoint or a pull request management service.
+> **Simple:** A machine you deploy and manage that runs GitHub Actions jobs when `runs-on` labels match.
+>
+> **Detailed:** You install the GitHub Actions runner agent on your own server, VM, or device. When a workflow job's `runs-on` matches the runner's labels—for example `runs-on: [self-hosted, linux]`—GitHub queues that job to your machine instead of a GitHub-hosted runner.
+>
+> The runner executes the same steps as cloud runners: `actions/checkout`, shell `run` commands, and `uses:` actions. You control the OS image, installed software, and network access, which is useful for private APIs, custom hardware, or compliance requirements.
+>
+> ```yaml
+> jobs:
+>   deploy:
+>     runs-on: [self-hosted, linux, x64]
+>     steps:
+>       - uses: actions/checkout@v4
+>       - run: ./deploy-to-internal-network.sh
+> ```
+>
+> A self-hosted runner is **not** a code-upload endpoint, an automatic workload factory, or a pull request management service—it only executes workflow jobs you assign via label matching.

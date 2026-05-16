@@ -96,4 +96,6 @@ documentation: "https://docs.github.com/en/actions/using-workflows/disabling-and
 ## Correct answer
 
 - [x] Use the `Disable workflow` option in GitHub Actions
-> In the Actions tab, open the workflow and choose **Disable workflow** to stop new runs without editing the YAML in git. Scheduled and event-triggered runs are blocked while disabled; re-enable when you want them back—useful during maintenance or when a flaky workflow should not queue more runs.
+> **Simple:** In the Actions tab, **Disable workflow** stops new runs without changing YAML in git.
+>
+> **Detailed:** Path: Actions → select workflow → **⋯** → **Disable workflow**. While disabled, `push`, `schedule`, and other triggers will not start new runs (in-progress runs are not retroactively killed by disable alone). Re-enable from the same menu when ready. Misconception: you must delete the file or comment out `on:`—disable is the supported temporary pause. Deleting branches or renaming files is heavier-handed and affects version control history.

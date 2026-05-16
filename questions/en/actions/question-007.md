@@ -96,7 +96,32 @@ documentation: "https://docs.github.com/en/actions/using-workflows/about-workflo
 ## Correct answer
 
 - [x] One or more events that will trigger the workflow
-> Every workflow needs an `on` section—for example `on: push` or `on: [push, pull_request]`. Without a trigger, GitHub will not start the workflow.
+> **Simple:** Every workflow needs an `on:` block—without it, nothing starts the run.
+>
+> **Detailed:** Required syntax includes when the workflow runs:
+>
+> ```yaml
+> on: push
+> # or
+> on:
+>   pull_request:
+>   workflow_dispatch:
+> ```
+>
+> Optional top-level keys like `name:` or `env:` do not replace `on`. Branch filters belong **inside** an event (`push.branches`), not as a standalone workflow property.
 
 - [x] One or more jobs
-> A workflow must define at least one job under `jobs`. The optional top-level `name` is not required, and there is no standalone `branches` property—branch filters belong inside event types like `push.branches`.
+> **Simple:** A workflow must define at least one job under `jobs:`—that's where steps execute.
+>
+> **Detailed:** Minimal valid workflow:
+>
+> ```yaml
+> on: workflow_dispatch
+> jobs:
+>   greet:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - run: echo "Hello"
+> ```
+>
+> `runs-on` and `steps` belong on jobs. Misconception: `branches` or `name` are required at workflow root—they are optional; `jobs` and `on` are not.

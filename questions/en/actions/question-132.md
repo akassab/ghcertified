@@ -97,8 +97,14 @@ documentation: "https://docs.github.com/en/enterprise-server/admin/overview/abou
 ## Correct answer
 
 - [x] GHES workflows cannot access GitHub.com nor GitHub Marketplace actions by default. 
-> GitHub Enterprise Server (GHES) does not download actions from GitHub.com or the Marketplace until an administrator enables **GitHub Connect** or syncs actions manually. Workflows that reference `actions/checkout@v4` fail on a fresh GHES instance until those actions exist on the appliance. Plan an allow list and sync process before rolling out Actions org-wide.
+> **Simple:** GHES does not fetch actions from GitHub.com or the Marketplace until an admin enables GitHub Connect or syncs actions.
+>
+> **Detailed:** Workflows that reference `actions/checkout@v4` fail on a fresh GHES instance until those actions exist on the appliance. Plan an allow list and sync process before rolling out Actions org-wide. This is a common gap when copying workflows from github.com without mirroring dependencies.
 - [x] `actions/actions-sync` is primarily devoted to moving GitHub.com actions to a GHES instance.
-> Syncing Actions from GitHub.com is done via **GitHub Connect** (automatic, policy-controlled) or the **`actions-sync`** CLI for air-gapped or manual pipelines. `actions/actions-sync` copies action repositories into your GHES namespace so workflows can use `uses: your-ghes/actions/checkout@v4`. It is not a general-purpose workflow runner tool.
+> **Simple:** Use **GitHub Connect** or the **`actions-sync`** CLI to copy GitHub.com actions into GHES—not a general runner tool.
+>
+> **Detailed:** `actions-sync` copies action repositories into your GHES namespace so workflows can use `uses: your-ghes/actions/checkout@v4`. Air-gapped installs rely on manual sync pipelines. It does not execute workflow jobs; it only replicates action repos.
 - [x] GitHub Enterprise Server instances are self-hosted, compared to GitHub Enterprise Cloud (GHEC) which is hosted and managed by GitHub.
-> **GitHub Enterprise Server** runs on your infrastructure—you operate the appliance and network boundaries. **GitHub Enterprise Cloud** (GHEC) is SaaS on `*.ghe.com` and is operated by GitHub. Actions behavior differs mainly around reaching github.com actions and runner hosting, not around YAML syntax itself.
+> **Simple:** GHES runs on your infrastructure; GHEC is GitHub-hosted SaaS on `*.ghe.com`.
+>
+> **Detailed:** You operate the GHES appliance and network boundaries. GHEC is managed by GitHub. Actions YAML syntax is largely the same; differences show up around reaching github.com actions, runner hosting, and enterprise policy—not basic workflow structure.

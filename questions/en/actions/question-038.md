@@ -116,4 +116,19 @@ steps:
     run: ?
 ```
 - [x] `run: echo "$action_state"`
-> `echo "action_state=yellow" >> "$GITHUB_ENV"` sets a job-level env var for **later** steps in the same job. In `step_two`, the shell expands `$action_state` directly. Values written to `$GITHUB_ENV` are not available via `steps.*.outputs`—that path is only for data written to `$GITHUB_OUTPUT`.
+> **Simple:** Values written to `$GITHUB_ENV` become shell env vars in later steps—use `$action_state`, not `steps.*.outputs`.
+>
+> **Detailed:** From the question:
+>
+> ```yaml
+> steps:
+>   - name: Set the value
+>     id: step_one
+>     run: |
+>       echo "action_state=yellow" >> "$GITHUB_ENV"
+>   - name: Use the value
+>     id: step_two
+>     run: echo "$action_state"
+> ```
+>
+> `$GITHUB_ENV` exposes variables to **subsequent** steps in the same job. Misconception: `${{ steps.step_one.outputs.action_state }}`—that requires writing to `$GITHUB_OUTPUT` instead. Also wrong: using the variable in `step_one` itself before it is set—env from `GITHUB_ENV` applies to steps **after** the writing step.

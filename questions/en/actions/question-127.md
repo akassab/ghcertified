@@ -96,4 +96,6 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-comm
 ## Correct answer
 
 - [x] `echo "API_VERSION=2.1" >> "$GITHUB_ENV"`
-> Append `NAME=value` lines to the file path in `$GITHUB_ENV` so later steps in the **same job** see the variable—for example, `echo "API_VERSION=2.1" >> "$GITHUB_ENV"`. `GITHUB_OUTPUT` is for step outputs consumed via `steps.<id>.outputs`, not environment variables. There is no `set-env` shell command; the file append pattern is the supported workflow command.
+> **Simple:** Append `NAME=value` to `$GITHUB_ENV` so later steps in the **same job** see the variable.
+>
+> **Detailed:** For example, `echo "API_VERSION=2.1" >> "$GITHUB_ENV"` sets `API_VERSION` for subsequent steps in that job only. `GITHUB_OUTPUT` is for step outputs consumed via `steps.<id>.outputs`, not environment variables. There is no `set-env` shell command; the file append pattern is the supported workflow command. Values do not propagate to other jobs—use job outputs and `needs` for that.

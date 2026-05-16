@@ -96,4 +96,15 @@ documentation: "https://docs.github.com/en/actions/security-guides/using-secrets
 ## Correct answer
 
 - [x] encrypt and store secrets in the repository but keep the decryption passphrase as a secret
-> Individual GitHub secrets are limited to 48 KB. For larger sensitive blobs, GitHub recommends encrypting the data (for example with OpenSSL), storing the ciphertext in the repo, and keeping only the decryption passphrase in secrets. At runtime a workflow step decrypts the file using `${{ secrets.DECRYPT_KEY }}`. That pattern avoids oversized secret values while keeping key material out of plain text in the repository.
+> **Simple:** Secrets are capped at 48 KB; encrypt large blobs, commit ciphertext, and store only the decryption key in secrets.
+>
+> **Detailed:** Each secret value in GitHub cannot exceed **48 KB**. For larger sensitive files (cert bundles, license files), GitHub recommends encrypting offline and committing the encrypted artifact:
+>
+> ```yaml
+> steps:
+>   - run: |
+>       openssl enc -d -aes-256-cbc -in secrets.enc -out secrets.bin \
+>         -pass pass:${{ secrets.DECRYPT_PASSPHRASE }}
+> ```
+>
+> The repo holds only ciphertext; `${{ secrets.DECRYPT_PASSPHRASE }}` supplies the key at runtime. That keeps bulky material out of the secret store while avoiding plaintext secrets in git history. Rotate the passphrase secret if the encrypted file is replaced.

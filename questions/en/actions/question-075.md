@@ -96,4 +96,21 @@ documentation: "https://docs.github.com/en/actions/using-jobs/choosing-the-runne
 ## Correct answer
 
 - [x] No
-> Each job on GitHub-hosted runners gets a fresh virtual machine; even two jobs with the same `runs-on: ubuntu-latest` label are not guaranteed to share one machine. Files written in `build` (for example `./dist/`) are not visible in `deploy` unless you pass them with artifacts, cache, or external storage. Parallel jobs always run on separate hosts; matching labels only pick the same *image*, not the same *instance*.
+> **Simple:** No—each job on GitHub-hosted runners gets a fresh VM; jobs do not share the same machine even with the same `runs-on` label.
+>
+> **Detailed:** Each job on GitHub-hosted runners receives a **fresh virtual machine**. Two jobs with `runs-on: ubuntu-latest` are **not** guaranteed to share one machine—they may run in parallel on different hosts.
+>
+> Files written in `build` (for example `./dist/`) are **not** visible in `deploy` unless you pass them via **artifacts**, **cache**, or external storage:
+>
+> ```yaml
+> jobs:
+>   build:
+>     steps:
+>       - run: echo "built" > dist/out.txt
+>   deploy:
+>     needs: build
+>     steps:
+>       - uses: actions/download-artifact@v4  # required
+> ```
+>
+> Matching `runs-on` labels pick the same **image**, not the same **instance**.

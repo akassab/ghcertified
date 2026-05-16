@@ -128,4 +128,20 @@ defaults:
     shell: bash
     working-directory: ./scripts
 ```
-> `defaults.run.working-directory` sets the current working directory for every `run` step in scope—workflow-wide or for a single job if defined under `jobs.<id>.defaults`. With the example above, a step `run: ./build.sh` executes from `./scripts` without repeating `working-directory` on each step. There is no `directory` key under `defaults.run`, and `job` is not a valid key for this purpose.
+> **Simple:** Set `defaults.run.working-directory` so every `run` step in scope starts in that folder.
+>
+> **Detailed:** The `defaults` block applies settings to all matching steps unless overridden. Under `defaults.run`, `working-directory` sets the cwd for every `run` step—at workflow scope or under `jobs.<job_id>.defaults` for one job only.
+>
+> ```yaml
+> defaults:
+>   run:
+>     shell: bash
+>     working-directory: ./scripts
+> jobs:
+>   build:
+>     steps:
+>       - run: ./build.sh    # runs as ./scripts/build.sh
+>       - run: npm test      # also from ./scripts
+> ```
+>
+> You can still set `working-directory` on an individual step to override the default. Invalid alternatives include `directory` under `defaults.run` or a top-level `job` key—only `working-directory` (and `shell`) belong under `defaults.run`.

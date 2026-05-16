@@ -98,13 +98,27 @@ question: "What components can be reused within a GitHub Organization?"
 ## Correct answer
 
 - [x] Secrets
-> Organization-level secrets can be shared with all repositories or a selected list in the org, so teams reuse credentials like `NPM_TOKEN` without copying them into every repo. Access policies and visibility are managed in org settings—individual repos still reference `${{ secrets.NAME }}` the same way.
+> **Simple:** Organization secrets can be shared with all repositories or a selected subset.
+>
+> **Detailed:** Define once at org level; member repos use `${{ secrets.NPM_TOKEN }}` without storing the same credential in every repository. Access can be limited to specific repos for least privilege.
 
 - [x] Configuration Variables
-> Organization variables (`vars`) follow the same sharing model as org secrets and appear in workflows as `${{ vars.BUILD_FLAVOR }}` for non-sensitive configuration. They are available only in repositories you allow, which keeps defaults consistent across microservices without hard-coding values in each workflow file.
+> **Simple:** Organization configuration variables follow the same sharing model as org secrets, for non-sensitive values.
+>
+> **Detailed:** Use `${{ vars.BUILD_FLAVOR }}` or `${{ vars.DEFAULT_REGION }}` across microservices from a single org-level definition. Variables are not encrypted like secrets but are centrally managed.
 
 - [x] Self Hosted Runners
-> Self-hosted runners can be registered at the organization level and assigned to repositories through runner groups (for example a `gpu` group for ML repos). Multiple repos can target `runs-on: [self-hosted, gpu]` on the same pool instead of installing a separate runner per repository.
+> **Simple:** Self-hosted runners can be registered at the organization and assigned to repos via runner groups.
+>
+> **Detailed:** Register machines at org level, group them (for example `gpu`), then multiple repos use:
+>
+> ```yaml
+> runs-on: [self-hosted, gpu]
+> ```
+>
+> One runner pool serves many repositories instead of registering runners per repo.
 
 - [x] Workflow Templates
-> Organization workflow templates (starter workflows) live in a dedicated `.github` repository under `.github/workflow-templates/` and appear in **New workflow** for repositories in the org. That centralizes CI patterns—security scanning, release, deploy—so every new repo starts from the same approved template.
+> **Simple:** Organizations can publish starter workflow templates from the org `.github` repository.
+>
+> **Detailed:** Files under `.github/workflow-templates/` appear in **Actions → New workflow** for org members, standardizing CI/deploy patterns. **Artifacts** and **cache** are not org-wide shared resources—they stay scoped to a repository or workflow run.

@@ -98,10 +98,16 @@ documentation: "https://docs.github.com/en/actions/using-workflows/creating-star
 ## Correct answer
 
 - [x] They allow users to leverage ready-to-use (or requiring minimal changes) workflow templates
-> Starter workflows appear in the **Actions → New workflow** UI so users pick a vetted template instead of an empty `.yml`. A Node project might start from "Node.js CI" with test and lint jobs already sketched. Teams adopt org or GitHub patterns with minimal edits—starter workflows are not a paid-only feature and they can be modified after selection.
+> **Simple:** Starter workflows are pre-built YAML templates you pick when creating a workflow, often needing only small edits.
+>
+> **Detailed:** In **Actions → New workflow**, GitHub shows starter workflows so you begin from a working pipeline (for example "Node.js CI") instead of an empty file. After you add the workflow, you can change triggers, jobs, and steps like any other workflow—they are not locked or read-only.
 
 - [x] GitHub provides and maintains starter workflows for different categories, languages and tooling
-> GitHub publishes maintained templates (CI, deploy, labeler, CodeQL, etc.) for common languages and ecosystems. They are updated on GitHub's side and surfaced in the workflow picker by category. Starter workflows are templates for new workflow files; they are not locked "ready-only" and can call reusable workflows like any other workflow once created.
+> **Simple:** GitHub ships and updates official starter workflows for common stacks and tasks (CI, deploy, CodeQL, etc.).
+>
+> **Detailed:** GitHub maintains templates grouped by language and use case in the workflow picker. When GitHub updates a template on their side, new repos still pick the current version; your existing committed workflow file is not auto-overwritten until you choose to sync or edit it.
 
 - [x] Your organization can create custom starter workflows for users in your organization
-> Organizations can add private starter workflows in a `.github` repo under `.github/workflow-templates/` with a `metadata.json` beside each template. Members in the org then see those pipelines when creating workflows—useful for standardizing deploy or security scanning. That is separate from GitHub's public catalog but uses the same "pick a template" experience.
+> **Simple:** Orgs can publish private starter workflows from a `.github` repository for members to use.
+>
+> **Detailed:** Add files under `.github/workflow-templates/` in the org's `.github` repo, with metadata (for example `ci.properties.json`). Members then see org-specific pipelines in **New workflow**—useful for standardizing security scans, deploy patterns, or compliance checks across many repositories.

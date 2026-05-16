@@ -96,4 +96,15 @@ documentation: "https://docs.github.com/en/actions/using-workflows/storing-workf
 ## Correct answer
 
 - [x] Artifacts
-> Test output such as coverage HTML, JUnit XML, or Playwright screenshots should be uploaded as workflow artifacts so reviewers can download them from the run summary. A typical step uses `actions/upload-artifact` with `path: coverage/` or `playwright-report/`. Caches speed up repeated dependency installs and are keyed for reuse, not for retaining reports you inspect after CI finishes. Packages and Releases are for publishing distributable software, not ad hoc CI attachments.
+> **Simple:** Upload coverage reports and test screenshots as workflow artifacts so reviewers can download them from the run summary.
+>
+> **Detailed:** Test output—coverage HTML, JUnit XML, Playwright screenshots—belongs in **artifacts**, not caches or releases:
+>
+> ```yaml
+> - uses: actions/upload-artifact@v4
+>   with:
+>     name: playwright-report
+>     path: playwright-report/
+> ```
+>
+> Reviewers download from the Actions run summary after CI finishes. **Caches** speed dependency installs and are keyed for reuse across runs, not for retaining reports you inspect post-run. **Packages** and **Releases** publish distributable software to users, not ad hoc CI attachments.

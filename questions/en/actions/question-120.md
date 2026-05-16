@@ -143,4 +143,6 @@ runs:
   entrypoint: 'entrypoint.sh'
   post-entrypoint: 'cleanup.sh'
 ```
-> For Docker actions, `post-entrypoint` names a script that runs **after** the main `entrypoint` finishes—ideal for tearing down temp files or stopping sidecar processes. Invalid keys such as `post`, `after`, `cleanup`, or `after-entrypoint` are not defined in the action metadata spec and are ignored. With `entrypoint: 'run.sh'` and `post-entrypoint: 'cleanup.sh'`, cleanup still runs when the main script exits successfully.
+> **Simple:** Use `post-entrypoint` under `runs` in a Docker action to run a cleanup script after the main `entrypoint` finishes.
+>
+> **Detailed:** For Docker actions, `post-entrypoint` names a script that runs **after** the main `entrypoint` completes—ideal for tearing down temp files or stopping sidecar processes. Invalid keys such as `post`, `after`, `cleanup`, or `after-entrypoint` are not defined in the action metadata spec and are ignored. With `entrypoint: 'entrypoint.sh'` and `post-entrypoint: 'cleanup.sh'`, cleanup still runs when the main script exits successfully, even if the action’s primary work succeeded.

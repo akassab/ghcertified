@@ -95,4 +95,18 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] Limiting workflow runs to specific activity types using the `types` filter
-> Many webhook events (`issues`, `pull_request`, `release`, etc.) emit multiple **activity types** (opened, closed, labeled, …). The `types` array under `on.<event>` limits which activities start your workflow—for example `on: pull_request: types: [opened, synchronize]` ignores label-only updates.
+> **Simple:** Use `types:` under an event to run only on specific activities (opened, labeled, published, etc.).
+>
+> **Detailed:** Many events have sub-activities:
+>
+> ```yaml
+> on:
+>   pull_request:
+>     types: [opened, synchronize, reopened]
+>   issues:
+>     types: [opened, labeled]
+>   release:
+>     types: [published]
+> ```
+>
+> Without `types`, GitHub uses defaults for that event (not "every possible subtype" for all events). A label-only change on a PR might not match if you omitted `labeled` from `types`. Misconception: `types` filters branches or paths—that is `branches` / `paths`; **activity types** are the webhook action names (`opened`, `closed`, …).

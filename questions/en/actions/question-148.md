@@ -97,4 +97,6 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
 ## Correct answer
 
 - [x] In push events, `github.ref` is the fully-formed ref of the branch or tag ref that was pushed. 
-> On **push** events, `github.ref` is the fully qualified ref that was pushed—`refs/heads/main` for a branch push or `refs/tags/v1.0.0` for a tag. Use it in `if:` conditions or scripts when behavior should differ for branches versus tags. `github.ref_name` is the short name (`main`, `v1.0.0`) without the `refs/heads/` prefix.
+> **Simple:** On **push** events, `github.ref` is the fully qualified ref that was pushed—for example `refs/heads/main` or `refs/tags/v1.0.0`.
+>
+> **Detailed:** Use it in `if:` conditions or scripts when behavior should differ for branches versus tags—for example `if: startsWith(github.ref, 'refs/tags/')` for release-only jobs. `github.ref_name` is the short name (`main`, `v1.0.0`) without the `refs/heads/` or `refs/tags/` prefix.

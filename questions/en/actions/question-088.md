@@ -96,4 +96,23 @@ documentation: "https://docs.github.com/en/enterprise-cloud@latest/actions/using
 ## Correct answer
 
 - [x] Allows defining multiple job configurations to run in parallel
-> `strategy.matrix` defines one or more axes (such as `os` and `node`) whose combinations GitHub expands into parallel jobs. Six combinations from `[ubuntu, windows]` × `[18, 20, 22]` produce six jobs that run concurrently subject to runner availability. Each job receives a `matrix` context (for example `${{ matrix.os }}`) for that combination. Matrix jobs are for variant testing, not for defining secrets or cron schedules.
+> **Simple:** `strategy.matrix` expands each combination of axis values into a separate parallel job.
+>
+> **Detailed:** Under `jobs.<id>.strategy.matrix`, you list one or more axes. GitHub creates one job per combination and runs them in parallel (unless limited by `max-parallel` or `needs`):
+>
+> ```yaml
+> jobs:
+>   test:
+>     strategy:
+>       matrix:
+>         os: [ubuntu-latest, windows-latest]
+>         node: [18, 20, 22]
+>     runs-on: ${{ matrix.os }}
+>     steps:
+>       - uses: actions/setup-node@v4
+>         with:
+>           node-version: ${{ matrix.node }}
+>       - run: npm test
+> ```
+>
+> Two OS values × three Node versions = **six jobs**. Each job sees `matrix.os` and `matrix.node` for its row. Use matrices for cross-platform or multi-version testing—not for secrets (`secrets` context), cron (`on.schedule`), or arbitrary key/value bags unrelated to job variants.

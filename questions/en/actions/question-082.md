@@ -96,4 +96,18 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] By using the branches filter
-> Use the `branches` filter (or `branches-ignore`) under event keys like `on.push` or `on.pull_request` to limit which branch names start the workflow. For example, `branches: [main, 'release/**']` runs on `main` and any `release/1.0` branch but not on `feature/login`. Without this filter, pushes to any branch can trigger the workflow. Branch filters apply to the Git ref involved in the event, not to runner labels or deployment environments.
+> **Simple:** Add `branches` (or `branches-ignore`) under the event in `on:` to limit which refs trigger the workflow.
+>
+> **Detailed:** Branch filters sit under the triggering event, not on the job. They compare the ref name from the webhook (push or pull request) against your patterns.
+>
+> ```yaml
+> on:
+>   push:
+>     branches:
+>       - main
+>       - 'release/**'
+>   pull_request:
+>     branches: [main]
+> ```
+>
+> A push to `feature/login` does not match `main` or `release/**`, so the workflow does not run. `branches-ignore` excludes names instead of allowing only listed ones. This controls **when** the workflow starts; it is separate from `runs-on` labels or `environment:` deployment gates. To run a job only on certain branches after the workflow already fired, use a job-level `if:` instead.

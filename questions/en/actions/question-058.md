@@ -96,4 +96,19 @@ documentation: "https://docs.github.com/en/actions/deployment/security-hardening
 ## Correct answer
 
 - [x] Using OIDC
-> OpenID Connect (OIDC) lets the workflow exchange a short-lived token with AWS, Azure, or GCP without storing long-lived access keys in GitHub secrets. You configure a trust relationship (audience, subject claims) in the cloud and use `permissions: id-token: write` plus the provider's login action—for example `aws-actions/configure-aws-credentials` with `role-to-assume`. GitHub's security hardening guide recommends OIDC over static `AWS_ACCESS_KEY_ID` secrets in repositories.
+> **Simple:** OIDC is the recommended way to authenticate to AWS, Azure, or GCP without storing long-lived access keys in GitHub secrets.
+>
+> **Detailed:** **OpenID Connect (OIDC)** lets the workflow exchange a **short-lived token** with the cloud provider. Configure a trust relationship (audience, subject claims) in AWS/Azure/GCP, then in the workflow:
+>
+> ```yaml
+> permissions:
+>   id-token: write
+>   contents: read
+> steps:
+>   - uses: aws-actions/configure-aws-credentials@v4
+>     with:
+>       role-to-assume: arn:aws:iam::123456789012:role/my-github-role
+>       aws-region: us-east-1
+> ```
+>
+> GitHub's security hardening guide recommends OIDC over static `AWS_ACCESS_KEY_ID` in secrets. Vault is an optional secret store, not the default GitHub-recommended cloud auth pattern.

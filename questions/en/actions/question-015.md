@@ -137,4 +137,18 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 ```
 
-> A job matrix is defined under `jobs.<job_id>.strategy.matrix`. The `strategy` wrapper is required—placing `matrix` directly on the job or swapping `matrix` and `strategy` is invalid. With `version: [10, 12, 14]` and two OS values, GitHub fans out **six** parallel jobs (every combination of dimensions).
+> **Simple:** Matrix belongs under `jobs.<id>.strategy.matrix`—not directly under the job, and not with `matrix`/`strategy` swapped.
+>
+> **Detailed:** Valid structure:
+>
+> ```yaml
+> jobs:
+>   example_matrix:
+>     strategy:
+>       matrix:
+>         version: [10, 12, 14]
+>         os: [ubuntu-latest, windows-latest]
+>     runs-on: ${{ matrix.os }}
+> ```
+>
+> Invalid: `jobs.example_matrix.matrix.strategy` (reversed keys) or `matrix:` without `strategy:`. Three versions × two OS values = **six** job instances (all combinations). Each leg can use `${{ matrix.version }}` and `${{ matrix.os }}` in expressions.

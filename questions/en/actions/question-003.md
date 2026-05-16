@@ -95,9 +95,40 @@ documentation: "https://docs.github.com/en/actions/writing-workflows/choosing-wh
 ## Correct answer
 
 - [x] Workflow level
-> A top-level `permissions` block applies the same token scopes to every job unless a job overrides them—for example, `permissions: contents: read` at the workflow root limits all jobs by default.
+> **Simple:** Put `permissions:` at the top of the workflow file to set default `GITHUB_TOKEN` scopes for every job.
+>
+> **Detailed:** A workflow-level block applies to all jobs unless a job overrides it:
+>
+> ```yaml
+> permissions:
+>   contents: read
+> jobs:
+>   test:
+>     runs-on: ubuntu-latest
+>     steps:
+>       - uses: actions/checkout@v4
+>   deploy:
+>     permissions:
+>       contents: write
+>     runs-on: ubuntu-latest
+> ```
+>
+> Here `test` inherits `contents: read`; `deploy` widens only what the workflow default allows (jobs cannot exceed organization/repo policy, but can narrow or, within policy, set job-specific scopes). Use workflow level for a secure baseline across the file.
 
 - [x] Job level
-> A job can override workflow defaults, such as giving only the `deploy` job `id-token: write` for OIDC while other jobs stay read-only.
-
-> Permissions cannot be set on individual steps. A step always uses the `GITHUB_TOKEN` (and scopes) of its job—there is no `permissions:` key under `steps`.
+> **Simple:** Each job can override workflow `permissions`—handy when only one job needs `id-token: write` or `contents: write`.
+>
+> **Detailed:** Job-level `permissions` replaces the workflow default for that job only. Typical pattern: CI jobs stay read-only; deploy job requests write:
+>
+> ```yaml
+> jobs:
+>   build:
+>     permissions:
+>       contents: read
+>   release:
+>     permissions:
+>       contents: write
+>       id-token: write   # OIDC to cloud
+> ```
+>
+> Steps have **no** `permissions:` key—they always use the job's token. Misconception: setting permissions on a single step; you must set them on the job (or workflow) that owns the step.

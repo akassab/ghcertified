@@ -96,4 +96,6 @@ documentation: "https://github.com/actions/download-artifact?tab=readme-ov-file#
 ## Correct answer
 
 - [x] Use the `actions/download-artifact` action with elevated permissions.
-> Artifacts from other runs in the same repository can be downloaded when the workflow has permission to read them—for example `permissions: actions: read` on `GITHUB_TOKEN` or a PAT with repo scope. `actions/download-artifact` (v4+) can target a specific `run-id` and artifact name, not only artifacts from the current run. You cannot use `upload-artifact` to fetch old files; expiration still applies, so the artifact must exist and not be past retention. "Elevated permissions" here means read access to Actions data, not a separate upload step.
+> **Simple:** Use `actions/download-artifact` with permission to read Actions data (for example `permissions: actions: read`) and ensure the artifact has not expired.
+>
+> **Detailed:** Artifacts from **other workflow runs** in the same repository can be downloaded when the workflow has **read access** to Actions artifacts—typically `permissions: actions: read` on `GITHUB_TOKEN` or a PAT with repo scope. `actions/download-artifact` (v4+) can target a specific **`run-id`** and artifact name, not only artifacts from the current run. You cannot use `upload-artifact` to fetch old files. **Retention** still applies—the artifact must exist and not be past expiration. "Elevated permissions" means **read** access to Actions data, not a separate upload step.

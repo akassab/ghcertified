@@ -96,4 +96,22 @@ documentation: "https://docs.github.com/en/actions/using-jobs/using-a-matrix-for
 ## Correct answer
 
 - [x] Using the `matrix` context
-> Each matrix combination exposes its values on `${{ matrix.<key> }}`—the `matrix` context. For example, `runs-on: ${{ matrix.os }}` picks the OS for that leg, and `node-version: ${{ matrix.version }}` might select Node 12 vs 14. There is no `job` or `jobs` context for matrix dimensions; `vars` holds repository configuration variables instead.
+> **Simple:** Read matrix values with `${{ matrix.<key> }}`—for example `${{ matrix.os }}` in `runs-on`.
+>
+> **Detailed:** Example job:
+>
+> ```yaml
+> jobs:
+>   test:
+>     strategy:
+>       matrix:
+>         node: [18, 20]
+>         os: [ubuntu-latest, windows-latest]
+>     runs-on: ${{ matrix.os }}
+>     steps:
+>       - uses: actions/setup-node@v4
+>         with:
+>           node-version: ${{ matrix.node }}
+> ```
+>
+> Each spawned job gets its own `matrix` context for that combination. Misconception: `jobs.os` or `vars.OS`—repository **vars** are unrelated; matrix dimensions live only on **`matrix`**. You can also use `matrix` in `if:` and `env:` within that matrix job.

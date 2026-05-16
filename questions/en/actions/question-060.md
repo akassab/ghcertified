@@ -96,4 +96,16 @@ documentation: "https://docs.github.com/en/actions/reference/environment-variabl
 ## Correct answer
 
 - [x] `GITHUB_ACTOR`
-> `GITHUB_ACTOR` is the username of the person or app that triggered the workflow—for example the user who pushed, opened a PR, or clicked **Run workflow**. You can branch on it in expressions (`if: github.actor == 'dependabot[bot]'`) or log it in a step. `GITHUB_REPOSITORY` is `owner/repo`; `GITHUB_WORKFLOW` is the workflow's display name—neither identifies who started the run.
+> **Simple:** `GITHUB_ACTOR` is the username of the person or app that triggered the workflow run.
+>
+> **Detailed:** `GITHUB_ACTOR` holds the account that initiated the run—for example the user who pushed, opened a PR, or clicked **Run workflow** (`octocat`, `dependabot[bot]`). Use it in expressions or shell:
+>
+> ```yaml
+> if: github.actor == 'dependabot[bot]'
+> ```
+>
+> ```yaml
+> - run: echo "Triggered by $GITHUB_ACTOR"
+> ```
+>
+> `GITHUB_REPOSITORY` is `owner/repo`; `GITHUB_WORKFLOW` is the workflow display name—neither identifies **who** started the run. `GITHUB_USER` is not a standard default env var for this purpose.
