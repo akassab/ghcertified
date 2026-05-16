@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/managing-workflow-runs/approv
 ## Correct answer
 
 - [x] Setup required approvals for fork runs in the repository
-> For `pull_request` workflows in public repos, runs from first-time or fork contributors can require maintainer approval before executing. Configure this under Actions → Fork pull request workflows in the repository settings.
+> For `pull_request` workflows in public repositories, runs from outside contributors or first-time contributors can require maintainer approval before any job executes—reducing risk from untrusted workflow code on the runner. Configure **Settings → Actions → Fork pull request workflows** (and related approval settings) so a maintainer clicks **Approve and run** before CI runs on a fork PR. That gate is separate from environment protection rules, which apply after a run has started.

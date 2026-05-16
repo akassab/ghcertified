@@ -121,4 +121,4 @@ uses: actions/setup-node@v4
 with:
   node-version: 20
 ```
-> Pin Node.js with the official `actions/setup-node` action and the `node-version` input. The action name must include the `actions/` owner prefix and a version tag; `setup-node` alone or inputs like `version` or `node` are not valid.
+> Pin Node.js with `actions/setup-node` and the `node-version` input, as in the example. The action must use the full `actions/` owner prefix and a version tag (for example `@v4`); `setup-node` alone is invalid. Inputs like `version` or `node` are not defined on the official action—use `node-version`. After setup, `node` and `npm` are on the PATH for subsequent `run` steps.

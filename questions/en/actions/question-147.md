@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
 ## Correct answer
 
 - [x] Using `add-mask` workflow command in jobs where the decoded secret may be utilized.
-> Using `add-mask` will redact values Github Actions does not detect as a secret. This needs to be done once per value, per job that utilizes the decoded secret.
+> The `::add-mask::` workflow command (often written `echo "::add-mask::$VALUE"`) hides values from logs when GitHub did not already treat them as secrets—for example a base64-decoded token printed in a script. Call it **once per sensitive value per job** before the value might appear in output. Masking in job A does not apply to job B.

@@ -121,4 +121,4 @@ steps:
     - uses: my-org/failing-action@v1
       continue-on-error: true
 ```
-> `continue-on-error: true` marks the step as failed for visibility but allows later steps in the same job to run. Use it when a non-critical check should not block the rest of the job.
+> `continue-on-error: true` on a step marks it failed for reporting but lets the job continue—later steps still run and the job can succeed overall. Use it when a linter or smoke test should not block deployment if it flakes.

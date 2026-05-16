@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/reference/environment-variabl
 ## Correct answer
 
 - [x] `GITHUB_REPOSITORY`
-> `github.repository_id` (and related owner ID fields) are available on the `github` context in expressions, but the default environment variable for the repo's `owner/name` string is `GITHUB_REPOSITORY`. The `_ID` and `_OWNER` suffixed names in the distractors are not the standard default env vars for those values.
+> `GITHUB_REPOSITORY` is the default environment variable for the repository's full `owner/name` slug (for example `octocat/hello-world`) where the workflow runs. Use `$GITHUB_REPOSITORY` in shell steps or `github.repository` in expressions. `GITHUB_REPOSITORY_ID` and owner ID variables are not the documented default env names for the human-readable repo name—the numeric IDs live on the `github` context instead.

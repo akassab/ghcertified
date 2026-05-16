@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-comm
 ## Correct answer
 
 - [x] `echo "PET=DOG" >> "$GITHUB_OUTPUT"`
-> Step outputs use the `NAME=value` format appended to `$GITHUB_OUTPUT`. Here `PET` is the output name and `DOG` is the value, readable later as `${{ steps.<step_id>.outputs.PET }}`.
+> Step outputs use `NAME=value` lines on `$GITHUB_OUTPUT`. `echo "PET=DOG" >> "$GITHUB_OUTPUT"` defines `PET`; a later step reads `${{ steps.<step_id>.outputs.PET }}`. The older `::set-output` command is deprecated—always use `$GITHUB_OUTPUT` for new workflows.

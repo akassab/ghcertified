@@ -106,4 +106,4 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
     echo "The results of the testing suite are:" >> $GITHUB_STEP_SUMMARY
 ```
 - [x] Adds this line to the job summary
-> Writing to `GITHUB_STEP_SUMMARY` adds to the job summary, which can be used as a streamlined version of a workflow log.
+> Appending markdown to `$GITHUB_STEP_SUMMARY` renders in the run’s **Job summary** tab on GitHub.com. The example line becomes visible documentation for reviewers without scrolling the full log. You can add tables, headings, and links—GitHub interprets the file as Markdown. Multiple steps append to the same summary for the job.

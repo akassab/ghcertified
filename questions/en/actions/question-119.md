@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/creating-actions/metadata-syn
 ## Correct answer
 
 - [x] `runs.using` has `docker` as value
-> Docker container actions declare `runs.using: docker` (optionally with `image`, `entrypoint`, and related keys). `container`, `Dockerfile` as a `using` value, or `runs.main: container` are not the correct indicator.
+> Container actions are identified by `runs.using: docker` in `action.yml`, optionally alongside `image`, `args`, `entrypoint`, and `post-entrypoint`. Composite actions use `using: composite`; JavaScript actions use `node20`. Values like `container`, `Dockerfile`, or `runs.main: container` are not valid `using` values in the metadata schema.

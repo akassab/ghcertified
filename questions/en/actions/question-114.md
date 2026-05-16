@@ -112,4 +112,4 @@ jobs:
                 os: [ubuntu-latest, windows-latest]
 ```
 - [x] reference variables through the `matrix` context with syntax like`matrix.version` and `matrix.os`
-> Matrix values are exposed on the `matrix` context (for example `${{ matrix.version }}`). You cannot use bare `version`/`os`, `matrix.property` as a generic placeholder, or a separate `context` keyword.
+> Matrix axes defined under `strategy.matrix` are exposed as the `matrix` context inside the job. Use `${{ matrix.version }}` and `${{ matrix.os }}` in `runs-on`, `env`, or step inputs for the current combination—for example `runs-on: ${{ matrix.os }}`. Bare names like `version` without the context are invalid. There is no separate `context` keyword for matrix values.

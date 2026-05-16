@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/triggering-a-
 ## Correct answer
 
 - [x] Using `branches` filter
-> Under an event like `push` or `pull_request`, the `branches` filter limits which branch activity triggers the workflow (for example `branches: [prod]`). The key is `branches`, not `branch`. You can use glob patterns **inside** the `branches` list, but creating the workflow file only on `prod` does not restrict when it runs.
+> Under `pull_request` or `pull_request_target`, use a `branches` filter so the workflow runs only when the PR **targets** matching branches—for example `branches: [prod]`. The key is `branches` (plural), not `branch`. Glob patterns like `release/*` go inside the list; storing the workflow file only on `prod` does not limit when GitHub triggers it.

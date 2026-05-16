@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] it limits the execution time for individual step
-> `jobs.<job_id>.steps[*].timeout-minutes` caps how long a single step may run. Job-level `timeout-minutes` limits the entire job, not per-step command intervals or external wait times.
+> `timeout-minutes` on a step caps that step's runtime; when the limit is exceeded, the step fails and the job can fail unless later steps use `if: failure()`. Job-level `timeout-minutes` applies to the whole job including all steps. Use step timeouts for long tests or network calls that should not hang the entire job.

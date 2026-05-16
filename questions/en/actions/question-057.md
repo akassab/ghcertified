@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/concepts/workflows-and-action
 ## Correct answer
 
 - [x] Each job in a workflow can reference a single environment.
-> A job may set `environment:` to one named environment (for secrets, variables, and protection rules). Different jobs in the same workflow can target different environments, but one job cannot reference two environments at once.
+> A job may set `environment:` to exactly one named environment for secrets, variables, and protection rules. `job1` might use `environment: staging` while `job2` uses `environment: production` in the same workflow file. One job cannot list two environments at once—you split staging and production across jobs or workflows instead. Environment-scoped values apply only to jobs that declare that environment key.

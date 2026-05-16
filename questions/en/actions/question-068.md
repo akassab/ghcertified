@@ -129,4 +129,4 @@ my-job:
   steps:
     - if: ${{ env.my_secret != '' }}
 ```
-> `secrets` cannot be used directly in `if:` expressions. Copying the secret into `env` at job scope lets you branch on whether it is empty without exposing the value in logs (GitHub still masks secrets when possible).
+> `secrets` cannot be used directly in `if:` expressions—`if: ${{ secrets.MY_SECRET }}` will not work as intended. Copy the secret into a job-level `env` value (`my_secret: ${{ secrets.MY_SECRET }}`), then test `if: ${{ env.my_secret != '' }}` on the step so you only run when the secret is configured. GitHub still masks secret values in logs when possible; avoid echoing the env var. Job-level `if: secrets.MY_SECRET == ''` is also invalid for the same reason.

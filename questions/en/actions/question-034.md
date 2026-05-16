@@ -95,4 +95,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] Reference the commit SHA
-> Pinning third-party actions to a full commit SHA (`uses: org/action@abc123...`) is the recommended supply-chain practice. Tags and branches can move; a SHA fixes the exact code that runs.
+> Pinning with a full commit SHA (`uses: actions/checkout@8e4660…`) fixes the exact code GitHub checks out. Tags like `@v4` and branches like `@main` can be retagged or force-pushed; SHAs are the recommended supply-chain control for third-party actions.

@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/enterprise-server@3.17/admin/github-a
 ## Correct answer
 
 - [x] Using GitHub Connect
-> GitHub Connect links a GitHub Enterprise Server instance to GitHub Enterprise Cloud on GitHub.com so GHES can use actions from GitHub.com in a controlled, authenticated way. By default, GHES does not pull Marketplace or github.com actions without Connect or a manual sync tool.
+> GitHub Connect links a GitHub Enterprise Server (GHES) instance to GitHub Enterprise Cloud on GitHub.com so administrators can enable controlled access to Actions hosted on GitHub.com. GHES does not see every github.com action by default—Connect (or the separate `actions-sync` tool for air-gapped installs) is how you bring third-party actions in. On-premise GHES can still use Actions; lack of internet means you sync bundles rather than pulling live on every run.

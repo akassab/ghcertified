@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/about-workflo
 ## Correct answer
 
 - [x] All jobs run in parallel
-> By default, jobs with no `needs` dependency start at the same time and run in parallel on available runners. Sequential execution only happens when you declare dependencies with `needs`; definition order in the YAML file does not control run order.
+> By default, jobs with no `needs` dependency start at the same time and run in parallel on available runners—for example, `lint` and `test` can run side by side while `build` also starts. Sequential execution only happens when you declare `needs`; listing `deploy` after `test` in the YAML does not make `deploy` wait unless `deploy` lists `needs: test`.

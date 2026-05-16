@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/caching-depen
 ## Correct answer
 
 - [x] provide alternative keys to use in case of a cache miss
-> The `restore-keys` input lists prefix keys to try when the primary `key` does not match, enabling partial cache reuse. It does not report hit/miss, set cache paths, or enable cross-OS caching by itself.
+> `restore-keys` lists prefix keys tried in order when the exact `key` has no match, enabling reuse of a previous partial cache (for example `npm-${{ runner.os }}-` matching `npm-Linux-abc123`). That softens cache busts when lockfiles change slightly. It does not log hit or miss by itself, define which paths are cached, or enable cross-OS sharing unless keys and paths are designed for that.

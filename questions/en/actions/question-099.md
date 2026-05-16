@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/security-guides/using-secrets
 ## Correct answer
 
 - [x] encrypt and store secrets in the repository but keep the decryption passphrase as a secret
-> Individual secrets are limited to 48 KB. For larger sensitive data, GitHub recommends encrypting the payload, committing the ciphertext, and storing only the decryption key as a secret—not storing huge blobs directly as secrets or avoiding secrets entirely.
+> Individual GitHub secrets are limited to 48 KB. For larger sensitive blobs, GitHub recommends encrypting the data (for example with OpenSSL), storing the ciphertext in the repo, and keeping only the decryption passphrase in secrets. At runtime a workflow step decrypts the file using `${{ secrets.DECRYPT_KEY }}`. That pattern avoids oversized secret values while keeping key material out of plain text in the repository.

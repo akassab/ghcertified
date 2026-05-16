@@ -116,4 +116,4 @@ on:
 ```yaml
     if: startsWith(inputs.branch-name, 'smoke-test')
 ```
-> Built-in functions use the `functionName(arg1, arg2)` form in expressions. `startsWith` on `inputs.branch-name` is the supported way to gate a step; method chaining, `branches` under `workflow_call`, and shell `[[ ]]` syntax are not valid in `if` conditions.
+> Workflow expressions use function syntax: `startsWith(searchString, prefix)`, not JavaScript method chaining. `if: startsWith(inputs.branch-name, 'smoke-test')` runs the step only when a reusable workflow input branch name begins with that prefix. Shell tests like `[[ ... ]]` belong in `run:` scripts; `branches` is not a `workflow_call` input type for this pattern.

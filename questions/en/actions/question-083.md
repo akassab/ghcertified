@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] Specifies the dependencies of a job
-> `needs` lists job IDs that must complete successfully before this job runs. It defines the DAG between jobs in a workflow, not env vars, deployment environments, or event triggers.
+> The `needs` keyword lists job IDs that must finish successfully before the current job starts, defining execution order between jobs. For example, `needs: [build, lint]` waits for both jobs to succeed; if either fails, the dependent job is skipped. Jobs with no `needs` run in parallel when runners are available. `needs` does not define environment variables, GitHub Environments, or what event triggered the workflow.

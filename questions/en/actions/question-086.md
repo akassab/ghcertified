@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/enterprise-cloud@latest/actions/using
 ## Correct answer
 
 - [x] Using a multiline string with |
-> In YAML, `run: |` followed by indented lines runs as a single script block (like a shell heredoc). Each line is one command in sequence on the same shell invocation— the idiomatic way to run multiple commands in one step.
+> In YAML, a pipe (`|`) after `run:` preserves line breaks so multiple commands run in one shell invocation, like a short script. For example, `run: |` followed by `npm ci`, `npm test`, and `npm run build` runs all three in the same step without starting a new shell each time. Alternatives such as chaining with `&&` on one line also work, but multiline `|` is the idiomatic style for longer scripts.

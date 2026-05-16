@@ -96,4 +96,4 @@ documentation: "https://github.blog/changelog/2019-10-17-github-actions-default-
 ## Correct answer
 
 - [x] powershell
-> On Windows runners, `run` steps default to PowerShell unless you set `shell:` to something else. Linux and macOS runners default to bash, not `sh` or `cmd`.
+> On `windows-latest` and other Windows runners, `run` steps default to PowerShell unless you set `shell:` to `bash`, `cmd`, or another option. Linux and macOS runners default to bash. That is why a step `run: echo $env:COMPUTERNAME` works on Windows without extra configuration. Choosing the wrong shell for the OS is a common source of "command not found" errors in cross-platform workflows.

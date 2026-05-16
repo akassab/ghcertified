@@ -97,4 +97,4 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
 ## Correct answer
 
 - [x] 50
-> A single workflow run can trigger at most 50 workflows via `workflow_run` (and the same cap applies to `workflow_call` chain depth in related limits). This prevents runaway cascading automation.
+> A single workflow run can trigger at most **50** downstream workflows via `workflow_run` (and related limits cap how many reusable workflows you can chain with `workflow_call` in one run). If every merge fired unbounded `workflow_run` listeners, one push could fan out thousands of runs—GitHub's limit prevents runaway cascading automation. The distractors (1, 5, 10, 20) are below the documented ceiling.

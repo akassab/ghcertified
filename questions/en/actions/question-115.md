@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/managing-workflow-runs/re-run
 ## Correct answer
 
 - [x] write 
-> Workflows need sufficient token permissions to push or modify repository content; `write` is the typical permission level for those operations. `read` is too restrictive, and `admin`/`owner` are not the usual permission names in workflow `permissions` blocks.
+> Anyone with **write** access to the repository can re-run a workflow from the Actions tab or API—for example, open a failed run and choose **Re-run all jobs**. **Read** access lets you view runs but not start a new attempt. **Admin** and **owner** are not the permission labels GitHub documents for this action; write is the threshold collaborators need for re-runs.

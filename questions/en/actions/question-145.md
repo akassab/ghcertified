@@ -97,8 +97,8 @@ documentation: "https://github.com/actions/upload-artifact#inputs"
 ## Correct answer
 
 - [x] By using the `actions/download-artifact` action in a workflow 
-> A later job or step can download artifacts produced earlier in the same or another workflow run using this action.
+> `actions/download-artifact` in a later job retrieves files uploaded with `upload-artifact` in the same or a prior run (when you pass `run-id` for cross-run downloads). Typical pattern: build job uploads `dist/`, deploy job downloads it before publishing. Artifact names must match what the upload step used.
 - [x] By downloading artifacts from the Github Actions UI workflow run
-> Using the UI allows you a hands-on approach to downloading artifacts. See the [documentation](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/download-workflow-artifacts) for more details.
+> From the Actions run page, expand **Artifacts** and download a zip without writing YAML—handy for debugging a single failed build. Each artifact lists its name and size. This does not replace automation for production deploys but is the fastest path for humans inspecting outputs.
 - [x] By using a specific GitHub API endpoint
-> The Github API has a "Download an artifact" endpoint. See the [documentation](https://docs.github.com/en/rest/actions/artifacts?apiVersion=2026-03-10#download-an-artifact) for more details.
+> The REST API **Download an artifact** endpoint streams artifact archives for custom tooling or dashboards. Scripts authenticate with a PAT or `GITHUB_TOKEN` that has `actions:read`. Use the artifact ID from the run’s artifact list in your integration code.

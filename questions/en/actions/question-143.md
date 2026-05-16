@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/organizations/managing-organization-s
 ## Correct answer
 
 - [x] By navigating to the organization's Actions settings and editing the value of the "Artifact and log retention" setting
-> Organization administrators can set a default retention period for artifacts and logs that applies across repositories in the org, instead of configuring each workflow individually.
+> Org admins set **Artifact and log retention** under **Organization settings → Actions** to apply a default day count for every repo in the org. Individual repos can use a shorter period but not exceed the org maximum unless policy allows. This centralizes compliance (for example “keep logs 90 days”) without editing hundreds of workflow files.

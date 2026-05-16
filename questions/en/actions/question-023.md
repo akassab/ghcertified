@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/disabling-and
 ## Correct answer
 
 - [x] Use the `Disable workflow` option in GitHub Actions
-> Disabling a workflow in the Actions tab stops new runs from being created for that workflow file without changing the YAML in the repository. You can re-enable it later when you want runs to resume—ideal for a temporary pause.
+> In the Actions tab, open the workflow and choose **Disable workflow** to stop new runs without editing the YAML in git. Scheduled and event-triggered runs are blocked while disabled; re-enable when you want them back—useful during maintenance or when a flaky workflow should not queue more runs.

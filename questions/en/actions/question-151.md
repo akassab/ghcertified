@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/how-tos/write-workflows/choos
 ## Correct answer
 
 - [x] Job outputs, because the value of environmental variables set via writing to `GITHUB_ENV` only applies to the current job.
-> While `env` can be set at workflow-level (meaning its variables can be referenced by multiple jobs), this does not mean changing the value of the environmental variable persists beyond the job that changed it.
+> Writing to `GITHUB_ENV` updates a variable only for **later steps in the same job**—not for other jobs in the workflow. Workflow-level `env` gives every job the same initial value, but each job’s runner is isolated. To pass data across jobs, use **job outputs** (`jobs.<id>.outputs`) and `needs` in downstream jobs.

@@ -95,4 +95,4 @@ question: "Workflows are defined in which format"
 ## Correct answer
 
 - [x] yaml
-> Workflow files must use the `.yml` or `.yaml` extension and YAML syntax. GitHub does not accept workflow definitions in JSON, TOML, or XML.
+> Workflow files live in `.github/workflows/` and must use the `.yml` or `.yaml` extension with YAML syntax—for example `ci.yml`. GitHub does not accept workflow definitions in JSON, TOML, or XML.

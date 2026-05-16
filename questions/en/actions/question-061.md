@@ -98,10 +98,10 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
 ## Correct answer
 
 - [x] `GITHUB_REPOSITORY`
-> Default variable set by GitHub to `owner/repo` for the repository where the workflow runs. It is always available in `env` and the `github` context.
+> Default environment variable set by GitHub to `owner/repo` (for example `octocat/Hello-World`) for the repository where the workflow runs. It is always available as `$GITHUB_REPOSITORY` in steps and as `github.repository` in expressions. Use it when logging or passing the repo slug to tools without hard-coding the name.
 
 - [x] `GITHUB_WORKFLOW`
-> The name of the workflow file's `name:` field (or the filename if omitted). Useful for logging which workflow definition is executing.
+> The display name of the workflow—the `name:` field in the YAML, or the workflow filename if `name` is omitted (for example `CI` or `deploy.yml`). It appears in the Actions UI and in `$GITHUB_WORKFLOW` for logging which pipeline definition is executing. It is not the job name or the workflow run number.
 
 - [x] `GITHUB_ACTOR`
-> The account that initiated the workflow run. `GITHUB_USER` and `GITHUB_ORGANIZATION` are not standard default env vars; `GITHUB_TOKEN` is injected separately as a secret, not a documented default env name in this list.
+> The account that initiated the workflow run (for example `octocat` after a push or `github-actions[bot]` for some automations). `GITHUB_USER` and `GITHUB_ORGANIZATION` are not standard default environment variable names. `GITHUB_TOKEN` is provided as an automatic secret for the job, not as a documented default env var in this list.

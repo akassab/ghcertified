@@ -98,4 +98,4 @@ Metadata examples: name, description, outputs or required inputs
 
 Metadata examples: name, description, outputs or required inputs
 - [x] In the `action.yml` or `action.yaml` file in the action repository
-> Every action must ship an `action.yml` (or `.yaml`) at the root of the action path. That file defines `name`, `description`, `inputs`, `outputs`, and whether the action is `docker`, `node`, or `composite`—GitHub reads it to run and display the action.
+> Every action must ship an `action.yml` (or `action.yaml`) at the root of the action path—the metadata file GitHub reads before running the action. It defines `name`, `description`, `inputs`, `outputs`, and `runs.using` (`node20`, `docker`, or `composite`). A composite action lists bundled `steps:` there; a JavaScript action points at `main` via `runs.main`. README examples alone are not sufficient; the marketplace and `uses:` resolution depend on this manifest.

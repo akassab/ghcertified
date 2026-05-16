@@ -158,4 +158,4 @@ documentation: "https://docs.github.com/en/actions/learn-github-actions/expressi
     name: test-report
     path: test-reports.html
 ```
-> Steps default to `success()`, so they are skipped after a failure unless you add `failure()` (or `always()`). Combining `failure()` with `steps.run-tests.outcome == 'failure'` runs the upload only when that specific test step failed.
+> Steps run only when prior steps succeed unless you override with `if`. Using `if: failure() && steps.run-tests.outcome == 'failure'` limits the upload to the case where the test step failed, not a failure in an unrelated step. `${{ steps.run-tests.outcome }}` can be `success`, `failure`, `cancelled`, or `skipped`. Combine `failure()` with a step `id` when you need precise control over which failure triggers follow-up work.

@@ -96,7 +96,7 @@ documentation: "https://docs.github.com/en/actions/using-workflows/creating-star
 ## Correct answer
 
 - [x] By using workflow templates
-> Organization workflow templates in `.github/workflow-templates` let every repo start from the same YAML pattern when users click "New workflow."
+> Organization workflow templates live in the organization's `.github` repository under `workflow-templates/`. When someone clicks "New workflow" in a repo, GitHub can show your template as a starting point with prefilled YAML. A `properties.json` file alongside the template can set display name and categories. This spreads a standard CI pattern across many repositories without copying files manually into each repo.
 
 - [x] By defining the workflow in a central repository
-> A common pattern is one "platform" repo that holds canonical workflows; other repos call reusable workflows or copy from that source of truth instead of maintaining unrelated copies by hand.
+> Reusable workflows let a central repository expose `workflow_call` entry points that other repos invoke with `uses: org/platform-repo/.github/workflows/ci.yml@main`. Callers pass inputs and secrets explicitly, so one canonical pipeline serves dozens of services. That differs from only sharing a template once at repo creation—central definitions stay the single source of truth as requirements evolve.

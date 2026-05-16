@@ -94,4 +94,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] True
-> A step is either a `uses` step (runs an action) or a `run` step (executes shell commands). Every workflow job is made of steps; not every step must call a third-party action—inline scripts count as steps too.
+> A **step** is either `uses:` (runs an action) or `run:` (shell commands). Every action runs inside a step, but steps can be plain scripts—`run: npm test`—with no marketplace action involved. Jobs are composed entirely of one or more steps.

@@ -115,4 +115,4 @@ jobs:
 ```
 
 - [x] Set `jobs.<job_id>.strategy.fail-fast` to `false`
-> `jobs.<job_id>.strategy.fail-fast` is set to `true` by default, meaning if one matrix job fails, other in-progress and queued matrix jobs will be cancelled. You must explicitly set `fail-fast` to `false` to avoid this behavior.
+> `strategy.fail-fast` defaults to **true**, so one failing matrix leg cancels the rest—useful to save minutes when any failure invalidates the build. Set `fail-fast: false` under `strategy` when you want every OS/version combination to finish (for example, to collect all test failures). Example: six matrix jobs on three OSes keep running after Ubuntu fails if `fail-fast: false`.

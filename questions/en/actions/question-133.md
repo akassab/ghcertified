@@ -97,9 +97,8 @@ documentation: "https://docs.github.com/en/actions/reference/security/secure-use
 ## Correct answer
 
 - [x] Commit SHAs are more secure
-> Commit SHAs are more secure because they are currently the only way to use an action as an immutable release
+> Pinning `uses: actions/checkout@abc1234…` (full SHA) is the strongest supply-chain practice because the resolved commit cannot change without editing your workflow. Tags like `@v4` and branches are convenient but mutable unless you enable immutable releases. Security reviews and compliance checks often require SHA pinning for third-party actions.
 - [x] Commit SHAs are immutable, whereas tags have the potential to be changed
-> [Tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging) are pointed to specific commits. Their reference can be changed, which is not always obvious. Tag-related vulnerabilities can be mitigated by enabling [immutable releases](https://docs.github.com/en/code-security/concepts/supply-chain-security/immutable-releases), but a commit SHA will always point to the same commit and is immutable.
-> Re-running a workflow uses the same commit SHA and Git ref of the original event that triggered the workflow run.
+> Tags point at commits but can be **moved** to a different commit (force-updated), so `@v1` might run different code tomorrow without a workflow edit. Immutable releases on GitHub reduce that risk for release tags, but a full SHA always identifies one tree. Re-running a workflow still uses the same action ref you pinned in the YAML at queue time.
 - [x] Commit SHAs are guaranteed to point to the exact same code every time, tags are not
-> A full commit SHA always resolves to the same tree of files. Tags and branch names are mutable references, so the action code behind `@v1` can change without editing your workflow file.
+> A full commit SHA always resolves to the same tree of files on every run. Branch names like `@main` and floating tags track whatever HEAD is at fetch time. If an action maintainer retags `v1`, your `uses: org/action@v1` step can pull new code silently—SHA pinning prevents that class of surprise.

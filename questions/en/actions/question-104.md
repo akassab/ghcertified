@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/writing-workflows/choosing-wh
 ## Correct answer
 
 - [x] treat environment variables as case-sensitive
-> On Linux and macOS runners, environment variable names are case-sensitive, so `VAR` and `var` are different. GitHub Actions does not normalize names for you, and behavior is not “handled automatically” across platforms.
+> Environment variable names are case-sensitive on Linux and macOS runners, so `API_KEY` and `api_key` are different variables. GitHub Actions does not normalize names across platforms for you. Use consistent uppercase names in `env:` blocks to avoid bugs that appear only on Ubuntu jobs. Windows can be case-insensitive in some contexts, but relying on that breaks cross-platform workflows.

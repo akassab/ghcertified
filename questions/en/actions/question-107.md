@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/monitoring-and-troubleshootin
 ## Correct answer
 
 - [x] `ACTIONS_STEP_DEBUG`
-> Set the `ACTIONS_STEP_DEBUG` secret or variable to `true` to enable extra debug logging for steps. `ACTIONS_RUNNER_DEBUG` enables runner diagnostic logs; `ACTIONS_JOB_DEBUG` and `ACTIONS_WORKFLOW_DEBUG` are not the documented step debug flags.
+> Set repository secret or variable `ACTIONS_STEP_DEBUG` to `true` to print additional debug output for steps in workflow logs. Use this when expressions or action inputs behave unexpectedly. `ACTIONS_RUNNER_DEBUG` enables runner diagnostic logs—a different flag. `ACTIONS_JOB_DEBUG` and `ACTIONS_WORKFLOW_DEBUG` are not the documented names for step debug logging.

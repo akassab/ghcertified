@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/enterprise-cloud@latest/actions/using
 ## Correct answer
 
 - [x] Using the actions/cache action
-> GitHub Actions does not provide a `cache` or `store` keyword in workflow YAML. You cache dependencies by using the `actions/cache` action (or cache support on setup actions) to save and restore directories such as package manager caches between workflow runs.
+> Workflow YAML has no built-in `cache:` keyword; you cache directories with the `actions/cache` action or with setup actions that support caching (such as `actions/setup-node` with `cache: npm`). You specify a `path` to store (for example `~/.npm`) and a `key` so later runs can restore dependencies and skip full downloads. A cache hit can cut minutes off install steps on pull requests. This speeds up workflows; it does not replace storing artifacts for deployment.

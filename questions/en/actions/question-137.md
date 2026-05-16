@@ -135,16 +135,4 @@ jobs:
 ```
 
 - [x] 5
-> This matrix produces 5 jobs with the following matrix combinations:
-
-> `os:ubuntu-latest,version:1,comment-color:blue,error-color:red` 
-
-> `os:ubuntu-latest,version:2,comment-color:blue,error-color:red` 
-
-> `os:windows-latest,version:1,comment-color:green,error-color:red` 
-
-> `os:windows-latest,version:2,comment-color:green,error-color:red` 
-
-> `os:macos-latest,comment-color:yellow` 
-
-> An `include` key NOT defined in `strategy.matrix` can be added to a job configuration if it does not overwrite the configuration. `include` keys already present in `strategy.matrix` will create a new job if they have a new value.
+> The Cartesian product of `os` × `version` × `comment-color` × `error-color` yields four jobs (Ubuntu×2 and Windows×2 with their `include` overrides for colors). The extra `include` row adds a fifth job: `macos-latest` with `comment-color: yellow` only—keys not in the base matrix can appear on `include` alone. An `include` that exactly matches an existing combination does not add a duplicate job; a new value for a matrix key does.

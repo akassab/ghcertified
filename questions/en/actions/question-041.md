@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/caching-depen
 ## Correct answer
 
 - [x] When you want to reuse files that don't change often between jobs or workflow runs, such as build dependencies from a package management system.
-> Dependency caching (`actions/cache`) is meant for files that are expensive to download or rebuild but change infrequently, such as npm or Maven caches. Restoring a cache speeds up later jobs or workflow runs without storing long-lived build outputs.
+> Dependency caching with `actions/cache` is for files that are expensive to download or rebuild but change infrequently—think `~/.npm`, Maven `.m2`, or Gradle caches. You key a cache (for example `npm-${{ hashFiles('**/package-lock.json') }}`) and restore it in later jobs or workflow runs to skip re-downloading dependencies. Caching is not for binaries, test reports, or logs you need after the run ends; those belong in artifacts. Choosing "files that change often" or "save build logs" describes artifacts or the wrong caching use case.

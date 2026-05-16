@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/reference/limits#existing-sys
 ## Correct answer
 
 - [x] 360 minutes
-> The default maximum runtime for a job on GitHub-hosted runners is 360 minutes (6 hours). You can set a lower limit with `jobs.<job_id>.timeout-minutes`, but the platform default is not 30, 60, or 120 minutes.
+> Unless you set `timeout-minutes` on a job, GitHub-hosted runner jobs may run up to 360 minutes (6 hours) before the platform terminates them. You can set a lower ceiling—for example `timeout-minutes: 30` on a quick lint job—to fail fast if a step hangs. The default is not 30, 60, or 120 minutes. Self-hosted runners follow the same default unless you configure otherwise.

@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/storing-workf
 ## Correct answer
 
 - [x] upload the binaries as artifacts in `build` and download them in `deploy`
-> The job that produces the binaries should `upload-artifact`; the downstream `deploy` job uses `download-artifact` after declaring `needs: build`. Caches are for dependencies, not passing fresh build outputs between jobs.
+> The job that produces the binaries should run `actions/upload-artifact` (for example `path: ./out/app`); the downstream `deploy` job runs `actions/download-artifact` after `needs: build` so deploy starts only after the artifact exists. Reversing upload/download or using cache in the wrong job would not pass a fresh build output reliably. Caches are keyed for reuse across runs (often dependencies), not for shipping a new binary build to deploy in the same workflow.

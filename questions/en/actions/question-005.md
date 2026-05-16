@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] Cloning the repository
-> Workflows run in response to **GitHub events** (pushes, pull requests, issues, schedules, and so on). Cloning a repository locally or over HTTPS/SSH does not emit a GitHub webhook event, so no workflow is triggered. Pushes, branch creation, and label changes are all valid activity events that can start a workflow.
+> Workflows run in response to **GitHub events** recorded on the platform—`push`, `pull_request`, `issues`, `schedule`, and others listed in the docs. Running `git clone https://github.com/org/repo.git` on your laptop does not notify GitHub, so no workflow runs. By contrast, `git push origin main` creates a `push` event, and adding a label via the UI fires `pull_request` label activity that can match `on: pull_request: types: [labeled]`.

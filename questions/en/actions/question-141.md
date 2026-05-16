@@ -108,4 +108,4 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
       key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
 ```
 - [x] If a cache key contains the dependencies file wrapped in `hashFiles`, the key changes when the dependencies file is updated, which helps keep it up to date.
-> `hashFiles` is a built-in Github function that creates a hash of the specified path. Using it to compose a cache key causes the hash to be regenerated, which in turn updates the cache key. The official [Dependency Caching Reference](https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching#example-using-the-cache-action) documentation shows how to use `hashFiles` as part of a cache key.
+> `hashFiles('**/package-lock.json')` hashes matching files so the cache **key** changes when dependencies change. Combined with `runner.os` in the key, you get a fresh cache after `npm install` updates the lockfile instead of reusing stale `node_modules`. Without `hashFiles`, you might hit an old cache and miss new packages until the key expires.

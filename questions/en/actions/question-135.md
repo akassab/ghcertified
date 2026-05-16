@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/how-tos/write-workflows/choos
 ## Correct answer
 
 - [x] Forked repositories do not inherit secrets from the original repository  
-> As a security measure, (except for `GITHUB_TOKEN`) secrets are not passed to the runner when a workflow is triggered from a forked repository. This will result in the workflow failing if it references a secret from the original repository.
+> Workflows triggered from a **fork** do not receive upstream repository secrets (except the limited, scoped `GITHUB_TOKEN` for that fork). A PR from `fork-user:feature` that runs `echo ${{ secrets.DEPLOY_KEY }}` gets an empty value and often fails. Maintainers use `pull_request_target` or approval gates when trusted secrets are required—never expose production secrets to unreviewed fork PRs.

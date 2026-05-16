@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] use the on: schedule: cron event trigger
-> Scheduled workflows use `on.schedule` with cron syntax in UTC. There is no `weekdays` schedule type, and a plain `if` in the job does not replace the trigger—you need the `schedule` event with `cron`.
+> Weekday-only schedules use `on.schedule` with cron expressions in UTC, such as `cron: '0 9 * * 1-5'` for 09:00 UTC Monday through Friday. There is no built-in `weekdays:` trigger type. A job-level `if` does not schedule runs—it only filters jobs after an event already fired. Put the cron under `schedule` so GitHub enqueues the workflow on the default branch.

@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/deployment/targeting-differen
 ## Correct answer
 
 - [x] workflow jobs won't start until all the environment's protection rules pass
-> When a job references a deployment environment, it waits until required reviewers, wait timers, and other protection rules are satisfied before starting. Jobs do not start immediately and fail later solely because an environment exists.
+> When a job declares `environment: production`, GitHub applies that environment's protection rules before the job starts executing steps. Required reviewers, wait timers, and deployment branches can block the job until conditions are met. The job does not start and then fail solely because an environment exists—it waits at the environment gate. Secrets scoped to that environment become available only after approval when rules require it.

@@ -95,4 +95,4 @@ documentation: "https://docs.github.com/en/actions/how-tos/write-workflows/choos
 ## Correct answer
 
 - [x] the jobs that are dependent on job A are skipped
-> When a job fails, any downstream jobs that list it in `needs` are **skipped** by default (shown as skipped in the UI). They do not automatically fail with the same error, and unrelated parallel jobs continue unless you use a fail-fast strategy.
+> When a job fails, any downstream jobs that list it in `needs` are **skipped** by default (shown as "Skipped" in the UI)—for example, if `test` fails, `deploy` with `needs: test` never runs. They do not automatically fail with the same error unless you add `if: failure()`. Unrelated parallel jobs (no `needs` link to the failed job) keep running unless you use `strategy.fail-fast` on a matrix.

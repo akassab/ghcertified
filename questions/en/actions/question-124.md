@@ -121,4 +121,4 @@ strategy:
 ```
 
 - [x] 5 jobs
-> The Cartesian product of `os` × `node` yields four combinations, plus `include` adds `macos-latest`/`18` and does not duplicate the existing `ubuntu-latest`/`14` pair, for five jobs total.
+> The matrix builds the Cartesian product of `os` × `node`: `ubuntu-latest`/`14`, `ubuntu-latest`/`16`, `windows-latest`/`14`, and `windows-latest`/`16`—four jobs. The `include` entry adds `macos-latest` with `node: 18` as a fifth combination. A second `include` row matching `ubuntu-latest`/`14` does not create a duplicate because that pair already exists from the product.

@@ -95,5 +95,4 @@ documentation: "https://docs.github.com/en/actions/concepts/security/github_toke
 ## Correct answer
 
 - [x] False
-> `GITHUB_TOKEN`'s permissions are scoped to the repository that contains the workflow that was triggered. 
-> To check out another repository, other methods token must be used, such as a personal access token (PAT) or installation access token
+> `GITHUB_TOKEN` is scoped to the repository that **contains** the workflow run—it cannot clone or push to arbitrary other repos by default. Checking out `actions/checkout` with `repository: other-org/other-repo` requires a PAT or installation token stored as a secret. The statement that the token always has access to any repository in the org is **false**.

@@ -98,6 +98,6 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
 ## Correct answer
 
 - [x] In pull requests that have not been merged, `github.ref` refers to the fully-formed ref of the pull request merge branch/tag 
-> For more information about refs, see the official [Git documentation](https://git-scm.com/book/en/Git-Internals-Git-References).
+> On an **open** pull request, `github.ref` is the merge ref GitHub uses for the PR build—for example `refs/pull/42/merge`, not the contributor’s branch name alone. That lets CI test the hypothetical merge result. See Git’s [refs documentation](https://git-scm.com/book/en/Git-Internals-Git-References) for how fully-qualified refs work.
 - [x] In pull requests that have been merged, `github.ref` refers to the fully-formed ref of the branch that was merged into.
-> After merge, the ref points at the base branch (for example `refs/heads/main`), not the ephemeral pull request merge ref used while the PR is open.
+> After the PR is **merged**, `github.ref` on subsequent events points at the base branch, such as `refs/heads/main`. The ephemeral `refs/pull/<number>/merge` ref no longer applies to routine pushes on main. Workflows that branch on `github.ref` should treat open-PR and post-merge runs differently.

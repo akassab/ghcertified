@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/security-guides/using-secrets
 ## Correct answer
 
 - [x] ${{ secrets.SECRET_NAME }}
-> Reference repository, organization, or environment secrets in expressions with the `secrets` context: `${{ secrets.SECRET_NAME }}`. `secret`, `env`, and `config` are not valid contexts for stored secrets.
+> Reference secrets in expressions with the `secrets` context: `${{ secrets.SECRET_NAME }}`. Secrets can be defined at repository, environment, or organization scope and are masked in logs. Map them into steps with `env: TOKEN: ${{ secrets.API_TOKEN }}` when a plain shell variable is needed. The contexts `secret`, `env`, and `config` are not valid for reading stored secrets directly.

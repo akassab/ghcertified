@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/security-guides/using-secrets
 ## Correct answer
 
 - [x] secrets
-> Encrypted repository, organization, or environment **secrets** are exposed to workflows through the `secrets` context (for example `${{ secrets.MY_TOKEN }}`). Configuration variables are non-secret settings, `vars` is a separate context, and there is no built-in `vault` context in Actions.
+> Encrypted repository, organization, or environment **secrets** are exposed to workflows through `${{ secrets.MY_TOKEN }}` or the `secrets` context in env blocks. Never commit passwords or certificates in the YAML—use Settings → Secrets instead. Configuration `vars` are for non-sensitive values, and there is no built-in `vault` context in Actions.

@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-jobs/choosing-the-runne
 ## Correct answer
 
 - [x] No
-> Each job gets a fresh runner VM (or a clean workspace on a new self-hosted assignment). Files written in one job are not visible in another unless you use artifacts, cache, or a shared store outside the runner filesystem.
+> Each job on GitHub-hosted runners gets a fresh virtual machine; even two jobs with the same `runs-on: ubuntu-latest` label are not guaranteed to share one machine. Files written in `build` (for example `./dist/`) are not visible in `deploy` unless you pass them with artifacts, cache, or external storage. Parallel jobs always run on separate hosts; matching labels only pick the same *image*, not the same *instance*.

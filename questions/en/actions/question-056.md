@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/deployment/targeting-differen
 ## Correct answer
 
 - [x] Using deployment protection rules
-> Configure required reviewers (and other protections) on the `production` environment in the repository or organization settings. Jobs that target that environment with `environment: production` wait for approval before proceeding.
+> Configure required reviewers (and optional wait timers) on the `production` environment under **Settings → Environments**. Jobs that set `environment: production` pause until an allowed reviewer approves the deployment in the Actions UI or via the API. Example: a deploy job runs tests automatically on every push, but the step that hits production waits for a platform engineer—without that environment gate, the same job would run unattended.

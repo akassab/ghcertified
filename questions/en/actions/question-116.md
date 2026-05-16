@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/how-tos/manage-workflow-runs/
 ## Correct answer
 
 - [x] After the workflow run has completed, regardless of its age.
-> Completed workflow runs can be deleted from the UI or API without waiting 14 or 30 days, despite older documentation sometimes suggesting a retention period before deletion.
+> You can delete a workflow run after it has **finished** (success, failure, or cancelled)—there is no mandatory 14- or 30-day waiting period before deletion. In the UI, open the run’s **⋯** menu and choose **Delete workflow run**, or use the REST API once the run is no longer `in_progress`. This is useful for clearing noisy experimental runs without waiting for automatic retention to expire.

@@ -95,4 +95,4 @@ documentation: "https://docs.github.com/en/actions/deployment/targeting-differen
 ## Correct answer
 
 - [x] Repository administrators
-> Only users with admin access to the repository (repository administrators) can configure Actions settings such as enabling workflows and managing permissions. Write or read access alone is not sufficient.
+> Configuring whether Actions is enabled, which workflows are allowed, and default `GITHUB_TOKEN` permissions requires **repository admin** access. Contributors with **write** or **read** can push code and open PRs but cannot change those settings under **Settings → Actions**. Only an org owner or someone with admin on the repo can, for example, disable workflows for forks or restrict actions to an allow list.

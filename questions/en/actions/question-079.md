@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] Scheduled workflows run on the latest commit on the repository default branch.
-> `schedule` events always use the latest commit on the repository's default branch (which may be `main` or another default). They do not run on arbitrary branches or pinned SHAs from other branches.
+> The `schedule` trigger always runs against the latest commit on the repository's default branch (such as `main`), regardless of which branch received recent pushes. The workflow file must exist on that default branch for scheduled runs to be created. Scheduled runs do not execute on feature branches or pinned SHAs from non-default branches. If you need branch-specific automation on a timer, merge to default first or use a different trigger such as `workflow_dispatch`.

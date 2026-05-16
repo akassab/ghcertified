@@ -124,4 +124,4 @@ on:
     check_run:
         types: [rerequested, completed]
 ```
-> The `check_run` event uses the `types` array with supported activity types such as `rerequested` and `completed`. `started` is not a valid type here, and `type` or `filter` are not the correct keys.
+> The `check_run` event listens for check run activity on the repository. The `types` array lists which activities fire the workflow, such as `rerequested` when someone re-runs a check and `completed` when a check finishes. `started` is not a supported type for this webhook. The key is `types`, not `type` or `filter`.

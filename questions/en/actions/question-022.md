@@ -94,4 +94,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] True
-> Workflows that define only `workflow_dispatch` can still be started via the REST API using the "Create a workflow dispatch event" endpoint. You send the workflow file name, ref, and optional `inputs` in the request body, same as triggering from the Actions UI.
+> Workflows that define only `workflow_dispatch` can still be started via the REST API: `POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches` with `ref` (branch or tag) and optional `inputs` in the JSON body. That is the same payload shape as clicking **Run workflow** in the Actions UI—no `push` event is required.

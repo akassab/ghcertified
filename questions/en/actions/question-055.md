@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/managing-workflow-runs/re-run
 ## Correct answer
 
 - [x] It will run with code from `commit A`
-> Re-running a failed workflow reuses the same commit SHA and ref as the original run—the workflow file and code snapshot from `commit A`. Fixes on `commit B` apply only when a new event triggers a new run.
+> Re-running a failed workflow (Re-run failed jobs / Re-run all jobs) reuses the same commit SHA and ref as the original run—the workflow definition and checkout snapshot from `commit A`. If you fixed the workflow on `commit B` after the failure, a re-run still executes the YAML and code as they existed on `commit A`. To pick up fixes on `commit B`, trigger a new run with a fresh event (push, `workflow_dispatch`, etc.).

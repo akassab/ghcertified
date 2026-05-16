@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
 ## Correct answer
 
 - [x] `workflow_run`
-> `workflow_run` allows you to trigger a workflow once other specified workflows have completed (regardless of success). Note that while this question specifically asks about completed workflows, `workflow_run` can also be oriented to trigger a workflow when other specified workflows have been triggered or started processing on a runner
+> The `workflow_run` event starts a workflow after another workflow finishes (or reaches another `types` activity such as `requested`). Example: `on.workflow_run.workflows: ["CI"]` runs a deploy workflow when `CI` completes, with `github.event.workflow_run.conclusion` available in `if:` conditions. This chains automation without embedding deploy steps in the same file as tests.

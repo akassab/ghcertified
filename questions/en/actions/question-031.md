@@ -112,7 +112,7 @@ jobs:
       ...
 ```
 - [x] `if: github.repository == 'my-org/my-repo'`
-> In job `if` expressions you can reference the `github` context without `${{ }}` for simple comparisons. `github.repository` is `owner/name`, so this restricts the deploy job to one repository.
+> In job `if` expressions you can reference the `github` context without `${{ }}` for simple comparisons. `github.repository` is `owner/name`, so `github.repository == 'my-org/my-repo'` skips `production-deploy` on forks that reuse the same workflow file.
 
 - [x] `if: ${{ github.repository == 'my-org/my-repo' }}`
-> The explicit expression form is equivalent: `${{ }}` evaluates the comparison and returns a boolean for the `if`. Both forms correctly gate the job on the repository identity.
+> Wrapping the comparison in `${{ }}` is equivalent for job-level `if`. Both forms return false on any other repo, so the deploy job never runs outside `my-org/my-repo`.

@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/enterprise-cloud@latest/actions/using
 ## Correct answer
 
 - [x] concurrency
-> Use the top-level `concurrency` key to limit how many workflow or job runs can be in progress at the same time. Keys like `limit`, `max-jobs`, and `parallelism` are not valid workflow syntax for this purpose.
+> The top-level `concurrency` key groups workflow runs with a `group` name and optionally `cancel-in-progress: true` so only one deployment runs at a time. For example, `group: deploy-${{ github.ref }}` serializes deploys per branch. Keys like `limit`, `max-jobs`, and `parallelism` are not valid GitHub Actions syntax. Use `concurrency` when overlapping runs would conflict, such as two migrations against the same database.

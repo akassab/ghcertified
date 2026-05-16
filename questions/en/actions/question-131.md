@@ -99,10 +99,10 @@ documentation: "https://docs.github.com/en/actions/concepts/workflows-and-action
 ## Correct answer
 
 - [x] Composite actions are called via referencing the folder that contains their `action.yml` file.
-> As an action, composite actions must contain the brunt of their logic within an `action.yml` file. To call the composite action, point to where its `action.yml` is located (this includes the root. ex. to call a composite action that is located at the root of the same repository as the caller workflow, the syntax `uses: ./` would be used).
+> Composite actions bundle steps in `action.yml` under `runs.steps`. Call them with `uses:` pointing at the folder that contains that file—for example `uses: ./.github/actions/my-composite` or `uses: ./` when the action lives at the repo root. The path is relative to the caller workflow’s repository, same as any other action reference.
 - [x] Composite actions must be called as a step within a job
-> Composite actions (as with any other action) are called from within a step of a workflow job--in other words, you do not need a specific workflow job just to caller a composite action. 
+> Composite actions run as a **step** inside an existing job, like `uses: ./.github/actions/lint` under `steps:`. You do not allocate a whole job only to invoke a composite action unless you want isolation for other reasons. Multiple composite actions can run sequentially in the same job on the same runner.
 - [x] Reusable workflows must be called on workflow job level (not from step-level).
-> Steps within a workflow job cannot call a reusable workflow. A reusable workflow must be called by an individual job within the caller workflow. This can result in one or more jobs running in the caller workflow (said jobs can be seen in workflow runs in the Github Actions UI). 
+> Reusable workflows are invoked at **job** level with `uses: org/repo/.github/workflows/reusable.yml@ref`, not from inside `steps:`. A caller job that `uses` a reusable workflow may show nested jobs in the Actions UI. You cannot `uses:` a workflow file from a step the way you `uses:` an action.
 - [x] Reusable workflows can use a different runner type than the caller workflow, while composite actions cannot. 
-> Reusable workflows have jobs like any other workflow, and those jobs can specify different runner type via the `jobs.runs-on` key. Composite actions inherit the runner environment of their calling workflow job.
+> Reusable workflows define their own `runs-on` per job—`ubuntu-latest` in the callee and `windows-latest` in the caller is valid. Composite actions always run on the **same** runner as the calling step; they cannot switch OS or machine type. Choose reusable workflows when you need separate runners or job boundaries.

@@ -99,16 +99,16 @@ documentation: "https://docs.github.com/en/actions/writing-workflows/workflow-sy
 ## Correct answer
 
 - [x] choice
-> For `workflow_dispatch` inputs, `choice` is the type used when you provide a fixed list of options via `options`. It is the GitHub Actions name for a dropdown-style input in the manual run UI.
+> For `workflow_dispatch` inputs, `choice` renders a dropdown when you list fixed `options`—for example `options: [patch, minor, major]` for a release type.
 
 - [x] boolean
-> `boolean` inputs render as a true/false toggle when someone manually triggers the workflow. The value is passed to the workflow as a boolean you can reference in expressions.
+> `boolean` inputs render as a true/false toggle in the manual run UI. Use them for flags like `dry_run` and reference the value in `if:` expressions.
 
 - [x] string
-> `string` is the default text input type for `workflow_dispatch`. Use it for free-form values such as release notes, branch names, or other arbitrary text.
+> `string` is the default free-text type for values such as a tag name, branch, or deployment note passed into `${{ inputs.<name> }}`.
 
 - [x] number
-> `number` inputs accept numeric values only. They are useful when the trigger should supply counts, timeouts, or other numeric parameters to the workflow.
+> `number` accepts numeric inputs only—useful for replica counts, retry limits, or timeout minutes without quoting numbers as strings.
 
 - [x] environment
-> The `environment` input type lets the person triggering the run pick a deployment environment from those configured in the repository. GitHub passes the selected environment name into the workflow run context.
+> The `environment` type lets the person triggering the run pick a configured deployment environment from the repo. GitHub associates the run with that environment (protection rules and environment secrets apply).

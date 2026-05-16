@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
 ## Correct answer
 
 - [x] Printing the contents of the `github.event` object in a step
-> `github.event` will show the full event webhook payload. This payload varies upon the type of event. See the [Webhook events and payloads](https://docs.github.com/en/webhooks/webhook-events-and-payloads) for more details.
+> Logging or printing `github.event` dumps the **webhook payload** for the trigger—`pull_request` includes `number`, `head`, and `base`; `push` includes `commits` and `ref`. Shape differs per `on:` event, so guard access with `if:` or optional chaining in scripts. The [webhook payload reference](https://docs.github.com/en/webhooks/webhook-events-and-payloads) lists fields per event type.

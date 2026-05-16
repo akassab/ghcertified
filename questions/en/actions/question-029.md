@@ -125,4 +125,4 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 ```
-> `cancel-in-progress: true` tells GitHub to cancel any in-progress runs in the same concurrency group when a new run starts. Combined with a group keyed by workflow and ref, pushing again to a PR branch stops the previous run instead of leaving both running.
+> `cancel-in-progress: true` cancels any in-progress run in the same concurrency `group` when a newer run starts. Keying the group with `${{ github.workflow }}-${{ github.ref }}` scopes cancellation to that PR branch—pushing again stops the stale 20-minute analysis run instead of stacking parallel duplicates.

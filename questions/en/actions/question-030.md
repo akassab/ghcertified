@@ -114,4 +114,4 @@ jobs:
     needs: [job1, job2]
 ```
 - [x] job3 will run after job1 and job2 have completed, regardless of whether they were successful
-> By default, `needs` skips dependent jobs when an upstream job fails. Wrapping the condition in `always()` evaluates the job's `if` even after failure, so `job3` still runs once `job1` and `job2` have finished—success or failure—useful for cleanup or notification jobs.
+> By default, `needs` skips dependents when an upstream job fails. Adding `if: ${{ always() }}` forces `job3` to evaluate and run after `job1` and `job2` finish regardless of success—typical for cleanup uploads, Slack notifications, or tearing down test infrastructure even when tests failed.

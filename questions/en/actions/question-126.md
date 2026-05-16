@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/writing-workflows/choosing-wh
 ## Correct answer
 
 - [x] `${{needs.job1.outputs.output1}}`
-> In a dependent job, read another job’s outputs with `needs.<job_id>.outputs.<name>`. Omitting `needs`, using `job1` directly, or `depends` is invalid syntax.
+> When job B declares `needs: job1`, it can read job A’s outputs with `${{ needs.job1.outputs.output1 }}`. The `needs` prefix ties the expression to the dependency graph GitHub already validated. `${{ job1.outputs.output1 }}` or `${{ depends.job1... }}` are invalid—only `needs.<job_id>.outputs.<name>` is supported in expressions.

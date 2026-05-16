@@ -124,4 +124,4 @@ jobs:
             - run: npm install -g bats
 ```
 - [x] the `production-deploy` job will be marked as skipped
-> The job `if` compares `github.repository` to `octo/my-prod-repo`. A push to `octo/my-dev-repo` makes the condition false, so the job is skipped—not failed—and its steps do not run.
+> The job condition `github.repository == 'octo/my-prod-repo'` is false when the workflow runs for `octo/my-dev-repo`, so GitHub marks `production-deploy` as **skipped** rather than failed. Skipped jobs do not execute their steps and do not emit failure signals for the overall workflow unless you depend on them with `needs`. The workflow run itself can still succeed with skipped jobs present.

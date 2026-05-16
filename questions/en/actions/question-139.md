@@ -97,6 +97,6 @@ documentation: "https://docs.github.com/en/actions/how-tos/monitor-workflows/ena
 ## Correct answer
 
 - [x] Setting a secret or variable named `ACTIONS_RUNNER_DEBUG` to `true`
-> Note: `ACTIONS_RUNNER_DEBUG` can be set as a secret or variable at organization-level or repository-level.
+> Set a repository or organization secret/variable `ACTIONS_RUNNER_DEBUG` to `true` to enable verbose runner diagnostic logs on subsequent runs. This persists until you remove or change the secret—useful for ongoing self-hosted runner issues. It increases log volume, so turn it off after troubleshooting.
 - [x] Re-running a workflow with `Enable debug logging enabled`
-> When you re-run a failed workflow from the Actions UI, enabling debug logging temporarily sets runner diagnostic logging for that run, which is useful for troubleshooting self-hosted runners without changing repository settings permanently.
+> When you **re-run** a workflow from the Actions UI, check **Enable debug logging** to turn on runner diagnostics for that single run only. No secret change is required, which is handy for one-off investigations on shared repos. Debug output appears in the job log alongside normal step output.

@@ -97,4 +97,4 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
 ## Correct answer
 
 - [x] In push events, `github.ref` is the fully-formed ref of the branch or tag ref that was pushed. 
-> For more information about refs, see the official [Git documentation](https://git-scm.com/book/en/Git-Internals-Git-References).
+> On **push** events, `github.ref` is the fully qualified ref that was pushed—`refs/heads/main` for a branch push or `refs/tags/v1.0.0` for a tag. Use it in `if:` conditions or scripts when behavior should differ for branches versus tags. `github.ref_name` is the short name (`main`, `v1.0.0`) without the `refs/heads/` prefix.

@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/rest/actions/secrets?create-or-update
 ## Correct answer
 
 - [x] `PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}`
-> Creating or updating an encrypted repository secret uses PUT with the secret name in the path and the encrypted value in the body. POST is not the documented method for this upsert operation.
+> Creating or updating an encrypted repository secret uses `PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}` with the Libsodium-encrypted value and key metadata in the JSON body. You first fetch the repo public key, encrypt locally, then PUT—this upserts by name. `POST` on the same path is not the documented create/update method; `GET` lists or reads metadata but does not set the secret value.

@@ -112,4 +112,4 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 ```
 - [x] Set `jobs.example_matrix.strategy.max-parallel` to 2
-> `strategy.max-parallel` caps how many matrix jobs run at the same time. With six combinations and `max-parallel: 2`, GitHub runs at most two matrix legs concurrently and queues the rest until slots free up.
+> Set `jobs.example_matrix.strategy.max-parallel: 2` to cap concurrent matrix legs. With six `version` × `os` combinations in the example, GitHub runs at most two at once and queues the rest until a slot frees up—useful to avoid overloading shared runners or rate-limited APIs.

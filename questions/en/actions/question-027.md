@@ -97,7 +97,7 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] Using defaults.run on workflow level to set default shell (e.g bash) for an entire workflow
-> `defaults.run` at the workflow root applies to every `run` step in every job unless overridden. Setting `shell` there avoids repeating the same shell on each step.
+> `defaults.run` at the workflow root applies to every `run` step in every job unless overridden—for example `defaults.run.shell: bash` so you do not repeat `shell: bash` on each step.
 
 - [x] Using defaults.run on job level to set default working-directory for all steps in a single job
-> `defaults.run` on a job applies only to steps in that job. `working-directory` is a valid key under `defaults.run` and sets the cwd for all `run` steps in the job.
+> `defaults.run` on a job scopes to that job's steps only. `working-directory: ./apps/web` under `defaults.run` sets the cwd for all `run` steps in that job—handy when every command should run from the same folder.

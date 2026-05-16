@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] To specify input parameters for an action
-> Under a `uses:` step, `with:` passes inputs defined in the action's `action.yml`. Environment variables use `env:`; job dependencies use `needs:`; workflows are triggered by `on:` events, not `with:`.
+> On a step that uses `uses:`, the `with` map passes input parameters declared in the action's `action.yml` (for example `node-version: '20'` for `actions/setup-node`). Inputs are how actions receive configuration; they are distinct from environment variables set with `env:`. Job dependencies use `needs:`, and workflows are started by `on:` events—not by `with:`.

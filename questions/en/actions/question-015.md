@@ -137,4 +137,4 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 ```
 
-> A job matrix is defined under `jobs.<job_id>.strategy.matrix`. The `strategy` key is required — placing `matrix` directly on the job or swapping `matrix` and `strategy` is invalid syntax.
+> A job matrix is defined under `jobs.<job_id>.strategy.matrix`. The `strategy` wrapper is required—placing `matrix` directly on the job or swapping `matrix` and `strategy` is invalid. With `version: [10, 12, 14]` and two OS values, GitHub fans out **six** parallel jobs (every combination of dimensions).

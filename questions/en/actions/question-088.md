@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/enterprise-cloud@latest/actions/using
 ## Correct answer
 
 - [x] Allows defining multiple job configurations to run in parallel
-> The `strategy.matrix` key defines multiple variable combinations for a job, and GitHub Actions runs one job per combination in parallel. It does not set environment variables, define secrets, or schedule workflows.
+> `strategy.matrix` defines one or more axes (such as `os` and `node`) whose combinations GitHub expands into parallel jobs. Six combinations from `[ubuntu, windows]` × `[18, 20, 22]` produce six jobs that run concurrently subject to runner availability. Each job receives a `matrix` context (for example `${{ matrix.os }}`) for that combination. Matrix jobs are for variant testing, not for defining secrets or cron schedules.

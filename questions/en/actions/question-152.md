@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/enterprise-server/admin/managing-gith
 ## Correct answer
 
 - [x] starts off empty and must be populated in order to save tools between runs
-> Tool caches allow you to cache different versions of tools, which enables faster self-hosted runner activity. Without tool caches, self-hosted runners that use `actions/setup-*` will take longer to execute.
+> On self-hosted runners, the tools cache directory starts **empty** and must be populated over time. When a job runs `actions/setup-node` or `actions/setup-python`, downloaded runtimes are stored there so later jobs on the same runner can reuse them instead of downloading again. Without that cache, every run repeats full tool downloads, which slows CI on self-hosted machines compared to GitHub-hosted runners that already ship with common toolchains.

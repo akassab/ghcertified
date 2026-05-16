@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] workflow_call
-> A workflow that other workflows invoke must declare `on: workflow_call`. That event makes the workflow reusable: callers reference it with `jobs.<job_id>.uses` and can pass `inputs` and `secrets` into it.
+> A workflow meant to be called by others must declare `on: workflow_call`. Callers reference it with `uses: ./.github/workflows/ci.yml` (or `org/repo/.github/workflows/ci.yml@ref`) and pass `with:` inputs and `secrets:`. Triggers like `push` belong on the **caller** workflow, not on the reusable `CI` file itself.

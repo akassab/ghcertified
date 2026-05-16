@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/hosting-your-own-runners/mana
 ## Correct answer
 
 - [x] In the `_diag` folder directly on the runner machine
-> Self-hosted runner diagnostic logs are written locally under the runner install directory in `_diag` (alongside the runner application). They are not streamed to the job log on GitHub.com unless you upload or forward them yourself.
+> Self-hosted runner diagnostic and connectivity logs are written locally under the runner install directory in `_diag` (alongside the runner application). They are not shown on the runner's GitHub.com settings page or in a normal job log on github.com unless you upload or forward them yourself. Enable debug logging on a job if you need more detail in the web UI for that specific run—not as a substitute for on-disk `_diag` files when debugging runner networking.

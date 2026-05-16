@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] create this dependency using the `needs` keyword in `job2`
-> `needs: job1` on `job2` ensures `job1` completes before `job2` starts, so artifacts from `job1` exist when `job2` downloads them. Job order in the YAML file alone does not enforce execution order.
+> `needs: job1` on `job2` ensures `job1` completes (success or failure, unless you add other `if` rules) before `job2` starts, so artifacts from `job1` exist when `job2` runs `download-artifact`. Listing `job2` after `job1` in the YAML does not guarantee execution order—parallel jobs without `needs` can run at the same time. `download-artifact` does not create an implicit dependency; without `needs`, `job2` might start before `job1` finishes uploading.

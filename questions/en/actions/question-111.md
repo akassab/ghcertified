@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/events-that-t
 ## Correct answer
 
 - [x] `issue_comment`
-> Workflows that react to comments on issues or pull requests use the `issue_comment` event. `issues.comment`, bare `issues`, and `comment` are not valid event names for this trigger.
+> The `issue_comment` event runs when someone creates, edits, or deletes a comment on an issue or pull request. Use `on.issue_comment` with optional `types: [created]` to react only to new comments. Valid event names are not `issues.comment`, bare `issues` for comments, or `comment`. This is the trigger Dave needs for notifications when a comment is added.

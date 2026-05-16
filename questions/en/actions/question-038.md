@@ -116,4 +116,4 @@ steps:
     run: ?
 ```
 - [x] `run: echo "$action_state"`
-> Writing to `$GITHUB_ENV` creates a job-level environment variable for subsequent steps in the same job. Later steps reference it as `$action_state` in the shell, not via `steps.*.outputs` (that path is for `$GITHUB_OUTPUT`).
+> `echo "action_state=yellow" >> "$GITHUB_ENV"` sets a job-level env var for **later** steps in the same job. In `step_two`, the shell expands `$action_state` directly. Values written to `$GITHUB_ENV` are not available via `steps.*.outputs`—that path is only for data written to `$GITHUB_OUTPUT`.

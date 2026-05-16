@@ -99,10 +99,10 @@ documentation: "https://docs.github.com/en/actions/using-workflows/sharing-workf
 ## Correct answer
 
 - [x] The entire organization, or selected repositories in an organization
-> Organization-level secrets and variables can apply to all repos in the org or to a selected list. That is the broadest scope below enterprise.
+> Organization-level secrets and variables can apply to all repositories in the org or to a selected subset you configure in org settings. For example `ORG_NPM_TOKEN` shared with five service repos avoids duplicating the same secret in each repo. That is the broadest Actions scope below enterprise; you cannot scope a single org secret to repos in unrelated orgs without enterprise policies.
 
 - [x] A single repository
-> Repository-level secrets and variables are available to workflows in that repo (subject to environment and branch rules).
+> Repository-level secrets and variables live under **Settings → Secrets and variables → Actions** for that repo and are available to workflows in that repository (subject to environment protection and branch rules). `${{ secrets.API_KEY }}` and `${{ vars.BUILD_TYPE }}` resolve here when no narrower environment override exists. Per-workflow or per-job scopes are not separate secret stores—you use environments or contexts instead.
 
 - [x] An environment in a repository
-> Environment-scoped secrets and variables apply only when a job targets that environment (via `environment:`). They support protection rules and deployment-specific values.
+> Environment-scoped secrets and variables apply only when a job sets `environment: production` (or another named environment). They support required reviewers, wait timers, and deployment-branch rules—ideal for `DATABASE_URL` that must not run on every PR build. A job cannot attach to two environments at once; pick one environment per job when you need that scope.

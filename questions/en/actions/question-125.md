@@ -96,8 +96,8 @@ documentation: "https://docs.github.com/en/actions/writing-workflows/choosing-wh
 ## Correct answer
 
 - [x] Workflow level
-> Set `timeout-minutes` at the workflow root to cap total runtime for all jobs in the run.
+> Workflow-level `timeout-minutes` caps the **entire** run across all jobs—for example, `timeout-minutes: 60` at the top of the file stops the workflow if the combined runtime exceeds one hour. Use this when many parallel jobs should share one global budget. Individual jobs can still hit their own limits first if those are lower.
 - [x] Job level
-> `jobs.<job_id>.timeout-minutes` limits a single job.
+> `jobs.<job_id>.timeout-minutes` applies only to that job, which is useful when deploy steps need more time than lint. A job with `timeout-minutes: 30` is cancelled if it runs longer than thirty minutes even when the workflow-level limit is higher. Steps inherit the job limit unless a step sets its own.
 - [x] Step level
-> `jobs.<job_id>.steps[*].timeout-minutes` limits an individual step. Actions do not define a separate timeout level in metadata.
+> `jobs.<job_id>.steps[*].timeout-minutes` can cap a single long-running step, such as an integration test script, without shortening the whole job. Action metadata in `action.yml` does not define a workflow timeout level—only workflow YAML does. Typical defaults are 360 minutes at workflow level and 6 hours per job unless you set lower values.

@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/triggering-a-
 ## Correct answer
 
 - [x] glob
-> GitHub Actions branch and path filters use glob syntax (for example `feature/*` or `!dependabot/**`). Full regular expressions, URL schemes, and a dedicated `action` pattern type are not used for these filters.
+> GitHub Actions branch and path filters use **glob** syntax, not full regex. Examples: `feature/*` matches `feature/login`; `!dependabot/**` excludes dependabot branches under `push` or `pull_request` filters. URL schemes and a special `action` pattern type are not used for these filters.

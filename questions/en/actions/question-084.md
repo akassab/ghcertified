@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] env
-> The `env` key at workflow, job, or step level defines environment variables for that scope. `vars` and `secrets` are separate contexts; there is no `config` key in workflow syntax.
+> The `env` keyword defines environment variables at workflow, job, or step scope; inner scopes override outer ones for the same name. For example, `env: NODE_ENV: production` at the job level is visible to every step in that job. Repository and organization variables and secrets use separate contexts (`vars`, `secrets`), not `env`. There is no `config` key in workflow syntax for defining variables.

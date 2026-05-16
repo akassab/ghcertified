@@ -111,4 +111,4 @@ parallel: ${{ github.workflow }}
 ```yaml
 concurrency: ${{ github.workflow }}
 ```
-> The `concurrency` key controls how many runs of a workflow can be in progress at once. Using the workflow name (or a custom `group`) as the concurrency group ensures only one run of that workflow executes at a time; additional runs wait in queue.
+> The `concurrency` key limits how many runs share the same group at once. Setting `concurrency: deploy-prod` (or `${{ github.workflow }}` as in the answer) puts every run of **Deploy Prod** in one group so only one executes at a time; the next run waits in queue until the current one finishes.

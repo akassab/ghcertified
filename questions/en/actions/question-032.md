@@ -96,10 +96,10 @@ documentation: "https://docs.github.com/en/actions/using-workflows/workflow-synt
 ## Correct answer
 
 - [x] Windows
-> GitHub-hosted runners include Windows images (for example `windows-latest`). You select them with `runs-on: windows-latest` or a specific Windows version label.
+> Windows hosted runners (`windows-latest`, specific Windows versions) support .NET, PowerShell, and builds that require a Windows environment—set `runs-on: windows-latest`.
 
 - [x] Ubuntu Linux
-> Linux runners are the most common hosted option (`ubuntu-latest`, `ubuntu-22.04`, etc.). Most Actions documentation examples use Ubuntu.
+> Linux runners (`ubuntu-latest`, `ubuntu-22.04`) are the default for most Actions examples; containers, apt packages, and Docker workflows typically use Ubuntu.
 
 - [x] macOS
-> macOS hosted runners (`macos-latest`, `macos-14`, etc.) are available for builds that require Apple tooling or Xcode. Android is not a GitHub-hosted runner OS—you use Linux/Windows/macOS runners with Android SDK tooling instead.
+> macOS runners (`macos-latest`, `macos-14`) provide Xcode and Apple toolchains for iOS/macOS builds. Android is not a hosted runner OS—you run the Android SDK on Linux or Windows instead.

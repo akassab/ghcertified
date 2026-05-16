@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/triggering-a-
 ## Correct answer
 
 - [x] `github.event`
-> The `github.event` context holds the webhook payload for the event that triggered the workflow (for example push or pull_request data). `github.repository` is the repo name, `github.job` is not a standard context, and job results use `jobs.<job_id>.result`.
+> `github.event` contains the webhook payload for the trigger—commit lists for `push`, PR metadata for `pull_request`, and so on. Expressions like `${{ github.event.pull_request.number }}` read that data without calling the API again. `github.repository` is only the `owner/name` string. Job results live under `needs` and step outcomes under `steps`, not in `github.event`.

@@ -95,4 +95,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/storing-workf
 ## Correct answer
 
 - [x] False
-> `actions/upload-artifact` accepts a `path` that can be a file, directory, or glob. You can upload multiple paths in one step; you are not limited to a single file per upload action.
+> `actions/upload-artifact` accepts a `path` that can be a single file, a directory, or a glob pattern. You can pass multiple paths (for example `dist/*.zip` and `reports/`) in one upload step, or run multiple upload steps in the same job. The statement that only one file at a time is allowed is false—you are not limited to a single file per action invocation.

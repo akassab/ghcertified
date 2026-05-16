@@ -128,4 +128,4 @@ defaults:
     shell: bash
     working-directory: ./scripts
 ```
-> `defaults.run.working-directory` sets the cwd for all `run` steps in the workflow (or job if defined at job level). There is no `directory` key under `defaults.run`, and `job` is not a valid sibling for this purpose.
+> `defaults.run.working-directory` sets the current working directory for every `run` step in scope—workflow-wide or for a single job if defined under `jobs.<id>.defaults`. With the example above, a step `run: ./build.sh` executes from `./scripts` without repeating `working-directory` on each step. There is no `directory` key under `defaults.run`, and `job` is not a valid key for this purpose.

@@ -95,9 +95,9 @@ documentation: "https://docs.github.com/en/actions/writing-workflows/choosing-wh
 ## Correct answer
 
 - [x] Workflow level
-> A top-level `permissions` block applies the same token scopes to every job in the workflow unless a job overrides them.
+> A top-level `permissions` block applies the same token scopes to every job unless a job overrides them—for example, `permissions: contents: read` at the workflow root limits all jobs by default.
 
 - [x] Job level
-> You can set `permissions` on an individual job to tighten or broaden scopes for just that job's `GITHUB_TOKEN`.
+> A job can override workflow defaults, such as giving only the `deploy` job `id-token: write` for OIDC while other jobs stay read-only.
 
-> Permissions cannot be set on individual steps. Step access is inherited from the job-level token.
+> Permissions cannot be set on individual steps. A step always uses the `GITHUB_TOKEN` (and scopes) of its job—there is no `permissions:` key under `steps`.

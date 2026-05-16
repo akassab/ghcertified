@@ -96,10 +96,10 @@ documentation: "https://docs.github.com/en/actions/using-workflows/reusing-workf
 ## Correct answer
 
 - [x] You define an output on workflow level in the `build` workflow
-> Reusable workflows expose return values under `on.workflow_call.outputs`. Map each output to a job output (for example `value: ${{ jobs.build.outputs.result }}`) so callers can read them after the called workflow finishes.
+> Reusable workflows expose return values under `on.workflow_call.outputs`. Map each name to a job output—for example `artifact-path: ${{ jobs.build.outputs.zip_path }}`—so the caller reads `needs.<job_id>.outputs.artifact-path` after the called run finishes.
 
 - [x] You define an output on job level in the `build` workflow
-> Jobs declare `outputs` that reference step outputs (for example `result: ${{ steps.set.outputs.result }}`). The called workflow's workflow-level outputs typically pull from these job outputs.
+> Jobs declare `outputs` that reference step outputs, such as `zip_path: ${{ steps.package.outputs.path }}`. Workflow-level outputs typically aggregate from these job outputs.
 
 - [x] In the `build` workflow you write the output into `$GITHUB_OUTPUT` in one of the steps
-> Step outputs are set by appending `name=value` lines to `$GITHUB_OUTPUT`. Without writing to `GITHUB_OUTPUT`, downstream jobs and workflow outputs have nothing to expose to the caller.
+> In a step, append `zip_path=/tmp/app.zip` to `$GITHUB_OUTPUT` so `${{ steps.<id>.outputs.zip_path }}` is available to the job and workflow outputs. Without writing to `GITHUB_OUTPUT`, nothing propagates to the caller.

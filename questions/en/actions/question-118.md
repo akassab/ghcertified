@@ -132,4 +132,4 @@ jobs:
 [skip actions]
 [actions skip]
 ```
-> GitHub skips workflow runs when these strings appear in the latest commit message or pull request title. `SKIP_WORKFLOW` is not a supported skip keyword, and push/pull_request workflows still run unless one of these phrases is present.
+> GitHub skips `push` and `pull_request` runs when the **latest** commit message or PR title contains one of these bracketed phrases—for example, `git commit -m "docs: typo [skip ci]"`. The phrases are recognized as written (`[ci skip]`, `[skip actions]`, etc.) and apply to workflows on those events. `SKIP_WORKFLOW` or informal text like “skip this build” does **not** cancel the run; only these documented keywords do.

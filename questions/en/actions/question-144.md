@@ -96,4 +96,4 @@ documentation: "https://github.com/actions/upload-artifact#inputs"
 ## Correct answer
 
 - [x] By utilizing the `retention-days` input in `actions/upload-artifact` 
-> The `retention-days` input on `actions/upload-artifact` sets how long that artifact is kept, which can differ from the repository or organization default. Download actions and org-wide settings apply to all workflows, not a single workflow file.
+> `actions/upload-artifact` accepts `retention-days` to keep **that** artifact longer or shorter than the repo default—for example `retention-days: 5` on a huge test report you only need briefly. Org defaults still cap the maximum retention. `download-artifact` does not set retention; it only fetches existing artifacts.

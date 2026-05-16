@@ -110,4 +110,4 @@ on:
       - '!release/**-alpha'
 ```
 - [x] the target branch name starts with `release` but does not end with `-alpha`
-> For `pull_request`, the `branches` filter applies to the **base** (target) branch of the PR, not the head branch. The pattern `release/**` includes release branches, and `!release/**-alpha` excludes names ending in `-alpha`, so only non-alpha release target branches match.
+> For `pull_request`, the `branches` filter applies to the **base** (target) branch, not the head/feature branch. Here `release/**` matches targets like `release/1.0`, and `!release/**-alpha` excludes names ending in `-alpha`—so a PR into `release/beta` runs, but one into `release/2.0-alpha` does not.

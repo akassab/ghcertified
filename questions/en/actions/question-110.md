@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/creating-star
 ## Correct answer
 
 - [x] inside a directory named `workflow-templates` within a repository named `.github`
-> Organization workflow templates live in a dedicated `.github` repository under `workflow-templates/`, not in each repo’s `.github/workflow-templates` or `.github/org-templates`.
+> Organization workflow templates are stored in the organization's `.github` repository under `workflow-templates/`, not in each member repo's `.github/workflow-templates`. Alongside the YAML, `properties.json` can set name, description, and categories shown in the template picker. Dave's org-wide starter workflows belong in that central `.github` repo so every repository sees them when creating a workflow.

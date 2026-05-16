@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/deployment/security-hardening
 ## Correct answer
 
 - [x] Using OIDC
-> OpenID Connect lets the workflow exchange a short-lived token with the cloud provider without storing long-lived access keys in secrets. Configure trust between GitHub and AWS/Azure/GCP and use the provider's official login action—recommended in GitHub's security hardening guidance.
+> OpenID Connect (OIDC) lets the workflow exchange a short-lived token with AWS, Azure, or GCP without storing long-lived access keys in GitHub secrets. You configure a trust relationship (audience, subject claims) in the cloud and use `permissions: id-token: write` plus the provider's login action—for example `aws-actions/configure-aws-credentials` with `role-to-assume`. GitHub's security hardening guide recommends OIDC over static `AWS_ACCESS_KEY_ID` secrets in repositories.

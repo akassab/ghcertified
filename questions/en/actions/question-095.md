@@ -97,8 +97,8 @@ documentation: "https://docs.github.com/en/actions/hosting-your-own-runners/mana
 ## Correct answer
 
 - [x] You can add a self-hosted runner to a repository
-> Self-hosted runners are registered at the repository, organization, or enterprise level so any eligible workflow in that scope can use them.
+> Repository-level runners are registered in **Settings → Actions → Runners** and are available to workflows in that repo when `runs-on` matches their labels. This is the smallest scope—ideal when only one project needs access to private hardware or networks. Runners are not registered on individual workflows or steps.
 - [x] You can add a self-hosted runner to an organization
-> Organization-level runners can be shared across repositories in the org according to your access settings.
+> Organization-level runners can be shared across repositories in the org according to runner group and access settings. A platform team might maintain one pool labeled `gpu` that many services use. Registration still happens once per machine, not per workflow file.
 - [x] You can add a self-hosted runner to an enterprise
-> Enterprise administrators can register runners for use across the enterprise. Runners are not attached to individual workflows or steps.
+> Enterprise administrators can register runners for use across the enterprise, the broadest scope for large organizations with centralized infrastructure. The same runner agent software is used at every level; only who can assign jobs to the runner changes with scope.

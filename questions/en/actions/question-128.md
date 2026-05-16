@@ -96,6 +96,6 @@ documentation: "https://docs.github.com/en/actions/reference/workflows-and-actio
 ## Correct answer
 
 - [x] `types: [reopened]` is defined under the `pull_request` event. 
-> Listing only `reopened` under `pull_request.types` limits runs to reopened PRs; pushes to the branch after open (`synchronize`) will not trigger the workflow.
+> With `pull_request.types: [reopened]`, the workflow runs only when someone reopens a closed PR—not when new commits are pushed to the branch (`synchronize`). A contributor pushing fixes to an open PR will not trigger CI, which is easy to misconfigure. Omit `types` unless you intentionally want that narrow behavior.
 - [x] No activity types are defined under the `pull_request` event.
-> When `types` is omitted, `pull_request` defaults to `opened`, `synchronize`, and `reopened`, so updates to the PR branch will trigger runs.
+> When `types` is omitted under `pull_request`, GitHub defaults to `opened`, `synchronize`, and `reopened`. That means new commits on the PR branch trigger runs, which is what most CI workflows expect. You only need an explicit `types` list when you want a subset of those activities.

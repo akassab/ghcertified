@@ -96,4 +96,4 @@ documentation: "https://docs.github.com/en/actions/using-workflows/caching-depen
 ## Correct answer
 
 - [x] by automatically creating a new cache if the job is completed successfully
-> When a job finishes successfully and no matching cache exists for the key, `actions/cache` saves a new cache entry automatically. You do not search other repositories, require manual cache creation, or fail the workflow on a cache miss.
+> When the primary `key` does not match an existing cache, restore steps continue without failing the job. If the job later completes successfully, `actions/cache` saves a new entry for future runs. On a miss you pay the full install cost once; the next run with the same key may hit the cache. Cache does not search other repositories or require manual creation in the UI.

@@ -114,4 +114,4 @@ jobs:
 ```
 
 - [x] Yes
-> A matrix can call a **reusable workflow** with `uses:` and pass matrix values as inputs, running multiple instances of that workflow in parallel. This works across repositories (with appropriate access) and does not require self-hosted runners.
+> A matrix can call a **reusable workflow** with `uses:` and pass each matrix value via `with:`—for example, `environment: [staging, prod]` can invoke the same `CI` workflow twice in parallel with different inputs. This works across repositories when access allows it and does not require self-hosted runners; you are parallelizing workflow **calls**, not just steps inside one job.
