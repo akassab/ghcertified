@@ -114,7 +114,11 @@ jobs:
 ```
 
 - [x] Yes
-> The YAML in the question is a **job matrix**: `version: [10, 12, 14]` × `os: [ubuntu-latest, windows-latest]` creates **6 jobs inside one workflow** (3 × 2), each running that workflow’s steps on a different runner combo. The question asks something different: can a matrix spin up **whole workflows** in parallel—not just jobs in a single file?
+> The YAML in the question is a **job matrix**: `version: [10, 12, 14]` × `os: [ubuntu-latest, windows-latest]` creates **6 jobs inside one workflow** (3 × 2)—for example `example_matrix (10, ubuntu-latest)`, `(10, windows-latest)`, through `(14, windows-latest)`. Each job runs that workflow’s steps on a different version/OS combo.
+>
+> **Do those 6 run in parallel?** Yes, by default. Matrix jobs do not wait on each other unless you add `needs` or limit concurrency. GitHub starts as many as it can on available runners, so you often see several or all six running at once. To cap that, set `strategy.max-parallel` (for example `max-parallel: 2` runs at most two matrix jobs at a time while the rest queue).
+>
+> The question also asks something different: can a matrix spin up **whole workflows** in parallel—not just jobs in a single file?
 >
 > **Yes.** A job can call a **reusable workflow** with `uses:` instead of `runs-on` + `steps`. Put that job in a matrix and each matrix combination starts a separate reusable-workflow run. Example:
 >
