@@ -114,4 +114,20 @@ jobs:
 ```
 
 - [x] Yes
-> A matrix can call a **reusable workflow** with `uses:` and pass each matrix value via `with:`—for example, `environment: [staging, prod]` can invoke the same `CI` workflow twice in parallel with different inputs. This works across repositories when access allows it and does not require self-hosted runners; you are parallelizing workflow **calls**, not just steps inside one job.
+> The YAML in the question is a **job matrix**: `version: [10, 12, 14]` × `os: [ubuntu-latest, windows-latest]` creates **6 jobs inside one workflow** (3 × 2), each running that workflow’s steps on a different runner combo. The question asks something different: can a matrix spin up **whole workflows** in parallel—not just jobs in a single file?
+>
+> **Yes.** A job can call a **reusable workflow** with `uses:` instead of `runs-on` + `steps`. Put that job in a matrix and each matrix combination starts a separate reusable-workflow run. Example:
+>
+> ```yaml
+> jobs:
+>   call-ci:
+>     strategy:
+>       matrix:
+>         environment: [staging, production]
+>     uses: my-org/shared-pipelines/.github/workflows/ci.yml@main
+>     with:
+>       target: ${{ matrix.environment }}
+>     secrets: inherit
+> ```
+>
+> That launches **two full workflow runs** (staging and production) in parallel, each executing every job defined in `ci.yml`. You are not limited to the same repository (caller and reusable workflow can be in different repos if permissions allow), and GitHub-hosted runners work fine—self-hosted runners are optional, not required.
